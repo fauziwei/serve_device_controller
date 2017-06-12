@@ -2,6 +2,7 @@
 from twisted.internet import reactor
 from twisted.internet.protocol import ClientFactory
 from twisted.protocols.basic import LineReceiver
+from twisted.internet.error import ReactorNotRunning
 
 # USAGE: ipython device_777777.py
 
@@ -22,7 +23,8 @@ class ClientProtocol(LineReceiver):
 
 	def connectionLost(self, reason):
 		print('Lost connection with: {0}'.format(self.peer_ip))
-		reactor.stop()
+		if not ReactorNotRunning:
+			reactor.stop()
 
 	def lineReceived(self, data):
 		# self.transport.loseConnection()
