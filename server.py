@@ -1,6 +1,13 @@
 # coding: utf-8
 # @2017
 # Fauzi, fauziwei@yahoo.com
+from platform import system
+if system().lower() == 'windows':
+	from twisted.internet import iocpreactor
+	iocpreactor.install()
+else:
+	from twisted.internet import epollreactor
+	epollreactor.install()
 from twisted.internet import reactor, threads
 from twisted.internet.protocol import Factory
 from twisted.protocols.basic import LineReceiver
