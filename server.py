@@ -1,7 +1,10 @@
 # coding: utf-8
+# @2017
+# Fauzi, fauziwei@yahoo.com
 from twisted.internet import reactor, threads
 from twisted.internet.protocol import Factory
 from twisted.protocols.basic import LineReceiver
+from cache import Cache
 from logic import Logic
 
 # USAGE: ipython server.py
@@ -25,19 +28,27 @@ class ServerProtocol(LineReceiver):
 
 	def connectionLost(self, reason):
 		if self.token_controller:
+			# remove in controllers.
 			if self.controller_id in self.factory.controllers.keys():
 				del self.factory.controllers[self.controller_id]
-				print('Lost connection with controller_id: {0}'.format(self.controller_id))
+			# remove in controllers cache.
+			if self.factory.controllers_cache.exists(self.controller_id):
+				self.factory.controllers_cache.delete(self.controller_id)
+			print('Lost connection with controller_id: {0}'.format(self.controller_id))
 			self.token_controller = False
 
 		if self.token_device:
+			# remove in devices.
 			if self.device_id in self.factory.devices.keys():
 				del self.factory.devices[self.device_id]
-				print('Lost connection with device_id: {0}'.format(self.device_id))
+			# remove in devices cache.
+			if self.factory.devices_cache.exists(self.device_id):
+				self.factory.devices_cache.delete(self.device_id)
+			print('Lost connection with device_id: {0}'.format(self.device_id))
 			self.token_device = False
 
-		print('Length of controllers: {0}'.format(len(self.factory.controllers)))
-		print('Length of devices: {0}'.format(len(self.factory.devices)))
+		print('Size of controllers: {0}'.format(len(self.factory.controllers)))
+		print('Size of devices: {0}'.format(len(self.factory.devices)))
 
 	def lineReceived(self, data):
 		# e.g. data format:
@@ -79,16 +90,36 @@ class ServerProtocol(LineReceiver):
 
 
 class Server(Factory):
-	__slots__ = ('logic', 'devices', 'controllers')
 
 	devices, controllers = {}, {}
 
-	def __init__(self):
+	def __init__(self, *args, **kwargs):
+
+		self.server_ip = kwargs['server_ip']
+		self.server_port = kwargs['server_port']
+		self.redis_ip = kwargs['redis_ip']
+		self.redis_port = kwargs['redis_port']
+
+		d = {'host': self.redis_ip, 'port': self.redis_port, 'db': 0}
+		c = {'host': self.redis_ip, 'port': self.redis_port, 'db': 1}
+
+		self.devices_cache = Cache(**d)
+		self.controllers_cache = Cache(**c)
+
+		self.devices_cache.flushdb()
+		self.controllers_cache.flushdb()
+
 		self.logic = Logic()
 
 	def buildProtocol(self, addr):
 		return ServerProtocol(self)
 
 
-reactor.listenTCP(8000, Server())
+kwargs = {
+	'server_ip': '127.0.0.1',
+	'server_port': 8000,
+	'redis_ip': '127.0.0.1',
+	'redis_port': 6379
+}
+reactor.listenTCP(kwargs['server_port'], Server(**kwargs))
 reactor.run()

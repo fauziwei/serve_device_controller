@@ -1,4 +1,6 @@
 # coding: utf-8
+# @2017
+# Fauzi, fauziwei@yahoo.com
 
 class Logic(object):
 
@@ -8,11 +10,17 @@ class Logic(object):
 		proto.unit = data[2]
 
 		if proto.controller_id in proto.factory.devices:
+
 			proto.belongto_device = proto.factory.devices[proto.controller_id]
 			print('Relayed to device: {0}'.format(proto.controller_id))
 
-			# Store connected controller into self.controllers 
+			# Store connected controller into self.controllers.
 			proto.factory.controllers[proto.controller_id] = proto
+
+			# Store to cache.
+			# proto.controller_id = proto.factory.server_ip
+			proto.factory.controllers_cache.set(proto.controller_id, proto.factory.server_ip)
+
 			proto.token_controller = True
 			return 'Connected.'
 
@@ -23,7 +31,11 @@ class Logic(object):
 		proto.device_id = data[0]
 		proto.unit = data[1]
 
-		# Store connected device into self.devices
+		# Store connected device into self.devices.
 		proto.factory.devices[proto.device_id] = proto
+
+		# Store to cache for controlling purpose.
+		proto.factory.devices_cache.set(proto.device_id, proto.factory.server_ip)
+
 		proto.token_device = True
 		return 'Connected.'
