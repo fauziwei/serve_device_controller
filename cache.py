@@ -20,7 +20,7 @@ class Cache(object):
 	def set(self, key, value):
 		self.rds.set(key, value)
 
-	def get(self, key, value):
+	def get(self, key):
 		return self.rds.get(key)
 
 	def set_dumps(self, key, value):

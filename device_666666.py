@@ -48,5 +48,6 @@ class Client(ClientFactory):
 		return ClientProtocol(self)
 
 device_id, unit = '666666', '30'
-reactor.connectTCP('localhost', 8000, Client(device_id, unit))
+# reactor.connectTCP('localhost', 8001, Client(device_id, unit))
+reactor.connectTCP('localhost', 8000, Client(device_id, unit)) # haproxy
 reactor.run()

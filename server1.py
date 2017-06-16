@@ -124,7 +124,7 @@ class Server(Factory):
 
 kwargs = {
 	'server_ip': '127.0.0.1',
-	'server_port': 8000,
+	'server_port': 8001,
 	'redis_ip': '127.0.0.1',
 	'redis_port': 6379
 }

@@ -19,7 +19,7 @@ class Logic(object):
 
 			# Store to cache.
 			# proto.controller_id = proto.factory.server_ip
-			proto.factory.controllers_cache.set(proto.controller_id, proto.factory.server_ip)
+			proto.factory.controllers_cache.set(proto.controller_id, '{0}:{1}'.format(proto.factory.server_ip, proto.factory.server_port))
 
 			proto.token_controller = True
 			return 'Connected.'
@@ -35,7 +35,7 @@ class Logic(object):
 		proto.factory.devices[proto.device_id] = proto
 
 		# Store to cache for controlling purpose.
-		proto.factory.devices_cache.set(proto.device_id, proto.factory.server_ip)
+		proto.factory.devices_cache.set(proto.device_id, '{0}:{1}'.format(proto.factory.server_ip, proto.factory.server_port))
 
 		proto.token_device = True
 		return 'Connected.'

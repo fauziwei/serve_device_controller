@@ -1,10 +1,12 @@
 # coding: utf-8
 # Fauzi, fauziwei@yahoo.com
+import sys
 from twisted.internet import reactor
 from twisted.internet.protocol import ClientFactory
 from twisted.protocols.basic import LineReceiver
+from cache import Cache
 
-# USAGE: ipython controller_777777.py
+# USAGE: ipython controller_666666.py
 
 class ControllerProtocol(LineReceiver):
 
@@ -40,6 +42,23 @@ class Controller(ClientFactory):
 	def buildProtocol(self, addr):
 		return ControllerProtocol(self)
 
+
 controller_id, unit = '777777', '700'
-reactor.connectTCP('localhost', 8000, Controller(controller_id, unit))
+
+kwargs = {
+	'redis_ip': '127.0.0.1',
+	'redis_port': 6379
+}
+d = {'host': kwargs['redis_ip'], 'port': kwargs['redis_port'], 'db': 0}
+devices_cache = Cache(**d)
+
+addr_port = devices_cache.get(controller_id)
+if not addr_port:
+	print('Device: {0} doesnt exist in cache.'.format(controller_id))
+	sys.exit(0)
+
+addr, port = addr_port.split(':')
+port = int(port)
+
+reactor.connectTCP(addr, port, Controller(controller_id, unit))
 reactor.run()
