@@ -1,0 +1,72 @@
+2017-06-21 00:06:41,061 ------------------------------
+2017-06-21 00:06:41,062 Get connection with 127.0.0.1:8001
+2017-06-21 00:06:41,062 message_id in byte: "'t"
+2017-06-21 00:06:41,062 message_id in hex: 2774
+2017-06-21 00:06:41,062 message_id in int: 10100
+2017-06-21 00:06:41,062 version: '\x03'
+2017-06-21 00:06:41,062 firmware: '\x01'
+2017-06-21 00:06:41,063 Lost connection with: 127.0.0.1:8001
+2017-06-21 00:07:42,496 ------------------------------
+2017-06-21 00:07:42,496 Get connection with 127.0.0.1:8001
+2017-06-21 00:07:42,496 message_id in byte: "'t"
+2017-06-21 00:07:42,496 message_id in hex: 2774
+2017-06-21 00:07:42,496 message_id in int: 10100
+2017-06-21 00:07:42,496 version: '\x03'
+2017-06-21 00:07:42,496 firmware: '\x01'
+2017-06-21 00:07:42,496 length of total message: 17
+2017-06-21 00:07:42,497 version: '\x03'
+2017-06-21 00:07:42,497 firmware: '\x01'
+2017-06-21 00:07:42,499 heartbeat: "\xaa\x00\x11\x03\x01't\x01\xab\xcd\xaa\xaa\xbb\xbb\xcc\xcc\xcf"
+2017-06-21 00:07:42,499 heartbeat: AA 00 11 03 01 27 74 01 AB CD AA AA BB BB CC CC CF 
+2017-06-21 00:07:42,499 Length of heartbeat: 17
+2017-06-21 00:07:42,500 vrfy_crc: '\xcf' , crc: '\xcf'
+2017-06-21 00:07:42,500 Lost connection with: 127.0.0.1:8001
+2017-06-21 00:08:17,305 ------------------------------
+2017-06-21 00:08:17,305 Get connection with 127.0.0.1:8001
+2017-06-21 00:08:17,305 message_id in byte: "'t"
+2017-06-21 00:08:17,305 message_id in hex: 2774
+2017-06-21 00:08:17,305 message_id in int: 10100
+2017-06-21 00:08:17,305 version: '\x03'
+2017-06-21 00:08:17,305 firmware: '\x01'
+2017-06-21 00:08:17,305 length of total message: 17
+2017-06-21 00:08:17,305 version: '\x03'
+2017-06-21 00:08:17,305 firmware: '\x01'
+2017-06-21 00:08:17,305 heartbeat: "\xaa\x00\x11\x03\x01't\x01\xab\xcd\xaa\xaa\xbb\xbb\xcc\xcc\xcf"
+2017-06-21 00:08:17,305 heartbeat: AA 00 11 03 01 27 74 01 AB CD AA AA BB BB CC CC CF 
+2017-06-21 00:08:17,305 Length of heartbeat: 17
+2017-06-21 00:08:17,306 vrfy_crc: '\xcf' , crc: '\xcf'
+2017-06-21 00:08:17,306 Send heartbeat: 'aa00110301277401abcdaaaabbbbcccccf'
+2017-06-21 00:08:27,266 Lost connection with: 127.0.0.1:8001
+2017-06-21 00:09:19,825 ------------------------------
+2017-06-21 00:09:19,825 Get connection with 127.0.0.1:8001
+2017-06-21 00:09:19,825 message_id in byte: "'t"
+2017-06-21 00:09:19,825 message_id in hex: 2774
+2017-06-21 00:09:19,825 message_id in int: 10100
+2017-06-21 00:09:19,825 version: '\x03'
+2017-06-21 00:09:19,825 firmware: '\x01'
+2017-06-21 00:09:19,825 length of total message: 17
+2017-06-21 00:09:19,825 version: '\x03'
+2017-06-21 00:09:19,825 firmware: '\x01'
+2017-06-21 00:09:19,825 heartbeat: "\xaa\x00\x11\x03\x01't\x01\xab\xcd\xaa\xaa\xbb\xbb\xcc\xcc\xcf"
+2017-06-21 00:09:19,825 heartbeat: AA 00 11 03 01 27 74 01 AB CD AA AA BB BB CC CC CF 
+2017-06-21 00:09:19,825 Length of heartbeat: 17
+2017-06-21 00:09:19,826 vrfy_crc: '\xcf' , crc: '\xcf'
+2017-06-21 00:09:19,826 Send heartbeat: 'aa00110301277401abcdaaaabbbbcccccf'
+2017-06-21 00:09:19,836 Recv: 'aa00110302277401abcdaaaabbbbcccc28'
+2017-06-21 00:14:59,512 Lost connection with: 127.0.0.1:8001
+2017-06-21 00:15:07,519 ------------------------------
+2017-06-21 00:15:07,519 Get connection with 127.0.0.1:8001
+2017-06-21 00:15:07,519 message_id in byte: "'t"
+2017-06-21 00:15:07,519 message_id in hex: 2774
+2017-06-21 00:15:07,519 message_id in int: 10100
+2017-06-21 00:15:07,519 version: '\x03'
+2017-06-21 00:15:07,519 firmware: '\x01'
+2017-06-21 00:15:07,519 length of total message: 17
+2017-06-21 00:15:07,519 version: '\x03'
+2017-06-21 00:15:07,519 firmware: '\x01'
+2017-06-21 00:15:07,520 heartbeat: "\xaa\x00\x11\x03\x01't\x01\xab\xcd\xaa\xaa\xbb\xbb\xcc\xcc\xcf"
+2017-06-21 00:15:07,520 heartbeat: AA 00 11 03 01 27 74 01 AB CD AA AA BB BB CC CC CF 
+2017-06-21 00:15:07,520 Length of heartbeat: 17
+2017-06-21 00:15:07,522 vrfy_crc: '\xcf' , crc: '\xcf'
+2017-06-21 00:15:07,522 Send heartbeat: 'aa00110301277401abcdaaaabbbbcccccf'
+2017-06-21 00:15:07,532 Recv: 'aa00110302277401abcdaaaabbbbcccc28'

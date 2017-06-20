@@ -1,0 +1,45 @@
+2017-06-21 00:05:52,716 Recv: 'xxx'
+2017-06-21 00:05:52,822 Server started at port: 8001
+2017-06-21 00:06:06,509 Server started at port: 8001
+2017-06-21 00:08:17,308 Recv: 'aa00110301277401abcdaaaabbbbcccccf'
+2017-06-21 00:08:17,312 vrfy_crc: '\xcf' , crc: '\xcf'
+2017-06-21 00:08:17,312 start: '\xaa'
+2017-06-21 00:08:17,313 length: '\x00\x11'
+2017-06-21 00:08:17,313 version: '\x03'
+2017-06-21 00:08:17,313 message_type: '\x01'
+2017-06-21 00:08:17,313 message_id: "'t\x01\xab"
+2017-06-21 00:08:17,313 firmware: '\xcd'
+2017-06-21 00:08:17,313 device_id: '\xaa\xaa\xbb\xbb\xcc\xcc'
+2017-06-21 00:08:17,313 crc: '\xcf'
+2017-06-21 00:09:11,091 Server started at port: 8001
+2017-06-21 00:09:19,828 Recv: 'aa00110301277401abcdaaaabbbbcccccf'
+2017-06-21 00:09:19,834 vrfy_crc: '\xcf' , crc: '\xcf'
+2017-06-21 00:09:19,834 start: '\xaa'
+2017-06-21 00:09:19,834 length: '\x00\x11'
+2017-06-21 00:09:19,834 version: '\x03'
+2017-06-21 00:09:19,834 message_type: '\x01'
+2017-06-21 00:09:19,834 message_id: "'t\x01\xab"
+2017-06-21 00:09:19,834 firmware: '\xcd'
+2017-06-21 00:09:19,834 device_id: '\xaa\xaa\xbb\xbb\xcc\xcc'
+2017-06-21 00:09:19,834 crc: '\xcf'
+2017-06-21 00:09:19,835 normal_ack: "\xaa\x00\x11\x03\x02't\x01\xab\xcd\xaa\xaa\xbb\xbb\xcc\xcc("
+2017-06-21 00:09:19,835 normal_ack: AA 00 11 03 02 27 74 01 AB CD AA AA BB BB CC CC 28 
+2017-06-21 00:09:19,835 Length of normal_ack: 17
+2017-06-21 00:09:19,835 vrfy_crc: '(' , crc: '('
+2017-06-21 00:09:19,835 Send: 'aa00110302277401abcdaaaabbbbcccc28'
+2017-06-21 00:15:05,736 Server started at port: 8001
+2017-06-21 00:15:07,523 Recv: 'aa00110301277401abcdaaaabbbbcccccf'
+2017-06-21 00:15:07,528 vrfy_crc: '\xcf' , crc: '\xcf'
+2017-06-21 00:15:07,529 start: '\xaa'
+2017-06-21 00:15:07,529 length: '\x00\x11'
+2017-06-21 00:15:07,529 version: '\x03'
+2017-06-21 00:15:07,529 message_type: '\x01'
+2017-06-21 00:15:07,529 message_id: "'t"
+2017-06-21 00:15:07,529 firmware: '\x01'
+2017-06-21 00:15:07,529 device_id: '\xab\xcd\xaa\xaa\xbb\xbb\xcc\xcc'
+2017-06-21 00:15:07,529 crc: '\xcf'
+2017-06-21 00:15:07,529 normal_ack: "\xaa\x00\x11\x03\x02't\x01\xab\xcd\xaa\xaa\xbb\xbb\xcc\xcc("
+2017-06-21 00:15:07,529 normal_ack: AA 00 11 03 02 27 74 01 AB CD AA AA BB BB CC CC 28 
+2017-06-21 00:15:07,529 Length of normal_ack: 17
+2017-06-21 00:15:07,530 vrfy_crc: '(' , crc: '('
+2017-06-21 00:15:07,530 Send: 'aa00110302277401abcdaaaabbbbcccc28'
