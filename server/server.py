@@ -54,7 +54,9 @@ class BProtocol(LineReceiver):
 		logger.debug(u'Recv: {0}'.format(repr(data)))
 		# Assume the data from device only,
 		# controller still not implemented.
-		self.locker.acquire().addCallback(self.blockingDevice, data)
+		# self.locker.acquire().addCallback(self.blockingDevice, data)
+		p = self.locker.acquire()
+		p.addCallback(self.blockingDevice, data)
 
 	def blockingDevice(self, lock, data):
 		p = threads.deferToThread(self.factory.logic.communication, self, data)

@@ -8,29 +8,18 @@ import crcmod.predefined
 
 logger = logging.getLogger(__name__)
 
-def uni_to_hex(u):
-	return binascii.hexlify(u)
+uni_to_hex = lambda u: binascii.hexlify(u)
+uni_to_byte = lambda u: binascii.unhexlify(u)
+byte_to_hex = lambda b: binascii.hexlify(b)
+hex_to_byte = lambda h: binascii.unhexlify(h)
+# int_to_hex = lambda i: '0x{0:02x}'.format(i)
+int_to_hex = lambda i: '{0:02x}'.format(i)
+hex_to_int = lambda h: int(h, 16)
 
-def uni_to_byte(u):
-	return binascii.unhexlify(u)
-
-def byte_to_hex(b):
-	return binascii.hexlify(b)
-
-def hex_to_byte(h):
-	return binascii.unhexlify(h)
-
-def int_to_hex(i):
-	# return '0x{0:02x}'.format(i)
-	return '{0:02x}'.format(i)
-
-def hex_to_int(h):
-	return int(h, 16)
-
-def int32_to_uint32(i):
-	return ctypes.c_uint32(i).value
-
+int32_to_uint32 = lambda i: ctypes.c_uint32(i).value
 ascii_string = lambda s: ''.join(map(lambda c: "%02X " % ord(c), s))
+
+crc8_func = crcmod.predefined.mkPredefinedCrcFun('crc-8')
 
 def convert_length_to_byte(int_len):
 	if int_len > 0xFF:
@@ -43,7 +32,7 @@ def convert_length_to_byte(int_len):
 
 def crc8_verification(data):
 	cmd = data[:-1]
-	crc8_func = crcmod.predefined.mkPredefinedCrcFun('crc-8')
+	# crc8_func = crcmod.predefined.mkPredefinedCrcFun('crc-8')
 	crc8_0xVal = hex(crc8_func(cmd))
 	crc8_hex = crc8_0xVal.replace('0x', '')
 	crc8_byte = binascii.unhexlify(crc8_hex)
@@ -52,7 +41,7 @@ def crc8_verification(data):
 
 def create_crc8_val(data):
 	'''data is full data bytesstream arrive from the network.'''
-	crc8_func = crcmod.predefined.mkPredefinedCrcFun('crc-8')
+	# crc8_func = crcmod.predefined.mkPredefinedCrcFun('crc-8')
 	crc8_0xVal = hex(crc8_func(data))
 	crc8_hex = crc8_0xVal.replace('0x', '')
 	crc8_byte = binascii.unhexlify(crc8_hex)

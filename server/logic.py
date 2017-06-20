@@ -35,13 +35,13 @@ class Logic(object):
 		device_id = data[8:-1]
 		crc = data[-1:]
 
-		logger.debug(u'start: {0}'.format(repr(start)))
-		logger.debug(u'length: {0}'.format(repr(length)))
-		logger.debug(u'version: {0}'.format(repr(version)))
-		logger.debug(u'message_type: {0}'.format(repr(message_type)))
-		logger.debug(u'message_id: {0}'.format(repr(message_id)))
-		logger.debug(u'firmware: {0}'.format(repr(firmware)))
-		logger.debug(u'device_id: {0}'.format(repr(device_id)))
+		logger.debug(u'start: {0}'.format(byte_to_hex(start)))
+		logger.debug(u'length: {0} bytes'.format(hex_to_int(byte_to_hex(length))))
+		logger.debug(u'version: {0}'.format(byte_to_hex(version)))
+		logger.debug(u'message_type: {0}'.format(byte_to_hex(message_type)))
+		logger.debug(u'message_id: {0}'.format(byte_to_hex(message_id)))
+		logger.debug(u'firmware: {0}'.format(byte_to_hex(firmware)))
+		logger.debug(u'device_id: {0}'.format(byte_to_hex(device_id)))
 		logger.debug(u'crc: {0}'.format(repr(crc)))
 
 		return {

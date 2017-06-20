@@ -29,8 +29,7 @@ class CProtocol(LineReceiver):
 
 	delimiter = '\n'
 	message_id = 10100 # it suppposed increase by one.
-	# device_id = 'ABCDAAAABBBBCCCC'
-	device_id = 'FFFFFFFFFFFFFFFF'
+	device_id = 'ABCDAAAABBBBCCCC'
 
 	# token for initiator test sending.
 	token_init_heartbeat = False
@@ -54,8 +53,8 @@ class CProtocol(LineReceiver):
 
 	def lineReceived(self, data):
 		logger.debug(u'Recv: {0}'.format(repr(data)))
-		# heartbeat = self.factory.logic.init_heartbeat(self)
-		# self.sendLine(heartbeat)
+		heartbeat = self.factory.logic.init_heartbeat(self)
+		self.sendLine(heartbeat)
 
 
 
