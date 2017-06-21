@@ -126,8 +126,8 @@ class BFactory(Factory):
 	redis_ip, redis_port = redis_ip, redis_port
 
 	def __init__(self):
-		d = {'host', redis_ip, 'port': redis_port, 'db': 0}
-		c = {'host', redis_ip, 'port': redis_port, 'db': 1}
+		d = {'host': redis_ip, 'port': redis_port, 'db': 0}
+		c = {'host': redis_ip, 'port': redis_port, 'db': 1}
 
 		self.devices_cache = Cache(**d)
 		self.controllers_cache = Cache(**c)
