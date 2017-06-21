@@ -37,14 +37,11 @@ class BProtocol(LineReceiver):
 
 	device_id = None
 
-	def __init__(self):
-		self.locker = DeferredLock()
-
 	def connectionMade(self):
-		# Limiting the active_connections.
+		# Limiting active_connections.
 		self.active_connection += 1
 		if self.active_connection > self.factory.max_connection:
-			logger.debug(u'Reaching max connection.')
+			logger.debug(u'Reaching max connection. Drop connection.')
 			self.transport.loseConnection()
 
 	def connectionLost(self, reason):
@@ -52,8 +49,8 @@ class BProtocol(LineReceiver):
 
 	def lineReceived(self, data):
 		logger.debug(u'Recv: {0}'.format(repr(data)))
-		# Assume the send/recv data are from device only,
-		# controller not implemented.
+		# Assume send/recv data are from device only,
+		# controller doesnt implemented.
 		p = threads.deferToThread(self.factory.logic.communication, self, data)
 		p.addCallback(lambda data: self.sendFromDevice(data))
 

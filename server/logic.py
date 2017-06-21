@@ -68,7 +68,7 @@ class Logic(object):
 		crc8_byte = create_crc8_val(cmd)
 		normal_ack = cmd+crc8_byte
 
-		logger.debug(u'normal_ack: {0}'.format(repr(normal_ack)))
+		# logger.debug(u'normal_ack: {0}'.format(repr(normal_ack)))
 		logger.debug(u'normal_ack: {0}'.format(ascii_string(normal_ack)))
 		logger.debug(u'Length of normal_ack: {0}'.format(len(normal_ack)))
 
@@ -138,5 +138,9 @@ class Logic(object):
 
 		elif parsed['message_type'] ==  CLIENT_TYPE['upgrade_data_request']:
 			return self.upgrade_data_request_processing(proto, parsed)
+
+		else:
+			logger.debug(u'Client Type is not correct. Drop connection.')
+			proto.transport.loseConnection()
 
 		return

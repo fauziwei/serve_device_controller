@@ -1,10 +1,14 @@
 # coding: utf-8
 # @2017
 # Fauzi, fauziwei@yahoo.com
+import sys
 import logging
 import binascii
 from header import *
 from utils import *
+
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 logger = logging.getLogger(__name__)
 
@@ -98,7 +102,7 @@ class Logic(object):
 		crc8_byte = create_crc8_val(cmd)
 		heartbeat = cmd+crc8_byte
 
-		logger.debug(u'heartbeat: {0}'.format(repr(heartbeat)))
+		# logger.debug(u'heartbeat: {0}'.format(repr(heartbeat)))
 		logger.debug(u'heartbeat: {0}'.format(ascii_string(heartbeat)))
 		logger.debug(u'Length of heartbeat: {0}'.format(len(heartbeat)))
 
@@ -157,5 +161,27 @@ class Logic(object):
 
 		elif parsed['message_type'] == SERVER_TYPE['configuration_command']:
 			return self.configuration_command_processing(proto, parsed)
+
+		elif parsed['message_type'] == SERVER_TYPE['fire_gps_starting_up']:
+			return self.fire_gps_starting_up_processing(proto, parsed)
+
+		elif parsed['message_type'] == SERVER_TYPE['get_device_status']:
+			return self.get_device_status_processing(proto, parsed)
+
+		elif parsed['message_type'] == SERVER_TYPE['ble_key_update']:
+			return self.ble_key_update_processing(proto, parsed)
+
+		elif parsed['message_type'] == SERVER_TYPE['control_command_send']:
+			return self.control_command_send_processing(proto, parsed)
+
+		elif parsed['message_type'] == SERVER_TYPE['upgrade_command_push']:
+			return self.upgrade_command_push_processing(proto, parsed)
+
+		elif parsed['message_type'] == SERVER_TYPE['upgrade_data_send']:
+			return self.upgrade_data_send_processing(proto, parsed)
+
+		else:
+			logger.debug(u'Server Type is not correct. Drop connection.')
+			proto.transport.loseConnection()
 
 		return

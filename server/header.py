@@ -17,7 +17,7 @@ CLIENT_TYPE = {
 
 SERVER_TYPE = {
   'normal_ack'            : '\x02',
-  'lock_control'          : '\x10',
+  # 'lock_control'          : '\x10',
   'unlock'                : '\x11',
   'lock'                  : '\x12',
   'configuration_command' : '\x21',
