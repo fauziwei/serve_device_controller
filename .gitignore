@@ -53,10 +53,10 @@ Temporary Items
 sqlite.db
 
 # Logger
-client/logs/client
-client/logs/client*
-server/logs/server
-server/logs/server*
+#client/logs/client
+#client/logs/client*
+#server/logs/server
+#server/logs/server*
 
 # nohup
 nohup.out
