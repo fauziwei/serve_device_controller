@@ -1,5 +1,7 @@
 Required open 3 consoles:
 
+- REDIS SETTING WITHOUT AUTH.
+
 1. server.py
 2. tail -f logs/server
 
