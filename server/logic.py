@@ -118,7 +118,7 @@ class Logic(object):
 		if not parsed:
 			return
 
-		proto.device_id = parsed['device_id']
+		proto.device_id = byte_to_hex(parsed['device_id'])
 
 		# Store connected device to self.devices
 		proto.factory.devices[proto.device_id] = proto

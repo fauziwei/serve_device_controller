@@ -64,5 +64,5 @@ class CFactory(ClientFactory):
 	logic = Logic()
 
 # Connected to HA.
-reactor.connectTCP('localhost', 8000, CFactory())
+reactor.connectTCP('localhost', 8001, CFactory())
 reactor.run()
