@@ -106,8 +106,28 @@ class Logic(object):
 		'''proto is parent's self.
 		The incoming data is from controller.
 		'''
-		# Still not implemented due to the format command
-		# from API still not determined.
+		data = hex_to_byte(data)
+		parsed = self.parsing_crc8(data)
+		if not parsed:
+			return
+
+		proto.controller_id = byte_to_hex(parsed['device_id'])
+
+		if proto.controller_id in proto.factory.devices:
+
+			logger.debug(u'Relayed to device: {0}'.format(proto.controller_id))
+			proto.belongto_device = proto.factory.devices[proto.controller_id]
+
+			# Store connected controller to self.controllers.
+			proto.factory.controllers[proto.controller_id] = proto
+
+			# Store to connected controller to redis.
+			proto.factory.controllers_cache.set(proto.controller_id, '{0}:{1}'.format(proto.factory.server_ip, proto.factory.server_port))
+
+			proto.token_controller = True
+			return 'Controller send Some message here...'
+
+		return
 
 	def communication(self, proto, data):
 		'''proto is parent's self.

@@ -31,7 +31,8 @@ class CProtocol(LineReceiver):
 	# Sample of message_id.
 	message_id = 10100
 	# Sample of device_id (sample in HEX)
-	device_id = 'FFFFFFFFFFFFFFFF'
+	# device_id = 'FFFFFFFFFFFFFFFF'
+	device_id = 'ffffffffffffffff'
 
 	# token for initiator heartbeat test sending.
 	token_init_heartbeat = False

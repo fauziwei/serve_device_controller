@@ -70,10 +70,11 @@ class BProtocol(LineReceiver):
 				self.factory.devices_cache.delete(self.device_id)
 			logger.debug(u'Lost connection with device_id: {0}'.format(self.device_id))
 			self.token_device = False
+			logger.debug(u'Active connections: {0}'.format(self.active_connection))
 
 		logger.debug(u'Size of controllers: {0}'.format(len(self.factory.controllers)))
 		logger.debug(u'Size of devices: {0}'.format(len(self.factory.devices)))
-		logger.debug(u'Active connections: {0}'.format(self.active_connection))
+		
 
 	def lineReceived(self, data):
 		logger.debug(u'Recv: {0}'.format(repr(data)))
@@ -83,8 +84,8 @@ class BProtocol(LineReceiver):
 		# Format data after 'controller' is HEX (normal data according to table format)
 		if data[0:10] == 'controller':
 			# Incoming data from controller.
-			p = threads.deferToThread(self.factory.logic.setting, self, data)
-			p.addCallback(lambda data: self.sendFromController(data[10:]))
+			p = threads.deferToThread(self.factory.logic.setting, self, data[10:])
+			p.addCallback(lambda data: self.sendFromController(data))
 		else:
 			# Incoming data from device.
 			p = threads.deferToThread(self.factory.logic.communication, self, data)
@@ -99,10 +100,10 @@ class BProtocol(LineReceiver):
 			# Send to device.
 			# You need to determine what command want to send to device
 			# For lock/Unlock. The command should be invoked by API.
-			self.belongto_device.sendLine(u'Some Message Format here...')
+			self.belongto_device.sendLine(data)
 			# Send to controller.
 			# You may determine other reply command.
-			self.sendLine(u'Success.')
+			self.sendLine('AAAABBBBCCCCDDDD')
 
 	def sendFromDevice(self, data):
 		if data:
