@@ -73,6 +73,7 @@ class BProtocol(LineReceiver):
 
 		logger.debug(u'Size of controllers: {0}'.format(len(self.factory.controllers)))
 		logger.debug(u'Size of devices: {0}'.format(len(self.factory.devices)))
+		logger.debug(u'Active connections: {0}'.format(self.active_connection))
 
 	def lineReceived(self, data):
 		logger.debug(u'Recv: {0}'.format(repr(data)))
