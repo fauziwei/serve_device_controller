@@ -9,6 +9,7 @@ from twisted.internet.protocol import ClientFactory
 from twisted.protocols.basic import LineReceiver
 from twisted.internet.error import ReactorNotRunning
 
+# local import
 from header import *
 from utils import *
 from logic import Logic
@@ -23,16 +24,16 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# USAGE: ipython client.py
 
 class CProtocol(LineReceiver):
 
 	delimiter = '\n'
-	message_id = 10100 # it suppposed increase by one.
-	# device_id = 'ABCDAAAABBBBCCCC'
+	# Sample of message_id.
+	message_id = 10100
+	# Sample of device_id (sample in HEX)
 	device_id = 'FFFFFFFFFFFFFFFF'
 
-	# token for initiator test sending.
+	# token for initiator heartbeat test sending.
 	token_init_heartbeat = False
 
 	def connectionMade(self):
@@ -62,5 +63,6 @@ class CFactory(ClientFactory):
 	protocol = CProtocol
 	logic = Logic()
 
-reactor.connectTCP('localhost', 8001, CFactory())
+# Connected to HA.
+reactor.connectTCP('localhost', 8000, CFactory())
 reactor.run()

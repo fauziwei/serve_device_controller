@@ -102,12 +102,33 @@ class Logic(object):
 	def upgrade_data_request_processing(self, proto, parsed):
 		pass
 
+	def setting(self, proto, data):
+		'''proto is parent's self.
+		The incoming data is from controller.
+		'''
+		# Still not implemented due to the format command
+		# from API still not determined.
+
 	def communication(self, proto, data):
-		
+		'''proto is parent's self.
+		The incoming data is from device.
+		'''
 		data = hex_to_byte(data)
 		parsed = self.parsing_crc8(data)
 		if not parsed:
 			return
+
+		proto.device_id = parsed['device_id']
+
+		# Store connected device to self.devices
+		proto.factory.devices[proto.device_id] = proto
+
+		# Store connected device to redis, later, it will be accessed by its controller.
+		# The controler will search this 'key': proto.device_id in redis,
+		# and then get value of ipaddr:port to determine, in which twisted server the device is connected.
+		# and then controler can login to the certain twisted server.
+		proto.factory.devices_cache.set(proto.device_id, '{0}:{1}'.format(proto.factory.server_ip, proto.factory.server_port))
+		proto.token_device = True
 
 		if parsed['message_type'] == CLIENT_TYPE['heartbeat']:
 			return self.heartbeat_processing(proto, parsed)
