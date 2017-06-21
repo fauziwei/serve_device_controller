@@ -60,11 +60,11 @@ class Logic(object):
 		length = parsed['length']
 		message_type = SERVER_TYPE['normal_ack']
 		message_id = parsed['message_id']
-		proto.device_id = parsed['device_id']
+		device_id = parsed['device_id']
 		version = parsed['version']
 		firmware = parsed['firmware']
 		# has timestamp
-		cmd = START+length+version+message_type+message_id+firmware+proto.device_id
+		cmd = START+length+version+message_type+message_id+firmware+device_id
 		crc8_byte = create_crc8_val(cmd)
 		normal_ack = cmd+crc8_byte
 
