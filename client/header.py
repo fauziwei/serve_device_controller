@@ -4,7 +4,7 @@ START = '\xAA'
 CLIENT_TYPE = {
   'heartbeat'             : '\x01',
   # 'lock_control'          : '\x10',
-  'lock_unlock_reply'     : '\x13',
+  'lock_unlock_response'  : '\x13',
   'gps_data_report'       : '\x32',
   'normal_bike_status'    : '\x42',
   'pedelec_status_report' : '\x43',
@@ -17,7 +17,7 @@ CLIENT_TYPE = {
 
 SERVER_TYPE = {
   'normal_ack'            : '\x02',
-  'lock_control'          : '\x10',
+  # 'lock_control'          : '\x10',
   'unlock'                : '\x11',
   'lock'                  : '\x12',
   'configuration_command' : '\x21',

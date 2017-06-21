@@ -58,11 +58,9 @@ class CProtocol(LineReceiver):
 		# self.sendLine(heartbeat)
 
 
-
 class CFactory(ClientFactory):
 	protocol = CProtocol
 	logic = Logic()
-
 
 reactor.connectTCP('localhost', 8001, CFactory())
 reactor.run()

@@ -52,16 +52,10 @@ class BProtocol(LineReceiver):
 
 	def lineReceived(self, data):
 		logger.debug(u'Recv: {0}'.format(repr(data)))
-		# Assume the data from device only,
-		# controller still not implemented.
-		# self.locker.acquire().addCallback(self.blockingDevice, data)
-		p = self.locker.acquire()
-		p.addCallback(self.blockingDevice, data)
-
-	def blockingDevice(self, lock, data):
+		# Assume the send/recv data are from device only,
+		# controller not implemented.
 		p = threads.deferToThread(self.factory.logic.communication, self, data)
 		p.addCallback(lambda data: self.sendFromDevice(data))
-		lock.release()
 
 	def sendFromDevice(self, data):
 		if data:
@@ -75,7 +69,6 @@ class BFactory(Factory):
 	max_connection = 10
 	devices = {}
 	logic = Logic()
-
 
 def run():
 	reactor.listenTCP(8001, BFactory())

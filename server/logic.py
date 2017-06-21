@@ -50,6 +50,12 @@ class Logic(object):
 			'firmware': firmware, 'device_id': device_id, 'crc': crc
 		}
 
+
+	''' Sending section. '''
+
+
+	''' Receiving section. '''
+
 	def heartbeat_processing(self, proto, parsed):
 		length = parsed['length']
 		message_type = SERVER_TYPE['normal_ack']
@@ -69,6 +75,33 @@ class Logic(object):
 		crc8_verification(normal_ack)
 		return byte_to_hex(normal_ack)
 
+	def lock_unlock_response_processing(self, proto, parsed):
+		pass
+
+	def gps_data_report_processing(self, proto, parsed):
+		pass
+
+	def normal_bike_status_processing(self, proto, parsed):
+		pass
+
+	def pedelec_status_report_processing(self, proto, parsed):
+		pass
+
+	def fault_report_processing(self, proto, parsed):
+		pass
+
+	def ble_key_response_processing(self, proto, parsed):
+		pass
+
+	def command_response_processing(self, proto, parsed):
+		pass
+
+	def upgrade_push_response_processing(self, proto, parsed):
+		pass
+
+	def upgrade_data_request_processing(self, proto, parsed):
+		pass
+
 	def communication(self, proto, data):
 		
 		data = hex_to_byte(data)
@@ -78,3 +111,32 @@ class Logic(object):
 
 		if parsed['message_type'] == CLIENT_TYPE['heartbeat']:
 			return self.heartbeat_processing(proto, parsed)
+
+		elif parsed['message_type'] == CLIENT_TYPE['lock_unlock_response']:
+			return self.lock_unlock_response_processing(proto, parsed)
+
+		elif parsed['message_type'] ==  CLIENT_TYPE['gps_data_report']:
+			return self.gps_data_report_processing(proto, parsed)
+
+		elif parsed['message_type'] ==  CLIENT_TYPE['normal_bike_status']:
+			return self.normal_bike_status_processing(proto, parsed)
+
+		elif parsed['message_type'] ==  CLIENT_TYPE['pedelec_status_report']:
+			return self.pedelec_status_report_processing(proto, parsed)
+
+		elif parsed['message_type'] ==  CLIENT_TYPE['fault_report']:
+			return self.fault_report_processing(proto, parsed)
+
+		elif parsed['message_type'] ==  CLIENT_TYPE['ble_key_response']:
+			return self.ble_key_response_processing(proto, parsed)
+
+		elif parsed['message_type'] ==  CLIENT_TYPE['command_response']:
+			return self.command_response_processing(proto, parsed)
+
+		elif parsed['message_type'] ==  CLIENT_TYPE['upgrade_push_response']:
+			return self.upgrade_push_response_processing(proto, parsed)
+
+		elif parsed['message_type'] ==  CLIENT_TYPE['upgrade_data_request']:
+			return self.upgrade_data_request_processing(proto, parsed)
+
+		return

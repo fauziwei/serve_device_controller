@@ -82,8 +82,11 @@ class Logic(object):
 			'firmware': firmware, 'device_id': device_id, 'crc': crc
 		}
 
+
+	''' Sending section. '''
+
 	def init_heartbeat(self, proto):
-		'''Sample initiator heartbeat from client.'''
+		'''Sample initiator heartbeat to server.'''
 		message_type = CLIENT_TYPE['heartbeat']
 		message_id = get_message_id_for_crc8(proto.message_id)
 		device_id = uni_to_byte(proto.device_id)
@@ -103,5 +106,56 @@ class Logic(object):
 		proto.token_init_heartbeat = True
 		return byte_to_hex(heartbeat)
 
-	def communication(self, proto, data):
+
+	''' Receiving section. '''
+
+	def normal_ack_processing(self, proto, parsed):
 		pass
+
+	def unlock_processing(self, proto, parsed):
+		pass
+
+	def lock_processing(self, proto, parsed):
+		pass
+
+	def configuration_command_processing(self, proto, parsed):
+		pass
+
+	def fire_gps_starting_up_processing(self, proto, parsed):
+		pass
+
+	def get_device_status_processing(self, proto, parsed):
+		pass
+
+	def ble_key_update_processing(self, proto, parsed):
+		pass
+
+	def control_command_send_processing(self, proto, parsed):
+		pass
+
+	def upgrade_command_push_processing(self, proto, parsed):
+		pass
+
+	def upgrade_data_send_processing(self, proto, parsed):
+		pass
+
+	def communication(self, proto, data):
+		
+		data = hex_to_byte(data)
+		parsed = self.parsing_crc8(data)
+		if not parsed:
+			return
+
+		if parsed['message_type'] == SERVER_TYPE['normal_ack']:
+			return self.normal_ack_processing(proto, parsed)
+
+		elif parsed['message_type'] == SERVER_TYPE['unlock']:
+			return self.unlock_processing(proto, parsed)
+
+		elif parsed['message_type'] == SERVER_TYPE['lock']:
+			return self.lock_processing(proto, parsed)
+
+		elif parsed['message_type'] == SERVER_TYPE['configuration_command']:
+			return self.configuration_command_processing(proto, parsed)
+
+		return
