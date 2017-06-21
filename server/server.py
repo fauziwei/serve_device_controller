@@ -111,7 +111,7 @@ class BProtocol(LineReceiver):
 
 # Configuration. --------------------------
 server_ip, server_port = '127.0.0.1', 8001
-redis_ip, redis_port: '127.0.0.1', 6379
+redis_ip, redis_port = '127.0.0.1', 6379
 max_connection = 10
 # -----------------------------------------
 
