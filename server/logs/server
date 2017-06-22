@@ -1,0 +1,174 @@
+2017-06-22 10:27:47,381 Server started at port: 8001
+2017-06-22 10:27:55,821 ------------------------------
+2017-06-22 10:27:55,822 Recv: 'aa00110301277401ffffffffffffffff60'
+2017-06-22 10:27:55,828 vrfy_crc: '`' , crc: '`'
+2017-06-22 10:27:55,828 start: aa
+2017-06-22 10:27:55,828 length: 17 bytes
+2017-06-22 10:27:55,828 version: 03
+2017-06-22 10:27:55,828 message_type: 01
+2017-06-22 10:27:55,828 message_id: 2774
+2017-06-22 10:27:55,828 firmware: 01
+2017-06-22 10:27:55,828 device_id: ffffffffffffffff
+2017-06-22 10:27:55,828 crc: '`'
+2017-06-22 10:27:55,828 normal_ack: AA 00 11 03 02 27 74 01 FF FF FF FF FF FF FF FF 87 
+2017-06-22 10:27:55,829 Length of normal_ack: 17
+2017-06-22 10:27:55,829 vrfy_crc: '\x87' , crc: '\x87'
+2017-06-22 10:27:55,829 Send: 'aa00110302277401ffffffffffffffff87'
+2017-06-22 10:28:09,381 ------------------------------
+2017-06-22 10:28:09,384 Recv: 'controlleraa00110301277401ffffffffffffffff60'
+2017-06-22 10:28:09,384 vrfy_crc: '`' , crc: '`'
+2017-06-22 10:28:09,384 start: aa
+2017-06-22 10:28:09,384 length: 17 bytes
+2017-06-22 10:28:09,384 version: 03
+2017-06-22 10:28:09,385 message_type: 01
+2017-06-22 10:28:09,385 message_id: 2774
+2017-06-22 10:28:09,385 firmware: 01
+2017-06-22 10:28:09,385 device_id: ffffffffffffffff
+2017-06-22 10:28:09,385 crc: '`'
+2017-06-22 10:28:09,385 Prepare for relaying data to device: ffffffffffffffff
+2017-06-22 10:28:27,410 Lost connection with controller_id: ffffffffffffffff
+2017-06-22 10:28:27,411 Size of controllers: 0
+2017-06-22 10:28:27,411 Size of devices: 1
+2017-06-22 10:28:31,923 ------------------------------
+2017-06-22 10:28:31,926 Recv: 'controlleraa00110301277401ffffffffffffffff60'
+2017-06-22 10:28:31,926 vrfy_crc: '`' , crc: '`'
+2017-06-22 10:28:31,926 start: aa
+2017-06-22 10:28:31,926 length: 17 bytes
+2017-06-22 10:28:31,926 version: 03
+2017-06-22 10:28:31,926 message_type: 01
+2017-06-22 10:28:31,926 message_id: 2774
+2017-06-22 10:28:31,927 firmware: 01
+2017-06-22 10:28:31,927 device_id: ffffffffffffffff
+2017-06-22 10:28:31,927 crc: '`'
+2017-06-22 10:28:31,927 Prepare for relaying data to device: ffffffffffffffff
+2017-06-22 10:28:39,437 Lost connection with controller_id: ffffffffffffffff
+2017-06-22 10:28:39,438 Size of controllers: 0
+2017-06-22 10:28:39,440 Size of devices: 1
+2017-06-22 10:28:44,127 ------------------------------
+2017-06-22 10:28:44,130 Recv: 'controlleraa00110301277401ffffffffffffffff60'
+2017-06-22 10:28:44,130 vrfy_crc: '`' , crc: '`'
+2017-06-22 10:28:44,131 start: aa
+2017-06-22 10:28:44,131 length: 17 bytes
+2017-06-22 10:28:44,131 version: 03
+2017-06-22 10:28:44,131 message_type: 01
+2017-06-22 10:28:44,131 message_id: 2774
+2017-06-22 10:28:44,131 firmware: 01
+2017-06-22 10:28:44,131 device_id: ffffffffffffffff
+2017-06-22 10:28:44,131 crc: '`'
+2017-06-22 10:28:44,131 Prepare for relaying data to device: ffffffffffffffff
+2017-06-22 10:28:48,140 Lost connection with controller_id: ffffffffffffffff
+2017-06-22 10:28:48,141 Size of controllers: 0
+2017-06-22 10:28:48,141 Size of devices: 1
+2017-06-22 10:28:53,262 ------------------------------
+2017-06-22 10:28:53,265 Recv: 'controlleraa00110301277401ffffffffffffffff60'
+2017-06-22 10:28:53,265 vrfy_crc: '`' , crc: '`'
+2017-06-22 10:28:53,265 start: aa
+2017-06-22 10:28:53,265 length: 17 bytes
+2017-06-22 10:28:53,265 version: 03
+2017-06-22 10:28:53,265 message_type: 01
+2017-06-22 10:28:53,265 message_id: 2774
+2017-06-22 10:28:53,266 firmware: 01
+2017-06-22 10:28:53,266 device_id: ffffffffffffffff
+2017-06-22 10:28:53,266 crc: '`'
+2017-06-22 10:28:53,266 Prepare for relaying data to device: ffffffffffffffff
+2017-06-22 10:28:55,770 Lost connection with controller_id: ffffffffffffffff
+2017-06-22 10:28:55,772 Size of controllers: 0
+2017-06-22 10:28:55,773 Size of devices: 1
+2017-06-22 10:28:58,904 Lost connection with device_id: ffffffffffffffff
+2017-06-22 10:28:58,904 Active connections: 0
+2017-06-22 10:28:58,904 Size of controllers: 0
+2017-06-22 10:28:58,904 Size of devices: 0
+2017-06-22 10:29:00,686 ------------------------------
+2017-06-22 10:29:00,687 Recv: 'aa00110301277401ffffffffffffffff60'
+2017-06-22 10:29:00,687 vrfy_crc: '`' , crc: '`'
+2017-06-22 10:29:00,687 start: aa
+2017-06-22 10:29:00,687 length: 17 bytes
+2017-06-22 10:29:00,687 version: 03
+2017-06-22 10:29:00,687 message_type: 01
+2017-06-22 10:29:00,687 message_id: 2774
+2017-06-22 10:29:00,687 firmware: 01
+2017-06-22 10:29:00,687 device_id: ffffffffffffffff
+2017-06-22 10:29:00,687 crc: '`'
+2017-06-22 10:29:00,687 normal_ack: AA 00 11 03 02 27 74 01 FF FF FF FF FF FF FF FF 87 
+2017-06-22 10:29:00,688 Length of normal_ack: 17
+2017-06-22 10:29:00,688 vrfy_crc: '\x87' , crc: '\x87'
+2017-06-22 10:29:00,688 Send: 'aa00110302277401ffffffffffffffff87'
+2017-06-22 10:29:06,121 ------------------------------
+2017-06-22 10:29:06,121 Recv: 'controlleraa00110301277401ffffffffffffffff60'
+2017-06-22 10:29:06,122 vrfy_crc: '`' , crc: '`'
+2017-06-22 10:29:06,122 start: aa
+2017-06-22 10:29:06,122 length: 17 bytes
+2017-06-22 10:29:06,122 version: 03
+2017-06-22 10:29:06,122 message_type: 01
+2017-06-22 10:29:06,122 message_id: 2774
+2017-06-22 10:29:06,122 firmware: 01
+2017-06-22 10:29:06,122 device_id: ffffffffffffffff
+2017-06-22 10:29:06,122 crc: '`'
+2017-06-22 10:29:06,122 Prepare for relaying data to device: ffffffffffffffff
+2017-06-22 10:29:07,628 Lost connection with controller_id: ffffffffffffffff
+2017-06-22 10:29:07,630 Size of controllers: 0
+2017-06-22 10:29:07,631 Size of devices: 1
+2017-06-22 10:33:00,259 Lost connection with device_id: ffffffffffffffff
+2017-06-22 10:33:00,259 Active connections: 0
+2017-06-22 10:33:00,259 Size of controllers: 0
+2017-06-22 10:33:00,259 Size of devices: 0
+2017-06-22 10:33:03,446 ------------------------------
+2017-06-22 10:33:03,447 Recv: 'aa00110311277401ffffffffffffffffab'
+2017-06-22 10:33:03,448 vrfy_crc: '\xab' , crc: '\xab'
+2017-06-22 10:33:03,448 start: aa
+2017-06-22 10:33:03,448 length: 17 bytes
+2017-06-22 10:33:03,448 version: 03
+2017-06-22 10:33:03,448 message_type: 11
+2017-06-22 10:33:03,448 message_id: 2774
+2017-06-22 10:33:03,448 firmware: 01
+2017-06-22 10:33:03,448 device_id: ffffffffffffffff
+2017-06-22 10:33:03,448 crc: '\xab'
+2017-06-22 10:33:03,450 Client Type is not correct. Drop connection.
+2017-06-22 10:33:03,450 Lost connection with device_id: ffffffffffffffff
+2017-06-22 10:33:03,451 Active connections: 0
+2017-06-22 10:33:03,451 Size of controllers: 0
+2017-06-22 10:33:03,451 Size of devices: 0
+2017-06-22 11:33:37,502 Server started at port: 8001
+2017-06-22 11:33:39,621 ------------------------------
+2017-06-22 11:33:39,622 Recv: 'aa00110311277401ffffffffffffffffab'
+2017-06-22 11:33:39,628 vrfy_crc: '\xab' , crc: '\xab'
+2017-06-22 11:33:39,628 start: aa
+2017-06-22 11:33:39,628 length: 17 bytes
+2017-06-22 11:33:39,628 version: 03
+2017-06-22 11:33:39,628 message_type: 11
+2017-06-22 11:33:39,628 message_id: 2774
+2017-06-22 11:33:39,628 firmware: 01
+2017-06-22 11:33:39,628 device_id: ffffffffffffffff
+2017-06-22 11:33:39,628 crc: '\xab'
+2017-06-22 11:33:39,628 Client Type is not correct. Drop connection.
+2017-06-22 11:33:39,630 Lost connection with device_id: ffffffffffffffff
+2017-06-22 11:33:39,630 Active connections: 0
+2017-06-22 11:33:39,630 Size of controllers: 0
+2017-06-22 11:33:39,630 Size of devices: 0
+2017-06-22 11:34:06,223 ------------------------------
+2017-06-22 11:34:06,224 Recv: 'aa00110301277401ffffffffffffffff60'
+2017-06-22 11:34:06,224 vrfy_crc: '`' , crc: '`'
+2017-06-22 11:34:06,226 start: aa
+2017-06-22 11:34:06,226 length: 17 bytes
+2017-06-22 11:34:06,226 version: 03
+2017-06-22 11:34:06,226 message_type: 01
+2017-06-22 11:34:06,226 message_id: 2774
+2017-06-22 11:34:06,226 firmware: 01
+2017-06-22 11:34:06,226 device_id: ffffffffffffffff
+2017-06-22 11:34:06,226 crc: '`'
+2017-06-22 11:34:06,226 normal_ack: AA 00 11 03 02 27 74 01 FF FF FF FF FF FF FF FF 87 
+2017-06-22 11:34:06,226 Length of normal_ack: 17
+2017-06-22 11:34:06,226 vrfy_crc: '\x87' , crc: '\x87'
+2017-06-22 11:34:06,226 Send: 'aa00110302277401ffffffffffffffff87'
+2017-06-22 11:34:11,286 ------------------------------
+2017-06-22 11:34:11,289 Recv: 'controlleraa00110311277401ffffffffffffffffab'
+2017-06-22 11:34:11,289 vrfy_crc: '\xab' , crc: '\xab'
+2017-06-22 11:34:11,289 start: aa
+2017-06-22 11:34:11,289 length: 17 bytes
+2017-06-22 11:34:11,289 version: 03
+2017-06-22 11:34:11,289 message_type: 11
+2017-06-22 11:34:11,289 message_id: 2774
+2017-06-22 11:34:11,289 firmware: 01
+2017-06-22 11:34:11,289 device_id: ffffffffffffffff
+2017-06-22 11:34:11,289 crc: '\xab'
+2017-06-22 11:34:11,289 Prepare for relaying data to device: ffffffffffffffff

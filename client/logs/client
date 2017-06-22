@@ -1,0 +1,76 @@
+2017-06-22 10:27:55,821 ------------------------------
+2017-06-22 10:27:55,821 Get connection with 127.0.0.1:8001
+2017-06-22 10:27:55,821 message_id in byte: "'t"
+2017-06-22 10:27:55,822 message_id in hex: 2774
+2017-06-22 10:27:55,822 message_id in int: 10100
+2017-06-22 10:27:55,822 version: '\x03'
+2017-06-22 10:27:55,822 firmware: '\x01'
+2017-06-22 10:27:55,822 length of total message: 17
+2017-06-22 10:27:55,822 version: '\x03'
+2017-06-22 10:27:55,822 firmware: '\x01'
+2017-06-22 10:27:55,822 heartbeat: AA 00 11 03 01 27 74 01 FF FF FF FF FF FF FF FF 60 
+2017-06-22 10:27:55,822 Length of heartbeat: 17
+2017-06-22 10:27:55,822 vrfy_crc: '`' , crc: '`'
+2017-06-22 10:27:55,822 Send heartbeat: 'aa00110301277401ffffffffffffffff60'
+2017-06-22 10:27:55,831 Recv: 'aa00110302277401ffffffffffffffff87'
+2017-06-22 10:29:00,686 ------------------------------
+2017-06-22 10:29:00,686 Get connection with 127.0.0.1:8001
+2017-06-22 10:29:00,686 message_id in byte: "'t"
+2017-06-22 10:29:00,686 message_id in hex: 2774
+2017-06-22 10:29:00,686 message_id in int: 10100
+2017-06-22 10:29:00,686 version: '\x03'
+2017-06-22 10:29:00,686 firmware: '\x01'
+2017-06-22 10:29:00,687 length of total message: 17
+2017-06-22 10:29:00,687 version: '\x03'
+2017-06-22 10:29:00,687 firmware: '\x01'
+2017-06-22 10:29:00,687 heartbeat: AA 00 11 03 01 27 74 01 FF FF FF FF FF FF FF FF 60 
+2017-06-22 10:29:00,687 Length of heartbeat: 17
+2017-06-22 10:29:00,687 vrfy_crc: '`' , crc: '`'
+2017-06-22 10:29:00,687 Send heartbeat: 'aa00110301277401ffffffffffffffff60'
+2017-06-22 10:29:00,688 Recv: 'aa00110302277401ffffffffffffffff87'
+2017-06-22 10:33:03,447 ------------------------------
+2017-06-22 10:33:03,447 Get connection with 127.0.0.1:8001
+2017-06-22 10:33:03,447 message_id in byte: "'t"
+2017-06-22 10:33:03,447 message_id in hex: 2774
+2017-06-22 10:33:03,447 message_id in int: 10100
+2017-06-22 10:33:03,447 version: '\x03'
+2017-06-22 10:33:03,447 firmware: '\x01'
+2017-06-22 10:33:03,447 length of total message: 17
+2017-06-22 10:33:03,447 version: '\x03'
+2017-06-22 10:33:03,447 firmware: '\x01'
+2017-06-22 10:33:03,447 heartbeat: AA 00 11 03 11 27 74 01 FF FF FF FF FF FF FF FF AB 
+2017-06-22 10:33:03,447 Length of heartbeat: 17
+2017-06-22 10:33:03,447 vrfy_crc: '\xab' , crc: '\xab'
+2017-06-22 10:33:03,447 Send heartbeat: 'aa00110311277401ffffffffffffffffab'
+2017-06-22 10:33:03,451 Lost connection with: 127.0.0.1:8001
+2017-06-22 11:33:39,621 ------------------------------
+2017-06-22 11:33:39,621 Get connection with 127.0.0.1:8001
+2017-06-22 11:33:39,621 message_id in byte: "'t"
+2017-06-22 11:33:39,621 message_id in hex: 2774
+2017-06-22 11:33:39,621 message_id in int: 10100
+2017-06-22 11:33:39,621 version: '\x03'
+2017-06-22 11:33:39,621 firmware: '\x01'
+2017-06-22 11:33:39,621 length of total message: 17
+2017-06-22 11:33:39,621 version: '\x03'
+2017-06-22 11:33:39,621 firmware: '\x01'
+2017-06-22 11:33:39,621 heartbeat: AA 00 11 03 11 27 74 01 FF FF FF FF FF FF FF FF AB 
+2017-06-22 11:33:39,621 Length of heartbeat: 17
+2017-06-22 11:33:39,621 vrfy_crc: '\xab' , crc: '\xab'
+2017-06-22 11:33:39,621 Send heartbeat: 'aa00110311277401ffffffffffffffffab'
+2017-06-22 11:33:39,631 Lost connection with: 127.0.0.1:8001
+2017-06-22 11:34:06,223 ------------------------------
+2017-06-22 11:34:06,223 Get connection with 127.0.0.1:8001
+2017-06-22 11:34:06,223 message_id in byte: "'t"
+2017-06-22 11:34:06,223 message_id in hex: 2774
+2017-06-22 11:34:06,223 message_id in int: 10100
+2017-06-22 11:34:06,223 version: '\x03'
+2017-06-22 11:34:06,223 firmware: '\x01'
+2017-06-22 11:34:06,223 length of total message: 17
+2017-06-22 11:34:06,223 version: '\x03'
+2017-06-22 11:34:06,223 firmware: '\x01'
+2017-06-22 11:34:06,223 heartbeat: AA 00 11 03 01 27 74 01 FF FF FF FF FF FF FF FF 60 
+2017-06-22 11:34:06,223 Length of heartbeat: 17
+2017-06-22 11:34:06,223 vrfy_crc: '`' , crc: '`'
+2017-06-22 11:34:06,223 Send heartbeat: 'aa00110301277401ffffffffffffffff60'
+2017-06-22 11:34:06,226 Recv: 'aa00110302277401ffffffffffffffff87'
+2017-06-22 11:34:11,290 Recv: 'Unlock message goes here...'

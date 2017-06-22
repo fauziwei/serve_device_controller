@@ -92,6 +92,7 @@ class Logic(object):
 	def init_heartbeat(self, proto):
 		'''Sample initiator heartbeat to server.'''
 		message_type = CLIENT_TYPE['heartbeat']
+		# message_type = SERVER_TYPE['unlock']
 		message_id = get_message_id_for_crc8(proto.message_id)
 		device_id = uni_to_byte(proto.device_id)
 		length = get_length_for_crc8(message_type, message_id, device_id)

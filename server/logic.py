@@ -57,6 +57,14 @@ class Logic(object):
 
 	''' Sending section. '''
 
+	def unlock_processing(self, proto, parsed):
+		'''Relaying data from controller to device.'''
+		return 'Unlock message goes here...'
+
+	def lock_processing(self, proto, parsed):
+		'''Relaying data from controller to device.'''
+		return 'Lock message goes here...'
+
 
 	''' Receiving section. '''
 
@@ -117,21 +125,32 @@ class Logic(object):
 
 		proto.controller_id = byte_to_hex(parsed['device_id'])
 
-		if proto.controller_id in proto.factory.devices:
+		if proto.controller_id not in proto.factory.devices:
+			logger.debug(u'Device {0} is not connected.'.format(proto.controller_id))
+			return
 
-			logger.debug(u'Relayed to device: {0}'.format(proto.controller_id))
-			proto.belongto_device = proto.factory.devices[proto.controller_id]
+		logger.debug(u'Prepare for relaying data to device: {0}'.format(proto.controller_id))
+		proto.belongto_device = proto.factory.devices[proto.controller_id]
 
-			# Store connected controller to self.controllers.
-			proto.factory.controllers[proto.controller_id] = proto
+		# Store connected controller to self.controllers.
+		proto.factory.controllers[proto.controller_id] = proto
 
-			# Store to connected controller to redis.
-			proto.factory.controllers_cache.set(proto.controller_id, '{0}:{1}'.format(proto.factory.server_ip, proto.factory.server_port))
+		# Store to connected controller to redis.
+		proto.factory.controllers_cache.set(proto.controller_id, '{0}:{1}'.format(proto.factory.server_ip, proto.factory.server_port))
+		proto.token_controller = True
 
-			proto.token_controller = True
-			return 'Controller send Some message here...'
+		if parsed['message_type'] == SERVER_TYPE['unlock']:
+			return self.unlock_processing(proto, parsed)
+
+		elif parsed['message_type'] == SERVER_TYPE['lock']:
+			return self.lock_processing(proto, parsed)
+
+		else:
+			# Still several message_type unfinished yet.
+			pass
 
 		return
+
 
 	def communication(self, proto, data):
 		'''proto is parent's self.

@@ -37,7 +37,9 @@ class CProtocol(LineReceiver):
 		print(u'Get connection with {0}:{1}'.format(self.peer_ip, self.peer_port))
 
 		# Send message to device via twisted server.
-		msg = 'controlleraa00110301277401ffffffffffffffff60'
+		# The following sample message is 'unlock'
+		# msg = 'controlleraa00110301277401ffffffffffffffff60'
+		msg = 'controlleraa00110311277401ffffffffffffffffab'
 		print(u'Send: {0}'.format(repr(msg)))
 		self.sendLine(msg)
 

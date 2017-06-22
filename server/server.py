@@ -95,7 +95,7 @@ class BProtocol(LineReceiver):
 		if not self.belongto_device:
 			# Device not connected to server.
 			# Send feedback to controller not success.
-			self.sendLine(u'Device: {0} not connected to twisted.'.format(self.controller_id))
+			self.sendLine(u'Device: {0} is not connected to server.'.format(self.controller_id))
 		else:
 			# Send to device.
 			# You need to determine what command want to send to device
