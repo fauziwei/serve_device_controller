@@ -4,13 +4,17 @@
 import sys
 import logging
 import binascii
+
+# local import
 from header import *
 from utils import *
+from models import *
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
 logger = logging.getLogger(__name__)
+
 
 class Logic(object):
 

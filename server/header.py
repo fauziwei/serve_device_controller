@@ -1,4 +1,6 @@
 # coding: utf-8
+# @2017
+# Fauzi, fauziwei@yahoo.com
 START = '\xAA'
 
 CLIENT_TYPE = {
