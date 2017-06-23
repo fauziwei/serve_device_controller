@@ -101,7 +101,7 @@ class BProtocol(LineReceiver):
 			self.sendLine(self.response_fail) # Fail
 		else:
 			# Send to device.
-			logger.debug('Send to device: {0}'.format(data))
+			logger.debug(u'Send to device: {0}'.format(repr(data)))
 			self.belongto_device.sendLine(data)
 
 	def sendFromDevice(self, data):
