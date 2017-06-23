@@ -43,7 +43,7 @@ class Logic(object):
 		message_id = data[5:7]
 		firmware = data[7]
 		device_id = data[8:-1]
-		# crc = data[-1:]
+		crc = data[-1:]
 
 		logger.debug(u'start: {0}'.format(repr(start)))
 		logger.debug(u'length: {0} bytes'.format(hex_to_int(byte_to_hex(length))))
@@ -52,7 +52,7 @@ class Logic(object):
 		logger.debug(u'message_id: {0}'.format(repr(message_id)))
 		logger.debug(u'firmware: {0}'.format(repr(firmware)))
 		logger.debug(u'device_id: {0}'.format(byte_to_hex(device_id)))
-		# logger.debug(u'crc: {0}'.format(repr(crc)))
+		logger.debug(u'crc: {0}'.format(repr(crc)))
 
 		if message_type == CLIENT_TYPE['heartbeat']:
 			logger.debug(u'Detected heartbeat message_type, doesnt required to be encrypted or decrypted.')
@@ -74,7 +74,6 @@ class Logic(object):
 		message_id = data[5:7]
 		firmware = data[7]
 		device_id = data[8:]
-		# crc = data[-1:]
 
 		logger.debug(u'start: {0}'.format(repr(start)))
 		logger.debug(u'length: {0} bytes'.format(hex_to_int(byte_to_hex(length))))
@@ -83,7 +82,6 @@ class Logic(object):
 		logger.debug(u'message_id: {0}'.format(repr(message_id)))
 		logger.debug(u'firmware: {0}'.format(repr(firmware)))
 		logger.debug(u'device_id: {0}'.format(byte_to_hex(device_id)))
-		# logger.debug(u'crc: {0}'.format(repr(crc)))
 
 		logger.debug( 30 * u'-')
 
@@ -130,7 +128,7 @@ class Logic(object):
 
 		logger.debug(u'Preparing relay unlock from controller to device:')
 		logger.debug(u'unlock: {0}'.format(repr(unlock)))
-		logger.debug(u'unlock: {0}'.format(ascii_string(unlock)))
+		# logger.debug(u'unlock: {0}'.format(ascii_string(unlock)))
 		logger.debug(u'Length of unlock: {0}'.format(len(unlock)))
 
 		crc8_verification(unlock)
@@ -154,7 +152,7 @@ class Logic(object):
 
 		logger.debug(u'Preparing relay lock from controller to device:')
 		logger.debug(u'lock: {0}'.format(repr(lock)))
-		logger.debug(u'lock: {0}'.format(ascii_string(lock)))
+		# logger.debug(u'lock: {0}'.format(ascii_string(lock)))
 		logger.debug(u'Length of lock: {0}'.format(len(lock)))
 
 		crc8_verification(lock)
@@ -179,7 +177,7 @@ class Logic(object):
 
 		logger.debug(u'Prepare response normal_ack:')
 		logger.debug(u'normal_ack: {0}'.format(repr(normal_ack)))
-		logger.debug(u'normal_ack: {0}'.format(ascii_string(normal_ack)))
+		# logger.debug(u'normal_ack: {0}'.format(ascii_string(normal_ack)))
 		logger.debug(u'Length of normal_ack: {0}'.format(len(normal_ack)))
 
 		crc8_verification(normal_ack)
@@ -206,7 +204,7 @@ class Logic(object):
 
 		logger.debug(u'Prepare for relaying data to controller_id: {0}'.format(proto.device_id))
 		proto.belongto_controller = proto.factory.controllers[proto.device_id]
-		logger.debug(repr(proto.response_success))
+		logger.debug(u'Send response success: {0}'.format(repr(proto.response_success)))
 		proto.belongto_controller.sendLine(proto.response_success)
 		proto.belongto_controller = False
 		return
@@ -239,7 +237,6 @@ class Logic(object):
 		'''proto is parent's self.
 		The incoming data is from controller.
 		'''
-		logger.debug('Recv: {0}'.format(repr(data)))
 		parsed = self.parsing_crc8(proto, data)
 		if not parsed:
 			return

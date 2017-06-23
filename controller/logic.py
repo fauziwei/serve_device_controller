@@ -77,7 +77,7 @@ class Logic(object):
 		message_id = data[5:7]
 		firmware = data[7]
 		device_id = data[8:-1]
-		# crc = data[-1:]
+		crc = data[-1:]
 
 		logger.debug(u'start: {0}'.format(repr(start)))
 		logger.debug(u'length: {0} bytes'.format(hex_to_int(byte_to_hex(length))))
@@ -86,7 +86,7 @@ class Logic(object):
 		logger.debug(u'message_id: {0}'.format(repr(message_id)))
 		logger.debug(u'firmware: {0}'.format(repr(firmware)))
 		logger.debug(u'device_id: {0}'.format(byte_to_hex(device_id)))
-		# logger.debug(u'crc: {0}'.format(repr(crc)))
+		logger.debug(u'crc: {0}'.format(repr(crc)))
 
 		logger.debug( 30 * u'-')
 
@@ -100,7 +100,6 @@ class Logic(object):
 		message_id = data[5:7]
 		firmware = data[7]
 		device_id = data[8:]
-		# crc = data[-1:]
 
 		logger.debug(u'start: {0}'.format(repr(start)))
 		logger.debug(u'length: {0} bytes'.format(hex_to_int(byte_to_hex(length))))
@@ -109,7 +108,6 @@ class Logic(object):
 		logger.debug(u'message_id: {0}'.format(repr(message_id)))
 		logger.debug(u'firmware: {0}'.format(repr(firmware)))
 		logger.debug(u'device_id: {0}'.format(byte_to_hex(device_id)))
-		# logger.debug(u'crc: {0}'.format(repr(crc)))
 
 		logger.debug( 30 * u'-')
 

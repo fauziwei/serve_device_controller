@@ -1134,3 +1134,201 @@
 2017-06-23 19:12:02,059 Active connections: 0
 2017-06-23 19:12:02,059 Size of controllers: 0
 2017-06-23 19:12:02,061 Size of devices: 0
+2017-06-23 20:19:39,224 Server started at port: 8001
+2017-06-23 20:20:14,322 ------------------------------
+2017-06-23 20:20:14,322 Recv: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 20:20:14,322 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 20:20:14,322 ------------------------------
+2017-06-23 20:20:14,322 Real data before encrypt/decrypt.
+2017-06-23 20:20:14,322 start: '\xaa'
+2017-06-23 20:20:14,322 length: 17 bytes
+2017-06-23 20:20:14,322 version: '\x03'
+2017-06-23 20:20:14,322 message_type: '\x01'
+2017-06-23 20:20:14,322 message_id: "'t"
+2017-06-23 20:20:14,322 firmware: '\x01'
+2017-06-23 20:20:14,322 device_id: 2469040358b6e392
+2017-06-23 20:20:14,322 crc: '\x16'
+2017-06-23 20:20:14,322 Detected heartbeat message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 20:20:14,322 Detected heartbeat...
+2017-06-23 20:20:14,322 Prepare response normal_ack:
+2017-06-23 20:20:14,322 normal_ack: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 20:20:14,322 Length of normal_ack: 17
+2017-06-23 20:20:14,322 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 20:20:14,322 Send >: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 20:20:19,180 ------------------------------
+2017-06-23 20:20:19,180 Recv: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 20:20:19,180 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 20:20:19,180 ------------------------------
+2017-06-23 20:20:19,180 Real data before encrypt/decrypt.
+2017-06-23 20:20:19,180 start: '\xfd'
+2017-06-23 20:20:19,180 length: 39638 bytes
+2017-06-23 20:20:19,180 version: '\xea'
+2017-06-23 20:20:19,180 message_type: '\x9c'
+2017-06-23 20:20:19,180 message_id: '\x9e\xe3'
+2017-06-23 20:20:19,180 firmware: '\xe0'
+2017-06-23 20:20:19,180 device_id: c1cc4484591d2ce8
+2017-06-23 20:20:19,180 crc: '\xf9'
+2017-06-23 20:20:19,180 ------------------------------
+2017-06-23 20:20:19,180 Data after decrypted.
+2017-06-23 20:20:19,180 start: '\xaa'
+2017-06-23 20:20:19,180 length: 17 bytes
+2017-06-23 20:20:19,180 version: '\x03'
+2017-06-23 20:20:19,180 message_type: '\x11'
+2017-06-23 20:20:19,180 message_id: "'t"
+2017-06-23 20:20:19,180 firmware: '\x01'
+2017-06-23 20:20:19,180 device_id: 2469040358b6e392
+2017-06-23 20:20:19,180 ------------------------------
+2017-06-23 20:20:19,180 Prepare for relaying data to device_id: 2469040358b6e392
+2017-06-23 20:20:19,180 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 20:20:19,180 Preparing relay unlock from controller to device:
+2017-06-23 20:20:19,180 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 20:20:19,180 Length of unlock: 17
+2017-06-23 20:20:19,180 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 20:20:19,180 Send to device: ýšÖêœžãàÁÌD„Y,èù
+2017-06-23 20:20:19,180 Recv: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+\xc6'
+2017-06-23 20:20:19,180 vrfy_crc: '\xc6' , crc: '\xc6'
+2017-06-23 20:20:19,180 ------------------------------
+2017-06-23 20:20:19,180 Real data before encrypt/decrypt.
+2017-06-23 20:20:19,180 start: ';'
+2017-06-23 20:20:19,180 length: 24142 bytes
+2017-06-23 20:20:19,180 version: '\xe7'
+2017-06-23 20:20:19,180 message_type: '\xf6'
+2017-06-23 20:20:19,180 message_id: '\xd46'
+2017-06-23 20:20:19,180 firmware: '\x9c'
+2017-06-23 20:20:19,180 device_id: 02115807714f442b
+2017-06-23 20:20:19,180 crc: '\xc6'
+2017-06-23 20:20:19,180 ------------------------------
+2017-06-23 20:20:19,180 Data after decrypted.
+2017-06-23 20:20:19,180 start: '\xaa'
+2017-06-23 20:20:19,180 length: 17 bytes
+2017-06-23 20:20:19,180 version: '\x03'
+2017-06-23 20:20:19,180 message_type: '\x13'
+2017-06-23 20:20:19,180 message_id: "'t"
+2017-06-23 20:20:19,180 firmware: '\x01'
+2017-06-23 20:20:19,180 device_id: 2469040358b6e392
+2017-06-23 20:20:19,180 ------------------------------
+2017-06-23 20:20:19,180 Detected lock_unlock_response...
+2017-06-23 20:20:19,180 Prepare for relaying data to controller_id: 2469040358b6e392
+2017-06-23 20:20:19,180 Send response success: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-23 20:20:19,180 Maintain...
+2017-06-23 20:20:19,180 Lost connection with controller_id: 2469040358b6e392
+2017-06-23 20:20:19,180 Size of controllers: 0
+2017-06-23 20:20:19,180 Size of devices: 1
+2017-06-23 20:24:44,698 ------------------------------
+2017-06-23 20:24:44,698 Recv: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 20:24:44,698 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 20:24:44,698 ------------------------------
+2017-06-23 20:24:44,698 Real data before encrypt/decrypt.
+2017-06-23 20:24:44,698 start: '\xfd'
+2017-06-23 20:24:44,698 length: 39638 bytes
+2017-06-23 20:24:44,698 version: '\xea'
+2017-06-23 20:24:44,698 message_type: '\x9c'
+2017-06-23 20:24:44,698 message_id: '\x9e\xe3'
+2017-06-23 20:24:44,698 firmware: '\xe0'
+2017-06-23 20:24:44,698 device_id: c1cc4484591d2ce8
+2017-06-23 20:24:44,698 crc: '\xf9'
+2017-06-23 20:24:44,698 ------------------------------
+2017-06-23 20:24:44,698 Data after decrypted.
+2017-06-23 20:24:44,698 start: '\xaa'
+2017-06-23 20:24:44,698 length: 17 bytes
+2017-06-23 20:24:44,698 version: '\x03'
+2017-06-23 20:24:44,698 message_type: '\x11'
+2017-06-23 20:24:44,698 message_id: "'t"
+2017-06-23 20:24:44,698 firmware: '\x01'
+2017-06-23 20:24:44,698 device_id: 2469040358b6e392
+2017-06-23 20:24:44,698 ------------------------------
+2017-06-23 20:24:44,698 Prepare for relaying data to device_id: 2469040358b6e392
+2017-06-23 20:24:44,714 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 20:24:44,714 Preparing relay unlock from controller to device:
+2017-06-23 20:24:44,714 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 20:24:44,714 Length of unlock: 17
+2017-06-23 20:24:44,714 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 20:24:44,714 Send to device: ýšÖêœžãàÁÌD„Y,èù
+2017-06-23 20:24:44,714 Recv: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+\xc6'
+2017-06-23 20:24:44,714 vrfy_crc: '\xc6' , crc: '\xc6'
+2017-06-23 20:24:44,714 ------------------------------
+2017-06-23 20:24:44,714 Real data before encrypt/decrypt.
+2017-06-23 20:24:44,714 start: ';'
+2017-06-23 20:24:44,714 length: 24142 bytes
+2017-06-23 20:24:44,714 version: '\xe7'
+2017-06-23 20:24:44,714 message_type: '\xf6'
+2017-06-23 20:24:44,714 message_id: '\xd46'
+2017-06-23 20:24:44,714 firmware: '\x9c'
+2017-06-23 20:24:44,714 device_id: 02115807714f442b
+2017-06-23 20:24:44,714 crc: '\xc6'
+2017-06-23 20:24:44,714 ------------------------------
+2017-06-23 20:24:44,714 Data after decrypted.
+2017-06-23 20:24:44,714 start: '\xaa'
+2017-06-23 20:24:44,714 length: 17 bytes
+2017-06-23 20:24:44,714 version: '\x03'
+2017-06-23 20:24:44,714 message_type: '\x13'
+2017-06-23 20:24:44,714 message_id: "'t"
+2017-06-23 20:24:44,714 firmware: '\x01'
+2017-06-23 20:24:44,714 device_id: 2469040358b6e392
+2017-06-23 20:24:44,714 ------------------------------
+2017-06-23 20:24:44,714 Detected lock_unlock_response...
+2017-06-23 20:24:44,714 Prepare for relaying data to controller_id: 2469040358b6e392
+2017-06-23 20:24:44,714 Send response success: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-23 20:24:44,714 Maintain...
+2017-06-23 20:24:44,714 Lost connection with controller_id: 2469040358b6e392
+2017-06-23 20:24:44,714 Size of controllers: 0
+2017-06-23 20:24:44,714 Size of devices: 1
+2017-06-23 20:25:15,039 ------------------------------
+2017-06-23 20:25:15,039 Recv: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 20:25:15,039 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 20:25:15,039 ------------------------------
+2017-06-23 20:25:15,039 Real data before encrypt/decrypt.
+2017-06-23 20:25:15,039 start: '\xfd'
+2017-06-23 20:25:15,039 length: 39638 bytes
+2017-06-23 20:25:15,039 version: '\xea'
+2017-06-23 20:25:15,039 message_type: '\x9c'
+2017-06-23 20:25:15,039 message_id: '\x9e\xe3'
+2017-06-23 20:25:15,039 firmware: '\xe0'
+2017-06-23 20:25:15,039 device_id: c1cc4484591d2ce8
+2017-06-23 20:25:15,039 crc: '\xf9'
+2017-06-23 20:25:15,039 ------------------------------
+2017-06-23 20:25:15,039 Data after decrypted.
+2017-06-23 20:25:15,039 start: '\xaa'
+2017-06-23 20:25:15,039 length: 17 bytes
+2017-06-23 20:25:15,039 version: '\x03'
+2017-06-23 20:25:15,039 message_type: '\x11'
+2017-06-23 20:25:15,039 message_id: "'t"
+2017-06-23 20:25:15,039 firmware: '\x01'
+2017-06-23 20:25:15,039 device_id: 2469040358b6e392
+2017-06-23 20:25:15,039 ------------------------------
+2017-06-23 20:25:15,039 Prepare for relaying data to device_id: 2469040358b6e392
+2017-06-23 20:25:15,039 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 20:25:15,039 Preparing relay unlock from controller to device:
+2017-06-23 20:25:15,039 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 20:25:15,039 Length of unlock: 17
+2017-06-23 20:25:15,039 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 20:25:15,039 Send to device: ýšÖêœžãàÁÌD„Y,èù
+2017-06-23 20:25:15,055 Recv: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+\xc6'
+2017-06-23 20:25:15,055 vrfy_crc: '\xc6' , crc: '\xc6'
+2017-06-23 20:25:15,055 ------------------------------
+2017-06-23 20:25:15,055 Real data before encrypt/decrypt.
+2017-06-23 20:25:15,055 start: ';'
+2017-06-23 20:25:15,055 length: 24142 bytes
+2017-06-23 20:25:15,055 version: '\xe7'
+2017-06-23 20:25:15,055 message_type: '\xf6'
+2017-06-23 20:25:15,055 message_id: '\xd46'
+2017-06-23 20:25:15,055 firmware: '\x9c'
+2017-06-23 20:25:15,055 device_id: 02115807714f442b
+2017-06-23 20:25:15,055 crc: '\xc6'
+2017-06-23 20:25:15,055 ------------------------------
+2017-06-23 20:25:15,055 Data after decrypted.
+2017-06-23 20:25:15,055 start: '\xaa'
+2017-06-23 20:25:15,055 length: 17 bytes
+2017-06-23 20:25:15,055 version: '\x03'
+2017-06-23 20:25:15,055 message_type: '\x13'
+2017-06-23 20:25:15,055 message_id: "'t"
+2017-06-23 20:25:15,055 firmware: '\x01'
+2017-06-23 20:25:15,055 device_id: 2469040358b6e392
+2017-06-23 20:25:15,055 ------------------------------
+2017-06-23 20:25:15,055 Detected lock_unlock_response...
+2017-06-23 20:25:15,055 Prepare for relaying data to controller_id: 2469040358b6e392
+2017-06-23 20:25:15,055 Send response success: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-23 20:25:15,055 Maintain...
+2017-06-23 20:25:15,055 Lost connection with controller_id: 2469040358b6e392
+2017-06-23 20:25:15,055 Size of controllers: 0
+2017-06-23 20:25:15,055 Size of devices: 1

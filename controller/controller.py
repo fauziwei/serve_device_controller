@@ -35,6 +35,10 @@ class CProtocol(LineReceiver):
 	token_init_unlock = False
 	token_init_lock = False
 
+	# Response from twisted server for fail or success.
+	response_fail = '\xee\xee\xee\xee\xee\xee\xee\xee'
+	response_success = '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+
 	def __init__(self, factory):
 		self.factory = factory
 		self.controller_id = self.factory.controller_id
@@ -48,11 +52,6 @@ class CProtocol(LineReceiver):
 		logger.debug(u'Get connection with {0}:{1}'.format(self.peer_ip, self.peer_port))
 
 		# Send message to device via twisted server.
-		# The following sample message is 'unlock'
-		# msg = 'controlleraa00110311277401ffffffffffffffffab'
-		# print(u'Send: {0}'.format(repr(msg)))
-		# self.sendLine(msg)
-
 		reactor.callLater(30, self.connectionLost, '')
 
 		if not self.token_init_unlock:
@@ -76,7 +75,14 @@ class CProtocol(LineReceiver):
 
 	def lineReceived(self, data):
 		logger.debug(u'Recv: {0}'.format(repr(data)))
-		# logger.debug(u'Recv: {0}'.format(data))
+		if data == self.response_success:
+			logger.debug(u'SUCCESS get response from device.')
+		elif data == self.response_fail:
+			logger.debug(u'FAIL get response from device.')
+		else:
+			logger.debug(u'ERROR response.')
+
+		logger.debug(u'controller initiate to drop connection.')
 		self.transport.loseConnection()
 
 
