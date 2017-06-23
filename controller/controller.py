@@ -70,8 +70,9 @@ class CProtocol(LineReceiver):
 
 	def connectionLost(self, reason):
 		logger.debug(u'Lost connection with: {0}:{1}'.format(self.peer_ip, self.peer_port))
-		if not ReactorNotRunning:
-			reactor.stop()
+		# if not ReactorNotRunning:
+		# 	reactor.stop()
+		reactor.stop()
 
 	def lineReceived(self, data):
 		logger.debug(u'Recv: {0}'.format(repr(data)))
