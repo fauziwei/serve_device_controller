@@ -32,7 +32,9 @@ class CProtocol(LineReceiver):
 	message_id = 10100
 	# Sample of device_id (sample in HEX)
 	# device_id = 'FFFFFFFFFFFFFFFF'
-	device_id = 'ffffffffffffffff'
+	device_id = '2469040358b6e392'
+
+	aes_key = '02B6111770695324'
 
 	# token for initiator heartbeat test sending.
 	token_init_heartbeat = False
@@ -56,8 +58,12 @@ class CProtocol(LineReceiver):
 
 	def lineReceived(self, data):
 		logger.debug(u'Recv: {0}'.format(repr(data)))
-		# heartbeat = self.factory.logic.init_heartbeat(self)
-		# self.sendLine(heartbeat)
+		data = self.factory.logic.communication(self, data)
+		if data:
+			logger.debug(u'Send: {0}'.format(repr(data)))
+			self.sendLine(data)
+		else:
+			logger.debug(u'Maintain...')
 
 
 class CFactory(ClientFactory):

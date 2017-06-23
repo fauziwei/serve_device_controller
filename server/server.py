@@ -40,6 +40,10 @@ class BProtocol(LineReceiver):
 	belongto_device, belongto_controller = False, False
 	token_device, token_controller = False, False
 
+	# Response to controller for fail or success.
+	response_fail = '\xee\xee\xee\xee\xee\xee\xee\xee'
+	response_success = '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+
 	def connectionMade(self):
 		# Limiting active_connections.
 		logger.debug( 30 * u'-' )
@@ -79,12 +83,10 @@ class BProtocol(LineReceiver):
 	def lineReceived(self, data):
 		logger.debug(u'Recv: {0}'.format(repr(data)))
 		# Assume that the incoming controller message from API
-		# is started by 'controller...',
-		# e.g: 'controlleraa01...'.
-		# Format data after 'controller' is HEX (normal data according to table format)
-		if data[0:10] == 'controller':
+		# is started by '\xff\xff\xff\xff',
+		if data[0:4] == '\xff\xff\xff\xff':
 			# Incoming data from controller.
-			p = threads.deferToThread(self.factory.logic.setting, self, data[10:])
+			p = threads.deferToThread(self.factory.logic.setting, self, data[4:])
 			p.addCallback(lambda data: self.sendFromController(data))
 		else:
 			# Incoming data from device.
@@ -95,32 +97,33 @@ class BProtocol(LineReceiver):
 		if not self.belongto_device:
 			# Device not connected to server.
 			# Send feedback to controller not success.
-			self.sendLine(u'Device: {0} is not connected to server.'.format(self.controller_id))
+			# self.sendLine(u'device_id: {0} is not connected to server.'.format(self.controller_id))
+			self.sendLine(self.response_fail) # Fail
 		else:
 			# Send to device.
-			# You need to determine what command want to send to device
-			# For lock/Unlock. The command should be invoked by API.
+			logger.debug('Send to device: {0}'.format(data))
 			self.belongto_device.sendLine(data)
-			# Send to controller.
-			# You may determine other reply command.
-			self.sendLine('AAAABBBBCCCCDDDD')
 
 	def sendFromDevice(self, data):
 		if data:
-			logger.debug(u'Send: {0}'.format(repr(data)))
+			logger.debug(u'Send >: {0}'.format(repr(data)))
 			self.sendLine(data)
+		else:
+			logger.debug(u'Maintain...')
 
 
 # Configuration. --------------------------
 server_ip, server_port = '127.0.0.1', 8001
 redis_ip, redis_port = '127.0.0.1', 6379
 max_connection = 10
+aes_key = '02B6111770695324'
 # -----------------------------------------
 
 class BFactory(Factory):
 	protocol = BProtocol
 
 	max_connection = max_connection
+	aes_key = aes_key
 	devices, controllers = {}, {}
 	logic = Logic()
 

@@ -1,6 +1,435 @@
-2017-06-22 10:28:09,381 ------------------------------
-2017-06-22 10:28:31,924 ------------------------------
-2017-06-22 10:28:44,127 ------------------------------
-2017-06-22 10:28:53,263 ------------------------------
-2017-06-22 10:29:06,121 ------------------------------
-2017-06-22 11:34:11,288 ------------------------------
+2017-06-23 14:26:43,854 ------------------------------
+2017-06-23 14:26:43,855 Get connection with 127.0.0.1:8001
+2017-06-23 14:26:43,855 message_id in byte: "'t"
+2017-06-23 14:26:43,855 message_id in hex: 2774
+2017-06-23 14:26:43,855 message_id in int: 10100
+2017-06-23 14:26:43,857 Lost connection with: 127.0.0.1:8001
+2017-06-23 14:28:49,532 ------------------------------
+2017-06-23 14:28:49,532 Get connection with 127.0.0.1:8001
+2017-06-23 14:28:49,532 message_id in byte: "'t"
+2017-06-23 14:28:49,532 message_id in hex: 2774
+2017-06-23 14:28:49,532 message_id in int: 10100
+2017-06-23 14:28:49,532 version: '\x03'
+2017-06-23 14:28:49,535 firmware: '\x01'
+2017-06-23 14:28:49,535 length of total message: 17
+2017-06-23 14:28:49,535 version: '\x03'
+2017-06-23 14:28:49,535 firmware: '\x01'
+2017-06-23 14:28:49,538 Lost connection with: 127.0.0.1:8001
+2017-06-23 14:31:46,348 ------------------------------
+2017-06-23 14:31:46,348 Get connection with 127.0.0.1:8001
+2017-06-23 14:31:46,348 message_id in byte: "'t"
+2017-06-23 14:31:46,348 message_id in hex: 2774
+2017-06-23 14:31:46,348 message_id in int: 10100
+2017-06-23 14:31:46,348 version: '\x03'
+2017-06-23 14:31:46,348 firmware: '\x01'
+2017-06-23 14:31:46,348 length of total message: 17
+2017-06-23 14:31:46,348 version: '\x03'
+2017-06-23 14:31:46,348 firmware: '\x01'
+2017-06-23 14:31:46,348 IV: 4BDB787F6AC6A06BEA60F11035C0C9B5
+2017-06-23 14:31:46,351 Lost connection with: 127.0.0.1:8001
+2017-06-23 14:40:03,055 ------------------------------
+2017-06-23 14:40:03,055 Get connection with 127.0.0.1:8001
+2017-06-23 14:40:03,055 message_id in byte: "'t"
+2017-06-23 14:40:03,055 message_id in hex: 2774
+2017-06-23 14:40:03,055 message_id in int: 10100
+2017-06-23 14:40:03,055 version: '\x03'
+2017-06-23 14:40:03,055 firmware: '\x01'
+2017-06-23 14:40:03,055 length of total message: 17
+2017-06-23 14:40:03,055 version: '\x03'
+2017-06-23 14:40:03,055 firmware: '\x01'
+2017-06-23 14:40:03,055 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 14:40:03,055 IV: A392D861DAAC2F6B720A07E9019FA399
+2017-06-23 14:40:03,058 Lost connection with: 127.0.0.1:8001
+2017-06-23 14:46:30,161 ------------------------------
+2017-06-23 14:46:30,161 Get connection with 127.0.0.1:8001
+2017-06-23 14:46:30,161 message_id in byte: "'t"
+2017-06-23 14:46:30,161 message_id in hex: 2774
+2017-06-23 14:46:30,161 message_id in int: 10100
+2017-06-23 14:46:30,161 version: '\x03'
+2017-06-23 14:46:30,161 firmware: '\x01'
+2017-06-23 14:46:30,161 length of total message: 17
+2017-06-23 14:46:30,161 version: '\x03'
+2017-06-23 14:46:30,161 firmware: '\x01'
+2017-06-23 14:46:30,161 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 14:46:30,161 len cmd: 16
+2017-06-23 14:46:30,161 IV: 70C3EC390DF8145C3257D8168A839D8E
+2017-06-23 14:46:30,164 Lost connection with: 127.0.0.1:8001
+2017-06-23 14:48:36,141 ------------------------------
+2017-06-23 14:48:36,141 Get connection with 127.0.0.1:8001
+2017-06-23 14:48:36,141 message_id in byte: "'t"
+2017-06-23 14:48:36,141 message_id in hex: 2774
+2017-06-23 14:48:36,141 message_id in int: 10100
+2017-06-23 14:48:36,141 version: '\x03'
+2017-06-23 14:48:36,142 firmware: '\x01'
+2017-06-23 14:48:36,142 length of total message: 17
+2017-06-23 14:48:36,142 version: '\x03'
+2017-06-23 14:48:36,142 firmware: '\x01'
+2017-06-23 14:48:36,142 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 14:48:36,142 len cmd: 16
+2017-06-23 14:48:36,142 IV: 2055B857347FBE1092C9C330331A27AB
+2017-06-23 14:48:36,142 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 14:48:36,142 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 14:48:36,142 unlock: FD 9A D6 EA 9C 9E E3 E0 C1 CC 44 84 59 1D 2C E8 F9 
+2017-06-23 14:48:36,142 Length of unlock: 17
+2017-06-23 14:48:36,142 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 14:48:36,142 Send unlock: 'controller\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 14:54:41,316 Lost connection with: 127.0.0.1:8001
+2017-06-23 14:55:03,628 ------------------------------
+2017-06-23 14:55:03,628 Get connection with 127.0.0.1:8001
+2017-06-23 14:55:03,628 message_id in byte: "'t"
+2017-06-23 14:55:03,628 message_id in hex: 2774
+2017-06-23 14:55:03,628 message_id in int: 10100
+2017-06-23 14:55:03,628 version: '\x03'
+2017-06-23 14:55:03,628 firmware: '\x01'
+2017-06-23 14:55:03,628 length of total message: 17
+2017-06-23 14:55:03,628 version: '\x03'
+2017-06-23 14:55:03,628 firmware: '\x01'
+2017-06-23 14:55:03,628 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 14:55:03,628 len cmd: 16
+2017-06-23 14:55:03,628 IV: 0553BF1FC509CB0EEAA43659AE094829
+2017-06-23 14:55:03,628 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 14:55:03,628 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 14:55:03,628 unlock: FD 9A D6 EA 9C 9E E3 E0 C1 CC 44 84 59 1D 2C E8 F9 
+2017-06-23 14:55:03,628 Length of unlock: 17
+2017-06-23 14:55:03,628 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 14:55:03,631 Lost connection with: 127.0.0.1:8001
+2017-06-23 14:55:56,512 ------------------------------
+2017-06-23 14:55:56,512 Get connection with 127.0.0.1:8001
+2017-06-23 14:55:56,512 message_id in byte: "'t"
+2017-06-23 14:55:56,512 message_id in hex: 2774
+2017-06-23 14:55:56,512 message_id in int: 10100
+2017-06-23 14:55:56,512 version: '\x03'
+2017-06-23 14:55:56,512 firmware: '\x01'
+2017-06-23 14:55:56,512 length of total message: 17
+2017-06-23 14:55:56,513 version: '\x03'
+2017-06-23 14:55:56,513 firmware: '\x01'
+2017-06-23 14:55:56,513 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 14:55:56,513 len cmd: 16
+2017-06-23 14:55:56,513 IV: F472FB1FBDED598FA70BEE237A2EC91E
+2017-06-23 14:55:56,513 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 14:55:56,513 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 14:55:56,513 unlock: FD 9A D6 EA 9C 9E E3 E0 C1 CC 44 84 59 1D 2C E8 F9 
+2017-06-23 14:55:56,513 Length of unlock: 17
+2017-06-23 14:55:56,513 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 14:55:56,513 Send unlock: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 14:57:14,105 Lost connection with: 127.0.0.1:8001
+2017-06-23 14:57:30,959 ------------------------------
+2017-06-23 14:57:30,959 Get connection with 127.0.0.1:8001
+2017-06-23 14:57:30,960 message_id in byte: "'t"
+2017-06-23 14:57:30,960 message_id in hex: 2774
+2017-06-23 14:57:30,960 message_id in int: 10100
+2017-06-23 14:57:30,960 version: '\x03'
+2017-06-23 14:57:30,960 firmware: '\x01'
+2017-06-23 14:57:30,960 length of total message: 17
+2017-06-23 14:57:30,960 version: '\x03'
+2017-06-23 14:57:30,960 firmware: '\x01'
+2017-06-23 14:57:30,960 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 14:57:30,960 len cmd: 16
+2017-06-23 14:57:30,960 IV: 351E6A9239AD57164BC78F0AE0698491
+2017-06-23 14:57:30,960 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 14:57:30,960 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 14:57:30,960 unlock: FD 9A D6 EA 9C 9E E3 E0 C1 CC 44 84 59 1D 2C E8 F9 
+2017-06-23 14:57:30,960 Length of unlock: 17
+2017-06-23 14:57:30,960 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 14:57:30,960 Send unlock: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 15:00:15,617 Lost connection with: 127.0.0.1:8001
+2017-06-23 15:01:05,816 ------------------------------
+2017-06-23 15:01:05,818 Get connection with 127.0.0.1:8001
+2017-06-23 15:01:05,818 message_id in byte: "'t"
+2017-06-23 15:01:05,818 message_id in hex: 2774
+2017-06-23 15:01:05,818 message_id in int: 10100
+2017-06-23 15:01:05,818 version: '\x03'
+2017-06-23 15:01:05,818 firmware: '\x01'
+2017-06-23 15:01:05,818 length of total message: 17
+2017-06-23 15:01:05,818 version: '\x03'
+2017-06-23 15:01:05,818 firmware: '\x01'
+2017-06-23 15:01:05,818 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 15:01:05,818 len cmd: 16
+2017-06-23 15:01:05,818 IV: 0A231731889C9BBBEAC3118923153558
+2017-06-23 15:01:05,818 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 15:01:05,818 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 15:01:05,819 unlock: FD 9A D6 EA 9C 9E E3 E0 C1 CC 44 84 59 1D 2C E8 F9 
+2017-06-23 15:01:05,819 Length of unlock: 17
+2017-06-23 15:01:05,819 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 15:01:05,819 Send unlock: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 15:01:24,792 Lost connection with: 127.0.0.1:8001
+2017-06-23 15:07:39,433 ------------------------------
+2017-06-23 15:07:39,433 Get connection with 127.0.0.1:8001
+2017-06-23 15:07:39,433 message_id in byte: "'t"
+2017-06-23 15:07:39,433 message_id in hex: 2774
+2017-06-23 15:07:39,433 message_id in int: 10100
+2017-06-23 15:07:39,433 version: '\x03'
+2017-06-23 15:07:39,433 firmware: '\x01'
+2017-06-23 15:07:39,433 length of total message: 17
+2017-06-23 15:07:39,433 version: '\x03'
+2017-06-23 15:07:39,433 firmware: '\x01'
+2017-06-23 15:07:39,433 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 15:07:39,433 len cmd: 16
+2017-06-23 15:07:39,433 IV: 6ABA4A480D7764E8F11932D961FA32A8
+2017-06-23 15:07:39,434 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 15:07:39,434 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 15:07:39,434 unlock: FD 9A D6 EA 9C 9E E3 E0 C1 CC 44 84 59 1D 2C E8 F9 
+2017-06-23 15:07:39,434 Length of unlock: 17
+2017-06-23 15:07:39,434 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 15:07:39,434 Send unlock: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 15:07:39,436 Recv: device_id: 2469040358b6e3 is not connected to server.
+2017-06-23 15:07:48,463 Lost connection with: 127.0.0.1:8001
+2017-06-23 15:08:36,943 ------------------------------
+2017-06-23 15:08:36,943 Get connection with 127.0.0.1:8001
+2017-06-23 15:08:36,943 message_id in byte: "'t"
+2017-06-23 15:08:36,943 message_id in hex: 2774
+2017-06-23 15:08:36,943 message_id in int: 10100
+2017-06-23 15:08:36,943 version: '\x03'
+2017-06-23 15:08:36,943 firmware: '\x01'
+2017-06-23 15:08:36,943 length of total message: 17
+2017-06-23 15:08:36,943 version: '\x03'
+2017-06-23 15:08:36,943 firmware: '\x01'
+2017-06-23 15:08:36,943 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 15:08:36,944 len cmd: 16
+2017-06-23 15:08:36,944 IV: AC539E341126BB55811F16EC17BC64CA
+2017-06-23 15:08:36,944 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 15:08:36,944 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 15:08:36,944 unlock: FD 9A D6 EA 9C 9E E3 E0 C1 CC 44 84 59 1D 2C E8 F9 
+2017-06-23 15:08:36,944 Length of unlock: 17
+2017-06-23 15:08:36,944 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 15:08:36,944 Send unlock: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 15:08:36,948 Lost connection with: 127.0.0.1:8001
+2017-06-23 18:00:36,236 ------------------------------
+2017-06-23 18:00:36,236 Get connection with 127.0.0.1:8001
+2017-06-23 18:00:36,236 message_id in byte: "'t"
+2017-06-23 18:00:36,236 message_id in hex: 2774
+2017-06-23 18:00:36,236 message_id in int: 10100
+2017-06-23 18:00:36,236 version: '\x03'
+2017-06-23 18:00:36,236 firmware: '\x01'
+2017-06-23 18:00:36,236 length of total message: 17
+2017-06-23 18:00:36,236 version: '\x03'
+2017-06-23 18:00:36,236 firmware: '\x01'
+2017-06-23 18:00:36,236 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 18:00:36,236 len cmd: 16
+2017-06-23 18:00:36,236 IV: 554A2ECAF897AB589BCA113946FA44A7
+2017-06-23 18:00:36,236 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 18:00:36,236 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 18:00:36,236 unlock: FD 9A D6 EA 9C 9E E3 E0 C1 CC 44 84 59 1D 2C E8 F9 
+2017-06-23 18:00:36,236 Length of unlock: 17
+2017-06-23 18:00:36,236 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 18:00:36,236 Send unlock: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 18:00:36,240 Recv: '\xee\xee\xee\xee'
+2017-06-23 18:02:36,342 Lost connection with: 127.0.0.1:8001
+2017-06-23 18:09:08,811 ------------------------------
+2017-06-23 18:09:08,811 Get connection with 127.0.0.1:8001
+2017-06-23 18:09:08,811 message_id in byte: "'t"
+2017-06-23 18:09:08,812 message_id in hex: 2774
+2017-06-23 18:09:08,812 message_id in int: 10100
+2017-06-23 18:09:08,812 version: '\x03'
+2017-06-23 18:09:08,812 firmware: '\x01'
+2017-06-23 18:09:08,812 length of total message: 17
+2017-06-23 18:09:08,812 version: '\x03'
+2017-06-23 18:09:08,812 firmware: '\x01'
+2017-06-23 18:09:08,812 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 18:09:08,812 len cmd: 16
+2017-06-23 18:09:08,812 IV: 8A9C22F78BFFD0108E92399AD0B90CDE
+2017-06-23 18:09:08,812 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 18:09:08,812 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 18:09:08,812 unlock: FD 9A D6 EA 9C 9E E3 E0 C1 CC 44 84 59 1D 2C E8 F9 
+2017-06-23 18:09:08,812 Length of unlock: 17
+2017-06-23 18:09:08,812 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 18:09:08,812 Send unlock: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 18:09:08,815 Recv: '\xee\xee\xee\xee'
+2017-06-23 18:33:19,976 Lost connection with: 127.0.0.1:8001
+2017-06-23 18:36:31,348 ------------------------------
+2017-06-23 18:36:31,348 Get connection with 127.0.0.1:8001
+2017-06-23 18:36:31,348 message_id in byte: "'t"
+2017-06-23 18:36:31,348 version: '\x03'
+2017-06-23 18:36:31,348 firmware: '\x01'
+2017-06-23 18:36:31,348 length of total message: 17
+2017-06-23 18:36:31,348 version: '\x03'
+2017-06-23 18:36:31,348 firmware: '\x01'
+2017-06-23 18:36:31,348 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 18:36:31,348 len cmd: 16
+2017-06-23 18:36:31,348 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 18:36:31,348 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 18:36:31,349 Length of unlock: 17
+2017-06-23 18:36:31,349 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 18:36:31,349 Send unlock: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 18:36:31,351 Recv: '\xee\xee\xee\xee'
+2017-06-23 18:41:26,448 Lost connection with: 127.0.0.1:8001
+2017-06-23 18:41:45,914 ------------------------------
+2017-06-23 18:41:45,914 Get connection with 127.0.0.1:8001
+2017-06-23 18:41:45,914 message_id in byte: "'t"
+2017-06-23 18:41:45,914 version: '\x03'
+2017-06-23 18:41:45,914 firmware: '\x01'
+2017-06-23 18:41:45,914 length of total message: 17
+2017-06-23 18:41:45,914 version: '\x03'
+2017-06-23 18:41:45,914 firmware: '\x01'
+2017-06-23 18:41:45,914 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 18:41:45,914 len cmd: 16
+2017-06-23 18:41:45,914 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 18:41:45,914 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 18:41:45,914 Length of unlock: 17
+2017-06-23 18:41:45,914 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 18:41:45,914 Send unlock: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 18:41:45,917 Recv: '\xee\xee\xee\xee'
+2017-06-23 18:44:36,375 Device: 2469040358b6e392 doesnt exist in redis.
+2017-06-23 18:44:42,062 Device: 2469040358b6e392 doesnt exist in redis.
+2017-06-23 18:44:48,099 Device: 2469040358b6e392 doesnt exist in redis.
+2017-06-23 18:44:55,529 ------------------------------
+2017-06-23 18:44:55,530 Get connection with 127.0.0.1:8001
+2017-06-23 18:44:55,530 message_type: 
+2017-06-23 18:44:55,530 message_id in byte: "'t"
+2017-06-23 18:44:55,530 version: '\x03'
+2017-06-23 18:44:55,530 firmware: '\x01'
+2017-06-23 18:44:55,530 length of total message: 17
+2017-06-23 18:44:55,530 version: '\x03'
+2017-06-23 18:44:55,530 firmware: '\x01'
+2017-06-23 18:44:55,530 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 18:44:55,530 len cmd: 16
+2017-06-23 18:44:55,530 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 18:44:55,530 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 18:44:55,530 Length of unlock: 17
+2017-06-23 18:44:55,530 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 18:44:55,530 Send unlock: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 18:44:55,533 Recv: '\xee\xee\xee\xee'
+2017-06-23 18:46:32,808 ------------------------------
+2017-06-23 18:46:32,808 Get connection with 127.0.0.1:8001
+2017-06-23 18:46:32,808 message_type: '\x11'
+2017-06-23 18:46:32,808 message_id in byte: "'t"
+2017-06-23 18:46:32,808 version: '\x03'
+2017-06-23 18:46:32,808 firmware: '\x01'
+2017-06-23 18:46:32,808 length of total message: 17
+2017-06-23 18:46:32,808 version: '\x03'
+2017-06-23 18:46:32,808 firmware: '\x01'
+2017-06-23 18:46:32,808 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 18:46:32,808 len cmd: 16
+2017-06-23 18:46:32,809 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 18:46:32,809 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 18:46:32,809 Length of unlock: 17
+2017-06-23 18:46:32,809 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 18:46:32,809 Send unlock: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 18:46:32,811 Recv: '\xee\xee\xee\xee'
+2017-06-23 18:49:55,463 ------------------------------
+2017-06-23 18:49:55,463 Get connection with 127.0.0.1:8001
+2017-06-23 18:49:55,463 message_type: '\x11'
+2017-06-23 18:49:55,463 message_id in byte: "'t"
+2017-06-23 18:49:55,463 version: '\x03'
+2017-06-23 18:49:55,463 firmware: '\x01'
+2017-06-23 18:49:55,463 length of total message: 17
+2017-06-23 18:49:55,464 version: '\x03'
+2017-06-23 18:49:55,464 firmware: '\x01'
+2017-06-23 18:49:55,464 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 18:49:55,464 len cmd: 16
+2017-06-23 18:49:55,464 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 18:49:55,464 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 18:49:55,464 Length of unlock: 17
+2017-06-23 18:49:55,464 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 18:49:55,464 Send unlock: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 18:49:55,467 Recv: '\xee\xee\xee\xee'
+2017-06-23 19:00:20,733 Lost connection with: 127.0.0.1:8001
+2017-06-23 19:00:30,543 ------------------------------
+2017-06-23 19:00:30,543 Get connection with 127.0.0.1:8001
+2017-06-23 19:00:30,543 message_type: '\x11'
+2017-06-23 19:00:30,543 message_id in byte: "'t"
+2017-06-23 19:00:30,545 version: '\x03'
+2017-06-23 19:00:30,545 firmware: '\x01'
+2017-06-23 19:00:30,545 length of total message: 17
+2017-06-23 19:00:30,545 version: '\x03'
+2017-06-23 19:00:30,545 firmware: '\x01'
+2017-06-23 19:00:30,545 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 19:00:30,545 len cmd: 16
+2017-06-23 19:00:30,545 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 19:00:30,545 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 19:00:30,545 Length of unlock: 17
+2017-06-23 19:00:30,545 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 19:00:30,545 Send unlock: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 19:02:05,331 Lost connection with: 127.0.0.1:8001
+2017-06-23 19:02:23,914 ------------------------------
+2017-06-23 19:02:23,914 Get connection with 127.0.0.1:8001
+2017-06-23 19:02:23,914 message_type: '\x11'
+2017-06-23 19:02:23,914 message_id in byte: "'t"
+2017-06-23 19:02:23,914 version: '\x03'
+2017-06-23 19:02:23,914 firmware: '\x01'
+2017-06-23 19:02:23,914 length of total message: 17
+2017-06-23 19:02:23,914 version: '\x03'
+2017-06-23 19:02:23,914 firmware: '\x01'
+2017-06-23 19:02:23,914 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 19:02:23,914 len cmd: 16
+2017-06-23 19:02:23,914 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 19:02:23,914 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 19:02:23,914 Length of unlock: 17
+2017-06-23 19:02:23,914 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 19:02:23,914 Send unlock: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 19:02:23,924 Recv: '\xbb\xbb\xbb\xbb'
+2017-06-23 19:04:26,763 Lost connection with: 127.0.0.1:8001
+2017-06-23 19:04:47,098 ------------------------------
+2017-06-23 19:04:47,098 Get connection with 127.0.0.1:8001
+2017-06-23 19:04:47,098 message_type: '\x11'
+2017-06-23 19:04:47,098 message_id in byte: "'t"
+2017-06-23 19:04:47,098 version: '\x03'
+2017-06-23 19:04:47,098 firmware: '\x01'
+2017-06-23 19:04:47,098 length of total message: 17
+2017-06-23 19:04:47,098 version: '\x03'
+2017-06-23 19:04:47,098 firmware: '\x01'
+2017-06-23 19:04:47,098 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 19:04:47,098 len cmd: 16
+2017-06-23 19:04:47,098 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 19:04:47,098 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 19:04:47,098 Length of unlock: 17
+2017-06-23 19:04:47,098 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 19:04:47,099 Send unlock: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 19:04:47,108 Recv: '\xbb\xbb\xbb\xbb'
+2017-06-23 19:04:47,108 Lost connection with: 127.0.0.1:8001
+2017-06-23 19:05:17,099 Lost connection with: 127.0.0.1:8001
+2017-06-23 19:05:25,713 ------------------------------
+2017-06-23 19:05:25,713 Get connection with 127.0.0.1:8001
+2017-06-23 19:05:25,713 message_type: '\x11'
+2017-06-23 19:05:25,713 message_id in byte: "'t"
+2017-06-23 19:05:25,714 version: '\x03'
+2017-06-23 19:05:25,714 firmware: '\x01'
+2017-06-23 19:05:25,714 length of total message: 17
+2017-06-23 19:05:25,714 version: '\x03'
+2017-06-23 19:05:25,714 firmware: '\x01'
+2017-06-23 19:05:25,714 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 19:05:25,714 len cmd: 16
+2017-06-23 19:05:25,714 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 19:05:25,714 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 19:05:25,714 Length of unlock: 17
+2017-06-23 19:05:25,714 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 19:05:25,714 Send unlock: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 19:05:25,723 Recv: '\xbb\xbb\xbb\xbb'
+2017-06-23 19:05:25,723 Lost connection with: 127.0.0.1:8001
+2017-06-23 19:05:42,558 ------------------------------
+2017-06-23 19:05:42,558 Get connection with 127.0.0.1:8001
+2017-06-23 19:05:42,558 message_type: '\x11'
+2017-06-23 19:05:42,558 message_id in byte: "'t"
+2017-06-23 19:05:42,559 version: '\x03'
+2017-06-23 19:05:42,559 firmware: '\x01'
+2017-06-23 19:05:42,559 length of total message: 17
+2017-06-23 19:05:42,559 version: '\x03'
+2017-06-23 19:05:42,559 firmware: '\x01'
+2017-06-23 19:05:42,559 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 19:05:42,559 len cmd: 16
+2017-06-23 19:05:42,559 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 19:05:42,559 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 19:05:42,559 Length of unlock: 17
+2017-06-23 19:05:42,559 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 19:05:42,559 Send unlock: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 19:05:42,566 Recv: '\xbb\xbb\xbb\xbb'
+2017-06-23 19:05:42,568 Lost connection with: 127.0.0.1:8001
+2017-06-23 19:10:29,227 ------------------------------
+2017-06-23 19:10:29,227 Get connection with 127.0.0.1:8001
+2017-06-23 19:10:29,227 message_type: '\x11'
+2017-06-23 19:10:29,229 message_id in byte: "'t"
+2017-06-23 19:10:29,229 version: '\x03'
+2017-06-23 19:10:29,229 firmware: '\x01'
+2017-06-23 19:10:29,229 length of total message: 17
+2017-06-23 19:10:29,229 version: '\x03'
+2017-06-23 19:10:29,229 firmware: '\x01'
+2017-06-23 19:10:29,229 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 19:10:29,229 len cmd: 16
+2017-06-23 19:10:29,229 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 19:10:29,229 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 19:10:29,229 Length of unlock: 17
+2017-06-23 19:10:29,229 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 19:10:29,229 Send unlock: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 19:10:29,237 Recv: '\xbb\xbb\xbb\xbb'
+2017-06-23 19:10:29,237 Lost connection with: 127.0.0.1:8001
+2017-06-23 19:10:59,227 Lost connection with: 127.0.0.1:8001

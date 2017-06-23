@@ -1,76 +1,831 @@
-2017-06-22 10:27:55,821 ------------------------------
-2017-06-22 10:27:55,821 Get connection with 127.0.0.1:8001
-2017-06-22 10:27:55,821 message_id in byte: "'t"
-2017-06-22 10:27:55,822 message_id in hex: 2774
-2017-06-22 10:27:55,822 message_id in int: 10100
-2017-06-22 10:27:55,822 version: '\x03'
-2017-06-22 10:27:55,822 firmware: '\x01'
-2017-06-22 10:27:55,822 length of total message: 17
-2017-06-22 10:27:55,822 version: '\x03'
-2017-06-22 10:27:55,822 firmware: '\x01'
-2017-06-22 10:27:55,822 heartbeat: AA 00 11 03 01 27 74 01 FF FF FF FF FF FF FF FF 60 
-2017-06-22 10:27:55,822 Length of heartbeat: 17
-2017-06-22 10:27:55,822 vrfy_crc: '`' , crc: '`'
-2017-06-22 10:27:55,822 Send heartbeat: 'aa00110301277401ffffffffffffffff60'
-2017-06-22 10:27:55,831 Recv: 'aa00110302277401ffffffffffffffff87'
-2017-06-22 10:29:00,686 ------------------------------
-2017-06-22 10:29:00,686 Get connection with 127.0.0.1:8001
-2017-06-22 10:29:00,686 message_id in byte: "'t"
-2017-06-22 10:29:00,686 message_id in hex: 2774
-2017-06-22 10:29:00,686 message_id in int: 10100
-2017-06-22 10:29:00,686 version: '\x03'
-2017-06-22 10:29:00,686 firmware: '\x01'
-2017-06-22 10:29:00,687 length of total message: 17
-2017-06-22 10:29:00,687 version: '\x03'
-2017-06-22 10:29:00,687 firmware: '\x01'
-2017-06-22 10:29:00,687 heartbeat: AA 00 11 03 01 27 74 01 FF FF FF FF FF FF FF FF 60 
-2017-06-22 10:29:00,687 Length of heartbeat: 17
-2017-06-22 10:29:00,687 vrfy_crc: '`' , crc: '`'
-2017-06-22 10:29:00,687 Send heartbeat: 'aa00110301277401ffffffffffffffff60'
-2017-06-22 10:29:00,688 Recv: 'aa00110302277401ffffffffffffffff87'
-2017-06-22 10:33:03,447 ------------------------------
-2017-06-22 10:33:03,447 Get connection with 127.0.0.1:8001
-2017-06-22 10:33:03,447 message_id in byte: "'t"
-2017-06-22 10:33:03,447 message_id in hex: 2774
-2017-06-22 10:33:03,447 message_id in int: 10100
-2017-06-22 10:33:03,447 version: '\x03'
-2017-06-22 10:33:03,447 firmware: '\x01'
-2017-06-22 10:33:03,447 length of total message: 17
-2017-06-22 10:33:03,447 version: '\x03'
-2017-06-22 10:33:03,447 firmware: '\x01'
-2017-06-22 10:33:03,447 heartbeat: AA 00 11 03 11 27 74 01 FF FF FF FF FF FF FF FF AB 
-2017-06-22 10:33:03,447 Length of heartbeat: 17
-2017-06-22 10:33:03,447 vrfy_crc: '\xab' , crc: '\xab'
-2017-06-22 10:33:03,447 Send heartbeat: 'aa00110311277401ffffffffffffffffab'
-2017-06-22 10:33:03,451 Lost connection with: 127.0.0.1:8001
-2017-06-22 11:33:39,621 ------------------------------
-2017-06-22 11:33:39,621 Get connection with 127.0.0.1:8001
-2017-06-22 11:33:39,621 message_id in byte: "'t"
-2017-06-22 11:33:39,621 message_id in hex: 2774
-2017-06-22 11:33:39,621 message_id in int: 10100
-2017-06-22 11:33:39,621 version: '\x03'
-2017-06-22 11:33:39,621 firmware: '\x01'
-2017-06-22 11:33:39,621 length of total message: 17
-2017-06-22 11:33:39,621 version: '\x03'
-2017-06-22 11:33:39,621 firmware: '\x01'
-2017-06-22 11:33:39,621 heartbeat: AA 00 11 03 11 27 74 01 FF FF FF FF FF FF FF FF AB 
-2017-06-22 11:33:39,621 Length of heartbeat: 17
-2017-06-22 11:33:39,621 vrfy_crc: '\xab' , crc: '\xab'
-2017-06-22 11:33:39,621 Send heartbeat: 'aa00110311277401ffffffffffffffffab'
-2017-06-22 11:33:39,631 Lost connection with: 127.0.0.1:8001
-2017-06-22 11:34:06,223 ------------------------------
-2017-06-22 11:34:06,223 Get connection with 127.0.0.1:8001
-2017-06-22 11:34:06,223 message_id in byte: "'t"
-2017-06-22 11:34:06,223 message_id in hex: 2774
-2017-06-22 11:34:06,223 message_id in int: 10100
-2017-06-22 11:34:06,223 version: '\x03'
-2017-06-22 11:34:06,223 firmware: '\x01'
-2017-06-22 11:34:06,223 length of total message: 17
-2017-06-22 11:34:06,223 version: '\x03'
-2017-06-22 11:34:06,223 firmware: '\x01'
-2017-06-22 11:34:06,223 heartbeat: AA 00 11 03 01 27 74 01 FF FF FF FF FF FF FF FF 60 
-2017-06-22 11:34:06,223 Length of heartbeat: 17
-2017-06-22 11:34:06,223 vrfy_crc: '`' , crc: '`'
-2017-06-22 11:34:06,223 Send heartbeat: 'aa00110301277401ffffffffffffffff60'
-2017-06-22 11:34:06,226 Recv: 'aa00110302277401ffffffffffffffff87'
-2017-06-22 11:34:11,290 Recv: 'Unlock message goes here...'
+2017-06-23 14:17:23,292 ------------------------------
+2017-06-23 14:17:23,292 Get connection with 127.0.0.1:8001
+2017-06-23 14:17:23,293 message_id in byte: "'t"
+2017-06-23 14:17:23,293 message_id in hex: 2774
+2017-06-23 14:17:23,293 message_id in int: 10100
+2017-06-23 14:17:23,293 version: '\x03'
+2017-06-23 14:17:23,293 firmware: '\x01'
+2017-06-23 14:17:23,293 length of total message: 17
+2017-06-23 14:17:23,293 version: '\x03'
+2017-06-23 14:17:23,293 firmware: '\x01'
+2017-06-23 14:17:23,293 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 14:17:23,293 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 14:17:23,293 Length of heartbeat: 17
+2017-06-23 14:17:23,293 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 14:17:23,296 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 14:17:23,303 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 14:17:23,303 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 14:17:23,303 ------------------------------
+2017-06-23 14:17:23,303 Real data before encrypt/decrypt.
+2017-06-23 14:17:23,303 start: '\xaa'
+2017-06-23 14:17:23,305 length: 17 bytes
+2017-06-23 14:17:23,305 version: '\x03'
+2017-06-23 14:17:23,305 message_type: '\x02'
+2017-06-23 14:17:23,305 message_id: "'t"
+2017-06-23 14:17:23,305 firmware: '\x01'
+2017-06-23 14:17:23,305 device_id: 2469040358b6e392
+2017-06-23 14:17:23,305 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 14:17:23,305 Detected normal_ack...
+2017-06-23 14:17:23,305 Maintain...
+2017-06-23 14:31:30,361 Lost connection with: 127.0.0.1:8001
+2017-06-23 14:31:34,456 ------------------------------
+2017-06-23 14:31:34,456 Get connection with 127.0.0.1:8001
+2017-06-23 14:31:34,456 message_id in byte: "'t"
+2017-06-23 14:31:34,456 message_id in hex: 2774
+2017-06-23 14:31:34,456 message_id in int: 10100
+2017-06-23 14:31:34,457 version: '\x03'
+2017-06-23 14:31:34,457 firmware: '\x01'
+2017-06-23 14:31:34,457 length of total message: 17
+2017-06-23 14:31:34,457 version: '\x03'
+2017-06-23 14:31:34,457 firmware: '\x01'
+2017-06-23 14:31:34,457 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 14:31:34,457 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 14:31:34,457 Length of heartbeat: 17
+2017-06-23 14:31:34,457 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 14:31:34,457 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 14:31:34,464 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 14:31:34,464 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 14:31:34,464 ------------------------------
+2017-06-23 14:31:34,466 Real data before encrypt/decrypt.
+2017-06-23 14:31:34,466 start: '\xaa'
+2017-06-23 14:31:34,466 length: 17 bytes
+2017-06-23 14:31:34,466 version: '\x03'
+2017-06-23 14:31:34,466 message_type: '\x02'
+2017-06-23 14:31:34,466 message_id: "'t"
+2017-06-23 14:31:34,466 firmware: '\x01'
+2017-06-23 14:31:34,466 device_id: 2469040358b6e392
+2017-06-23 14:31:34,466 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 14:31:34,466 Detected normal_ack...
+2017-06-23 14:31:34,466 Maintain...
+2017-06-23 14:54:41,316 Lost connection with: 127.0.0.1:8001
+2017-06-23 14:54:55,198 ------------------------------
+2017-06-23 14:54:55,198 Get connection with 127.0.0.1:8001
+2017-06-23 14:54:55,198 message_id in byte: "'t"
+2017-06-23 14:54:55,198 message_id in hex: 2774
+2017-06-23 14:54:55,198 message_id in int: 10100
+2017-06-23 14:54:55,198 version: '\x03'
+2017-06-23 14:54:55,198 firmware: '\x01'
+2017-06-23 14:54:55,198 length of total message: 17
+2017-06-23 14:54:55,198 version: '\x03'
+2017-06-23 14:54:55,198 firmware: '\x01'
+2017-06-23 14:54:55,200 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 14:54:55,200 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 14:54:55,200 Length of heartbeat: 17
+2017-06-23 14:54:55,200 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 14:54:55,200 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 14:54:55,207 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 14:54:55,207 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 14:54:55,207 ------------------------------
+2017-06-23 14:54:55,207 Real data before encrypt/decrypt.
+2017-06-23 14:54:55,207 start: '\xaa'
+2017-06-23 14:54:55,207 length: 17 bytes
+2017-06-23 14:54:55,209 version: '\x03'
+2017-06-23 14:54:55,209 message_type: '\x02'
+2017-06-23 14:54:55,209 message_id: "'t"
+2017-06-23 14:54:55,209 firmware: '\x01'
+2017-06-23 14:54:55,209 device_id: 2469040358b6e392
+2017-06-23 14:54:55,209 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 14:54:55,209 Detected normal_ack...
+2017-06-23 14:54:55,209 Maintain...
+2017-06-23 14:57:14,105 Lost connection with: 127.0.0.1:8001
+2017-06-23 14:57:27,450 ------------------------------
+2017-06-23 14:57:27,450 Get connection with 127.0.0.1:8001
+2017-06-23 14:57:27,450 message_id in byte: "'t"
+2017-06-23 14:57:27,450 message_id in hex: 2774
+2017-06-23 14:57:27,450 message_id in int: 10100
+2017-06-23 14:57:27,451 version: '\x03'
+2017-06-23 14:57:27,451 firmware: '\x01'
+2017-06-23 14:57:27,451 length of total message: 17
+2017-06-23 14:57:27,451 version: '\x03'
+2017-06-23 14:57:27,451 firmware: '\x01'
+2017-06-23 14:57:27,451 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 14:57:27,451 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 14:57:27,451 Length of heartbeat: 17
+2017-06-23 14:57:27,451 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 14:57:27,451 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 14:57:27,460 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 14:57:27,460 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 14:57:27,460 ------------------------------
+2017-06-23 14:57:27,460 Real data before encrypt/decrypt.
+2017-06-23 14:57:27,460 start: '\xaa'
+2017-06-23 14:57:27,460 length: 17 bytes
+2017-06-23 14:57:27,460 version: '\x03'
+2017-06-23 14:57:27,460 message_type: '\x02'
+2017-06-23 14:57:27,460 message_id: "'t"
+2017-06-23 14:57:27,460 firmware: '\x01'
+2017-06-23 14:57:27,460 device_id: 2469040358b6e392
+2017-06-23 14:57:27,460 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 14:57:27,460 Detected normal_ack...
+2017-06-23 14:57:27,460 Maintain...
+2017-06-23 15:00:15,617 Lost connection with: 127.0.0.1:8001
+2017-06-23 15:00:21,713 ------------------------------
+2017-06-23 15:00:21,713 Get connection with 127.0.0.1:8001
+2017-06-23 15:00:21,713 message_id in byte: "'t"
+2017-06-23 15:00:21,713 message_id in hex: 2774
+2017-06-23 15:00:21,713 message_id in int: 10100
+2017-06-23 15:00:21,713 version: '\x03'
+2017-06-23 15:00:21,713 firmware: '\x01'
+2017-06-23 15:00:21,713 length of total message: 17
+2017-06-23 15:00:21,713 version: '\x03'
+2017-06-23 15:00:21,713 firmware: '\x01'
+2017-06-23 15:00:21,713 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 15:00:21,713 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 15:00:21,713 Length of heartbeat: 17
+2017-06-23 15:00:21,713 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 15:00:21,713 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 15:00:21,717 Lost connection with: 127.0.0.1:8001
+2017-06-23 15:00:56,831 ------------------------------
+2017-06-23 15:00:56,831 Get connection with 127.0.0.1:8001
+2017-06-23 15:00:56,831 message_id in byte: "'t"
+2017-06-23 15:00:56,831 message_id in hex: 2774
+2017-06-23 15:00:56,831 message_id in int: 10100
+2017-06-23 15:00:56,831 version: '\x03'
+2017-06-23 15:00:56,831 firmware: '\x01'
+2017-06-23 15:00:56,831 length of total message: 17
+2017-06-23 15:00:56,832 version: '\x03'
+2017-06-23 15:00:56,832 firmware: '\x01'
+2017-06-23 15:00:56,832 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 15:00:56,832 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 15:00:56,832 Length of heartbeat: 17
+2017-06-23 15:00:56,832 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 15:00:56,832 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 15:00:56,839 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 15:00:56,839 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 15:00:56,839 ------------------------------
+2017-06-23 15:00:56,839 Real data before encrypt/decrypt.
+2017-06-23 15:00:56,841 start: '\xaa'
+2017-06-23 15:00:56,841 length: 17 bytes
+2017-06-23 15:00:56,841 version: '\x03'
+2017-06-23 15:00:56,841 message_type: '\x02'
+2017-06-23 15:00:56,841 message_id: "'t"
+2017-06-23 15:00:56,841 firmware: '\x01'
+2017-06-23 15:00:56,841 device_id: 2469040358b6e392
+2017-06-23 15:00:56,841 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 15:00:56,841 Detected normal_ack...
+2017-06-23 15:00:56,841 Maintain...
+2017-06-23 15:01:24,792 Lost connection with: 127.0.0.1:8001
+2017-06-23 15:07:31,467 ------------------------------
+2017-06-23 15:07:31,467 Get connection with 127.0.0.1:8001
+2017-06-23 15:07:31,467 message_id in byte: "'t"
+2017-06-23 15:07:31,467 message_id in hex: 2774
+2017-06-23 15:07:31,467 message_id in int: 10100
+2017-06-23 15:07:31,467 version: '\x03'
+2017-06-23 15:07:31,467 firmware: '\x01'
+2017-06-23 15:07:31,467 length of total message: 17
+2017-06-23 15:07:31,467 version: '\x03'
+2017-06-23 15:07:31,467 firmware: '\x01'
+2017-06-23 15:07:31,467 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 15:07:31,467 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 15:07:31,467 Length of heartbeat: 17
+2017-06-23 15:07:31,467 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 15:07:31,467 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 15:07:31,476 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 15:07:31,476 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 15:07:31,476 ------------------------------
+2017-06-23 15:07:31,476 Real data before encrypt/decrypt.
+2017-06-23 15:07:31,476 start: '\xaa'
+2017-06-23 15:07:31,476 length: 17 bytes
+2017-06-23 15:07:31,476 version: '\x03'
+2017-06-23 15:07:31,476 message_type: '\x02'
+2017-06-23 15:07:31,476 message_id: "'t"
+2017-06-23 15:07:31,476 firmware: '\x01'
+2017-06-23 15:07:31,476 device_id: 2469040358b6e392
+2017-06-23 15:07:31,476 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 15:07:31,476 Detected normal_ack...
+2017-06-23 15:07:31,476 Maintain...
+2017-06-23 15:07:48,463 Lost connection with: 127.0.0.1:8001
+2017-06-23 15:08:34,352 ------------------------------
+2017-06-23 15:08:34,354 Get connection with 127.0.0.1:8001
+2017-06-23 15:08:34,354 message_id in byte: "'t"
+2017-06-23 15:08:34,354 message_id in hex: 2774
+2017-06-23 15:08:34,354 message_id in int: 10100
+2017-06-23 15:08:34,354 version: '\x03'
+2017-06-23 15:08:34,354 firmware: '\x01'
+2017-06-23 15:08:34,354 length of total message: 17
+2017-06-23 15:08:34,354 version: '\x03'
+2017-06-23 15:08:34,354 firmware: '\x01'
+2017-06-23 15:08:34,354 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 15:08:34,354 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 15:08:34,354 Length of heartbeat: 17
+2017-06-23 15:08:34,354 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 15:08:34,354 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 15:08:34,362 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 15:08:34,364 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 15:08:34,364 ------------------------------
+2017-06-23 15:08:34,364 Real data before encrypt/decrypt.
+2017-06-23 15:08:34,364 start: '\xaa'
+2017-06-23 15:08:34,364 length: 17 bytes
+2017-06-23 15:08:34,364 version: '\x03'
+2017-06-23 15:08:34,364 message_type: '\x02'
+2017-06-23 15:08:34,364 message_id: "'t"
+2017-06-23 15:08:34,364 firmware: '\x01'
+2017-06-23 15:08:34,364 device_id: 2469040358b6e392
+2017-06-23 15:08:34,364 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 15:08:34,364 Detected normal_ack...
+2017-06-23 15:08:34,364 Maintain...
+2017-06-23 18:00:32,619 ------------------------------
+2017-06-23 18:00:32,619 Get connection with 127.0.0.1:8001
+2017-06-23 18:00:32,619 message_id in byte: "'t"
+2017-06-23 18:00:32,621 message_id in hex: 2774
+2017-06-23 18:00:32,621 message_id in int: 10100
+2017-06-23 18:00:32,621 version: '\x03'
+2017-06-23 18:00:32,621 firmware: '\x01'
+2017-06-23 18:00:32,621 length of total message: 17
+2017-06-23 18:00:32,621 version: '\x03'
+2017-06-23 18:00:32,621 firmware: '\x01'
+2017-06-23 18:00:32,621 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 18:00:32,621 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 18:00:32,621 Length of heartbeat: 17
+2017-06-23 18:00:32,621 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 18:00:32,621 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 18:00:32,628 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 18:00:32,630 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 18:00:32,630 ------------------------------
+2017-06-23 18:00:32,630 Real data before encrypt/decrypt.
+2017-06-23 18:00:32,630 start: '\xaa'
+2017-06-23 18:00:32,630 length: 17 bytes
+2017-06-23 18:00:32,630 version: '\x03'
+2017-06-23 18:00:32,630 message_type: '\x02'
+2017-06-23 18:00:32,630 message_id: "'t"
+2017-06-23 18:00:32,630 firmware: '\x01'
+2017-06-23 18:00:32,630 device_id: 2469040358b6e392
+2017-06-23 18:00:32,630 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 18:00:32,630 Detected normal_ack...
+2017-06-23 18:00:32,630 Maintain...
+2017-06-23 18:02:36,344 Lost connection with: 127.0.0.1:8001
+2017-06-23 18:03:25,950 ------------------------------
+2017-06-23 18:03:25,950 Get connection with 127.0.0.1:8001
+2017-06-23 18:03:25,950 message_id in byte: "'t"
+2017-06-23 18:03:25,950 message_id in hex: 2774
+2017-06-23 18:03:25,950 message_id in int: 10100
+2017-06-23 18:03:25,950 version: '\x03'
+2017-06-23 18:03:25,950 firmware: '\x01'
+2017-06-23 18:03:25,950 length of total message: 17
+2017-06-23 18:03:25,951 version: '\x03'
+2017-06-23 18:03:25,951 firmware: '\x01'
+2017-06-23 18:03:25,951 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 18:03:25,951 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 18:03:25,951 Length of heartbeat: 17
+2017-06-23 18:03:25,951 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 18:03:25,951 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 18:03:25,960 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 18:03:25,960 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 18:03:25,960 ------------------------------
+2017-06-23 18:03:25,960 Real data before encrypt/decrypt.
+2017-06-23 18:03:25,960 start: '\xaa'
+2017-06-23 18:03:25,960 length: 17 bytes
+2017-06-23 18:03:25,960 version: '\x03'
+2017-06-23 18:03:25,960 message_type: '\x02'
+2017-06-23 18:03:25,960 message_id: "'t"
+2017-06-23 18:03:25,960 firmware: '\x01'
+2017-06-23 18:03:25,960 device_id: 2469040358b6e392
+2017-06-23 18:03:25,960 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 18:03:25,960 Detected normal_ack...
+2017-06-23 18:03:25,960 Maintain...
+2017-06-23 18:05:20,871 Lost connection with: 127.0.0.1:8001
+2017-06-23 18:05:32,812 ------------------------------
+2017-06-23 18:05:32,812 Get connection with 127.0.0.1:8001
+2017-06-23 18:05:32,812 message_id in byte: "'t"
+2017-06-23 18:05:32,812 message_id in hex: 2774
+2017-06-23 18:05:32,812 message_id in int: 10100
+2017-06-23 18:05:32,812 version: '\x03'
+2017-06-23 18:05:32,812 firmware: '\x01'
+2017-06-23 18:05:32,812 length of total message: 17
+2017-06-23 18:05:32,812 version: '\x03'
+2017-06-23 18:05:32,812 firmware: '\x01'
+2017-06-23 18:05:32,812 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 18:05:32,812 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 18:05:32,812 Length of heartbeat: 17
+2017-06-23 18:05:32,812 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 18:05:32,812 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 18:05:32,819 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 18:05:32,819 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 18:05:32,819 ------------------------------
+2017-06-23 18:05:32,821 Real data before encrypt/decrypt.
+2017-06-23 18:05:32,821 start: '\xaa'
+2017-06-23 18:05:32,821 length: 17 bytes
+2017-06-23 18:05:32,821 version: '\x03'
+2017-06-23 18:05:32,821 message_type: '\x02'
+2017-06-23 18:05:32,821 message_id: "'t"
+2017-06-23 18:05:32,821 firmware: '\x01'
+2017-06-23 18:05:32,821 device_id: 2469040358b6e392
+2017-06-23 18:05:32,821 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 18:05:32,821 Detected normal_ack...
+2017-06-23 18:05:32,821 Maintain...
+2017-06-23 18:05:42,279 ------------------------------
+2017-06-23 18:05:42,279 Get connection with 127.0.0.1:8001
+2017-06-23 18:05:42,279 message_id in byte: "'t"
+2017-06-23 18:05:42,279 message_id in hex: 2774
+2017-06-23 18:05:42,279 message_id in int: 10100
+2017-06-23 18:05:42,279 version: '\x03'
+2017-06-23 18:05:42,279 firmware: '\x01'
+2017-06-23 18:05:42,279 length of total message: 17
+2017-06-23 18:05:42,279 version: '\x03'
+2017-06-23 18:05:42,279 firmware: '\x01'
+2017-06-23 18:05:42,279 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 18:05:42,279 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 18:05:42,279 Length of heartbeat: 17
+2017-06-23 18:05:42,279 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 18:05:42,280 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 18:05:42,283 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 18:05:42,283 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 18:05:42,283 ------------------------------
+2017-06-23 18:05:42,283 Real data before encrypt/decrypt.
+2017-06-23 18:05:42,283 start: '\xaa'
+2017-06-23 18:05:42,283 length: 17 bytes
+2017-06-23 18:05:42,283 version: '\x03'
+2017-06-23 18:05:42,283 message_type: '\x02'
+2017-06-23 18:05:42,283 message_id: "'t"
+2017-06-23 18:05:42,283 firmware: '\x01'
+2017-06-23 18:05:42,283 device_id: 2469040358b6e392
+2017-06-23 18:05:42,283 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 18:05:42,283 Detected normal_ack...
+2017-06-23 18:05:42,283 Maintain...
+2017-06-23 18:06:03,150 Lost connection with: 127.0.0.1:8001
+2017-06-23 18:06:10,903 ------------------------------
+2017-06-23 18:06:10,903 Get connection with 127.0.0.1:8001
+2017-06-23 18:06:10,903 message_id in byte: "'t"
+2017-06-23 18:06:10,903 message_id in hex: 2774
+2017-06-23 18:06:10,903 message_id in int: 10100
+2017-06-23 18:06:10,903 version: '\x03'
+2017-06-23 18:06:10,903 firmware: '\x01'
+2017-06-23 18:06:10,903 length of total message: 17
+2017-06-23 18:06:10,903 version: '\x03'
+2017-06-23 18:06:10,903 firmware: '\x01'
+2017-06-23 18:06:10,903 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 18:06:10,903 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 18:06:10,903 Length of heartbeat: 17
+2017-06-23 18:06:10,903 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 18:06:10,904 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 18:06:10,911 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 18:06:10,911 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 18:06:10,911 ------------------------------
+2017-06-23 18:06:10,911 Real data before encrypt/decrypt.
+2017-06-23 18:06:10,911 start: '\xaa'
+2017-06-23 18:06:10,911 length: 17 bytes
+2017-06-23 18:06:10,911 version: '\x03'
+2017-06-23 18:06:10,911 message_type: '\x02'
+2017-06-23 18:06:10,911 message_id: "'t"
+2017-06-23 18:06:10,911 firmware: '\x01'
+2017-06-23 18:06:10,913 device_id: 2469040358b6e392
+2017-06-23 18:06:10,913 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 18:06:10,913 Detected normal_ack...
+2017-06-23 18:06:10,913 Maintain...
+2017-06-23 18:33:19,976 Lost connection with: 127.0.0.1:8001
+2017-06-23 18:33:30,634 ------------------------------
+2017-06-23 18:33:30,634 Get connection with 127.0.0.1:8001
+2017-06-23 18:33:30,634 message_id in byte: "'t"
+2017-06-23 18:33:30,634 message_id in hex: 2774
+2017-06-23 18:33:30,634 message_id in int: 10100
+2017-06-23 18:33:30,634 version: '\x03'
+2017-06-23 18:33:30,634 firmware: '\x01'
+2017-06-23 18:33:30,634 length of total message: 17
+2017-06-23 18:33:30,634 version: '\x03'
+2017-06-23 18:33:30,634 firmware: '\x01'
+2017-06-23 18:33:30,634 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 18:33:30,634 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 18:33:30,634 Length of heartbeat: 17
+2017-06-23 18:33:30,634 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 18:33:30,634 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 18:34:58,499 Lost connection with: 127.0.0.1:8001
+2017-06-23 18:35:02,763 ------------------------------
+2017-06-23 18:35:02,763 Get connection with 127.0.0.1:8001
+2017-06-23 18:35:02,763 message_id in byte: "'t"
+2017-06-23 18:35:02,763 message_id in hex: 2774
+2017-06-23 18:35:02,763 message_id in int: 10100
+2017-06-23 18:35:02,763 version: '\x03'
+2017-06-23 18:35:02,763 firmware: '\x01'
+2017-06-23 18:35:02,763 length of total message: 17
+2017-06-23 18:35:02,763 version: '\x03'
+2017-06-23 18:35:02,763 firmware: '\x01'
+2017-06-23 18:35:02,763 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 18:35:02,763 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 18:35:02,763 Length of heartbeat: 17
+2017-06-23 18:35:02,763 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 18:35:02,763 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 18:35:02,772 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 18:35:02,772 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 18:35:02,772 ------------------------------
+2017-06-23 18:35:02,772 Real data before encrypt/decrypt.
+2017-06-23 18:35:02,772 start: '\xaa'
+2017-06-23 18:35:02,772 length: 17 bytes
+2017-06-23 18:35:02,772 version: '\x03'
+2017-06-23 18:35:02,772 message_type: '\x02'
+2017-06-23 18:35:02,772 message_id: "'t"
+2017-06-23 18:35:02,772 firmware: '\x01'
+2017-06-23 18:35:02,772 device_id: 2469040358b6e392
+2017-06-23 18:35:02,772 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 18:35:02,772 Detected normal_ack...
+2017-06-23 18:35:02,772 Maintain...
+2017-06-23 18:41:26,448 Lost connection with: 127.0.0.1:8001
+2017-06-23 18:41:41,296 ------------------------------
+2017-06-23 18:41:41,296 Get connection with 127.0.0.1:8001
+2017-06-23 18:41:41,296 message_id in byte: "'t"
+2017-06-23 18:41:41,296 message_id in hex: 2774
+2017-06-23 18:41:41,296 message_id in int: 10100
+2017-06-23 18:41:41,296 version: '\x03'
+2017-06-23 18:41:41,296 firmware: '\x01'
+2017-06-23 18:41:41,296 length of total message: 17
+2017-06-23 18:41:41,296 version: '\x03'
+2017-06-23 18:41:41,296 firmware: '\x01'
+2017-06-23 18:41:41,296 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 18:41:41,296 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 18:41:41,296 Length of heartbeat: 17
+2017-06-23 18:41:41,296 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 18:41:41,296 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 18:41:41,305 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 18:41:41,305 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 18:41:41,305 ------------------------------
+2017-06-23 18:41:41,305 Real data before encrypt/decrypt.
+2017-06-23 18:41:41,305 start: '\xaa'
+2017-06-23 18:41:41,305 length: 17 bytes
+2017-06-23 18:41:41,305 version: '\x03'
+2017-06-23 18:41:41,305 message_type: '\x02'
+2017-06-23 18:41:41,305 message_id: "'t"
+2017-06-23 18:41:41,305 firmware: '\x01'
+2017-06-23 18:41:41,305 device_id: 2469040358b6e392
+2017-06-23 18:41:41,305 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 18:41:41,305 Detected normal_ack...
+2017-06-23 18:41:41,305 Maintain...
+2017-06-23 18:44:52,118 ------------------------------
+2017-06-23 18:44:52,119 Get connection with 127.0.0.1:8001
+2017-06-23 18:44:52,119 message_id in byte: "'t"
+2017-06-23 18:44:52,119 message_id in hex: 2774
+2017-06-23 18:44:52,119 message_id in int: 10100
+2017-06-23 18:44:52,119 version: '\x03'
+2017-06-23 18:44:52,119 firmware: '\x01'
+2017-06-23 18:44:52,119 length of total message: 17
+2017-06-23 18:44:52,119 version: '\x03'
+2017-06-23 18:44:52,119 firmware: '\x01'
+2017-06-23 18:44:52,119 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 18:44:52,119 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 18:44:52,119 Length of heartbeat: 17
+2017-06-23 18:44:52,119 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 18:44:52,119 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 18:44:52,124 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 18:44:52,124 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 18:44:52,124 ------------------------------
+2017-06-23 18:44:52,124 Real data before encrypt/decrypt.
+2017-06-23 18:44:52,124 start: '\xaa'
+2017-06-23 18:44:52,124 length: 17 bytes
+2017-06-23 18:44:52,124 version: '\x03'
+2017-06-23 18:44:52,124 message_type: '\x02'
+2017-06-23 18:44:52,124 message_id: "'t"
+2017-06-23 18:44:52,124 firmware: '\x01'
+2017-06-23 18:44:52,124 device_id: 2469040358b6e392
+2017-06-23 18:44:52,124 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 18:44:52,124 Detected normal_ack...
+2017-06-23 18:44:52,124 Maintain...
+2017-06-23 18:49:35,009 Lost connection with: 127.0.0.1:8001
+2017-06-23 18:49:52,315 ------------------------------
+2017-06-23 18:49:52,315 Get connection with 127.0.0.1:8001
+2017-06-23 18:49:52,315 message_id in byte: "'t"
+2017-06-23 18:49:52,315 message_id in hex: 2774
+2017-06-23 18:49:52,315 message_id in int: 10100
+2017-06-23 18:49:52,315 version: '\x03'
+2017-06-23 18:49:52,315 firmware: '\x01'
+2017-06-23 18:49:52,315 length of total message: 17
+2017-06-23 18:49:52,315 version: '\x03'
+2017-06-23 18:49:52,315 firmware: '\x01'
+2017-06-23 18:49:52,315 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 18:49:52,316 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 18:49:52,316 Length of heartbeat: 17
+2017-06-23 18:49:52,316 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 18:49:52,316 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 18:49:52,323 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 18:49:52,325 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 18:49:52,325 ------------------------------
+2017-06-23 18:49:52,325 Real data before encrypt/decrypt.
+2017-06-23 18:49:52,325 start: '\xaa'
+2017-06-23 18:49:52,325 length: 17 bytes
+2017-06-23 18:49:52,325 version: '\x03'
+2017-06-23 18:49:52,325 message_type: '\x02'
+2017-06-23 18:49:52,325 message_id: "'t"
+2017-06-23 18:49:52,325 firmware: '\x01'
+2017-06-23 18:49:52,325 device_id: 2469040358b6e392
+2017-06-23 18:49:52,325 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 18:49:52,325 Detected normal_ack...
+2017-06-23 18:49:52,325 Maintain...
+2017-06-23 19:00:20,733 Lost connection with: 127.0.0.1:8001
+2017-06-23 19:00:25,224 ------------------------------
+2017-06-23 19:00:25,224 Get connection with 127.0.0.1:8001
+2017-06-23 19:00:25,226 message_id in byte: "'t"
+2017-06-23 19:00:25,226 message_id in hex: 2774
+2017-06-23 19:00:25,226 message_id in int: 10100
+2017-06-23 19:00:25,226 version: '\x03'
+2017-06-23 19:00:25,226 firmware: '\x01'
+2017-06-23 19:00:25,226 length of total message: 17
+2017-06-23 19:00:25,226 version: '\x03'
+2017-06-23 19:00:25,226 firmware: '\x01'
+2017-06-23 19:00:25,226 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 19:00:25,226 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 19:00:25,226 Length of heartbeat: 17
+2017-06-23 19:00:25,226 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 19:00:25,226 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 19:00:25,234 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 19:00:25,234 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 19:00:25,234 ------------------------------
+2017-06-23 19:00:25,234 Real data before encrypt/decrypt.
+2017-06-23 19:00:25,234 start: '\xaa'
+2017-06-23 19:00:25,234 length: 17 bytes
+2017-06-23 19:00:25,234 version: '\x03'
+2017-06-23 19:00:25,234 message_type: '\x02'
+2017-06-23 19:00:25,234 message_id: "'t"
+2017-06-23 19:00:25,234 firmware: '\x01'
+2017-06-23 19:00:25,234 device_id: 2469040358b6e392
+2017-06-23 19:00:25,234 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 19:00:25,234 Detected normal_ack...
+2017-06-23 19:00:25,234 Maintain...
+2017-06-23 19:00:30,549 Recv: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 19:00:30,549 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 19:00:30,549 ------------------------------
+2017-06-23 19:00:30,549 Real data before encrypt/decrypt.
+2017-06-23 19:00:30,549 start: '\xfd'
+2017-06-23 19:00:30,549 length: 39638 bytes
+2017-06-23 19:00:30,549 version: '\xea'
+2017-06-23 19:00:30,549 message_type: '\x9c'
+2017-06-23 19:00:30,549 message_id: '\x9e\xe3'
+2017-06-23 19:00:30,549 firmware: '\xe0'
+2017-06-23 19:00:30,549 device_id: c1cc4484591d2ce8
+2017-06-23 19:00:30,549 ------------------------------
+2017-06-23 19:00:30,549 Data after decrypted.
+2017-06-23 19:00:30,549 start: '\xaa'
+2017-06-23 19:00:30,549 length: 17 bytes
+2017-06-23 19:00:30,549 version: '\x03'
+2017-06-23 19:00:30,549 message_type: '\x11'
+2017-06-23 19:00:30,549 message_id: "'t"
+2017-06-23 19:00:30,549 firmware: '\x01'
+2017-06-23 19:00:30,549 device_id: 2469040358b6e392
+2017-06-23 19:00:30,549 ------------------------------
+2017-06-23 19:00:30,549 Detected unlock...
+2017-06-23 19:00:30,549 cyphertext: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+'
+2017-06-23 19:00:30,549 Preparing relay lock_unlock_response from device to controller:
+2017-06-23 19:00:30,549 lock_unlock_response: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+\xc6'
+2017-06-23 19:00:30,549 lock_unlock_response: 3B 5E 4E E7 F6 D4 36 9C 02 11 58 07 71 4F 44 2B C6 
+2017-06-23 19:00:30,551 Length of lock_unlock_response: 17
+2017-06-23 19:00:30,551 vrfy_crc: '\xc6' , crc: '\xc6'
+2017-06-23 19:00:30,551 Send: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+\xc6'
+2017-06-23 19:02:05,331 Lost connection with: 127.0.0.1:8001
+2017-06-23 19:02:14,434 ------------------------------
+2017-06-23 19:02:14,434 Get connection with 127.0.0.1:8001
+2017-06-23 19:02:14,434 message_id in byte: "'t"
+2017-06-23 19:02:14,436 message_id in hex: 2774
+2017-06-23 19:02:14,436 message_id in int: 10100
+2017-06-23 19:02:14,436 version: '\x03'
+2017-06-23 19:02:14,436 firmware: '\x01'
+2017-06-23 19:02:14,436 length of total message: 17
+2017-06-23 19:02:14,436 version: '\x03'
+2017-06-23 19:02:14,436 firmware: '\x01'
+2017-06-23 19:02:14,436 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 19:02:14,436 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 19:02:14,436 Length of heartbeat: 17
+2017-06-23 19:02:14,436 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 19:02:14,436 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 19:02:14,444 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 19:02:14,444 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 19:02:14,444 ------------------------------
+2017-06-23 19:02:14,444 Real data before encrypt/decrypt.
+2017-06-23 19:02:14,444 start: '\xaa'
+2017-06-23 19:02:14,444 length: 17 bytes
+2017-06-23 19:02:14,444 version: '\x03'
+2017-06-23 19:02:14,444 message_type: '\x02'
+2017-06-23 19:02:14,444 message_id: "'t"
+2017-06-23 19:02:14,444 firmware: '\x01'
+2017-06-23 19:02:14,444 device_id: 2469040358b6e392
+2017-06-23 19:02:14,444 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 19:02:14,444 Detected normal_ack...
+2017-06-23 19:02:14,444 Maintain...
+2017-06-23 19:02:23,918 Recv: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 19:02:23,918 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 19:02:23,918 ------------------------------
+2017-06-23 19:02:23,920 Real data before encrypt/decrypt.
+2017-06-23 19:02:23,920 start: '\xfd'
+2017-06-23 19:02:23,920 length: 39638 bytes
+2017-06-23 19:02:23,920 version: '\xea'
+2017-06-23 19:02:23,920 message_type: '\x9c'
+2017-06-23 19:02:23,920 message_id: '\x9e\xe3'
+2017-06-23 19:02:23,920 firmware: '\xe0'
+2017-06-23 19:02:23,920 device_id: c1cc4484591d2ce8
+2017-06-23 19:02:23,920 ------------------------------
+2017-06-23 19:02:23,920 Data after decrypted.
+2017-06-23 19:02:23,920 start: '\xaa'
+2017-06-23 19:02:23,920 length: 17 bytes
+2017-06-23 19:02:23,920 version: '\x03'
+2017-06-23 19:02:23,920 message_type: '\x11'
+2017-06-23 19:02:23,920 message_id: "'t"
+2017-06-23 19:02:23,920 firmware: '\x01'
+2017-06-23 19:02:23,920 device_id: 2469040358b6e392
+2017-06-23 19:02:23,920 ------------------------------
+2017-06-23 19:02:23,921 Detected unlock...
+2017-06-23 19:02:23,921 cyphertext: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+'
+2017-06-23 19:02:23,921 Preparing relay lock_unlock_response from device to controller:
+2017-06-23 19:02:23,921 lock_unlock_response: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+\xc6'
+2017-06-23 19:02:23,921 lock_unlock_response: 3B 5E 4E E7 F6 D4 36 9C 02 11 58 07 71 4F 44 2B C6 
+2017-06-23 19:02:23,921 Length of lock_unlock_response: 17
+2017-06-23 19:02:23,921 vrfy_crc: '\xc6' , crc: '\xc6'
+2017-06-23 19:02:23,921 Send: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+\xc6'
+2017-06-23 19:04:26,763 Lost connection with: 127.0.0.1:8001
+2017-06-23 19:04:44,154 ------------------------------
+2017-06-23 19:04:44,154 Get connection with 127.0.0.1:8001
+2017-06-23 19:04:44,154 message_id in byte: "'t"
+2017-06-23 19:04:44,154 message_id in hex: 2774
+2017-06-23 19:04:44,154 message_id in int: 10100
+2017-06-23 19:04:44,154 version: '\x03'
+2017-06-23 19:04:44,154 firmware: '\x01'
+2017-06-23 19:04:44,154 length of total message: 17
+2017-06-23 19:04:44,154 version: '\x03'
+2017-06-23 19:04:44,154 firmware: '\x01'
+2017-06-23 19:04:44,154 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 19:04:44,154 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 19:04:44,154 Length of heartbeat: 17
+2017-06-23 19:04:44,155 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 19:04:44,155 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 19:04:44,163 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 19:04:44,164 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 19:04:44,164 ------------------------------
+2017-06-23 19:04:44,164 Real data before encrypt/decrypt.
+2017-06-23 19:04:44,164 start: '\xaa'
+2017-06-23 19:04:44,164 length: 17 bytes
+2017-06-23 19:04:44,164 version: '\x03'
+2017-06-23 19:04:44,164 message_type: '\x02'
+2017-06-23 19:04:44,164 message_id: "'t"
+2017-06-23 19:04:44,164 firmware: '\x01'
+2017-06-23 19:04:44,164 device_id: 2469040358b6e392
+2017-06-23 19:04:44,164 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 19:04:44,164 Detected normal_ack...
+2017-06-23 19:04:44,164 Maintain...
+2017-06-23 19:04:47,102 Recv: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 19:04:47,102 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 19:04:47,102 ------------------------------
+2017-06-23 19:04:47,104 Real data before encrypt/decrypt.
+2017-06-23 19:04:47,104 start: '\xfd'
+2017-06-23 19:04:47,104 length: 39638 bytes
+2017-06-23 19:04:47,104 version: '\xea'
+2017-06-23 19:04:47,104 message_type: '\x9c'
+2017-06-23 19:04:47,104 message_id: '\x9e\xe3'
+2017-06-23 19:04:47,104 firmware: '\xe0'
+2017-06-23 19:04:47,104 device_id: c1cc4484591d2ce8
+2017-06-23 19:04:47,104 ------------------------------
+2017-06-23 19:04:47,104 Data after decrypted.
+2017-06-23 19:04:47,104 start: '\xaa'
+2017-06-23 19:04:47,104 length: 17 bytes
+2017-06-23 19:04:47,104 version: '\x03'
+2017-06-23 19:04:47,104 message_type: '\x11'
+2017-06-23 19:04:47,104 message_id: "'t"
+2017-06-23 19:04:47,104 firmware: '\x01'
+2017-06-23 19:04:47,104 device_id: 2469040358b6e392
+2017-06-23 19:04:47,104 ------------------------------
+2017-06-23 19:04:47,105 Detected unlock...
+2017-06-23 19:04:47,105 cyphertext: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+'
+2017-06-23 19:04:47,105 Preparing relay lock_unlock_response from device to controller:
+2017-06-23 19:04:47,105 lock_unlock_response: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+\xc6'
+2017-06-23 19:04:47,105 lock_unlock_response: 3B 5E 4E E7 F6 D4 36 9C 02 11 58 07 71 4F 44 2B C6 
+2017-06-23 19:04:47,105 Length of lock_unlock_response: 17
+2017-06-23 19:04:47,105 vrfy_crc: '\xc6' , crc: '\xc6'
+2017-06-23 19:04:47,105 Send: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+\xc6'
+2017-06-23 19:05:25,719 Recv: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 19:05:25,719 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 19:05:25,719 ------------------------------
+2017-06-23 19:05:25,719 Real data before encrypt/decrypt.
+2017-06-23 19:05:25,719 start: '\xfd'
+2017-06-23 19:05:25,719 length: 39638 bytes
+2017-06-23 19:05:25,719 version: '\xea'
+2017-06-23 19:05:25,719 message_type: '\x9c'
+2017-06-23 19:05:25,720 message_id: '\x9e\xe3'
+2017-06-23 19:05:25,720 firmware: '\xe0'
+2017-06-23 19:05:25,720 device_id: c1cc4484591d2ce8
+2017-06-23 19:05:25,720 ------------------------------
+2017-06-23 19:05:25,720 Data after decrypted.
+2017-06-23 19:05:25,720 start: '\xaa'
+2017-06-23 19:05:25,720 length: 17 bytes
+2017-06-23 19:05:25,720 version: '\x03'
+2017-06-23 19:05:25,720 message_type: '\x11'
+2017-06-23 19:05:25,720 message_id: "'t"
+2017-06-23 19:05:25,720 firmware: '\x01'
+2017-06-23 19:05:25,720 device_id: 2469040358b6e392
+2017-06-23 19:05:25,720 ------------------------------
+2017-06-23 19:05:25,720 Detected unlock...
+2017-06-23 19:05:25,720 cyphertext: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+'
+2017-06-23 19:05:25,720 Preparing relay lock_unlock_response from device to controller:
+2017-06-23 19:05:25,720 lock_unlock_response: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+\xc6'
+2017-06-23 19:05:25,720 lock_unlock_response: 3B 5E 4E E7 F6 D4 36 9C 02 11 58 07 71 4F 44 2B C6 
+2017-06-23 19:05:25,720 Length of lock_unlock_response: 17
+2017-06-23 19:05:25,720 vrfy_crc: '\xc6' , crc: '\xc6'
+2017-06-23 19:05:25,720 Send: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+\xc6'
+2017-06-23 19:05:39,539 ------------------------------
+2017-06-23 19:05:39,539 Get connection with 127.0.0.1:8001
+2017-06-23 19:05:39,539 message_id in byte: "'t"
+2017-06-23 19:05:39,540 message_id in hex: 2774
+2017-06-23 19:05:39,540 message_id in int: 10100
+2017-06-23 19:05:39,540 version: '\x03'
+2017-06-23 19:05:39,540 firmware: '\x01'
+2017-06-23 19:05:39,540 length of total message: 17
+2017-06-23 19:05:39,540 version: '\x03'
+2017-06-23 19:05:39,540 firmware: '\x01'
+2017-06-23 19:05:39,540 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 19:05:39,540 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 19:05:39,540 Length of heartbeat: 17
+2017-06-23 19:05:39,540 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 19:05:39,540 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 19:05:39,543 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 19:05:39,545 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 19:05:39,545 ------------------------------
+2017-06-23 19:05:39,545 Real data before encrypt/decrypt.
+2017-06-23 19:05:39,545 start: '\xaa'
+2017-06-23 19:05:39,545 length: 17 bytes
+2017-06-23 19:05:39,545 version: '\x03'
+2017-06-23 19:05:39,545 message_type: '\x02'
+2017-06-23 19:05:39,545 message_id: "'t"
+2017-06-23 19:05:39,545 firmware: '\x01'
+2017-06-23 19:05:39,545 device_id: 2469040358b6e392
+2017-06-23 19:05:39,545 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 19:05:39,545 Detected normal_ack...
+2017-06-23 19:05:39,545 Maintain...
+2017-06-23 19:05:42,562 Recv: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 19:05:42,562 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 19:05:42,562 ------------------------------
+2017-06-23 19:05:42,562 Real data before encrypt/decrypt.
+2017-06-23 19:05:42,562 start: '\xfd'
+2017-06-23 19:05:42,562 length: 39638 bytes
+2017-06-23 19:05:42,562 version: '\xea'
+2017-06-23 19:05:42,562 message_type: '\x9c'
+2017-06-23 19:05:42,562 message_id: '\x9e\xe3'
+2017-06-23 19:05:42,562 firmware: '\xe0'
+2017-06-23 19:05:42,562 device_id: c1cc4484591d2ce8
+2017-06-23 19:05:42,562 ------------------------------
+2017-06-23 19:05:42,562 Data after decrypted.
+2017-06-23 19:05:42,562 start: '\xaa'
+2017-06-23 19:05:42,562 length: 17 bytes
+2017-06-23 19:05:42,562 version: '\x03'
+2017-06-23 19:05:42,562 message_type: '\x11'
+2017-06-23 19:05:42,562 message_id: "'t"
+2017-06-23 19:05:42,562 firmware: '\x01'
+2017-06-23 19:05:42,563 device_id: 2469040358b6e392
+2017-06-23 19:05:42,563 ------------------------------
+2017-06-23 19:05:42,563 Detected unlock...
+2017-06-23 19:05:42,563 cyphertext: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+'
+2017-06-23 19:05:42,563 Preparing relay lock_unlock_response from device to controller:
+2017-06-23 19:05:42,563 lock_unlock_response: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+\xc6'
+2017-06-23 19:05:42,563 lock_unlock_response: 3B 5E 4E E7 F6 D4 36 9C 02 11 58 07 71 4F 44 2B C6 
+2017-06-23 19:05:42,563 Length of lock_unlock_response: 17
+2017-06-23 19:05:42,563 vrfy_crc: '\xc6' , crc: '\xc6'
+2017-06-23 19:05:42,563 Send: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+\xc6'
+2017-06-23 19:09:43,941 Lost connection with: 127.0.0.1:8001
+2017-06-23 19:09:57,102 ------------------------------
+2017-06-23 19:09:57,102 Get connection with 127.0.0.1:8001
+2017-06-23 19:09:57,102 message_id in byte: "'t"
+2017-06-23 19:09:57,102 message_id in hex: 2774
+2017-06-23 19:09:57,102 message_id in int: 10100
+2017-06-23 19:09:57,102 version: '\x03'
+2017-06-23 19:09:57,104 firmware: '\x01'
+2017-06-23 19:09:57,104 length of total message: 17
+2017-06-23 19:09:57,104 version: '\x03'
+2017-06-23 19:09:57,104 firmware: '\x01'
+2017-06-23 19:09:57,104 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 19:09:57,104 heartbeat: AA 00 11 03 01 27 74 01 24 69 04 03 58 B6 E3 92 16 
+2017-06-23 19:09:57,104 Length of heartbeat: 17
+2017-06-23 19:09:57,104 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-23 19:09:57,104 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-23 19:09:57,111 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-23 19:09:57,111 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-23 19:09:57,111 ------------------------------
+2017-06-23 19:09:57,111 Real data before encrypt/decrypt.
+2017-06-23 19:09:57,111 start: '\xaa'
+2017-06-23 19:09:57,111 length: 17 bytes
+2017-06-23 19:09:57,111 version: '\x03'
+2017-06-23 19:09:57,111 message_type: '\x02'
+2017-06-23 19:09:57,111 message_id: "'t"
+2017-06-23 19:09:57,111 firmware: '\x01'
+2017-06-23 19:09:57,111 device_id: 2469040358b6e392
+2017-06-23 19:09:57,111 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-23 19:09:57,111 Detected normal_ack...
+2017-06-23 19:09:57,111 Maintain...
+2017-06-23 19:10:29,233 Recv: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 19:10:29,233 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 19:10:29,233 ------------------------------
+2017-06-23 19:10:29,233 Real data before encrypt/decrypt.
+2017-06-23 19:10:29,233 start: '\xfd'
+2017-06-23 19:10:29,233 length: 39638 bytes
+2017-06-23 19:10:29,233 version: '\xea'
+2017-06-23 19:10:29,233 message_type: '\x9c'
+2017-06-23 19:10:29,233 message_id: '\x9e\xe3'
+2017-06-23 19:10:29,233 firmware: '\xe0'
+2017-06-23 19:10:29,233 device_id: c1cc4484591d2ce8
+2017-06-23 19:10:29,233 ------------------------------
+2017-06-23 19:10:29,233 Data after decrypted.
+2017-06-23 19:10:29,233 start: '\xaa'
+2017-06-23 19:10:29,233 length: 17 bytes
+2017-06-23 19:10:29,233 version: '\x03'
+2017-06-23 19:10:29,233 message_type: '\x11'
+2017-06-23 19:10:29,233 message_id: "'t"
+2017-06-23 19:10:29,233 firmware: '\x01'
+2017-06-23 19:10:29,233 device_id: 2469040358b6e392
+2017-06-23 19:10:29,233 ------------------------------
+2017-06-23 19:10:29,233 Detected unlock...
+2017-06-23 19:10:29,233 cyphertext: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+'
+2017-06-23 19:10:29,233 Preparing relay lock_unlock_response from device to controller:
+2017-06-23 19:10:29,233 lock_unlock_response: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+\xc6'
+2017-06-23 19:10:29,233 lock_unlock_response: 3B 5E 4E E7 F6 D4 36 9C 02 11 58 07 71 4F 44 2B C6 
+2017-06-23 19:10:29,233 Length of lock_unlock_response: 17
+2017-06-23 19:10:29,233 vrfy_crc: '\xc6' , crc: '\xc6'
+2017-06-23 19:10:29,233 Send: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+\xc6'
