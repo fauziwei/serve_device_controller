@@ -493,3 +493,23 @@
 2017-06-23 20:25:15,055 controller initiate to drop connection.
 2017-06-23 20:25:15,055 Lost connection with: 127.0.0.1:8001
 2017-06-23 20:25:45,049 Lost connection with: 127.0.0.1:8001
+2017-06-23 20:43:38,102 ------------------------------
+2017-06-23 20:43:38,102 Get connection with 127.0.0.1:8001
+2017-06-23 20:43:38,102 message_type: '\x11'
+2017-06-23 20:43:38,102 message_id in byte: "'t"
+2017-06-23 20:43:38,102 version: '\x03'
+2017-06-23 20:43:38,102 firmware: '\x01'
+2017-06-23 20:43:38,102 length of total message: 17
+2017-06-23 20:43:38,102 version: '\x03'
+2017-06-23 20:43:38,102 firmware: '\x01'
+2017-06-23 20:43:38,102 cmd: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-23 20:43:38,102 len cmd: 16
+2017-06-23 20:43:38,102 cyphertext: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8'
+2017-06-23 20:43:38,102 unlock: '\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 20:43:38,102 Length of unlock: 17
+2017-06-23 20:43:38,102 vrfy_crc: '\xf9' , crc: '\xf9'
+2017-06-23 20:43:38,102 Send unlock: '\xff\xff\xff\xff\xfd\x9a\xd6\xea\x9c\x9e\xe3\xe0\xc1\xccD\x84Y\x1d,\xe8\xf9'
+2017-06-23 20:43:38,118 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-23 20:43:38,118 SUCCESS get response from device.
+2017-06-23 20:43:38,118 controller initiate to drop connection.
+2017-06-23 20:43:38,118 Lost connection with: 127.0.0.1:8001

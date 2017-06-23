@@ -149,7 +149,6 @@ class Logic(object):
 		'''Sample initiator heartbeat to server.'''
 		message_type = CLIENT_TYPE['heartbeat']
 		message_id = get_message_id_for_crc8(proto.message_id)
-		# device_id = uni_to_byte(proto.device_id)
 		device_id = hex_to_byte(proto.device_id)
 		length = get_length_for_crc8(message_type, message_id, device_id)
 		version = get_version()
@@ -169,6 +168,30 @@ class Logic(object):
 		crc8_verification(heartbeat)
 		proto.token_init_heartbeat = True
 		return heartbeat
+
+	def init_normal_bike_status(self, proto):
+		'''Sample initiator to server.'''
+		message_type = CLIENT_TYPE['normal_bike_status']
+		message_id = get_message_id_for_crc8(proto.message_id)
+		device_id = hex_to_byte(proto.device_id)
+		length = get_length_for_crc8(message_type, message_id, device_id)
+		version = get_version()
+		firmware = get_firmware()
+
+		cmd = START+length+version+message_type+message_id+firmware+device_id
+		# aes encryption, doesnt required.
+		cmd = self.aes_encrypt(proto, cmd)
+		# create crc8
+		crc8_byte = create_crc8_val(cmd)
+		normal_bike_status = cmd+crc8_byte
+
+		logger.debug(u'normal_bike_status: {0}'.format(repr(normal_bike_status)))
+		# logger.debug(u'normal_bike_status: {0}'.format(ascii_string(normal_bike_status)))
+		logger.debug(u'Length of normal_bike_status: {0}'.format(len(normal_bike_status)))
+
+		crc8_verification(normal_bike_status)
+		proto.token_init_normal_bike_status = True
+		return normal_bike_status
 
 
 	''' Receiving section. '''
@@ -195,7 +218,7 @@ class Logic(object):
 
 		logger.debug(u'Preparing relay lock_unlock_response from device to controller:')
 		logger.debug(u'lock_unlock_response: {0}'.format(repr(lock_unlock_response)))
-		logger.debug(u'lock_unlock_response: {0}'.format(ascii_string(lock_unlock_response)))
+		# logger.debug(u'lock_unlock_response: {0}'.format(ascii_string(lock_unlock_response)))
 		logger.debug(u'Length of lock_unlock_response: {0}'.format(len(lock_unlock_response)))
 
 		crc8_verification(lock_unlock_response)

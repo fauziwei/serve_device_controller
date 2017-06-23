@@ -213,7 +213,26 @@ class Logic(object):
 		pass
 
 	def normal_bike_status_processing(self, proto, parsed):
-		pass
+		'''Preparing response to device.'''
+		length = parsed['length']
+		message_type = SERVER_TYPE['normal_ack']
+		message_id = parsed['message_id']
+		device_id = parsed['device_id']
+		version = parsed['version']
+		firmware = parsed['firmware']
+		# has timestamp
+		cmd = START+length+version+message_type+message_id+firmware+device_id
+		# normal_ack doesnt required to be encrypted.
+		crc8_byte = create_crc8_val(cmd)
+		normal_ack = cmd+crc8_byte
+
+		logger.debug(u'Prepare response normal_ack:')
+		logger.debug(u'normal_ack: {0}'.format(repr(normal_ack)))
+		# logger.debug(u'normal_ack: {0}'.format(ascii_string(normal_ack)))
+		logger.debug(u'Length of normal_ack: {0}'.format(len(normal_ack)))
+
+		crc8_verification(normal_ack)
+		return normal_ack
 
 	def pedelec_status_report_processing(self, proto, parsed):
 		pass

@@ -36,8 +36,9 @@ class CProtocol(LineReceiver):
 
 	aes_key = '02B6111770695324'
 
-	# token for initiator heartbeat test sending.
+	# token for initiator test sending.
 	token_init_heartbeat = False
+	token_init_normal_bike_status = False
 
 	def connectionMade(self):
 		self.peer_ip = self.transport.getPeer().host
@@ -46,10 +47,15 @@ class CProtocol(LineReceiver):
 		logger.debug( 30 * u'-' )
 		logger.debug(u'Get connection with {0}:{1}'.format(self.peer_ip, self.peer_port))
 
-		if not self.token_init_heartbeat:
-			heartbeat = self.factory.logic.init_heartbeat(self)
-			logger.debug(u'Send heartbeat: {0}'.format(repr(heartbeat)))
-			self.sendLine(heartbeat)
+		# if not self.token_init_heartbeat:
+		# 	heartbeat = self.factory.logic.init_heartbeat(self)
+		# 	logger.debug(u'Send heartbeat: {0}'.format(repr(heartbeat)))
+		# 	self.sendLine(heartbeat)
+
+		if not self.token_init_normal_bike_status:
+			normal_bike_status = self.factory.logic.init_normal_bike_status(self)
+			logger.debug(u'Send normal_bike_status: {0}'.format(repr(normal_bike_status)))
+			self.sendLine(normal_bike_status)
 
 	def connectionLost(self, reason):
 		logger.debug(u'Lost connection with: {0}:{1}'.format(self.peer_ip, self.peer_port))
