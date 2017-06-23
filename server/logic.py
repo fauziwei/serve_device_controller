@@ -54,8 +54,9 @@ class Logic(object):
 		logger.debug(u'device_id: {0}'.format(byte_to_hex(device_id)))
 		logger.debug(u'crc: {0}'.format(repr(crc)))
 
-		if message_type == CLIENT_TYPE['heartbeat']:
-			logger.debug(u'Detected heartbeat message_type, doesnt required to be encrypted or decrypted.')
+		if message_type == CLIENT_TYPE['heartbeat'] or \
+			message_type == CLIENT_TYPE['normal_bike_status']:
+			logger.debug(u'Detected message_type which doesnt required to be encrypted or decrypted.')
 			return {
 				'start': start, 'length': length, 'version': version,
 				'message_type': message_type, 'message_id': message_id,
