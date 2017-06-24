@@ -48,9 +48,11 @@ class BProtocol(LineReceiver):
 		# Limiting active_connections.
 		logger.debug( 30 * u'-' )
 		self.active_connection += 1
-		if self.active_connection > self.factory.max_connection:
-			logger.debug(u'Reaching max connection. Drop connection.')
-			self.transport.loseConnection()
+		
+		if self.factory.haproxy_addr == self.transport.getPeer().host:
+			if self.active_connection > self.factory.max_connection:
+				logger.debug(u'Reaching max connection. Drop connection.')
+				self.transport.loseConnection()
 
 	def connectionLost(self, reason):
 		self.active_connection -= 1
@@ -100,7 +102,7 @@ class BProtocol(LineReceiver):
 			self.sendLine(self.response_fail) # Fail
 		else:
 			# Send to device.
-			logger.debug(u'Send to device: {0}'.format(repr(data)))
+			logger.debug(u'Send to device >: {0}'.format(repr(data)))
 			self.belongto_device.sendLine(data)
 
 	def sendFromDevice(self, data):
@@ -116,6 +118,7 @@ server_ip, server_port = '127.0.0.1', 8001
 redis_ip, redis_port = '127.0.0.1', 6379
 max_connection = 10
 aes_key = '02B6111770695324'
+haproxy_addr = '192.168.8.10' # sample
 # -----------------------------------------
 
 class BFactory(Factory):
@@ -128,6 +131,7 @@ class BFactory(Factory):
 
 	server_ip, server_port = server_ip, server_port
 	redis_ip, redis_port = redis_ip, redis_port
+	haproxy_addr = haproxy_addr
 
 	def __init__(self):
 		d = {'host': redis_ip, 'port': redis_port, 'db': 0}
