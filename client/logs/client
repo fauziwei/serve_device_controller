@@ -1241,3 +1241,31 @@
 2017-06-24 12:15:53,828 Detected normal_ack...
 2017-06-24 12:15:53,828 Maintain connection...
 2017-06-24 12:17:14,346 Lost connection with: 127.0.0.1:8001
+2017-06-24 12:32:55,227 ------------------------------
+2017-06-24 12:32:55,229 Get connection with 127.0.0.1:8001
+2017-06-24 12:32:55,229 message_id in byte: "'t"
+2017-06-24 12:32:55,229 version: '\x03'
+2017-06-24 12:32:55,229 firmware: '\x01'
+2017-06-24 12:32:55,229 length of total message: 17
+2017-06-24 12:32:55,229 version: '\x03'
+2017-06-24 12:32:55,229 firmware: '\x01'
+2017-06-24 12:32:55,229 cyphertext: '\xf6\x9d\xc7/N\xf9\t\xb8\xb6\xc1\xad]G1\xd4\xf1'
+2017-06-24 12:32:55,229 normal_bike_status: '\xf6\x9d\xc7/N\xf9\t\xb8\xb6\xc1\xad]G1\xd4\xf1g'
+2017-06-24 12:32:55,229 Length of normal_bike_status: 17
+2017-06-24 12:32:55,229 vrfy_crc: 'g' , crc: 'g'
+2017-06-24 12:32:55,229 Send normal_bike_status: '\xf6\x9d\xc7/N\xf9\t\xb8\xb6\xc1\xad]G1\xd4\xf1g'
+2017-06-24 12:32:55,237 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-24 12:32:55,237 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-24 12:32:55,237 ------------------------------
+2017-06-24 12:32:55,237 Real data before encrypt/decrypt.
+2017-06-24 12:32:55,237 start: '\xaa'
+2017-06-24 12:32:55,237 length: 17 bytes
+2017-06-24 12:32:55,237 version: '\x03'
+2017-06-24 12:32:55,237 message_type: '\x02'
+2017-06-24 12:32:55,237 message_id: "'t"
+2017-06-24 12:32:55,237 firmware: '\x01'
+2017-06-24 12:32:55,237 device_id: 2469040358b6e392
+2017-06-24 12:32:55,237 crc: '\xf1'
+2017-06-24 12:32:55,237 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
+2017-06-24 12:32:55,237 Detected normal_ack...
+2017-06-24 12:32:55,239 Maintain connection...
