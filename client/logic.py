@@ -31,11 +31,11 @@ def get_message_id_for_crc8(message_id):
 	message_id = binascii.unhexlify(int_to_hex(message_id))
 	logger.debug(u'message_id in byte: {0}'.format(repr(message_id))) # '\x16'
 	# message_id in hex.
-	message_id_in_hex = binascii.hexlify(message_id)
-	logger.debug(u'message_id in hex: {0}'.format(message_id_in_hex))
+	# message_id_in_hex = binascii.hexlify(message_id)
+	# logger.debug(u'message_id in hex: {0}'.format(message_id_in_hex))
 	# message_id in int. (back to int)
-	message_id_in_int = hex_to_int(message_id_in_hex)
-	logger.debug(u'message_id in int: {0}'.format(message_id_in_int))
+	# message_id_in_int = hex_to_int(message_id_in_hex)
+	# logger.debug(u'message_id in int: {0}'.format(message_id_in_int))
 	return message_id
 
 def get_firmware():

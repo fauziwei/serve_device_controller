@@ -8,9 +8,10 @@ import binascii
 from Crypto.Cipher import AES
 
 # local import
-from header import *
-from utils import *
-from models import *
+from header import START, CLIENT_TYPE, SERVER_TYPE
+from utils import byte_to_hex, hex_to_int, ascii_string, \
+	crc8_verification, create_crc8_val
+from models import Db, commit, Device
 
 reload(sys)
 sys.setdefaultencoding('utf-8')

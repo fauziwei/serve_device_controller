@@ -97,7 +97,6 @@ class BProtocol(LineReceiver):
 		if not self.belongto_device:
 			# Device not connected to server.
 			# Send feedback to controller not success.
-			# self.sendLine(u'device_id: {0} is not connected to server.'.format(self.controller_id))
 			self.sendLine(self.response_fail) # Fail
 		else:
 			# Send to device.
@@ -109,7 +108,7 @@ class BProtocol(LineReceiver):
 			logger.debug(u'Send >: {0}'.format(repr(data)))
 			self.sendLine(data)
 		else:
-			logger.debug(u'Maintain...')
+			logger.debug(u'Maintain connection...')
 
 
 # Configuration. --------------------------

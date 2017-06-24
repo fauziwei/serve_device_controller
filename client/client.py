@@ -69,7 +69,7 @@ class CProtocol(LineReceiver):
 			logger.debug(u'Send: {0}'.format(repr(data)))
 			self.sendLine(data)
 		else:
-			logger.debug(u'Maintain...')
+			logger.debug(u'Maintain connection...')
 
 
 class CFactory(ClientFactory):

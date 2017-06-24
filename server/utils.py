@@ -8,8 +8,6 @@ import crcmod.predefined
 
 logger = logging.getLogger(__name__)
 
-uni_to_hex = lambda u: binascii.hexlify(u)
-uni_to_byte = lambda u: binascii.unhexlify(u)
 byte_to_hex = lambda b: binascii.hexlify(b)
 hex_to_byte = lambda h: binascii.unhexlify(h)
 # int_to_hex = lambda i: '0x{0:02x}'.format(i)
