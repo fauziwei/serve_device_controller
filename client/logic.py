@@ -8,7 +8,7 @@ import binascii
 from Crypto.Cipher import AES
 
 # local import
-from header import *
+from header import START, CLIENT_TYPE, SERVER_TYPE
 from utils import *
 
 reload(sys)
@@ -56,28 +56,29 @@ class Logic(object):
 
 	def parsing_crc8(self, proto, data):
 		'''Cut recv_data.
-		Data is supposed in ByteStream with length 17bytes
-		default is todo encryption after checking CRC8, otherwise do decryption
+		Data is supposed in ByteStream with length 32bytes
+		default is todo checking CRC8 and decryption
 		'''
-		if len(data) <> 17:
-			logger.debug(u'Parsing data 17bytes failed.')
-			return
+		# if len(data) <> 17:
+		# 	logger.debug(u'Parsing data 17bytes failed.')
+		# 	return
 
 		if not crc8_verification(data):
 			logger.debug(u'CRC8 verification failed.')
 			return
 
-		logger.debug( 30 * u'-')
-		logger.debug(u'Real data before encrypt/decrypt.')
-
 		start = data[0]
 		length = data[1:3]
 		version = data[3]
 		message_type = data[4]
 		message_id = data[5:7]
 		firmware = data[7]
-		device_id = data[8:-1]
+		device_id = data[8:16]
+		payload = data[16:-1]
 		crc = data[-1:]
+
+		logger.debug( 30 * u'-')
+		logger.debug('Receiving...')
 
 		logger.debug(u'start: {0}'.format(repr(start)))
 		logger.debug(u'length: {0} bytes'.format(hex_to_int(byte_to_hex(length))))
@@ -86,44 +87,26 @@ class Logic(object):
 		logger.debug(u'message_id: {0}'.format(repr(message_id)))
 		logger.debug(u'firmware: {0}'.format(repr(firmware)))
 		logger.debug(u'device_id: {0}'.format(byte_to_hex(device_id)))
-		logger.debug(u'crc: {0}'.format(repr(crc)))
+		logger.debug(u'payload: {0}'.format(repr(payload)))
 
-		'''Ask to laoban wheter normal_ack is encrypted?.'''
 		if message_type == SERVER_TYPE['normal_ack']:
-			logger.debug(u'Detected normal_ack message_type, doesnt required to be encrypted or decrypted.')
+			logger.debug(u'crc: {0}'.format(repr(crc)))
 			return {
 				'start': start, 'length': length, 'version': version,
 				'message_type': message_type, 'message_id': message_id,
-				'firmware': firmware, 'device_id': device_id
+				'firmware': firmware, 'device_id': device_id, 'payload': payload
 			}
 
-		logger.debug( 30 * u'-')
-
-		logger.debug(u'Data after decrypted.')
-		data = self.aes_decrypt(proto, data[:-1]) # data is minus crc
-
-		start = data[0]
-		length = data[1:3]
-		version = data[3]
-		message_type = data[4]
-		message_id = data[5:7]
-		firmware = data[7]
-		device_id = data[8:]
-
-		logger.debug(u'start: {0}'.format(repr(start)))
-		logger.debug(u'length: {0} bytes'.format(hex_to_int(byte_to_hex(length))))
-		logger.debug(u'version: {0}'.format(repr(version)))
-		logger.debug(u'message_type: {0}'.format(repr(message_type)))
-		logger.debug(u'message_id: {0}'.format(repr(message_id)))
-		logger.debug(u'firmware: {0}'.format(repr(firmware)))
-		logger.debug(u'device_id: {0}'.format(byte_to_hex(device_id)))
+		payload = self.aes_decrypt(proto, payload) # data is minus crc
+		logger.debug(u'payload: {0}'.format(repr(payload)))
+		logger.debug(u'crc: {0}'.format(repr(crc)))
 
 		logger.debug( 30 * u'-')
 
 		return {
 			'start': start, 'length': length, 'version': version,
 			'message_type': message_type, 'message_id': message_id,
-			'firmware': firmware, 'device_id': device_id
+			'firmware': firmware, 'device_id': device_id, 'payload': payload
 		}
 
 	def aes_encrypt(self, proto, data):
@@ -154,9 +137,8 @@ class Logic(object):
 		version = get_version()
 		firmware = get_firmware()
 
-		cmd = START+length+version+message_type+message_id+firmware+device_id
-		# aes encryption, heartbeat doesnt required tobe encrypted.
-		# cmd = self.aes_encrypt(proto, cmd)
+		header = START+length+version+message_type+message_id+firmware+device_id
+		cmd = header
 		# create crc8
 		crc8_byte = create_crc8_val(cmd)
 		heartbeat = cmd+crc8_byte
@@ -170,7 +152,8 @@ class Logic(object):
 		return heartbeat
 
 	def init_normal_bike_status(self, proto):
-		'''Sample initiator to server.'''
+		'''Sample initiator normal_bike_status to server.'''
+		# header without aes.
 		message_type = CLIENT_TYPE['normal_bike_status']
 		message_id = get_message_id_for_crc8(proto.message_id)
 		device_id = hex_to_byte(proto.device_id)
@@ -178,10 +161,69 @@ class Logic(object):
 		version = get_version()
 		firmware = get_firmware()
 
-		cmd = START+length+version+message_type+message_id+firmware+device_id
-		# aes encryption, doesnt required.
-		cmd = self.aes_encrypt(proto, cmd)
+		header = START+length+version+message_type+message_id+firmware+device_id
+
+		# payload --------------------------------------
+		hdware_ver = 1
+		upgrade_flag = 1
+		lock_status = 1
+		csq = 1
+		temp = 1
+		v_bus = 1
+		i_charge = 1
+		v_battery = 1
+		battery_stat = 1
+
+		# timestamp (4bytes)
+		t = get_shanghai_time()
+		timestamp = to_timestamp(t)
+		timestamp = timestamp_to_byte(timestamp)
+
+		# latitude (split by 2), 3bytes and 5bytes.
+		latitude = 23.88888888
+		lat_byte = double_to_byte(latitude)
+		lat_byte_3bytes = lat_byte[0:3]
+		lat_byte_5bytes = lat_byte[3:]
+
+		# longitude (split by 2), 3bytes and 5bytes.
+		longitude = 3.66666666
+		lon_byte = double_to_byte(longitude)
+		lon_byte_3bytes = lon_byte[0:3]
+		lon_byte_5bytes = lon_byte[3:]
+
+		fix_flag = 1
+		gps_stars = 1
+		signature = 1
+
+		# payload length is 32bytes
+
+		payload = \
+			int_to_byte(hdware_ver)+\
+			int_to_byte(upgrade_flag)+\
+			int_to_byte(lock_status)+\
+			int_to_byte(csq)+\
+			int_to_byte(temp)+\
+			int_to_byte(v_bus)+\
+			int_to_byte(i_charge)+\
+			int_to_byte(v_battery)+\
+			int_to_byte(battery_stat)+\
+			timestamp+\
+			lat_byte_3bytes+\
+			lat_byte_5bytes+\
+			lon_byte_3bytes+\
+			lon_byte_5bytes+\
+			int_to_byte(fix_flag)+\
+			int_to_byte(gps_stars)+\
+			int_to_byte(signature)
+
+		# -----------------------------------------------
+
+		logger.debug(u'payload length: {0}'.format(len(payload)))
+
+		# aes encryption
+		payload = self.aes_encrypt(proto, payload)
 		# create crc8
+		cmd = header+payload
 		crc8_byte = create_crc8_val(cmd)
 		normal_bike_status = cmd+crc8_byte
 
@@ -193,6 +235,109 @@ class Logic(object):
 		proto.token_init_normal_bike_status = True
 		return normal_bike_status
 
+	def init_pedelec_status_report(self, proto):
+		'''Sample initiator pedelec_status_report to server.'''
+		message_type = CLIENT_TYPE['pedelec_status_report']
+		message_id = get_message_id_for_crc8(proto.message_id)
+		device_id = hex_to_byte(proto.device_id)
+		length = get_length_for_crc8(message_type, message_id, device_id)
+		version = get_version()
+		firmware = get_firmware()		
+		
+		header = START+length+version+message_type+message_id+firmware+device_id
+
+		# payload
+		hdware_ver = 1
+		upgrade_flag = 1
+		lock_status = 1
+		csq = 1
+		temp = 1
+		v_bus = 1
+		i_charge = 1
+		v_battery = 1
+		battery_stat = 1
+
+		# timestamp (4bytes)
+		t = get_shanghai_time()
+		timestamp = to_timestamp(t)
+		timestamp = timestamp_to_byte(timestamp)
+
+		# latitude (split by 2), 3bytes and 5bytes.
+		latitude = 23.88888888
+		lat_byte = double_to_byte(latitude)
+		lat_byte_3bytes = lat_byte[0:3]
+		lat_byte_5bytes = lat_byte[3:]
+
+		# longitude (split by 2), 3bytes and 5bytes.
+		longitude = 3.66666666
+		lon_byte = double_to_byte(longitude)
+		lon_byte_3bytes = lon_byte[0:3]
+		lon_byte_5bytes = lon_byte[3:]
+
+		fix_flag = 1
+		gps_stars = 1
+		rid_speed = 1
+		limit_speed = 1
+		gear = 1
+		m_vbattery = 2
+		m_battery_stat = 1
+		m_battery_cab = 1
+		m_bat_is = 1
+		m_bat_cycle_count = 1
+		m_bat_temp = 1
+		m_bat_id = 4
+		zeros = '\x00' * 2
+		signature = 1
+
+		payload = \
+			int_to_byte(hdware_ver)+\
+			int_to_byte(upgrade_flag)+\
+			int_to_byte(lock_status)+\
+			int_to_byte(csq)+\
+			int_to_byte(temp)+\
+			int_to_byte(v_bus)+\
+			int_to_byte(i_charge)+\
+			int_to_byte(v_battery)+\
+			int_to_byte(battery_stat)+\
+			timestamp+\
+			lat_byte_3bytes+\
+			lat_byte_5bytes+\
+			lon_byte_3bytes+\
+			lon_byte_5bytes+\
+			int_to_byte(fix_flag)+\
+			int_to_byte(gps_stars)+\
+			int_to_byte(rid_speed)+\
+			int_to_byte(limit_speed)+\
+			int_to_byte(gear)+\
+			int_to_byte(m_vbattery)+\
+			int_to_byte(m_battery_stat)+\
+			int_to_byte(m_battery_cab)+\
+			int_to_byte(m_bat_is)+\
+			int_to_byte(m_bat_cycle_count)+\
+			int_to_byte(m_bat_temp)+\
+			int_to_byte(m_bat_id)+\
+			zeros+\
+			int_to_byte(signature)
+
+		# -----------------------------------------------
+
+		logger.debug(u'payload length: {0}'.format(len(payload)))
+
+		# aes encryption
+		payload = self.aes_encrypt(proto, payload)
+		# create crc8
+		cmd = header+payload
+		crc8_byte = create_crc8_val(cmd)
+		pedelec_status_report = cmd+crc8_byte
+
+		logger.debug(u'pedelec_status_report: {0}'.format(repr(pedelec_status_report)))
+		# logger.debug(u'pedelec_status_report: {0}'.format(ascii_string(pedelec_status_report)))
+		logger.debug(u'Length of pedelec_status_report: {0}'.format(len(pedelec_status_report)))
+
+		crc8_verification(pedelec_status_report)
+		proto.token_init_pedelec_status_report = True
+		return pedelec_status_report
+
 
 	''' Receiving section. '''
 
@@ -201,18 +346,81 @@ class Logic(object):
 		return
 
 	def unlock_processing(self, proto, parsed):
-		'''Preparing send to server.'''
+		'''Preparing response lock_unlock_response to server > controller'''
 		length = parsed['length']
 		message_type = CLIENT_TYPE['lock_unlock_response']
 		message_id = parsed['message_id'] # Check, it required tobe modified.
 		device_id = parsed['device_id']
 		version = parsed['version']
-		firmware = parsed['firmware']		
+		firmware = parsed['firmware']
 
-		cmd = START+length+version+message_type+message_id+firmware+device_id
+		# do something with payload
+		payload = parsed['payload']
+
+		# header
+		header = START+length+version+message_type+message_id+firmware+device_id
+
+		# payload
+		hdware_ver = 1
+		upgrade_flag = 1
+		lock_status = 1
+		csq = 1
+		temp = 1
+		v_bus = 1
+		i_charge = 1
+		v_battery = 1
+		battery_stat = 1
+
+		# timestamp (4bytes)
+		t = get_shanghai_time()
+		timestamp = to_timestamp(t)
+		timestamp = timestamp_to_byte(timestamp)
+
+		# latitude (split by 2), 3bytes and 5bytes.
+		latitude = 23.88888888
+		lat_byte = double_to_byte(latitude)
+		lat_byte_3bytes = lat_byte[0:3]
+		lat_byte_5bytes = lat_byte[3:]
+
+		# longitude (split by 2), 3bytes and 5bytes.
+		longitude = 3.66666666
+		lon_byte = double_to_byte(longitude)
+		lon_byte_3bytes = lon_byte[0:3]
+		lon_byte_5bytes = lon_byte[3:]
+
+		fix_flag = 1
+		gps_stars = 1
+		signature = 1
+
+		# payload length is 32bytes
+
+		payload = \
+			int_to_byte(hdware_ver)+\
+			int_to_byte(upgrade_flag)+\
+			int_to_byte(lock_status)+\
+			int_to_byte(csq)+\
+			int_to_byte(temp)+\
+			int_to_byte(v_bus)+\
+			int_to_byte(i_charge)+\
+			int_to_byte(v_battery)+\
+			int_to_byte(battery_stat)+\
+			timestamp+\
+			lat_byte_3bytes+\
+			lat_byte_5bytes+\
+			lon_byte_3bytes+\
+			lon_byte_5bytes+\
+			int_to_byte(fix_flag)+\
+			int_to_byte(gps_stars)+\
+			int_to_byte(signature)
+
+		# -----------------------------------------------
+
+		logger.debug(u'payload length: {0}'.format(len(payload)))
+
 		# aes encryption
-		cmd = self.aes_encrypt(proto, cmd)
+		payload = self.aes_encrypt(proto, payload)
 		# create crc8
+		cmd = header+payload
 		crc8_byte = create_crc8_val(cmd)
 		lock_unlock_response = cmd+crc8_byte
 
@@ -225,18 +433,81 @@ class Logic(object):
 		return lock_unlock_response
 
 	def lock_processing(self, proto, parsed):
-		'''Preparing send to server.'''
+		'''Preparing response lock_unlock_response to server > controller'''
 		length = parsed['length']
 		message_type = CLIENT_TYPE['lock_unlock_response']
 		message_id = parsed['message_id'] # Check, it required tobe modified.
 		device_id = parsed['device_id']
 		version = parsed['version']
-		firmware = parsed['firmware']		
+		firmware = parsed['firmware']
 
-		cmd = START+length+version+message_type+message_id+firmware+device_id
+		# do something with payload
+		payload = parsed['payload']
+
+		# header
+		header = START+length+version+message_type+message_id+firmware+device_id
+
+		# payload
+		hdware_ver = 1
+		upgrade_flag = 1
+		lock_status = 1
+		csq = 1
+		temp = 1
+		v_bus = 1
+		i_charge = 1
+		v_battery = 1
+		battery_stat = 1
+
+		# timestamp (4bytes)
+		t = get_shanghai_time()
+		timestamp = to_timestamp(t)
+		timestamp = timestamp_to_byte(timestamp)
+
+		# latitude (split by 2), 3bytes and 5bytes.
+		latitude = 23.88888888
+		lat_byte = double_to_byte(latitude)
+		lat_byte_3bytes = lat_byte[0:3]
+		lat_byte_5bytes = lat_byte[3:]
+
+		# longitude (split by 2), 3bytes and 5bytes.
+		longitude = 3.66666666
+		lon_byte = double_to_byte(longitude)
+		lon_byte_3bytes = lon_byte[0:3]
+		lon_byte_5bytes = lon_byte[3:]
+
+		fix_flag = 1
+		gps_stars = 1
+		signature = 1
+
+		# payload length is 32bytes
+
+		payload = \
+			int_to_byte(hdware_ver)+\
+			int_to_byte(upgrade_flag)+\
+			int_to_byte(lock_status)+\
+			int_to_byte(csq)+\
+			int_to_byte(temp)+\
+			int_to_byte(v_bus)+\
+			int_to_byte(i_charge)+\
+			int_to_byte(v_battery)+\
+			int_to_byte(battery_stat)+\
+			timestamp+\
+			lat_byte_3bytes+\
+			lat_byte_5bytes+\
+			lon_byte_3bytes+\
+			lon_byte_5bytes+\
+			int_to_byte(fix_flag)+\
+			int_to_byte(gps_stars)+\
+			int_to_byte(signature)
+
+		# -----------------------------------------------
+
+		logger.debug(u'payload length: {0}'.format(len(payload)))
+
 		# aes encryption
-		cmd = self.aes_encrypt(proto, cmd)
+		payload = self.aes_encrypt(proto, payload)
 		# create crc8
+		cmd = header+payload
 		crc8_byte = create_crc8_val(cmd)
 		lock_unlock_response = cmd+crc8_byte
 

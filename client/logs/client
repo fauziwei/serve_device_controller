@@ -1269,3 +1269,584 @@
 2017-06-24 12:32:55,237 Detected normal_ack message_type, doesnt required to be encrypted or decrypted.
 2017-06-24 12:32:55,237 Detected normal_ack...
 2017-06-24 12:32:55,239 Maintain connection...
+2017-06-26 00:05:21,470 ------------------------------
+2017-06-26 00:05:21,470 Get connection with 127.0.0.1:8001
+2017-06-26 00:05:21,470 message_id in byte: "'t"
+2017-06-26 00:05:21,470 version: '\x03'
+2017-06-26 00:05:21,470 firmware: '\x01'
+2017-06-26 00:05:21,470 length of total message: 17
+2017-06-26 00:05:21,470 version: '\x03'
+2017-06-26 00:05:21,470 firmware: '\x01'
+2017-06-26 00:05:21,519 cyphertext: '{r\xec"\x91\x12L]\xb7\x1b&\xc0X\xad\xbb\x10K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd'
+2017-06-26 00:05:21,520 Lost connection with: 127.0.0.1:8001
+2017-06-26 00:09:17,362 ------------------------------
+2017-06-26 00:09:17,362 Get connection with 127.0.0.1:8001
+2017-06-26 00:09:17,364 message_id in byte: "'t"
+2017-06-26 00:09:17,364 version: '\x03'
+2017-06-26 00:09:17,364 firmware: '\x01'
+2017-06-26 00:09:17,364 length of total message: 17
+2017-06-26 00:09:17,364 version: '\x03'
+2017-06-26 00:09:17,364 firmware: '\x01'
+2017-06-26 00:09:17,410 payload length: 32
+2017-06-26 00:09:17,410 cyphertext: 't#F\xc6\xf8R\xe5\xf5\x12\x95|\xdd}\xcf5xK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd'
+2017-06-26 00:09:17,410 normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92t#F\xc6\xf8R\xe5\xf5\x12\x95|\xdd}\xcf5xK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\xdd"
+2017-06-26 00:09:17,411 Length of normal_bike_status: 49
+2017-06-26 00:09:17,411 vrfy_crc: '\xdd' , crc: '\xdd'
+2017-06-26 00:09:17,411 Send normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92t#F\xc6\xf8R\xe5\xf5\x12\x95|\xdd}\xcf5xK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\xdd"
+2017-06-26 00:09:17,418 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-26 00:09:17,418 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-26 00:09:17,418 ------------------------------
+2017-06-26 00:09:17,418 Real data before encrypt/decrypt.
+2017-06-26 00:09:17,418 start: '\xaa'
+2017-06-26 00:09:17,420 length: 17 bytes
+2017-06-26 00:09:17,420 version: '\x03'
+2017-06-26 00:09:17,420 message_type: '\x02'
+2017-06-26 00:09:17,420 message_id: "'t"
+2017-06-26 00:09:17,420 firmware: '\x01'
+2017-06-26 00:09:17,420 device_id: 2469040358b6e392
+2017-06-26 00:09:17,420 crc: '\xf1'
+2017-06-26 00:09:17,420 Detected normal_ack message_type, doesnt required to be decrypted.
+2017-06-26 00:09:17,420 Detected normal_ack...
+2017-06-26 00:09:17,420 Maintain connection...
+2017-06-26 00:10:15,049 ------------------------------
+2017-06-26 00:10:15,049 Get connection with 127.0.0.1:8001
+2017-06-26 00:10:15,049 message_id in byte: "'t"
+2017-06-26 00:10:15,049 version: '\x03'
+2017-06-26 00:10:15,049 firmware: '\x01'
+2017-06-26 00:10:15,049 length of total message: 17
+2017-06-26 00:10:15,049 version: '\x03'
+2017-06-26 00:10:15,049 firmware: '\x01'
+2017-06-26 00:10:15,095 payload length: 32
+2017-06-26 00:10:15,095 cyphertext: '\xa8\xee\xdd\xf2\xf8\xaa\xfdC\xa3\x958\x84\x0e\x81\x95QK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd'
+2017-06-26 00:10:15,095 normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92\xa8\xee\xdd\xf2\xf8\xaa\xfdC\xa3\x958\x84\x0e\x81\x95QK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\x9c"
+2017-06-26 00:10:15,095 Length of normal_bike_status: 49
+2017-06-26 00:10:15,095 vrfy_crc: '\x9c' , crc: '\x9c'
+2017-06-26 00:10:15,095 Send normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92\xa8\xee\xdd\xf2\xf8\xaa\xfdC\xa3\x958\x84\x0e\x81\x95QK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\x9c"
+2017-06-26 00:10:15,099 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xf1"
+2017-06-26 00:10:15,101 vrfy_crc: '\xf1' , crc: '\xf1'
+2017-06-26 00:10:15,101 ------------------------------
+2017-06-26 00:10:15,101 Real data before encrypt/decrypt.
+2017-06-26 00:10:15,101 start: '\xaa'
+2017-06-26 00:10:15,101 length: 17 bytes
+2017-06-26 00:10:15,101 version: '\x03'
+2017-06-26 00:10:15,101 message_type: '\x02'
+2017-06-26 00:10:15,101 message_id: "'t"
+2017-06-26 00:10:15,101 firmware: '\x01'
+2017-06-26 00:10:15,101 device_id: 2469040358b6e392
+2017-06-26 00:10:15,101 crc: '\xf1'
+2017-06-26 00:10:15,101 Detected normal_ack message_type, doesnt required to be decrypted.
+2017-06-26 00:10:15,101 Detected normal_ack...
+2017-06-26 00:10:15,101 Maintain connection...
+2017-06-26 00:14:40,703 Lost connection with: 127.0.0.1:8001
+2017-06-26 00:14:50,990 ------------------------------
+2017-06-26 00:14:50,990 Get connection with 127.0.0.1:8001
+2017-06-26 00:14:50,990 message_id in byte: "'t"
+2017-06-26 00:14:50,990 version: '\x03'
+2017-06-26 00:14:50,990 firmware: '\x01'
+2017-06-26 00:14:50,990 length of total message: 17
+2017-06-26 00:14:50,990 version: '\x03'
+2017-06-26 00:14:50,990 firmware: '\x01'
+2017-06-26 00:14:51,036 payload length: 32
+2017-06-26 00:14:51,036 cyphertext: 'J\x1f2J\x85\x9a\xa4/\x9741F\xb4\x94!]K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd'
+2017-06-26 00:14:51,036 normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92J\x1f2J\x85\x9a\xa4/\x9741F\xb4\x94!]K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfda"
+2017-06-26 00:14:51,036 Length of normal_bike_status: 49
+2017-06-26 00:14:51,036 vrfy_crc: 'a' , crc: 'a'
+2017-06-26 00:14:51,036 Send normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92J\x1f2J\x85\x9a\xa4/\x9741F\xb4\x94!]K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfda"
+2017-06-26 00:14:57,009 Lost connection with: 127.0.0.1:8001
+2017-06-26 00:15:49,069 ------------------------------
+2017-06-26 00:15:49,069 Get connection with 127.0.0.1:8001
+2017-06-26 00:15:49,069 message_id in byte: "'t"
+2017-06-26 00:15:49,069 version: '\x03'
+2017-06-26 00:15:49,069 firmware: '\x01'
+2017-06-26 00:15:49,069 length of total message: 17
+2017-06-26 00:15:49,069 version: '\x03'
+2017-06-26 00:15:49,069 firmware: '\x01'
+2017-06-26 00:15:49,117 payload length: 32
+2017-06-26 00:15:49,117 cyphertext: 'lv\xba\x8aR\xae\x1c\xd4\x1dc\xe1v}\xb0\xd8\x8aK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd'
+2017-06-26 00:15:49,117 normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92lv\xba\x8aR\xae\x1c\xd4\x1dc\xe1v}\xb0\xd8\x8aK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfdX"
+2017-06-26 00:15:49,117 Length of normal_bike_status: 49
+2017-06-26 00:15:49,117 vrfy_crc: 'X' , crc: 'X'
+2017-06-26 00:15:49,117 Send normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92lv\xba\x8aR\xae\x1c\xd4\x1dc\xe1v}\xb0\xd8\x8aK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfdX"
+2017-06-26 00:15:49,173 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xb5\xe1OYv"
+2017-06-26 00:15:49,173 Parsing data 17bytes failed.
+2017-06-26 00:15:49,174 Maintain connection...
+2017-06-26 00:20:44,647 ------------------------------
+2017-06-26 00:20:44,647 Get connection with 127.0.0.1:8001
+2017-06-26 00:20:44,647 message_id in byte: "'t"
+2017-06-26 00:20:44,647 version: '\x03'
+2017-06-26 00:20:44,647 firmware: '\x01'
+2017-06-26 00:20:44,647 length of total message: 17
+2017-06-26 00:20:44,647 version: '\x03'
+2017-06-26 00:20:44,648 firmware: '\x01'
+2017-06-26 00:20:44,694 payload length: 32
+2017-06-26 00:20:44,694 cyphertext: '\xd7`\xb4yw\x87\xb6\xc8\xd2\xe9\xedG\x08E\x86\xf9K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd'
+2017-06-26 00:20:44,694 normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92\xd7`\xb4yw\x87\xb6\xc8\xd2\xe9\xedG\x08E\x86\xf9K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfdL"
+2017-06-26 00:20:44,694 Length of normal_bike_status: 49
+2017-06-26 00:20:44,694 vrfy_crc: 'L' , crc: 'L'
+2017-06-26 00:20:44,694 Send normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92\xd7`\xb4yw\x87\xb6\xc8\xd2\xe9\xedG\x08E\x86\xf9K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfdL"
+2017-06-26 00:20:44,698 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xdc\xe2OY8"
+2017-06-26 00:20:44,698 vrfy_crc: '8' , crc: '8'
+2017-06-26 00:20:44,698 ------------------------------
+2017-06-26 00:20:44,698 Real data before encrypt/decrypt.
+2017-06-26 00:20:44,698 start: '\xaa'
+2017-06-26 00:20:44,698 length: 17 bytes
+2017-06-26 00:20:44,698 version: '\x03'
+2017-06-26 00:20:44,698 message_type: '\x02'
+2017-06-26 00:20:44,700 message_id: "'t"
+2017-06-26 00:20:44,700 firmware: '\x01'
+2017-06-26 00:20:44,700 device_id: 2469040358b6e392
+2017-06-26 00:20:44,700 payload: '\xdc\xe2OY'
+2017-06-26 00:20:44,700 crc: '8'
+2017-06-26 00:20:44,700 Detected normal_ack message_type, doesnt required to be decrypted.
+2017-06-26 00:20:44,700 Detected normal_ack...
+2017-06-26 00:20:44,700 Maintain connection...
+2017-06-26 00:25:13,838 Lost connection with: 127.0.0.1:8001
+2017-06-26 01:00:22,394 ------------------------------
+2017-06-26 01:00:22,394 Get connection with 127.0.0.1:8001
+2017-06-26 01:00:22,394 message_id in byte: "'t"
+2017-06-26 01:00:22,394 version: '\x03'
+2017-06-26 01:00:22,394 firmware: '\x01'
+2017-06-26 01:00:22,394 length of total message: 17
+2017-06-26 01:00:22,394 version: '\x03'
+2017-06-26 01:00:22,394 firmware: '\x01'
+2017-06-26 01:00:23,848 payload length: 32
+2017-06-26 01:00:23,848 cyphertext: '%\x00\x0b\xa5\xa3y!\xc3\x16n\xdb>Rt\xdcwK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd'
+2017-06-26 01:00:23,849 normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92%\x00\x0b\xa5\xa3y!\xc3\x16n\xdb>Rt\xdcwK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\x96"
+2017-06-26 01:00:23,849 Length of normal_bike_status: 49
+2017-06-26 01:00:23,849 vrfy_crc: '\x96' , crc: '\x96'
+2017-06-26 01:00:23,849 Send normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92%\x00\x0b\xa5\xa3y!\xc3\x16n\xdb>Rt\xdcwK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\x96"
+2017-06-26 01:00:23,910 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92'\xecOY\x9d"
+2017-06-26 01:00:23,910 vrfy_crc: '\x9d' , crc: '\x9d'
+2017-06-26 01:00:23,910 ------------------------------
+2017-06-26 01:00:23,910 Real data before encrypt/decrypt.
+2017-06-26 01:00:23,910 start: '\xaa'
+2017-06-26 01:00:23,910 length: 17 bytes
+2017-06-26 01:00:23,910 version: '\x03'
+2017-06-26 01:00:23,910 message_type: '\x02'
+2017-06-26 01:00:23,910 message_id: "'t"
+2017-06-26 01:00:23,911 firmware: '\x01'
+2017-06-26 01:00:23,911 device_id: 2469040358b6e392
+2017-06-26 01:00:23,911 payload: "'\xecOY"
+2017-06-26 01:00:23,911 crc: '\x9d'
+2017-06-26 01:00:23,911 Detected normal_ack message_type, doesnt required to be decrypted.
+2017-06-26 01:00:23,911 Detected normal_ack...
+2017-06-26 01:00:23,911 Maintain connection...
+2017-06-26 01:00:46,622 Lost connection with: 127.0.0.1:8001
+2017-06-26 01:08:55,315 ------------------------------
+2017-06-26 01:08:55,315 Get connection with 127.0.0.1:8001
+2017-06-26 01:08:55,315 message_id in byte: "'t"
+2017-06-26 01:08:55,315 version: '\x03'
+2017-06-26 01:08:55,315 firmware: '\x01'
+2017-06-26 01:08:55,315 length of total message: 17
+2017-06-26 01:08:55,315 version: '\x03'
+2017-06-26 01:08:55,315 firmware: '\x01'
+2017-06-26 01:08:55,362 payload length: 32
+2017-06-26 01:08:55,362 cyphertext: '\x17(\x9cX~|\x19\x96\xf9\xcbmh\x8dv{wK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd'
+2017-06-26 01:08:55,362 normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92\x17(\x9cX~|\x19\x96\xf9\xcbmh\x8dv{wK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd;"
+2017-06-26 01:08:55,362 Length of normal_bike_status: 49
+2017-06-26 01:08:55,362 vrfy_crc: ';' , crc: ';'
+2017-06-26 01:08:55,364 Send normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92\x17(\x9cX~|\x19\x96\xf9\xcbmh\x8dv{wK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd;"
+2017-06-26 01:08:55,418 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92'\xeeOYK"
+2017-06-26 01:08:55,418 vrfy_crc: 'K' , crc: 'K'
+2017-06-26 01:08:55,418 ------------------------------
+2017-06-26 01:08:55,420 start: '\xaa'
+2017-06-26 01:08:55,420 length: 17 bytes
+2017-06-26 01:08:55,420 version: '\x03'
+2017-06-26 01:08:55,420 message_type: '\x02'
+2017-06-26 01:08:55,420 message_id: "'t"
+2017-06-26 01:08:55,420 firmware: '\x01'
+2017-06-26 01:08:55,420 device_id: 2469040358b6e392
+2017-06-26 01:08:55,420 payload: "'\xeeOY"
+2017-06-26 01:08:55,420 crc: 'K'
+2017-06-26 01:08:55,420 Detected normal_ack...
+2017-06-26 01:08:55,420 Maintain connection...
+2017-06-26 01:15:15,190 Lost connection with: 127.0.0.1:8001
+2017-06-26 01:15:23,242 ------------------------------
+2017-06-26 01:15:23,242 Get connection with 127.0.0.1:8001
+2017-06-26 01:15:23,242 message_id in byte: "'t"
+2017-06-26 01:15:23,242 version: '\x03'
+2017-06-26 01:15:23,242 firmware: '\x01'
+2017-06-26 01:15:23,243 length of total message: 17
+2017-06-26 01:15:23,243 version: '\x03'
+2017-06-26 01:15:23,243 firmware: '\x01'
+2017-06-26 01:15:23,243 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-26 01:15:23,243 Length of heartbeat: 17
+2017-06-26 01:15:23,243 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-26 01:15:23,243 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-26 01:15:24,371 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xac\xefOY\x9b"
+2017-06-26 01:15:24,371 vrfy_crc: '\x9b' , crc: '\x9b'
+2017-06-26 01:15:24,371 ------------------------------
+2017-06-26 01:15:24,371 Receiving...
+2017-06-26 01:15:24,371 start: '\xaa'
+2017-06-26 01:15:24,371 length: 17 bytes
+2017-06-26 01:15:24,371 version: '\x03'
+2017-06-26 01:15:24,371 message_type: '\x02'
+2017-06-26 01:15:24,371 message_id: "'t"
+2017-06-26 01:15:24,371 firmware: '\x01'
+2017-06-26 01:15:24,371 device_id: 2469040358b6e392
+2017-06-26 01:15:24,372 payload: '\xac\xefOY'
+2017-06-26 01:15:24,372 crc: '\x9b'
+2017-06-26 01:15:24,372 Detected normal_ack...
+2017-06-26 01:15:24,372 Maintain connection...
+2017-06-26 01:15:32,319 ------------------------------
+2017-06-26 01:15:32,319 Get connection with 127.0.0.1:8001
+2017-06-26 01:15:32,319 message_id in byte: "'t"
+2017-06-26 01:15:32,319 version: '\x03'
+2017-06-26 01:15:32,319 firmware: '\x01'
+2017-06-26 01:15:32,319 length of total message: 17
+2017-06-26 01:15:32,319 version: '\x03'
+2017-06-26 01:15:32,319 firmware: '\x01'
+2017-06-26 01:15:32,319 heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-26 01:15:32,319 Length of heartbeat: 17
+2017-06-26 01:15:32,319 vrfy_crc: '\x16' , crc: '\x16'
+2017-06-26 01:15:32,319 Send heartbeat: "\xaa\x00\x11\x03\x01't\x01$i\x04\x03X\xb6\xe3\x92\x16"
+2017-06-26 01:15:32,322 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xb4\xefOYL"
+2017-06-26 01:15:32,322 vrfy_crc: 'L' , crc: 'L'
+2017-06-26 01:15:32,322 ------------------------------
+2017-06-26 01:15:32,322 Receiving...
+2017-06-26 01:15:32,323 start: '\xaa'
+2017-06-26 01:15:32,323 length: 17 bytes
+2017-06-26 01:15:32,323 version: '\x03'
+2017-06-26 01:15:32,323 message_type: '\x02'
+2017-06-26 01:15:32,323 message_id: "'t"
+2017-06-26 01:15:32,323 firmware: '\x01'
+2017-06-26 01:15:32,323 device_id: 2469040358b6e392
+2017-06-26 01:15:32,323 payload: '\xb4\xefOY'
+2017-06-26 01:15:32,323 crc: 'L'
+2017-06-26 01:15:32,323 Detected normal_ack...
+2017-06-26 01:15:32,323 Maintain connection...
+2017-06-26 01:58:43,038 ------------------------------
+2017-06-26 01:58:43,038 Get connection with 127.0.0.1:8001
+2017-06-26 01:58:43,039 message_id in byte: "'t"
+2017-06-26 01:58:43,039 version: '\x03'
+2017-06-26 01:58:43,039 firmware: '\x01'
+2017-06-26 01:58:43,039 length of total message: 17
+2017-06-26 01:58:43,039 version: '\x03'
+2017-06-26 01:58:43,039 firmware: '\x01'
+2017-06-26 01:58:43,085 payload length: 32
+2017-06-26 01:58:43,085 cyphertext: '\xed\xe2\x81\x9b\xbd_x\xb8\x85)$\xf5\xc4R\x0eDK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd'
+2017-06-26 01:58:43,085 normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92\xed\xe2\x81\x9b\xbd_x\xb8\x85)$\xf5\xc4R\x0eDK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\x8e"
+2017-06-26 01:58:43,085 Length of normal_bike_status: 49
+2017-06-26 01:58:43,085 vrfy_crc: '\x8e' , crc: '\x8e'
+2017-06-26 01:58:43,085 Send normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92\xed\xe2\x81\x9b\xbd_x\xb8\x85)$\xf5\xc4R\x0eDK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\x8e"
+2017-06-26 01:58:43,141 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xd3\xf9OY\xa4"
+2017-06-26 01:58:43,142 vrfy_crc: '\xa4' , crc: '\xa4'
+2017-06-26 01:58:43,142 ------------------------------
+2017-06-26 01:58:43,142 Receiving...
+2017-06-26 01:58:43,142 start: '\xaa'
+2017-06-26 01:58:43,142 length: 17 bytes
+2017-06-26 01:58:43,142 version: '\x03'
+2017-06-26 01:58:43,142 message_type: '\x02'
+2017-06-26 01:58:43,142 message_id: "'t"
+2017-06-26 01:58:43,142 firmware: '\x01'
+2017-06-26 01:58:43,142 device_id: 2469040358b6e392
+2017-06-26 01:58:43,142 payload: '\xd3\xf9OY'
+2017-06-26 01:58:43,142 crc: '\xa4'
+2017-06-26 01:58:43,142 Detected normal_ack...
+2017-06-26 01:58:43,142 Maintain connection...
+2017-06-26 01:58:47,242 Recv: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92\xc7\xea\xce\xae3\xa5\xe7\x1fa\xa47\x10\xb60\x83\x8f\xe4"
+2017-06-26 01:58:47,242 vrfy_crc: '\xe4' , crc: '\xe4'
+2017-06-26 01:58:47,242 ------------------------------
+2017-06-26 01:58:47,243 Receiving...
+2017-06-26 01:58:47,243 start: '\xaa'
+2017-06-26 01:58:47,243 length: 17 bytes
+2017-06-26 01:58:47,243 version: '\x03'
+2017-06-26 01:58:47,243 message_type: '\x11'
+2017-06-26 01:58:47,243 message_id: "'t"
+2017-06-26 01:58:47,243 firmware: '\x01'
+2017-06-26 01:58:47,243 device_id: 2469040358b6e392
+2017-06-26 01:58:47,243 payload: '\xc7\xea\xce\xae3\xa5\xe7\x1fa\xa47\x10\xb60\x83\x8f'
+2017-06-26 01:58:47,243 payload: '\xd7\xf9OY\xd7\xf9OY\x00\x00\x00\x00\x00\x00\x00\x01'
+2017-06-26 01:58:47,243 crc: '\xe4'
+2017-06-26 01:58:47,243 ------------------------------
+2017-06-26 01:58:47,243 Detected unlock...
+2017-06-26 01:58:47,243 payload length: 32
+2017-06-26 01:58:47,243 cyphertext: '\xee\xd2t\xde\xc8D\xe2\x03\xb0]<\x9a\x9c\x8cvCK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd'
+2017-06-26 01:58:47,243 Preparing relay lock_unlock_response from device to controller:
+2017-06-26 01:58:47,243 lock_unlock_response: "\xaa\x00\x11\x03\x13't\x01$i\x04\x03X\xb6\xe3\x92\xee\xd2t\xde\xc8D\xe2\x03\xb0]<\x9a\x9c\x8cvCK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfdJ"
+2017-06-26 01:58:47,243 Length of lock_unlock_response: 49
+2017-06-26 01:58:47,243 vrfy_crc: 'J' , crc: 'J'
+2017-06-26 01:58:47,243 Send: "\xaa\x00\x11\x03\x13't\x01$i\x04\x03X\xb6\xe3\x92\xee\xd2t\xde\xc8D\xe2\x03\xb0]<\x9a\x9c\x8cvCK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfdJ"
+2017-06-26 02:00:28,612 Lost connection with: 127.0.0.1:8001
+2017-06-26 02:00:33,660 ------------------------------
+2017-06-26 02:00:33,660 Get connection with 127.0.0.1:8001
+2017-06-26 02:00:33,660 message_id in byte: "'t"
+2017-06-26 02:00:33,660 version: '\x03'
+2017-06-26 02:00:33,660 firmware: '\x01'
+2017-06-26 02:00:33,660 length of total message: 17
+2017-06-26 02:00:33,660 version: '\x03'
+2017-06-26 02:00:33,660 firmware: '\x01'
+2017-06-26 02:00:33,709 payload length: 32
+2017-06-26 02:00:33,709 cyphertext: '\xa5\xd8w\x1d9\x07\xe4\xd5\xea\xcf\xe0\xcd\xb6]\xe3\xf8K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd'
+2017-06-26 02:00:33,709 normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92\xa5\xd8w\x1d9\x07\xe4\xd5\xea\xcf\xe0\xcd\xb6]\xe3\xf8K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\xa1"
+2017-06-26 02:00:33,710 Length of normal_bike_status: 49
+2017-06-26 02:00:33,710 vrfy_crc: '\xa1' , crc: '\xa1'
+2017-06-26 02:00:33,710 Send normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92\xa5\xd8w\x1d9\x07\xe4\xd5\xea\xcf\xe0\xcd\xb6]\xe3\xf8K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\xa1"
+2017-06-26 02:00:33,767 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92A\xfaOYc"
+2017-06-26 02:00:33,767 vrfy_crc: 'c' , crc: 'c'
+2017-06-26 02:00:33,767 ------------------------------
+2017-06-26 02:00:33,769 Receiving...
+2017-06-26 02:00:33,769 start: '\xaa'
+2017-06-26 02:00:33,769 length: 17 bytes
+2017-06-26 02:00:33,769 version: '\x03'
+2017-06-26 02:00:33,769 message_type: '\x02'
+2017-06-26 02:00:33,769 message_id: "'t"
+2017-06-26 02:00:33,769 firmware: '\x01'
+2017-06-26 02:00:33,769 device_id: 2469040358b6e392
+2017-06-26 02:00:33,769 payload: 'A\xfaOY'
+2017-06-26 02:00:33,769 crc: 'c'
+2017-06-26 02:00:33,769 Detected normal_ack...
+2017-06-26 02:00:33,769 Maintain connection...
+2017-06-26 02:00:38,319 Recv: "\xaa\x00\x11\x03\x11't\x01$i\x04\x03X\xb6\xe3\x92Jln\xb1\xcd\xcd\x91\xd2\xf5&fx\x14.;]f"
+2017-06-26 02:00:38,319 vrfy_crc: 'f' , crc: 'f'
+2017-06-26 02:00:38,319 ------------------------------
+2017-06-26 02:00:38,319 Receiving...
+2017-06-26 02:00:38,319 start: '\xaa'
+2017-06-26 02:00:38,319 length: 17 bytes
+2017-06-26 02:00:38,319 version: '\x03'
+2017-06-26 02:00:38,319 message_type: '\x11'
+2017-06-26 02:00:38,319 message_id: "'t"
+2017-06-26 02:00:38,319 firmware: '\x01'
+2017-06-26 02:00:38,319 device_id: 2469040358b6e392
+2017-06-26 02:00:38,319 payload: 'Jln\xb1\xcd\xcd\x91\xd2\xf5&fx\x14.;]'
+2017-06-26 02:00:38,319 payload: 'F\xfaOYF\xfaOY\x00\x00\x00\x00\x00\x00\x00\x01'
+2017-06-26 02:00:38,319 crc: 'f'
+2017-06-26 02:00:38,319 ------------------------------
+2017-06-26 02:00:38,319 Detected unlock...
+2017-06-26 02:00:38,319 payload length: 32
+2017-06-26 02:00:38,319 cyphertext: 'fz3j\xd1\xf7\xda\x80\xbb\xdb\x01\xa8\x92\xd8*TK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd'
+2017-06-26 02:00:38,319 Preparing relay lock_unlock_response from device to controller:
+2017-06-26 02:00:38,319 lock_unlock_response: "\xaa\x00\x11\x03\x13't\x01$i\x04\x03X\xb6\xe3\x92fz3j\xd1\xf7\xda\x80\xbb\xdb\x01\xa8\x92\xd8*TK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\xa6"
+2017-06-26 02:00:38,319 Length of lock_unlock_response: 49
+2017-06-26 02:00:38,321 vrfy_crc: '\xa6' , crc: '\xa6'
+2017-06-26 02:00:38,321 Send: "\xaa\x00\x11\x03\x13't\x01$i\x04\x03X\xb6\xe3\x92fz3j\xd1\xf7\xda\x80\xbb\xdb\x01\xa8\x92\xd8*TK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\xa6"
+2017-06-26 02:06:05,578 Lost connection with: 127.0.0.1:8001
+2017-06-26 02:06:10,936 ------------------------------
+2017-06-26 02:06:10,937 Get connection with 127.0.0.1:8001
+2017-06-26 02:06:10,937 message_id in byte: "'t"
+2017-06-26 02:06:10,937 version: '\x03'
+2017-06-26 02:06:10,937 firmware: '\x01'
+2017-06-26 02:06:10,937 length of total message: 17
+2017-06-26 02:06:10,937 version: '\x03'
+2017-06-26 02:06:10,937 firmware: '\x01'
+2017-06-26 02:06:10,983 payload length: 32
+2017-06-26 02:06:10,983 cyphertext: '\xdd\xb0Z}\xad\xbc\xd0*636w\x17\x08L\x11K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd'
+2017-06-26 02:06:10,983 normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92\xdd\xb0Z}\xad\xbc\xd0*636w\x17\x08L\x11K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\xd9"
+2017-06-26 02:06:10,983 Length of normal_bike_status: 49
+2017-06-26 02:06:10,983 vrfy_crc: '\xd9' , crc: '\xd9'
+2017-06-26 02:06:10,983 Send normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92\xdd\xb0Z}\xad\xbc\xd0*636w\x17\x08L\x11K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\xd9"
+2017-06-26 02:06:11,040 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\x93\xfbOY\xe9"
+2017-06-26 02:06:11,040 vrfy_crc: '\xe9' , crc: '\xe9'
+2017-06-26 02:06:11,040 ------------------------------
+2017-06-26 02:06:11,040 Receiving...
+2017-06-26 02:06:11,040 start: '\xaa'
+2017-06-26 02:06:11,040 length: 17 bytes
+2017-06-26 02:06:11,040 version: '\x03'
+2017-06-26 02:06:11,042 message_type: '\x02'
+2017-06-26 02:06:11,042 message_id: "'t"
+2017-06-26 02:06:11,042 firmware: '\x01'
+2017-06-26 02:06:11,042 device_id: 2469040358b6e392
+2017-06-26 02:06:11,042 payload: '\x93\xfbOY'
+2017-06-26 02:06:11,042 crc: '\xe9'
+2017-06-26 02:06:11,042 Detected normal_ack...
+2017-06-26 02:06:11,042 Maintain connection...
+2017-06-26 02:08:00,520 Recv: "\xaa\x00\x11\x03\x12't\x01$i\x04\x03X\xb6\xe3\x92\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01s"
+2017-06-26 02:08:00,522 vrfy_crc: 's' , crc: 's'
+2017-06-26 02:08:00,522 ------------------------------
+2017-06-26 02:08:00,522 Receiving...
+2017-06-26 02:08:00,522 start: '\xaa'
+2017-06-26 02:08:00,522 length: 17 bytes
+2017-06-26 02:08:00,522 version: '\x03'
+2017-06-26 02:08:00,522 message_type: '\x12'
+2017-06-26 02:08:00,522 message_id: "'t"
+2017-06-26 02:08:00,522 firmware: '\x01'
+2017-06-26 02:08:00,522 device_id: 2469040358b6e392
+2017-06-26 02:08:00,522 payload: '\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01'
+2017-06-26 02:08:00,522 payload: '\x8c\xda\xe9\x87\x87~\xe7\xe8\xcd\x9a\x9f\x88\x0c\xe5E\x98'
+2017-06-26 02:08:00,522 crc: 's'
+2017-06-26 02:08:00,522 ------------------------------
+2017-06-26 02:08:00,522 Detected lock...
+2017-06-26 02:08:00,522 cyphertext: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+'
+2017-06-26 02:08:00,522 Preparing relay lock_unlock_response from device to controller:
+2017-06-26 02:08:00,522 lock_unlock_response: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+\xc6'
+2017-06-26 02:08:00,523 Length of lock_unlock_response: 17
+2017-06-26 02:08:00,523 vrfy_crc: '\xc6' , crc: '\xc6'
+2017-06-26 02:08:00,523 Send: ';^N\xe7\xf6\xd46\x9c\x02\x11X\x07qOD+\xc6'
+2017-06-26 02:08:00,526 Lost connection with: 127.0.0.1:8001
+2017-06-26 02:11:43,631 ------------------------------
+2017-06-26 02:11:43,632 Get connection with 127.0.0.1:8001
+2017-06-26 02:11:43,632 message_id in byte: "'t"
+2017-06-26 02:11:43,632 version: '\x03'
+2017-06-26 02:11:43,632 firmware: '\x01'
+2017-06-26 02:11:43,632 length of total message: 17
+2017-06-26 02:11:43,632 version: '\x03'
+2017-06-26 02:11:43,632 firmware: '\x01'
+2017-06-26 02:11:43,680 payload length: 32
+2017-06-26 02:11:43,680 cyphertext: '\xfb\x94\x1c\x02~\x7fz\xc0\xb9\xc1\xd6R&\xbf\x9f\xc2K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd'
+2017-06-26 02:11:43,680 normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92\xfb\x94\x1c\x02~\x7fz\xc0\xb9\xc1\xd6R&\xbf\x9f\xc2K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd7"
+2017-06-26 02:11:43,680 Length of normal_bike_status: 49
+2017-06-26 02:11:43,680 vrfy_crc: '7' , crc: '7'
+2017-06-26 02:11:43,680 Send normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92\xfb\x94\x1c\x02~\x7fz\xc0\xb9\xc1\xd6R&\xbf\x9f\xc2K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd7"
+2017-06-26 02:11:43,743 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\xdf\xfcOY\x8c"
+2017-06-26 02:11:43,743 vrfy_crc: '\x8c' , crc: '\x8c'
+2017-06-26 02:11:43,743 ------------------------------
+2017-06-26 02:11:43,743 Receiving...
+2017-06-26 02:11:43,743 start: '\xaa'
+2017-06-26 02:11:43,743 length: 17 bytes
+2017-06-26 02:11:43,743 version: '\x03'
+2017-06-26 02:11:43,743 message_type: '\x02'
+2017-06-26 02:11:43,743 message_id: "'t"
+2017-06-26 02:11:43,743 firmware: '\x01'
+2017-06-26 02:11:43,743 device_id: 2469040358b6e392
+2017-06-26 02:11:43,743 payload: '\xdf\xfcOY'
+2017-06-26 02:11:43,743 crc: '\x8c'
+2017-06-26 02:11:43,743 Detected normal_ack...
+2017-06-26 02:11:43,743 Maintain connection...
+2017-06-26 02:11:46,779 Recv: "\xaa\x00\x11\x03\x12't\x01$i\x04\x03X\xb6\xe3\x92\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01s"
+2017-06-26 02:11:46,779 vrfy_crc: 's' , crc: 's'
+2017-06-26 02:11:46,779 ------------------------------
+2017-06-26 02:11:46,779 Receiving...
+2017-06-26 02:11:46,779 start: '\xaa'
+2017-06-26 02:11:46,779 length: 17 bytes
+2017-06-26 02:11:46,782 version: '\x03'
+2017-06-26 02:11:46,782 message_type: '\x12'
+2017-06-26 02:11:46,782 message_id: "'t"
+2017-06-26 02:11:46,782 firmware: '\x01'
+2017-06-26 02:11:46,782 device_id: 2469040358b6e392
+2017-06-26 02:11:46,782 payload: '\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01'
+2017-06-26 02:11:46,782 payload: '\x8c\xda\xe9\x87\x87~\xe7\xe8\xcd\x9a\x9f\x88\x0c\xe5E\x98'
+2017-06-26 02:11:46,782 crc: 's'
+2017-06-26 02:11:46,782 ------------------------------
+2017-06-26 02:11:46,782 Detected lock...
+2017-06-26 02:11:46,782 payload length: 32
+2017-06-26 02:11:46,782 cyphertext: '\x8e\xfa\x95\xda\xa6\x19\xad\x91\x88\x89\xd6\xc0\xa7\x9b\\\xf0K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd'
+2017-06-26 02:11:46,783 Lost connection with: 127.0.0.1:8001
+2017-06-26 02:13:06,803 ------------------------------
+2017-06-26 02:13:06,803 Get connection with 127.0.0.1:8001
+2017-06-26 02:13:06,803 message_id in byte: "'t"
+2017-06-26 02:13:06,803 version: '\x03'
+2017-06-26 02:13:06,803 firmware: '\x01'
+2017-06-26 02:13:06,803 length of total message: 17
+2017-06-26 02:13:06,803 version: '\x03'
+2017-06-26 02:13:06,803 firmware: '\x01'
+2017-06-26 02:13:06,851 payload length: 32
+2017-06-26 02:13:06,851 cyphertext: 'dz\x1f\xfbT\xc5\xd5\xe2XX\x04\x1e\xbe\xe2X\xf2K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd'
+2017-06-26 02:13:06,851 normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92dz\x1f\xfbT\xc5\xd5\xe2XX\x04\x1e\xbe\xe2X\xf2K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\xd9"
+2017-06-26 02:13:06,851 Length of normal_bike_status: 49
+2017-06-26 02:13:06,851 vrfy_crc: '\xd9' , crc: '\xd9'
+2017-06-26 02:13:06,851 Send normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92dz\x1f\xfbT\xc5\xd5\xe2XX\x04\x1e\xbe\xe2X\xf2K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\xd9"
+2017-06-26 02:13:06,855 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x922\xfdOY}"
+2017-06-26 02:13:06,855 vrfy_crc: '}' , crc: '}'
+2017-06-26 02:13:06,855 ------------------------------
+2017-06-26 02:13:06,855 Receiving...
+2017-06-26 02:13:06,855 start: '\xaa'
+2017-06-26 02:13:06,855 length: 17 bytes
+2017-06-26 02:13:06,855 version: '\x03'
+2017-06-26 02:13:06,855 message_type: '\x02'
+2017-06-26 02:13:06,855 message_id: "'t"
+2017-06-26 02:13:06,855 firmware: '\x01'
+2017-06-26 02:13:06,855 device_id: 2469040358b6e392
+2017-06-26 02:13:06,855 payload: '2\xfdOY'
+2017-06-26 02:13:06,855 crc: '}'
+2017-06-26 02:13:06,855 Detected normal_ack...
+2017-06-26 02:13:06,855 Maintain connection...
+2017-06-26 02:13:10,355 Recv: "\xaa\x00\x11\x03\x12't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8xa"
+2017-06-26 02:13:10,355 vrfy_crc: 'a' , crc: 'a'
+2017-06-26 02:13:10,355 ------------------------------
+2017-06-26 02:13:10,355 Receiving...
+2017-06-26 02:13:10,355 start: '\xaa'
+2017-06-26 02:13:10,355 length: 17 bytes
+2017-06-26 02:13:10,355 version: '\x03'
+2017-06-26 02:13:10,355 message_type: '\x12'
+2017-06-26 02:13:10,355 message_id: "'t"
+2017-06-26 02:13:10,355 firmware: '\x01'
+2017-06-26 02:13:10,355 device_id: 2469040358b6e392
+2017-06-26 02:13:10,355 payload: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-26 02:13:10,355 payload: '\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01'
+2017-06-26 02:13:10,355 crc: 'a'
+2017-06-26 02:13:10,355 ------------------------------
+2017-06-26 02:13:10,355 Detected lock...
+2017-06-26 02:13:10,355 payload length: 32
+2017-06-26 02:13:10,355 cyphertext: '-\x85\xcf?\x87\x80\xa8\x98\xf0\x11\xe2\xf4\xf1l\x17\x9cK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd'
+2017-06-26 02:13:10,355 Preparing relay lock_unlock_response from device to controller:
+2017-06-26 02:13:10,355 lock_unlock_response: "\xaa\x00\x11\x03\x13't\x01$i\x04\x03X\xb6\xe3\x92-\x85\xcf?\x87\x80\xa8\x98\xf0\x11\xe2\xf4\xf1l\x17\x9cK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\x83"
+2017-06-26 02:13:10,355 Length of lock_unlock_response: 49
+2017-06-26 02:13:10,355 vrfy_crc: '\x83' , crc: '\x83'
+2017-06-26 02:13:10,357 Send: "\xaa\x00\x11\x03\x13't\x01$i\x04\x03X\xb6\xe3\x92-\x85\xcf?\x87\x80\xa8\x98\xf0\x11\xe2\xf4\xf1l\x17\x9cK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\x83"
+2017-06-26 02:17:13,971 Recv: "\xaa\x00\x11\x03\x12't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8xa"
+2017-06-26 02:17:13,971 vrfy_crc: 'a' , crc: 'a'
+2017-06-26 02:17:13,971 ------------------------------
+2017-06-26 02:17:13,971 Receiving...
+2017-06-26 02:17:13,971 start: '\xaa'
+2017-06-26 02:17:13,971 length: 17 bytes
+2017-06-26 02:17:13,971 version: '\x03'
+2017-06-26 02:17:13,971 message_type: '\x12'
+2017-06-26 02:17:13,971 message_id: "'t"
+2017-06-26 02:17:13,971 firmware: '\x01'
+2017-06-26 02:17:13,971 device_id: 2469040358b6e392
+2017-06-26 02:17:13,971 payload: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-26 02:17:13,971 payload: '\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01'
+2017-06-26 02:17:13,973 crc: 'a'
+2017-06-26 02:17:13,973 ------------------------------
+2017-06-26 02:17:13,973 Detected lock...
+2017-06-26 02:17:13,973 payload length: 32
+2017-06-26 02:17:13,973 cyphertext: '\xb4(\xec?K\x1e\xdf{\xc9\x18\x95/6l\xa0\x1bK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd'
+2017-06-26 02:17:13,973 Preparing relay lock_unlock_response from device to controller:
+2017-06-26 02:17:13,973 lock_unlock_response: "\xaa\x00\x11\x03\x13't\x01$i\x04\x03X\xb6\xe3\x92\xb4(\xec?K\x1e\xdf{\xc9\x18\x95/6l\xa0\x1bK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfdN"
+2017-06-26 02:17:13,973 Length of lock_unlock_response: 49
+2017-06-26 02:17:13,973 vrfy_crc: 'N' , crc: 'N'
+2017-06-26 02:17:13,973 Send: "\xaa\x00\x11\x03\x13't\x01$i\x04\x03X\xb6\xe3\x92\xb4(\xec?K\x1e\xdf{\xc9\x18\x95/6l\xa0\x1bK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfdN"
+2017-06-26 02:17:18,451 Lost connection with: 127.0.0.1:8001
+2017-06-26 02:18:55,915 ------------------------------
+2017-06-26 02:18:55,915 Get connection with 127.0.0.1:8001
+2017-06-26 02:18:55,915 message_id in byte: "'t"
+2017-06-26 02:18:55,915 version: '\x03'
+2017-06-26 02:18:55,915 firmware: '\x01'
+2017-06-26 02:18:55,915 length of total message: 17
+2017-06-26 02:18:55,915 version: '\x03'
+2017-06-26 02:18:55,915 firmware: '\x01'
+2017-06-26 02:18:55,964 payload length: 32
+2017-06-26 02:18:55,964 cyphertext: '\x86\\\xc8s\xcf\xf3\xb0Z\x93YKg\x1b\x8fF&K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd'
+2017-06-26 02:18:55,964 normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92\x86\\\xc8s\xcf\xf3\xb0Z\x93YKg\x1b\x8fF&K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfdc"
+2017-06-26 02:18:55,964 Length of normal_bike_status: 49
+2017-06-26 02:18:55,964 vrfy_crc: 'c' , crc: 'c'
+2017-06-26 02:18:55,964 Send normal_bike_status: "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92\x86\\\xc8s\xcf\xf3\xb0Z\x93YKg\x1b\x8fF&K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfdc"
+2017-06-26 02:18:56,023 Recv: "\xaa\x00\x11\x03\x02't\x01$i\x04\x03X\xb6\xe3\x92\x90\xfeOY\x13"
+2017-06-26 02:18:56,023 vrfy_crc: '\x13' , crc: '\x13'
+2017-06-26 02:18:56,023 ------------------------------
+2017-06-26 02:18:56,023 Receiving...
+2017-06-26 02:18:56,023 start: '\xaa'
+2017-06-26 02:18:56,023 length: 17 bytes
+2017-06-26 02:18:56,023 version: '\x03'
+2017-06-26 02:18:56,023 message_type: '\x02'
+2017-06-26 02:18:56,023 message_id: "'t"
+2017-06-26 02:18:56,023 firmware: '\x01'
+2017-06-26 02:18:56,023 device_id: 2469040358b6e392
+2017-06-26 02:18:56,023 payload: '\x90\xfeOY'
+2017-06-26 02:18:56,025 crc: '\x13'
+2017-06-26 02:18:56,025 Detected normal_ack...
+2017-06-26 02:18:56,025 Maintain connection...
+2017-06-26 02:18:59,528 Recv: "\xaa\x00\x11\x03\x12't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8xa"
+2017-06-26 02:18:59,528 vrfy_crc: 'a' , crc: 'a'
+2017-06-26 02:18:59,528 ------------------------------
+2017-06-26 02:18:59,528 Receiving...
+2017-06-26 02:18:59,528 start: '\xaa'
+2017-06-26 02:18:59,528 length: 17 bytes
+2017-06-26 02:18:59,528 version: '\x03'
+2017-06-26 02:18:59,528 message_type: '\x12'
+2017-06-26 02:18:59,528 message_id: "'t"
+2017-06-26 02:18:59,528 firmware: '\x01'
+2017-06-26 02:18:59,528 device_id: 2469040358b6e392
+2017-06-26 02:18:59,528 payload: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-26 02:18:59,529 payload: '\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01'
+2017-06-26 02:18:59,529 crc: 'a'
+2017-06-26 02:18:59,529 ------------------------------
+2017-06-26 02:18:59,529 Detected lock...
+2017-06-26 02:18:59,529 payload length: 32
+2017-06-26 02:18:59,529 cyphertext: "W!\x9d\xe0\x04\x0csZ\x9f[\xd2mu`{'K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd"
+2017-06-26 02:18:59,529 Preparing relay lock_unlock_response from device to controller:
+2017-06-26 02:18:59,529 lock_unlock_response: "\xaa\x00\x11\x03\x13't\x01$i\x04\x03X\xb6\xe3\x92W!\x9d\xe0\x04\x0csZ\x9f[\xd2mu`{'K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfdL"
+2017-06-26 02:18:59,529 Length of lock_unlock_response: 49
+2017-06-26 02:18:59,529 vrfy_crc: 'L' , crc: 'L'
+2017-06-26 02:18:59,529 Send: "\xaa\x00\x11\x03\x13't\x01$i\x04\x03X\xb6\xe3\x92W!\x9d\xe0\x04\x0csZ\x9f[\xd2mu`{'K\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfdL"
+2017-06-26 02:19:04,664 Lost connection with: 127.0.0.1:8001

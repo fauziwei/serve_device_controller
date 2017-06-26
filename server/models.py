@@ -3,7 +3,7 @@
 # Fauzi, fauziwei@yahoo.com
 import sys
 import traceback
-from sqlalchemy import String, Integer, Float, Boolean, \
+from sqlalchemy import String, Integer, Float, \
 	Column, Table, ForeignKey, MetaData, create_engine
 from sqlalchemy.dialects.mysql import DOUBLE
 from sqlalchemy.orm  import sessionmaker
@@ -94,3 +94,31 @@ class Device(Base):
 
 # Auto create if doesnt exist.
 Base.metadata.create_all(engine)
+
+
+# Sample record.
+session = Db().Session()
+device_id = '2469040358b6e392'
+device = session.query(Device).filter_by(id=device_id).first()
+if not device:
+	device = Device()
+	device.id = device_id
+	device.mode = 1
+	device.firmware = 1
+	device.hardware = 1
+	device.longitude = 1.23
+	device.latitude = 3.21
+	device.gps_flags = 1
+	device.gps_satellite = 1
+	device.lock_status = 1
+	device.battery = 1
+	device.charging = 1
+	device.ble_key = '1234567812345678'
+	device.csq = 1
+	device.sim = '12345678123456781234'
+	device.phone = '1234567812345678'
+	device.upgrade_flag = 1
+	device.parameters = '123456781234'
+	device.scene = '123456781234'
+	session.add(device)
+commit(session)

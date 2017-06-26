@@ -8,7 +8,7 @@ import binascii
 from Crypto.Cipher import AES
 
 # local import
-from header import *
+from header import START, CLIENT_TYPE, SERVER_TYPE
 from utils import *
 
 reload(sys)
@@ -59,47 +59,22 @@ class Logic(object):
 		Data is supposed in ByteStream with length 17bytes
 		default is todo encryption after checking CRC8, otherwise do decryption
 		'''
-		if len(data) <> 17:
-			logger.debug(u'Parsing data 17bytes failed.')
-			return
-
 		if not crc8_verification(data):
 			logger.debug(u'CRC8 verification failed.')
 			return
 
-		logger.debug( 30 * u'-')
-		logger.debug(u'Real data before encrypt/decrypt.')
-
 		start = data[0]
 		length = data[1:3]
 		version = data[3]
 		message_type = data[4]
 		message_id = data[5:7]
 		firmware = data[7]
-		device_id = data[8:-1]
+		device_id = data[8:16]
+		payload = data[16:-1]
 		crc = data[-1:]
 
-		logger.debug(u'start: {0}'.format(repr(start)))
-		logger.debug(u'length: {0} bytes'.format(hex_to_int(byte_to_hex(length))))
-		logger.debug(u'version: {0}'.format(repr(version)))
-		logger.debug(u'message_type: {0}'.format(repr(message_type)))
-		logger.debug(u'message_id: {0}'.format(repr(message_id)))
-		logger.debug(u'firmware: {0}'.format(repr(firmware)))
-		logger.debug(u'device_id: {0}'.format(byte_to_hex(device_id)))
-		logger.debug(u'crc: {0}'.format(repr(crc)))
-
 		logger.debug( 30 * u'-')
-
-		logger.debug(u'Data after decrypted.')
-		data = self.aes_decrypt(proto, data[:-1]) # data is minus crc
-
-		start = data[0]
-		length = data[1:3]
-		version = data[3]
-		message_type = data[4]
-		message_id = data[5:7]
-		firmware = data[7]
-		device_id = data[8:]
+		logger.debug('Receiving...')
 
 		logger.debug(u'start: {0}'.format(repr(start)))
 		logger.debug(u'length: {0} bytes'.format(hex_to_int(byte_to_hex(length))))
@@ -108,13 +83,17 @@ class Logic(object):
 		logger.debug(u'message_id: {0}'.format(repr(message_id)))
 		logger.debug(u'firmware: {0}'.format(repr(firmware)))
 		logger.debug(u'device_id: {0}'.format(byte_to_hex(device_id)))
+
+		payload = self.aes_decrypt(proto, payload) # data is minus crc
+		logger.debug(u'payload: {0}'.format(repr(payload)))
+		logger.debug(u'crc: {0}'.format(repr(crc)))
 
 		logger.debug( 30 * u'-')
 
 		return {
 			'start': start, 'length': length, 'version': version,
 			'message_type': message_type, 'message_id': message_id,
-			'firmware': firmware, 'device_id': device_id
+			'firmware': firmware, 'device_id': device_id, 'payload': payload
 		}
 
 	def aes_encrypt(self, proto, data):
@@ -146,14 +125,38 @@ class Logic(object):
 		version = get_version()
 		firmware = get_firmware()
 
-		cmd = START+length+version+message_type+message_id+firmware+controller_id
-		logger.debug(u'cmd: {0}'.format(repr(cmd)))
-		logger.debug('len cmd: {0}'.format(len(cmd)))
+		# header
+		header = START+length+version+message_type+message_id+firmware+controller_id
+
+		# payload ------------------------------------
+		# end_timestamp (4bytes)
+		t = get_shanghai_time()
+		end_timestamp = to_timestamp(t)
+		end_timestamp = timestamp_to_byte(end_timestamp)
+
+		# start_timestamp (4bytes)
+		t = get_shanghai_time()
+		start_timestamp = to_timestamp(t)
+		start_timestamp = timestamp_to_byte(start_timestamp)
+
+		zeros = '\x00' * 7
+		signature = 1
+		payload = \
+			end_timestamp+\
+			start_timestamp+\
+			zeros+\
+			int_to_byte(signature)
+
+		# -----------------------------------------------
+
+		logger.debug(u'payload length: {0}'.format(len(payload)))
+
 		# aes encryption
-		cmd = self.aes_encrypt(proto, cmd)
+		payload = self.aes_encrypt(proto, payload)
 		# create crc8
+		cmd = header+payload
 		crc8_byte = create_crc8_val(cmd)
-		unlock = cmd+crc8_byte
+		unlock = cmd+crc8_byte		
 
 		logger.debug(u'unlock: {0}'.format(repr(unlock)))
 		# logger.debug(u'unlock: {0}'.format(ascii_string(unlock)))
@@ -166,16 +169,31 @@ class Logic(object):
 	def init_lock(self, proto):
 		'''Send data to device via twisted server.'''
 		message_type = SERVER_TYPE['lock']
+		logger.debug('message_type: {0}'.format(repr(message_type)))
 		message_id = get_message_id_for_crc8(proto.message_id)
 		controller_id = hex_to_byte(proto.controller_id)
 		length = get_length_for_crc8(message_type, message_id, controller_id)
 		version = get_version()
 		firmware = get_firmware()
 
-		cmd = START+length+version+message_type+message_id+firmware+controller_id
+		# header
+		header = START+length+version+message_type+message_id+firmware+controller_id
+
+		# payload ------------------------------------
+		zeros = '\x00' * 15
+		signature = 1
+		payload = \
+			zeros+\
+			int_to_byte(signature)
+
+		# -----------------------------------------------
+
+		logger.debug(u'payload length: {0}'.format(len(payload)))
+
 		# aes encryption
-		cmd = self.aes_encrypt(proto, cmd)
+		payload = self.aes_encrypt(proto, payload)
 		# create crc8
+		cmd = header+payload
 		crc8_byte = create_crc8_val(cmd)
 		lock = cmd+crc8_byte
 

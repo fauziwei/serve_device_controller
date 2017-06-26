@@ -54,19 +54,19 @@ class CProtocol(LineReceiver):
 		# Send message to device via twisted server.
 		reactor.callLater(30, self.connectionLost, '')
 
-		if not self.token_init_unlock:
-			unlock = self.factory.logic.init_unlock(self)
-			controller = '\xff\xff\xff\xff'
-			unlock = controller+unlock
-			logger.debug(u'Send unlock: {0}'.format(repr(unlock)))
-			self.sendLine(unlock)
-
-		# if not self.token_init_lock:
-		# 	lock = self.factory.logic.init_lock(self)
-		#	controller = '\xff\xff\xff\xff'
-		#	lock = controller+lock
-		# 	logger.debug(u'Send lock: {0}'.format(repr(lock)))
+		# if not self.token_init_unlock:
+		# 	unlock = self.factory.logic.init_unlock(self)
+		# 	controller = '\xff\xff\xff\xff'
+		# 	unlock = controller+unlock
+		# 	logger.debug(u'Send unlock: {0}'.format(repr(unlock)))
 		# 	self.sendLine(unlock)
+
+		if not self.token_init_lock:
+			lock = self.factory.logic.init_lock(self)
+			controller = '\xff\xff\xff\xff'
+			lock = controller+lock
+			logger.debug(u'Send lock: {0}'.format(repr(lock)))
+			self.sendLine(lock)
 
 	def connectionLost(self, reason):
 		logger.debug(u'Lost connection with: {0}:{1}'.format(self.peer_ip, self.peer_port))
