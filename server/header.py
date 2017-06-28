@@ -5,6 +5,7 @@ START = '\xAA'
 
 CLIENT_TYPE = {
   'heartbeat'             : '\x01',
+  'normal_ack'            : '\x02', # client/server has normal_ack
   # 'lock_control'          : '\x10',
   'lock_unlock_response'  : '\x13',
   'gps_data_report'       : '\x32',
@@ -18,7 +19,7 @@ CLIENT_TYPE = {
 }
 
 SERVER_TYPE = {
-  'normal_ack'            : '\x02',
+  'normal_ack'            : '\x02', # client/server has normal_ack
   # 'lock_control'          : '\x10',
   'unlock'                : '\x11',
   'lock'                  : '\x12',

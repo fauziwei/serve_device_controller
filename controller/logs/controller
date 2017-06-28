@@ -791,3 +791,424 @@
 2017-06-26 02:18:59,532 SUCCESS get response from device.
 2017-06-26 02:18:59,532 controller initiate to drop connection.
 2017-06-26 02:18:59,532 Lost connection with: 127.0.0.1:8001
+2017-06-28 00:13:16,684 ------------------------------
+2017-06-28 00:13:16,684 Get connection with 127.0.0.1:8001
+2017-06-28 00:13:16,684 message_type: '1'
+2017-06-28 00:13:16,684 message_id in byte: "'t"
+2017-06-28 00:13:16,684 version: '\x03'
+2017-06-28 00:13:16,684 firmware: '\x01'
+2017-06-28 00:13:16,684 length of total message: 17
+2017-06-28 00:13:16,684 version: '\x03'
+2017-06-28 00:13:16,684 firmware: '\x01'
+2017-06-28 00:13:16,684 payload length: 16
+2017-06-28 00:13:16,684 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 00:13:16,684 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 00:13:16,684 Length of fire_gps_starting_up: 33
+2017-06-28 00:13:16,684 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 00:13:16,684 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 00:18:16,684 Lost connection with: 127.0.0.1:8001
+2017-06-28 00:18:16,686 Lost connection with: 127.0.0.1:8001
+2017-06-28 01:26:52,976 ------------------------------
+2017-06-28 01:26:52,976 Get connection with 127.0.0.1:8001
+2017-06-28 01:26:52,976 message_type: '1'
+2017-06-28 01:26:52,976 message_id in byte: "'t"
+2017-06-28 01:26:52,976 version: '\x03'
+2017-06-28 01:26:52,976 firmware: '\x01'
+2017-06-28 01:26:52,976 length of total message: 17
+2017-06-28 01:26:52,977 version: '\x03'
+2017-06-28 01:26:52,977 firmware: '\x01'
+2017-06-28 01:26:52,977 payload length: 16
+2017-06-28 01:26:52,977 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 01:26:52,977 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 01:26:52,977 Length of fire_gps_starting_up: 33
+2017-06-28 01:26:52,977 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 01:26:52,977 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 01:26:55,003 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 01:26:55,003 SUCCESS get response from device.
+2017-06-28 01:26:55,003 controller initiate to drop connection.
+2017-06-28 01:26:57,977 Lost connection with: 127.0.0.1:8001
+2017-06-28 01:26:57,979 Lost connection with: 127.0.0.1:8001
+2017-06-28 01:28:23,339 ------------------------------
+2017-06-28 01:28:23,341 Get connection with 127.0.0.1:8001
+2017-06-28 01:28:23,341 message_type: '1'
+2017-06-28 01:28:23,341 message_id in byte: "'t"
+2017-06-28 01:28:23,341 version: '\x03'
+2017-06-28 01:28:23,341 firmware: '\x01'
+2017-06-28 01:28:23,341 length of total message: 17
+2017-06-28 01:28:23,341 version: '\x03'
+2017-06-28 01:28:23,341 firmware: '\x01'
+2017-06-28 01:28:23,341 payload length: 16
+2017-06-28 01:28:23,341 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 01:28:23,341 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 01:28:23,341 Length of fire_gps_starting_up: 33
+2017-06-28 01:28:23,342 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 01:28:23,342 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 01:28:25,374 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 01:28:25,374 SUCCESS get response from device.
+2017-06-28 01:28:25,375 controller initiate to drop connection.
+2017-06-28 01:28:33,342 Lost connection with: 127.0.0.1:8001
+2017-06-28 01:28:33,344 Lost connection with: 127.0.0.1:8001
+2017-06-28 01:36:14,009 ------------------------------
+2017-06-28 01:36:14,009 Get connection with 127.0.0.1:8001
+2017-06-28 01:36:14,009 message_type: '1'
+2017-06-28 01:36:14,010 message_id in byte: "'t"
+2017-06-28 01:36:14,010 version: '\x03'
+2017-06-28 01:36:14,010 firmware: '\x01'
+2017-06-28 01:36:14,010 length of total message: 17
+2017-06-28 01:36:14,010 version: '\x03'
+2017-06-28 01:36:14,010 firmware: '\x01'
+2017-06-28 01:36:14,010 payload length: 16
+2017-06-28 01:36:14,010 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 01:36:14,010 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 01:36:14,010 Length of fire_gps_starting_up: 33
+2017-06-28 01:36:14,010 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 01:36:14,010 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 01:36:16,042 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 01:36:16,042 SUCCESS get response from device.
+2017-06-28 01:36:16,042 controller initiate to drop connection.
+2017-06-28 01:36:24,010 Lost connection with: 127.0.0.1:8001
+2017-06-28 01:36:24,010 Lost connection with: 127.0.0.1:8001
+2017-06-28 13:13:52,269 ------------------------------
+2017-06-28 13:13:52,269 Get connection with 127.0.0.1:8001
+2017-06-28 13:13:52,269 message_type: '1'
+2017-06-28 13:13:52,269 message_id in byte: "'t"
+2017-06-28 13:13:52,269 version: '\x03'
+2017-06-28 13:13:52,269 firmware: '\x01'
+2017-06-28 13:13:52,269 length of total message: 17
+2017-06-28 13:13:52,269 version: '\x03'
+2017-06-28 13:13:52,269 firmware: '\x01'
+2017-06-28 13:13:52,269 payload length: 16
+2017-06-28 13:13:52,269 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 13:13:52,269 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 13:13:52,269 Length of fire_gps_starting_up: 33
+2017-06-28 13:13:52,270 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 13:13:52,270 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 13:13:54,301 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 13:13:54,301 SUCCESS get response from device.
+2017-06-28 13:13:54,301 controller initiate to drop connection.
+2017-06-28 13:14:02,269 Lost connection with: 127.0.0.1:8001
+2017-06-28 13:14:02,270 Lost connection with: 127.0.0.1:8001
+2017-06-28 13:19:41,921 ------------------------------
+2017-06-28 13:19:41,921 Get connection with 127.0.0.1:8001
+2017-06-28 13:19:41,921 message_type: '1'
+2017-06-28 13:19:41,921 message_id in byte: "'t"
+2017-06-28 13:19:41,921 version: '\x03'
+2017-06-28 13:19:41,921 firmware: '\x01'
+2017-06-28 13:19:41,921 length of total message: 17
+2017-06-28 13:19:41,921 version: '\x03'
+2017-06-28 13:19:41,921 firmware: '\x01'
+2017-06-28 13:19:41,921 payload length: 16
+2017-06-28 13:19:41,921 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 13:19:41,921 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 13:19:41,923 Length of fire_gps_starting_up: 33
+2017-06-28 13:19:41,923 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 13:19:41,923 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 13:19:43,960 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 13:19:43,960 SUCCESS get response from device.
+2017-06-28 13:19:43,960 controller initiate to drop connection.
+2017-06-28 13:19:51,921 Lost connection with: 127.0.0.1:8001
+2017-06-28 13:19:51,924 Lost connection with: 127.0.0.1:8001
+2017-06-28 13:20:31,585 ------------------------------
+2017-06-28 13:20:31,585 Get connection with 127.0.0.1:8001
+2017-06-28 13:20:31,585 message_type: '1'
+2017-06-28 13:20:31,585 message_id in byte: "'t"
+2017-06-28 13:20:31,585 version: '\x03'
+2017-06-28 13:20:31,585 firmware: '\x01'
+2017-06-28 13:20:31,585 length of total message: 17
+2017-06-28 13:20:31,585 version: '\x03'
+2017-06-28 13:20:31,585 firmware: '\x01'
+2017-06-28 13:20:31,585 payload length: 16
+2017-06-28 13:20:31,585 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 13:20:31,585 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 13:20:31,585 Length of fire_gps_starting_up: 33
+2017-06-28 13:20:31,585 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 13:20:31,585 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 13:20:33,602 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 13:20:33,602 SUCCESS get response from device.
+2017-06-28 13:20:33,602 controller initiate to drop connection.
+2017-06-28 13:20:41,585 Lost connection with: 127.0.0.1:8001
+2017-06-28 13:20:41,586 Lost connection with: 127.0.0.1:8001
+2017-06-28 13:45:25,499 ------------------------------
+2017-06-28 13:45:25,499 Get connection with 127.0.0.1:8001
+2017-06-28 13:45:25,500 message_type: '1'
+2017-06-28 13:45:25,500 message_id in byte: "'t"
+2017-06-28 13:45:25,500 version: '\x03'
+2017-06-28 13:45:25,500 firmware: '\x01'
+2017-06-28 13:45:25,500 length of total message: 17
+2017-06-28 13:45:25,500 version: '\x03'
+2017-06-28 13:45:25,500 firmware: '\x01'
+2017-06-28 13:45:25,500 payload length: 16
+2017-06-28 13:45:25,500 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 13:45:25,500 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 13:45:25,500 Length of fire_gps_starting_up: 33
+2017-06-28 13:45:25,500 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 13:45:25,500 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 13:45:27,535 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 13:45:27,535 SUCCESS get response from device.
+2017-06-28 13:45:27,536 controller initiate to drop connection.
+2017-06-28 13:45:35,500 Lost connection with: 127.0.0.1:8001
+2017-06-28 13:45:35,500 Lost connection with: 127.0.0.1:8001
+2017-06-28 13:50:36,869 ------------------------------
+2017-06-28 13:50:36,869 Get connection with 127.0.0.1:8001
+2017-06-28 13:50:36,869 message_type: '1'
+2017-06-28 13:50:36,869 message_id in byte: "'t"
+2017-06-28 13:50:36,869 version: '\x03'
+2017-06-28 13:50:36,871 firmware: '\x01'
+2017-06-28 13:50:36,871 length of total message: 17
+2017-06-28 13:50:36,871 version: '\x03'
+2017-06-28 13:50:36,871 firmware: '\x01'
+2017-06-28 13:50:36,871 payload length: 16
+2017-06-28 13:50:36,871 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 13:50:36,871 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 13:50:36,871 Length of fire_gps_starting_up: 33
+2017-06-28 13:50:36,871 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 13:50:36,871 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 13:50:36,884 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 13:50:36,884 SUCCESS get response from device.
+2017-06-28 13:50:36,884 controller initiate to drop connection.
+2017-06-28 13:50:46,869 Lost connection with: 127.0.0.1:8001
+2017-06-28 13:50:46,871 Lost connection with: 127.0.0.1:8001
+2017-06-28 13:59:55,220 ------------------------------
+2017-06-28 13:59:55,220 Get connection with 127.0.0.1:8001
+2017-06-28 13:59:55,220 message_type: '1'
+2017-06-28 13:59:55,220 message_id in byte: "'t"
+2017-06-28 13:59:55,220 version: '\x03'
+2017-06-28 13:59:55,220 firmware: '\x01'
+2017-06-28 13:59:55,220 length of total message: 17
+2017-06-28 13:59:55,220 version: '\x03'
+2017-06-28 13:59:55,220 firmware: '\x01'
+2017-06-28 13:59:55,221 payload length: 16
+2017-06-28 13:59:55,221 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 13:59:55,221 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 13:59:55,221 Length of fire_gps_starting_up: 33
+2017-06-28 13:59:55,221 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 13:59:55,221 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 13:59:57,242 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 13:59:57,242 SUCCESS get response from device.
+2017-06-28 13:59:57,242 controller initiate to drop connection.
+2017-06-28 14:00:05,220 Lost connection with: 127.0.0.1:8001
+2017-06-28 14:00:05,221 Lost connection with: 127.0.0.1:8001
+2017-06-28 14:02:04,341 ------------------------------
+2017-06-28 14:02:04,341 Get connection with 127.0.0.1:8001
+2017-06-28 14:02:04,341 message_type: '1'
+2017-06-28 14:02:04,341 message_id in byte: "'t"
+2017-06-28 14:02:04,341 version: '\x03'
+2017-06-28 14:02:04,341 firmware: '\x01'
+2017-06-28 14:02:04,341 length of total message: 17
+2017-06-28 14:02:04,341 version: '\x03'
+2017-06-28 14:02:04,341 firmware: '\x01'
+2017-06-28 14:02:04,341 payload length: 16
+2017-06-28 14:02:04,341 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 14:02:04,341 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 14:02:04,342 Length of fire_gps_starting_up: 33
+2017-06-28 14:02:04,342 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 14:02:04,342 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 14:02:06,375 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 14:02:06,375 SUCCESS get response from device.
+2017-06-28 14:02:06,375 controller initiate to drop connection.
+2017-06-28 14:02:14,342 Lost connection with: 127.0.0.1:8001
+2017-06-28 14:02:14,342 Lost connection with: 127.0.0.1:8001
+2017-06-28 14:06:44,533 ------------------------------
+2017-06-28 14:06:44,535 Get connection with 127.0.0.1:8001
+2017-06-28 14:06:44,535 message_type: '1'
+2017-06-28 14:06:44,535 message_id in byte: "'t"
+2017-06-28 14:06:44,535 version: '\x03'
+2017-06-28 14:06:44,535 firmware: '\x01'
+2017-06-28 14:06:44,535 length of total message: 17
+2017-06-28 14:06:44,535 version: '\x03'
+2017-06-28 14:06:44,535 firmware: '\x01'
+2017-06-28 14:06:44,535 payload length: 16
+2017-06-28 14:06:44,535 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 14:06:44,535 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 14:06:44,535 Length of fire_gps_starting_up: 33
+2017-06-28 14:06:44,535 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 14:06:44,536 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 14:06:46,568 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 14:06:46,568 SUCCESS get response from device.
+2017-06-28 14:06:46,568 controller initiate to drop connection.
+2017-06-28 14:06:54,535 Lost connection with: 127.0.0.1:8001
+2017-06-28 14:06:54,536 Lost connection with: 127.0.0.1:8001
+2017-06-28 14:07:53,098 ------------------------------
+2017-06-28 14:07:53,098 Get connection with 127.0.0.1:8001
+2017-06-28 14:07:53,098 message_type: '1'
+2017-06-28 14:07:53,098 message_id in byte: "'t"
+2017-06-28 14:07:53,098 version: '\x03'
+2017-06-28 14:07:53,098 firmware: '\x01'
+2017-06-28 14:07:53,098 length of total message: 17
+2017-06-28 14:07:53,098 version: '\x03'
+2017-06-28 14:07:53,098 firmware: '\x01'
+2017-06-28 14:07:53,098 payload length: 16
+2017-06-28 14:07:53,098 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 14:07:53,098 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 14:07:53,098 Length of fire_gps_starting_up: 33
+2017-06-28 14:07:53,098 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 14:07:53,098 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 14:08:03,098 Lost connection with: 127.0.0.1:8001
+2017-06-28 14:08:03,099 Lost connection with: 127.0.0.1:8001
+2017-06-28 14:08:06,594 ------------------------------
+2017-06-28 14:08:06,595 Get connection with 127.0.0.1:8001
+2017-06-28 14:08:06,595 message_type: '1'
+2017-06-28 14:08:06,595 message_id in byte: "'t"
+2017-06-28 14:08:06,595 version: '\x03'
+2017-06-28 14:08:06,595 firmware: '\x01'
+2017-06-28 14:08:06,595 length of total message: 17
+2017-06-28 14:08:06,595 version: '\x03'
+2017-06-28 14:08:06,595 firmware: '\x01'
+2017-06-28 14:08:06,595 payload length: 16
+2017-06-28 14:08:06,595 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 14:08:06,595 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 14:08:06,595 Length of fire_gps_starting_up: 33
+2017-06-28 14:08:06,595 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 14:08:06,595 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 14:08:08,630 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 14:08:08,631 SUCCESS get response from device.
+2017-06-28 14:08:08,631 controller initiate to drop connection.
+2017-06-28 14:08:16,595 Lost connection with: 127.0.0.1:8001
+2017-06-28 14:08:16,595 Lost connection with: 127.0.0.1:8001
+2017-06-28 14:09:11,828 ------------------------------
+2017-06-28 14:09:11,829 Get connection with 127.0.0.1:8001
+2017-06-28 14:09:11,829 message_type: '1'
+2017-06-28 14:09:11,829 message_id in byte: "'t"
+2017-06-28 14:09:11,829 version: '\x03'
+2017-06-28 14:09:11,829 firmware: '\x01'
+2017-06-28 14:09:11,829 length of total message: 17
+2017-06-28 14:09:11,829 version: '\x03'
+2017-06-28 14:09:11,829 firmware: '\x01'
+2017-06-28 14:09:11,829 payload length: 16
+2017-06-28 14:09:11,829 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 14:09:11,829 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 14:09:11,829 Length of fire_gps_starting_up: 33
+2017-06-28 14:09:11,829 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 14:09:11,829 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 14:09:13,868 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 14:09:13,868 SUCCESS get response from device.
+2017-06-28 14:09:13,868 controller initiate to drop connection.
+2017-06-28 14:09:21,831 Lost connection with: 127.0.0.1:8001
+2017-06-28 14:09:21,832 Lost connection with: 127.0.0.1:8001
+2017-06-28 14:09:33,973 ------------------------------
+2017-06-28 14:09:33,973 Get connection with 127.0.0.1:8001
+2017-06-28 14:09:33,973 message_type: '1'
+2017-06-28 14:09:33,973 message_id in byte: "'t"
+2017-06-28 14:09:33,973 version: '\x03'
+2017-06-28 14:09:33,973 firmware: '\x01'
+2017-06-28 14:09:33,973 length of total message: 17
+2017-06-28 14:09:33,973 version: '\x03'
+2017-06-28 14:09:33,973 firmware: '\x01'
+2017-06-28 14:09:33,974 payload length: 16
+2017-06-28 14:09:33,974 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 14:09:33,974 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 14:09:33,974 Length of fire_gps_starting_up: 33
+2017-06-28 14:09:33,974 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 14:09:33,974 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 14:09:35,984 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 14:09:35,984 SUCCESS get response from device.
+2017-06-28 14:09:35,984 controller initiate to drop connection.
+2017-06-28 14:11:39,789 ------------------------------
+2017-06-28 14:11:39,789 Get connection with 127.0.0.1:8001
+2017-06-28 14:11:39,789 message_type: '1'
+2017-06-28 14:11:39,789 message_id in byte: "'t"
+2017-06-28 14:11:39,789 version: '\x03'
+2017-06-28 14:11:39,789 firmware: '\x01'
+2017-06-28 14:11:39,789 length of total message: 17
+2017-06-28 14:11:39,789 version: '\x03'
+2017-06-28 14:11:39,789 firmware: '\x01'
+2017-06-28 14:11:39,789 payload length: 16
+2017-06-28 14:11:39,789 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 14:11:39,789 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 14:11:39,789 Length of fire_gps_starting_up: 33
+2017-06-28 14:11:39,789 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 14:11:39,789 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 14:11:49,789 Lost connection with: 127.0.0.1:8001
+2017-06-28 14:11:49,789 Lost connection with: 127.0.0.1:8001
+2017-06-28 14:14:20,868 ------------------------------
+2017-06-28 14:14:20,869 Get connection with 127.0.0.1:8001
+2017-06-28 14:14:20,869 message_type: '1'
+2017-06-28 14:14:20,869 message_id in byte: "'t"
+2017-06-28 14:14:20,869 version: '\x03'
+2017-06-28 14:14:20,869 firmware: '\x01'
+2017-06-28 14:14:20,869 length of total message: 17
+2017-06-28 14:14:20,869 version: '\x03'
+2017-06-28 14:14:20,869 firmware: '\x01'
+2017-06-28 14:14:20,869 payload length: 16
+2017-06-28 14:14:20,869 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 14:14:20,869 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 14:14:20,869 Length of fire_gps_starting_up: 33
+2017-06-28 14:14:20,869 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 14:14:20,869 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 14:14:22,904 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 14:14:22,904 SUCCESS get response from device.
+2017-06-28 14:14:22,904 controller initiate to drop connection.
+2017-06-28 14:14:22,904 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 14:14:22,904 SUCCESS get response from device.
+2017-06-28 14:14:22,904 controller initiate to drop connection.
+2017-06-28 14:14:30,871 Lost connection with: 127.0.0.1:8001
+2017-06-28 14:14:30,871 Lost connection with: 127.0.0.1:8001
+2017-06-28 14:25:44,864 Device: 2469040358b6e392 doesnt exist in redis.
+2017-06-28 14:25:49,823 Device: 2469040358b6e392 doesnt exist in redis.
+2017-06-28 14:26:01,397 ------------------------------
+2017-06-28 14:26:01,397 Get connection with 127.0.0.1:8001
+2017-06-28 14:26:01,397 message_type: '1'
+2017-06-28 14:26:01,397 message_id in byte: "'t"
+2017-06-28 14:26:01,397 version: '\x03'
+2017-06-28 14:26:01,397 firmware: '\x01'
+2017-06-28 14:26:01,397 length of total message: 17
+2017-06-28 14:26:01,397 version: '\x03'
+2017-06-28 14:26:01,397 firmware: '\x01'
+2017-06-28 14:26:01,397 payload length: 16
+2017-06-28 14:26:01,397 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 14:26:01,397 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 14:26:01,397 Length of fire_gps_starting_up: 33
+2017-06-28 14:26:01,397 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 14:26:01,398 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 14:26:03,436 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 14:26:03,436 SUCCESS get response from device.
+2017-06-28 14:26:03,436 controller initiate to drop connection.
+2017-06-28 14:26:03,437 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 14:26:03,437 SUCCESS get response from device.
+2017-06-28 14:26:03,437 controller initiate to drop connection.
+2017-06-28 14:26:11,398 Lost connection with: 127.0.0.1:8001
+2017-06-28 14:26:11,398 Lost connection with: 127.0.0.1:8001
+2017-06-28 14:26:15,627 ------------------------------
+2017-06-28 14:26:15,627 Get connection with 127.0.0.1:8001
+2017-06-28 14:26:15,627 message_type: '1'
+2017-06-28 14:26:15,627 message_id in byte: "'t"
+2017-06-28 14:26:15,627 version: '\x03'
+2017-06-28 14:26:15,627 firmware: '\x01'
+2017-06-28 14:26:15,627 length of total message: 17
+2017-06-28 14:26:15,627 version: '\x03'
+2017-06-28 14:26:15,628 firmware: '\x01'
+2017-06-28 14:26:15,628 payload length: 16
+2017-06-28 14:26:15,628 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 14:26:15,628 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 14:26:15,628 Length of fire_gps_starting_up: 33
+2017-06-28 14:26:15,628 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 14:26:15,628 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 14:26:17,663 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 14:26:17,664 SUCCESS get response from device.
+2017-06-28 14:26:17,664 controller initiate to drop connection.
+2017-06-28 14:26:17,664 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 14:26:17,664 SUCCESS get response from device.
+2017-06-28 14:26:17,664 controller initiate to drop connection.
+2017-06-28 14:26:25,628 Lost connection with: 127.0.0.1:8001
+2017-06-28 14:26:25,628 Lost connection with: 127.0.0.1:8001
+2017-06-28 18:40:45,862 ------------------------------
+2017-06-28 18:40:45,864 Get connection with 127.0.0.1:8001
+2017-06-28 18:40:45,864 message_type: '1'
+2017-06-28 18:40:45,864 message_id in byte: "'t"
+2017-06-28 18:40:45,864 version: '\x03'
+2017-06-28 18:40:45,864 firmware: '\x01'
+2017-06-28 18:40:45,864 length of total message: 17
+2017-06-28 18:40:45,864 version: '\x03'
+2017-06-28 18:40:45,864 firmware: '\x01'
+2017-06-28 18:40:45,864 payload length: 16
+2017-06-28 18:40:45,864 cyphertext: '\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-28 18:40:45,864 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 18:40:45,865 Length of fire_gps_starting_up: 33
+2017-06-28 18:40:45,865 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-28 18:40:45,865 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-28 18:40:47,910 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 18:40:47,911 SUCCESS get response from device.
+2017-06-28 18:40:47,911 controller initiate to drop connection.
+2017-06-28 18:40:47,913 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-28 18:40:47,913 SUCCESS get response from device.
+2017-06-28 18:40:47,913 controller initiate to drop connection.

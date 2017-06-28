@@ -24,7 +24,7 @@ class Logic(object):
 		'''Cut recv_data.
 		Data is supposed in ByteStream.
 		Default is todo decryption after checking CRC8, ...
-		unless 'hearbeat' and 'normal_bike_status'.
+		unless 'hearbeat' and 'normal_ack'.
 		'''
 		if not crc8_verification(data):
 			logger.debug(u'CRC8 verification failed.')
@@ -50,7 +50,7 @@ class Logic(object):
 		logger.debug(u'firmware: {0}'.format(repr(firmware)))
 		logger.debug(u'device_id: {0}'.format(byte_to_hex(device_id)))
 
-		if message_type == CLIENT_TYPE['heartbeat']:
+		if message_type in [ CLIENT_TYPE['heartbeat'], CLIENT_TYPE['normal_ack'] ]:
 			logger.debug(u'crc: {0}'.format(repr(crc)))
 			return {
 				'start': start, 'length': length, 'version': version,
@@ -99,6 +99,10 @@ class Logic(object):
 		'''Relaying data from controller to device.'''
 		return data
 
+	def fire_gps_starting_up_processing(self, data):
+		'''Relaying data from controller to device.'''
+		return data
+
 
 	''' Receiving section. '''
 
@@ -134,17 +138,32 @@ class Logic(object):
 		crc8_verification(normal_ack)
 		return normal_ack
 
+	def normal_ack_processing(self, proto, parsed):
+		'''Relaying data from device to controller.
+		1st reply fire_gps_starting_up.
+		'''
+		if proto.device_id not in proto.factory.controllers:
+			logger.debug(u'controller_id {0} is not connected.'.format(proto.device_id))
+			return
+
+		logger.debug(u'Prepare for relaying data to controller_id: {0}'.format(proto.device_id))
+		proto.belongto_controller = proto.factory.controllers[proto.device_id]
+		logger.debug(u'Send response success normal_ack: {0}'.format(repr(proto.response_success)))
+		proto.belongto_controller.sendLine(proto.response_success)
+		# proto.belongto_controller = False
+		return
+
 	def lock_unlock_response_processing(self, proto, parsed):
 		'''Relaying data from device to controller.
 		Device inform its new status, this twisted relay 'success' to controller.
 		'''
-		length = parsed['length']
-		message_type = parsed['message_type']
+		# length = parsed['length']
+		# message_type = parsed['message_type']
 		# Server should update device status here, by saving to database.
-		message_id = parsed['message_id'] # Check the status.
-		device_id = parsed['device_id']
-		version = parsed['version']
-		firmware = parsed['firmware']
+		# message_id = parsed['message_id'] # Check the status.
+		# device_id = parsed['device_id']
+		# version = parsed['version']
+		# firmware = parsed['firmware']
 
 		# do something with payload from 'lock' or 'unlock'
 		# and store in database.
@@ -157,13 +176,33 @@ class Logic(object):
 
 		logger.debug(u'Prepare for relaying data to controller_id: {0}'.format(proto.device_id))
 		proto.belongto_controller = proto.factory.controllers[proto.device_id]
-		logger.debug(u'Send response success: {0}'.format(repr(proto.response_success)))
+		logger.debug(u'Send response success lock_unlock_response: {0}'.format(repr(proto.response_success)))
 		proto.belongto_controller.sendLine(proto.response_success)
 		proto.belongto_controller = False
 		return
 
 	def gps_data_report_processing(self, proto, parsed):
-		pass
+		'''Preparing relaying gps_data_report from device to controller.'''
+		# length = parsed['length']
+		# message_type = parsed['message_type']
+		# message_id = parsed['message_id']
+		# device_id = parsed['device_id']
+		# version = parsed['version']
+		# firmware = parsed['firmware']
+		# do something with payload (from device), should saving to db.
+		payload = parsed['payload']
+
+		# Send message 'success' to controller.
+		if proto.device_id not in proto.factory.controllers:
+			logger.debug(u'controller_id {0} is not connected.'.format(proto.device_id))
+			return
+
+		logger.debug(u'Prepare for relaying data to controller_id: {0}'.format(proto.device_id))
+		proto.belongto_controller = proto.factory.controllers[proto.device_id]
+		logger.debug(u'Send response success gps_data_report: {0}'.format(repr(proto.response_success)))
+		proto.belongto_controller.sendLine(proto.response_success)
+		proto.belongto_controller = False
+		return
 
 	def normal_bike_status_processing(self, proto, parsed):
 		'''Preparing response normal_ack to device.'''
@@ -282,6 +321,10 @@ class Logic(object):
 			logger.debug(u'Detected incoming lock...')
 			return self.lock_processing(data)
 
+		elif parsed['message_type'] == SERVER_TYPE['fire_gps_starting_up']:
+			logger.debug(u'Detected incoming fire_gps_starting_up...')
+			return self.fire_gps_starting_up_processing(data)
+
 		else:
 			# Still several message_type unfinished yet.
 			pass
@@ -312,6 +355,11 @@ class Logic(object):
 		if parsed['message_type'] == CLIENT_TYPE['heartbeat']:
 			logger.debug(u'Detected incoming heartbeat...')
 			return self.heartbeat_processing(proto, parsed)
+
+		if parsed['message_type'] == CLIENT_TYPE['normal_ack']:
+			# 1st reply fire_gps_starting_up
+			logger.debug(u'Detected incoming normal_ack...')
+			return self.normal_ack_processing(proto, parsed)
 
 		elif parsed['message_type'] == CLIENT_TYPE['lock_unlock_response']:
 			logger.debug(u'Detected incoming lock_unlock_response...')

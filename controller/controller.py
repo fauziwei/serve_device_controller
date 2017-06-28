@@ -34,6 +34,7 @@ class CProtocol(LineReceiver):
 
 	token_init_unlock = False
 	token_init_lock = False
+	token_init_fire_gps_starting_up = False
 
 	# Response from twisted server for fail or success.
 	response_fail = '\xee\xee\xee\xee\xee\xee\xee\xee'
@@ -52,7 +53,8 @@ class CProtocol(LineReceiver):
 		logger.debug(u'Get connection with {0}:{1}'.format(self.peer_ip, self.peer_port))
 
 		# Send message to device via twisted server.
-		reactor.callLater(30, self.connectionLost, '')
+		# reactor.callLater(300, self.connectionLost, '')
+		reactor.callLater(10, self.connectionLost, '')
 
 		# if not self.token_init_unlock:
 		# 	unlock = self.factory.logic.init_unlock(self)
@@ -61,12 +63,19 @@ class CProtocol(LineReceiver):
 		# 	logger.debug(u'Send unlock: {0}'.format(repr(unlock)))
 		# 	self.sendLine(unlock)
 
-		if not self.token_init_lock:
-			lock = self.factory.logic.init_lock(self)
+		# if not self.token_init_lock:
+		# 	lock = self.factory.logic.init_lock(self)
+		# 	controller = '\xff\xff\xff\xff'
+		# 	lock = controller+lock
+		# 	logger.debug(u'Send lock: {0}'.format(repr(lock)))
+		# 	self.sendLine(lock)
+
+		if not self.token_init_fire_gps_starting_up:
+			fire_gps_starting_up = self.factory.logic.init_fire_gps_starting_up(self)
 			controller = '\xff\xff\xff\xff'
-			lock = controller+lock
-			logger.debug(u'Send lock: {0}'.format(repr(lock)))
-			self.sendLine(lock)
+			fire_gps_starting_up = controller+fire_gps_starting_up
+			logger.debug(u'Send fire_gps_starting_up: {0}'.format(repr(fire_gps_starting_up)))
+			self.sendLine(fire_gps_starting_up)
 
 	def connectionLost(self, reason):
 		logger.debug(u'Lost connection with: {0}:{1}'.format(self.peer_ip, self.peer_port))
@@ -84,7 +93,7 @@ class CProtocol(LineReceiver):
 			logger.debug(u'ERROR response.')
 
 		logger.debug(u'controller initiate to drop connection.')
-		self.transport.loseConnection()
+		# self.transport.loseConnection()
 
 
 # Configuration -------------------------

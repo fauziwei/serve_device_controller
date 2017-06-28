@@ -3,6 +3,7 @@
 # Fauzi, fauziwei@yahoo.com
 import os
 import sys
+import time
 import logging
 import binascii
 from Crypto.Cipher import AES
@@ -279,13 +280,13 @@ class Logic(object):
 		rid_speed = 1
 		limit_speed = 1
 		gear = 1
-		m_vbattery = 2
+		m_vbattery = '\x00' * 2 # 2bytes
 		m_battery_stat = 1
 		m_battery_cab = 1
 		m_bat_is = 1
 		m_bat_cycle_count = 1
 		m_bat_temp = 1
-		m_bat_id = 4
+		m_bat_id = '\x00' * 4  # 4bytes
 		zeros = '\x00' * 2
 		signature = 1
 
@@ -309,13 +310,13 @@ class Logic(object):
 			int_to_byte(rid_speed)+\
 			int_to_byte(limit_speed)+\
 			int_to_byte(gear)+\
-			int_to_byte(m_vbattery)+\
+			m_vbattery+\
 			int_to_byte(m_battery_stat)+\
 			int_to_byte(m_battery_cab)+\
 			int_to_byte(m_bat_is)+\
 			int_to_byte(m_bat_cycle_count)+\
 			int_to_byte(m_bat_temp)+\
-			int_to_byte(m_bat_id)+\
+			m_bat_id+\
 			zeros+\
 			int_to_byte(signature)
 
@@ -523,7 +524,106 @@ class Logic(object):
 		pass
 
 	def fire_gps_starting_up_processing(self, proto, parsed):
-		pass
+		'''
+		1. reply with normal_ack
+		2. create delay
+		3. reply again with gps_data_report
+		'''
+
+		# 1st. Preparing normal_ack -----------------------
+		length = parsed['length']
+		message_type = CLIENT_TYPE['normal_ack']
+		message_id = parsed['message_id']
+		device_id = parsed['device_id']
+		version = parsed['version']
+		firmware = parsed['firmware']
+		# do something with payload.
+		payload = parsed['payload']
+
+		# header
+		header = START+length+version+message_type+message_id+firmware+device_id
+
+		# payload ---------------------------------
+		# timestamp (4bytes)
+		t = get_shanghai_time()
+		timestamp = to_timestamp(t)
+		timestamp = timestamp_to_byte(timestamp)
+		payload = timestamp
+
+		# normal_ack doesnt required to be encrypted.
+		cmd = header+payload
+		crc8_byte = create_crc8_val(cmd)
+		normal_ack = cmd+crc8_byte
+
+		logger.debug(u'Prepare response normal_ack:')
+		logger.debug(u'normal_ack: {0}'.format(repr(normal_ack)))
+		# logger.debug(u'normal_ack: {0}'.format(ascii_string(normal_ack)))
+		logger.debug(u'Length of normal_ack: {0}'.format(len(normal_ack)))
+
+		crc8_verification(normal_ack)
+		logger.debug(u'Send to server: {0}'.format(repr(normal_ack)))
+		proto.sendLine(normal_ack)
+
+		# 2nd. time.sleep()
+		time.sleep(2)
+
+		# 3rd. Preparing gps_data_report
+		# length = parsed['length']
+		message_type = CLIENT_TYPE['gps_data_report']
+		# message_id = parsed['message_id']
+		# device_id = parsed['device_id']
+		# version = parsed['version']
+		# firmware = parsed['firmware']
+
+		# header
+		header = START+length+version+message_type+message_id+firmware+device_id
+
+		# payload ------------------------
+
+		# latitude
+		latitude = 22.22222222
+		lat_byte = double_to_byte(latitude)
+
+		# longitude
+		longitude = 32.99999999
+		lon_byte = double_to_byte(longitude)
+
+		fix_flag = 1
+		gps_stars = 1
+		zeros1 = '\x00' * 6
+		zeros2 = '\x00' * 7
+		signature = 1
+
+		payload = \
+			lat_byte+\
+			lon_byte+\
+			int_to_byte(fix_flag)+\
+			int_to_byte(gps_stars)+\
+			zeros1+\
+			zeros2+\
+			int_to_byte(signature)
+
+		# -----------------------------------------------
+
+		logger.debug(u'payload length: {0}'.format(len(payload)))
+		logger.debug(u'payload before aes: {0}'.format(repr(payload)))
+
+		# aes encryption
+		payload = self.aes_encrypt(proto, payload)
+		payload = payload.replace('\n', '\x0D')
+		logger.debug(u'payload after aes: {0}'.format(repr(payload)))
+		# create crc8
+		cmd = header+payload
+		crc8_byte = create_crc8_val(cmd)
+		gps_data_report = cmd+crc8_byte
+
+		logger.debug(u'Preparing relay gps_data_report from device to controller:')
+		logger.debug(u'gps_data_report: {0}'.format(repr(gps_data_report)))
+		# logger.debug(u'gps_data_report: {0}'.format(ascii_string(gps_data_report)))
+		logger.debug(u'Length of gps_data_report: {0}'.format(len(gps_data_report)))
+
+		crc8_verification(gps_data_report)
+		return gps_data_report
 
 	def get_device_status_processing(self, proto, parsed):
 		pass

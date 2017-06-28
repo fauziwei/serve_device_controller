@@ -10,77 +10,91 @@ byte_to_double = lambda b: struct.unpack('>d', byte)[0]
 
 int_to_byte = lambda i: struct.pack('!H', i)[1:]
 
+print repr(int_to_byte(4))
+
+# latitude = 23.88888888
+# lat_byte = double_to_byte(latitude)
+# lat_byte_3bytes = lat_byte[0:3]
+# lat_byte_5bytes = lat_byte[3:]
+# # print len(lat_byte_3bytes)
+# # print len(lat_byte_5bytes)
+
+# longitude = 3.66666666
+# lon_byte = double_to_byte(longitude)
+# lon_byte_3bytes = lon_byte[0:3]
+# lon_byte_5bytes = lon_byte[3:]
+# # print len(lon_byte_3bytes)
+# # print len(lon_byte_5bytes)
 
 
-latitude = 23.88888888
-lat_byte = double_to_byte(latitude)
-lat_byte_3bytes = lat_byte[0:3]
-lat_byte_5bytes = lat_byte[3:]
-# print len(lat_byte_3bytes)
-# print len(lat_byte_5bytes)
+# # payload --------------------------------------
+# hdware_ver = 1
+# upgrade_flag = 1
+# lock_status = 1
+# csq = 1
+# temp = 1
+# v_bus = 1
+# i_charge = 1
+# v_battery = 1
+# battery_stat = 1
 
-longitude = 3.66666666
-lon_byte = double_to_byte(longitude)
-lon_byte_3bytes = lon_byte[0:3]
-lon_byte_5bytes = lon_byte[3:]
-# print len(lon_byte_3bytes)
-# print len(lon_byte_5bytes)
-
-
-# payload --------------------------------------
-hdware_ver = 1
-upgrade_flag = 1
-lock_status = 1
-csq = 1
-temp = 1
-v_bus = 1
-i_charge = 1
-v_battery = 1
-battery_stat = 1
-
-# timestamp (4bytes)
-t = get_shanghai_time()
-timestamp = to_timestamp(t)
-timestamp = timestamp_to_byte(timestamp)
+# # timestamp (4bytes)
+# t = get_shanghai_time()
+# timestamp = to_timestamp(t)
+# timestamp = timestamp_to_byte(timestamp)
 
 
-# latitude (split by 2), 3bytes and 5bytes.
-latitude = 23.88888888
-lat_byte = double_to_byte(latitude)
-lat_byte_3bytes = lat_byte[0:3]
-lat_byte_5bytes = lat_byte[3:]
+# # latitude (split by 2), 3bytes and 5bytes.
+# latitude = 23.88888888
+# lat_byte = double_to_byte(latitude)
+# lat_byte_3bytes = lat_byte[0:3]
+# lat_byte_5bytes = lat_byte[3:]
 
-# longitude (split by 2), 3bytes and 5bytes.
-longitude = 3.66666666
-lon_byte = double_to_byte(longitude)
-lon_byte_3bytes = lon_byte[0:3]
-lon_byte_5bytes = lon_byte[3:]
+# # longitude (split by 2), 3bytes and 5bytes.
+# longitude = 3.66666666
+# lon_byte = double_to_byte(longitude)
+# lon_byte_3bytes = lon_byte[0:3]
+# lon_byte_5bytes = lon_byte[3:]
 
-fix_flag = 1
-gps_stars = 1
-signature = 1
+# fix_flag = 1
+# gps_stars = 1
+# signature = 1
 
-payload = \
-	int_to_byte(hdware_ver)+\
-	int_to_byte(upgrade_flag)+\
-	int_to_byte(lock_status)+\
-	int_to_byte(csq)+\
-	int_to_byte(temp)+\
-	int_to_byte(v_bus)+\
-	int_to_byte(i_charge)+\
-	int_to_byte(v_battery)+\
-	int_to_byte(battery_stat)+\
-	timestamp+\
-	lat_byte_3bytes+\
-	lat_byte_5bytes+\
-	lon_byte_3bytes+\
-	lon_byte_5bytes+\
-	int_to_byte(fix_flag)+\
-	int_to_byte(gps_stars)+\
-	int_to_byte(signature)
+# payload = \
+# 	int_to_byte(hdware_ver)+\
+# 	int_to_byte(upgrade_flag)+\
+# 	int_to_byte(lock_status)+\
+# 	int_to_byte(csq)+\
+# 	int_to_byte(temp)+\
+# 	int_to_byte(v_bus)+\
+# 	int_to_byte(i_charge)+\
+# 	int_to_byte(v_battery)+\
+# 	int_to_byte(battery_stat)+\
+# 	timestamp+\
+# 	lat_byte_3bytes+\
+# 	lat_byte_5bytes+\
+# 	lon_byte_3bytes+\
+# 	lon_byte_5bytes+\
+# 	int_to_byte(fix_flag)+\
+# 	int_to_byte(gps_stars)+\
+# 	int_to_byte(signature)
 
-print len(payload)
+# print len(payload)
 
+
+# orig
+normal_bike_status = 'aa0031034200010124479c0658cd0a18eaf7f5a4b52ac418b43d585d66a09dd5b4a595db644a34ac5518d42893493a0969'
+print repr(binascii.unhexlify(normal_bike_status))
+print len(binascii.unhexlify(normal_bike_status))
+
+# simu
+normal_bike_status = "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92\x9c\xf6\xe5\xb00R\xa3\x83\x80J$\xbe\xe6?\xeb\xddK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\x91"
+print len(normal_bike_status)
+
+
+gps_data_report = "aa0031033200030124479c0658cd0a1861c0595ab3891183b7831e87c91b01c3c2a11c628e2a67ec64086d4948546e3cfc"
+print repr(binascii.unhexlify(gps_data_report))
+print len(binascii.unhexlify(gps_data_report))
 
 # def bin_to_float(b):
 # 	""" Convert binary string to a float. """
