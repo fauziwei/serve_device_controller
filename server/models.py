@@ -2,6 +2,7 @@
 # @2017
 # Fauzi, fauziwei@yahoo.com
 import sys
+import uuid
 import datetime
 import traceback
 from sqlalchemy import String, Integer, Float, DateTime, \
@@ -60,52 +61,53 @@ def commit(session):
 # The models is started from here...
 
 class Bike(Base):
-	'''The following only sample table will be created if not exist.'''
 	__tablename__ = u'bike'
 	__table_args__ = {'mysql_engine': 'InnoDB', 'mysql_charset': 'utf8', 'mysql_collate': 'utf8_general_ci'}
 	id = Column('id', String(16), primary_key=True)
 
 
 class Device(Base):
-	'''The following only sample table will be created if not exist.'''
 	__tablename__ = u'device'
 	__table_args__ = {'mysql_engine': 'InnoDB', 'mysql_charset': 'utf8', 'mysql_collate': 'utf8_general_ci'}
 	id = Column(u'id', String(16), primary_key=True)
 	bike_id = Column(u'bike_id', String(16), ForeignKey('bike.id'), index=True)
-	# work/test/maintain
-	mode = Column(u'mode', Integer(), index=True)
+	sim = Column(u'sim', String(20), index=True)
+	phone = Column(u'phone', String(16), index=True)
+	ble_key = Column(u'ble_key', String(16), index=True)
+	parameter = Column(u'parameter', String(12), index=True)
 	firmware = Column(u'firmware', Integer(), index=True)
 	hardware = Column(u'hardware', Integer(), index=True)
-	# longitude = Column(u'longitude', DOUBLE(), index=True)
-	longitude = Column(u'longitude', Float(), index=True)
-	# latitude = Column(u'latitude', DOUBLE(), index=True)
-	latitude = Column(u'latitude', Float(), index=True)
-	# gps data type
-	gps_flags = Column(u'gps_flags', Integer(), index=True)
-	# satellite number
-	gps_satellite = Column(u'gps_satellite', Integer(), index=True)
-	lock_status = Column(u'lock_status', Integer(), index=True)
-	battery = Column(u'battery', Integer(), index=True)
-	battery_percentage = Column(u'battery_percentage', Integer(), index=True)
-	# charging status
-	charging = Column(u'charging', Integer(), index=True)
-	ble_key = Column(u'ble_key', String(16), index=True)
-	# GSM signal strength
-	csq = Column(u'csq', Integer(), index=True)
-	# sim card ID
-	sim = Column(u'sim', String(20), index=True)
-	# phone number with sms
-	phone = Column(u'phone', String(16), index=True)
+	temp = Column(u'temp', Integer(), index=True)
+	vbus = Column(u'vbus', Integer(), index=True)
+	vbattery = Column(u'vbattery', Integer(), index=True)
 	upgrade_flag = Column(u'upgrade_flag', Integer(), index=True)
-	parameters = Column(u'parameters', String(12), index=True)
 	scene = Column(u'scene', String(12), index=True)
-	temp = Column(u'temp', Integer(), index=True) # ????
-	vbus = Column(u'vbus', Integer(), index=True) # ???
-	faults = Column(u'faults', Integer(), index=True)
+	fault = Column(u'fault', Integer(), index=True)
 	pedelec = Column(u'pedelec', Integer(), index=True)
-	time = Column(u'time', DateTime(), index=True)
 
 	bike = relationship(u'Bike', backref='devices')
+
+
+class Status(Base):
+	__tablename__ = u'status'
+	__table_args__ = {'mysql_engine': 'InnoDB', 'mysql_charset': 'utf8', 'mysql_collate': 'utf8_general_ci'}
+	id = Column(u'id', String(36), primary_key=True)
+	device_id = Column(u'device_id', String(16), ForeignKey('device.id'), index=True)
+	longitude = Column(u'longitude', Float(), index=True)
+	# longitude = Column(u'longitude', DOUBLE(), index=True)
+	latitude = Column(u'latitude', Float(), index=True)
+	# latitude = Column(u'latitude', DOUBLE(), index=True)
+	lock_status = Column(u'lock_status', Integer(), index=True)
+	csq = Column(u'csq', Integer(), index=True) # GSM Signal Strength
+	gps_flags = Column(u'gps_flags', Integer(), index=True) # GPS Type
+	gps_satellite = Column(u'gps_satellite', Integer(), index=True) # Sat Number
+	battery_percent = Column(u'battery_percent', Integer(), index=True)
+	battery_charging = Column(u'battery_charging', Integer(), index=True)
+	mode = Column(u'mode', Integer(), index=True)
+	start_count = Column(u'start_count', DateTime(), index=True)
+	last_used = Column(u'last_used', DateTime(), index=True)
+
+	device = relationship(u'Device', backref='statuses')
 
 
 
@@ -133,28 +135,39 @@ if not device:
 	device = Device()
 	device.id = device_id
 	device.bike_id = bike_id
-	device.mode = 1
-	device.firmware = 1
-	device.hardware = 1
-	device.longitude = 23.66666666
-	device.latitude = 3.99999999
-	device.gps_flags = 1
-	device.gps_satellite = 1
-	device.lock_status = 1
-	device.battery = 1
-	device.battery_percentage = 37
-	device.charging = 1
-	device.ble_key = '1234567812345678'
-	device.csq = 1
 	device.sim = '12345678123456781234'
 	device.phone = '1234567812345678'
-	device.upgrade_flag = 1
-	device.parameters = '123456781234'
-	device.scene = '123456781234'
+	device.ble_key = '1234567812345678'
+	device.parameter = '123456781234'
+	device.firmware = 1
+	device.hardware = 1
 	device.temp = 1
 	device.vbus = 1
-	device.faults = 0
+	device.vbattery = 1
+	device.upgrade_flag = 1
+	device.scene = '123456781234'
+	device.fault = 0
 	device.pedelec = 1
-	device.time = datetime.datetime.now()
 	session.add(device)
+commit(session)
+
+# Create status
+session = Db().Session()
+status = session.query(Status).filter_by(device_id=device_id).first()
+if not status:
+	status = Status()
+	status.id = str(uuid.uuid4())
+	status.device_id = device_id
+	status.longitude = 23.66666666
+	status.latitude = 3.99999999
+	status.lock_status = 1
+	status.csq = 1
+	status.gps_flags = 1
+	status.gps_satellite = 1
+	status.battery_percent = 37
+	status.battery_charging = 1
+	status.mode = 1
+	status.start_count = datetime.datetime.now()
+	status.last_used = datetime.datetime.now()
+	session.add(status)
 commit(session)
