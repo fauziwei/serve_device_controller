@@ -102,7 +102,7 @@ class Logic(object):
 		# logger.debug(u'IV: {0}'.format(binascii.hexlify(IV).upper()))
 		aes = AES.new(proto.aes_key, AES.MODE_ECB, IV=IV)
 		ciphertext = aes.encrypt(data)
-		logger.debug(u'cyphertext: {0}'.format(repr(ciphertext)))
+		# logger.debug(u'cyphertext: {0}'.format(repr(ciphertext)))
 		return ciphertext
 
 	def aes_decrypt(self, proto, data):
@@ -118,7 +118,7 @@ class Logic(object):
 	def init_unlock(self, proto):
 		'''Send data to device via twisted server.'''
 		message_type = SERVER_TYPE['unlock']
-		logger.debug('message_type: {0}'.format(repr(message_type)))
+		logger.debug(u'message_type: {0}'.format(repr(message_type)))
 		message_id = get_message_id_for_crc8(proto.message_id)
 		controller_id = hex_to_byte(proto.controller_id)
 		length = get_length_for_crc8(message_type, message_id, controller_id)
@@ -169,7 +169,7 @@ class Logic(object):
 	def init_lock(self, proto):
 		'''Send data to device via twisted server.'''
 		message_type = SERVER_TYPE['lock']
-		logger.debug('message_type: {0}'.format(repr(message_type)))
+		logger.debug(u'message_type: {0}'.format(repr(message_type)))
 		message_id = get_message_id_for_crc8(proto.message_id)
 		controller_id = hex_to_byte(proto.controller_id)
 		length = get_length_for_crc8(message_type, message_id, controller_id)
@@ -208,7 +208,7 @@ class Logic(object):
 	def init_fire_gps_starting_up(self, proto):
 		'''Send data to device via twisted server.'''
 		message_type = SERVER_TYPE['fire_gps_starting_up']
-		logger.debug('message_type: {0}'.format(repr(message_type)))
+		logger.debug(u'message_type: {0}'.format(repr(message_type)))
 		message_id = get_message_id_for_crc8(proto.message_id)
 		controller_id = hex_to_byte(proto.controller_id)
 		length = get_length_for_crc8(message_type, message_id, controller_id)
@@ -243,6 +243,55 @@ class Logic(object):
 		crc8_verification(fire_gps_starting_up)
 		proto.token_init_fire_gps_starting_up = True
 		return fire_gps_starting_up
+
+	def init_ble_key_update(self, proto):
+		'''Send data to device via twisted server.'''
+		message_type = SERVER_TYPE['ble_key_update']
+		logger.debug(u'message_type: {0}'.format(repr(message_type)))
+		message_id = get_message_id_for_crc8(proto.message_id)
+		controller_id = hex_to_byte(proto.controller_id)
+		length = get_length_for_crc8(message_type, message_id, controller_id)
+		version = get_version()
+		firmware = get_firmware()
+
+		# header
+		header = START+length+version+message_type+message_id+firmware+controller_id
+
+		# payload ------------------------------------
+		ble_key1 = 'AAAAAAAAAAAAAAAA'
+		ble_key2 = 'BBBBBBBBBBBBBBBB'
+		zeros1 = '\x00' * 8
+		zeros2 = '\x00' * 7
+		signature = 1
+		payload = \
+			hex_to_byte(ble_key1)+\
+			hex_to_byte(ble_key2)+\
+			zeros1+\
+			zeros2+\
+			int_to_byte(signature)
+
+		# -----------------------------------------------
+
+		# logger.debug(u'header: {0}'.format(repr(header)))		
+
+		# logger.debug(u'payload before aes: {0}'.format(repr(payload)))
+		logger.debug(u'payload length: {0}'.format(len(payload)))
+
+		# aes encryption
+		payload = self.aes_encrypt(proto, payload)
+		# logger.debug(u'payload after aes: {0}'.format(repr(payload)))
+		# create crc8
+		cmd = header+payload
+		crc8_byte = create_crc8_val(cmd)
+		ble_key_update = cmd+crc8_byte
+
+		logger.debug(u'ble_key_update: {0}'.format(repr(ble_key_update)))
+		# logger.debug(u'ble_key_update: {0}'.format(ascii_string(ble_key_update)))
+		logger.debug(u'Length of ble_key_update: {0}'.format(len(ble_key_update)))
+
+		crc8_verification(ble_key_update)
+		proto.token_init_ble_key_update = True
+		return ble_key_update
 
 
 	''' Receiving section. '''

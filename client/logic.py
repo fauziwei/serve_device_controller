@@ -116,7 +116,7 @@ class Logic(object):
 		# logger.debug(u'IV: {0}'.format(binascii.hexlify(IV).upper()))
 		aes = AES.new(proto.aes_key, AES.MODE_ECB, IV=IV)
 		ciphertext = aes.encrypt(data)
-		logger.debug(u'cyphertext: {0}'.format(repr(ciphertext)))
+		# logger.debug(u'cyphertext: {0}'.format(repr(ciphertext)))
 		return ciphertext
 
 	def aes_decrypt(self, proto, data):
@@ -339,6 +339,51 @@ class Logic(object):
 		proto.token_init_pedelec_status_report = True
 		return pedelec_status_report
 
+	def init_fault_report(self, proto):
+		message_type = CLIENT_TYPE['fault_report']
+		message_id = get_message_id_for_crc8(proto.message_id)
+		device_id = hex_to_byte(proto.device_id)
+		length = get_length_for_crc8(message_type, message_id, device_id)
+		version = get_version()
+		firmware = get_firmware()		
+		
+		header = START+length+version+message_type+message_id+firmware+device_id
+
+		# payload
+		hdware_ver = 1
+		abnormal = 1
+		fault = 1
+		zeros1 = '\x00' * 5
+		zeros2 = '\x00' * 7
+		signature = 1
+
+		payload = \
+			int_to_byte(hdware_ver)+\
+			int_to_byte(abnormal)+\
+			int_to_byte(fault)+\
+			zeros1+\
+			zeros2+\
+			int_to_byte(signature)
+
+		# -----------------------------------------------
+
+		logger.debug(u'payload length: {0}'.format(len(payload)))
+
+		# aes encryption
+		payload = self.aes_encrypt(proto, payload)
+		# create crc8
+		cmd = header+payload
+		crc8_byte = create_crc8_val(cmd)
+		fault_report = cmd+crc8_byte
+
+		logger.debug(u'fault_report: {0}'.format(repr(fault_report)))
+		# logger.debug(u'fault_report: {0}'.format(ascii_string(fault_report)))
+		logger.debug(u'Length of fault_report: {0}'.format(len(fault_report)))
+
+		crc8_verification(fault_report)
+		proto.token_init_fault_report = True
+		return fault_report
+
 
 	''' Receiving section. '''
 
@@ -525,6 +570,7 @@ class Logic(object):
 
 	def fire_gps_starting_up_processing(self, proto, parsed):
 		'''
+		Preparing response to server > controller
 		1. reply with normal_ack
 		2. create delay
 		3. reply again with gps_data_report
@@ -629,7 +675,32 @@ class Logic(object):
 		pass
 
 	def ble_key_update_processing(self, proto, parsed):
-		pass
+		'''Preparing response lock_unlock_response to server > controller'''
+		length = parsed['length']
+		message_type = CLIENT_TYPE['ble_key_response']
+		message_id = parsed['message_id']
+		device_id = parsed['device_id']
+		version = parsed['version']
+		firmware = parsed['firmware']
+		# do something with payload.
+		payload = parsed['payload']
+
+		# header
+		header = START+length+version+message_type+message_id+firmware+device_id
+
+		# payload ------------------------
+		# reply back same payload
+		cmd = header+payload
+		crc8_byte = create_crc8_val(cmd)
+		ble_key_response = cmd+crc8_byte
+
+		logger.debug(u'Preparing relay ble_key_response from device to controller:')
+		logger.debug(u'ble_key_response: {0}'.format(repr(ble_key_response)))
+		# logger.debug(u'ble_key_response: {0}'.format(ascii_string(ble_key_response)))
+		logger.debug(u'Length of ble_key_response: {0}'.format(len(ble_key_response)))
+
+		crc8_verification(ble_key_response)
+		return ble_key_response
 
 	def control_command_send_processing(self, proto, parsed):
 		pass
@@ -647,43 +718,43 @@ class Logic(object):
 			return
 
 		if parsed['message_type'] == SERVER_TYPE['normal_ack']:
-			logger.debug(u'Detected normal_ack...')
+			logger.debug(u'Detected incoming normal_ack...')
 			return self.normal_ack_processing(proto, parsed)
 
 		elif parsed['message_type'] == SERVER_TYPE['unlock']:
-			logger.debug(u'Detected unlock...')
+			logger.debug(u'Detected incoming unlock...')
 			return self.unlock_processing(proto, parsed)
 
 		elif parsed['message_type'] == SERVER_TYPE['lock']:
-			logger.debug(u'Detected lock...')
+			logger.debug(u'Detected incoming lock...')
 			return self.lock_processing(proto, parsed)
 
 		elif parsed['message_type'] == SERVER_TYPE['configuration_command']:
-			logger.debug(u'Detected configuration_command...')
+			logger.debug(u'Detected incoming configuration_command...')
 			return self.configuration_command_processing(proto, parsed)
 
 		elif parsed['message_type'] == SERVER_TYPE['fire_gps_starting_up']:
-			logger.debug(u'Detected fire_gps_starting_up...')
+			logger.debug(u'Detected incoming fire_gps_starting_up...')
 			return self.fire_gps_starting_up_processing(proto, parsed)
 
 		elif parsed['message_type'] == SERVER_TYPE['get_device_status']:
-			logger.debug(u'Detected get_device_status...')
+			logger.debug(u'Detected incoming get_device_status...')
 			return self.get_device_status_processing(proto, parsed)
 
 		elif parsed['message_type'] == SERVER_TYPE['ble_key_update']:
-			logger.debug(u'Detected ble_key_update...')
+			logger.debug(u'Detected incoming ble_key_update...')
 			return self.ble_key_update_processing(proto, parsed)
 
 		elif parsed['message_type'] == SERVER_TYPE['control_command_send']:
-			logger.debug(u'Detected control_command_send...')
+			logger.debug(u'Detected incoming control_command_send...')
 			return self.control_command_send_processing(proto, parsed)
 
 		elif parsed['message_type'] == SERVER_TYPE['upgrade_command_push']:
-			logger.debug(u'Detected upgrade_command_push...')
+			logger.debug(u'Detected incoming upgrade_command_push...')
 			return self.upgrade_command_push_processing(proto, parsed)
 
 		elif parsed['message_type'] == SERVER_TYPE['upgrade_data_send']:
-			logger.debug(u'Detected upgrade_data_send...')
+			logger.debug(u'Detected incoming upgrade_data_send...')
 			return self.upgrade_data_send_processing(proto, parsed)
 
 		else:

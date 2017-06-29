@@ -35,6 +35,10 @@ class CProtocol(LineReceiver):
 	token_init_unlock = False
 	token_init_lock = False
 	token_init_fire_gps_starting_up = False
+	token_init_ble_key_update = False
+
+	# controller starting message.
+	controller_start = '\xff\xff\xff\xff'
 
 	# Response from twisted server for fail or success.
 	response_fail = '\xee\xee\xee\xee\xee\xee\xee\xee'
@@ -58,24 +62,27 @@ class CProtocol(LineReceiver):
 
 		# if not self.token_init_unlock:
 		# 	unlock = self.factory.logic.init_unlock(self)
-		# 	controller = '\xff\xff\xff\xff'
-		# 	unlock = controller+unlock
+		# 	unlock = self.controller_start+unlock
 		# 	logger.debug(u'Send unlock: {0}'.format(repr(unlock)))
 		# 	self.sendLine(unlock)
 
 		# if not self.token_init_lock:
 		# 	lock = self.factory.logic.init_lock(self)
-		# 	controller = '\xff\xff\xff\xff'
-		# 	lock = controller+lock
+		# 	lock = self.controller_start+lock
 		# 	logger.debug(u'Send lock: {0}'.format(repr(lock)))
 		# 	self.sendLine(lock)
 
-		if not self.token_init_fire_gps_starting_up:
-			fire_gps_starting_up = self.factory.logic.init_fire_gps_starting_up(self)
-			controller = '\xff\xff\xff\xff'
-			fire_gps_starting_up = controller+fire_gps_starting_up
-			logger.debug(u'Send fire_gps_starting_up: {0}'.format(repr(fire_gps_starting_up)))
-			self.sendLine(fire_gps_starting_up)
+		# if not self.token_init_fire_gps_starting_up:
+		# 	fire_gps_starting_up = self.factory.logic.init_fire_gps_starting_up(self)
+		# 	fire_gps_starting_up = self.controller_start+fire_gps_starting_up
+		# 	logger.debug(u'Send fire_gps_starting_up: {0}'.format(repr(fire_gps_starting_up)))
+		# 	self.sendLine(fire_gps_starting_up)
+
+		if not self.token_init_ble_key_update:
+			ble_key_update = self.factory.logic.init_ble_key_update(self)
+			ble_key_update = self.controller_start+ble_key_update
+			logger.debug(u'Send ble_key_update: {0}'.format(repr(ble_key_update)))
+			self.sendLine(ble_key_update)
 
 	def connectionLost(self, reason):
 		logger.debug(u'Lost connection with: {0}:{1}'.format(self.peer_ip, self.peer_port))

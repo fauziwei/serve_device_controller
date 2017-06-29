@@ -40,7 +40,7 @@ class Logic(object):
 		crc = data[-1:]
 
 		logger.debug( 30 * u'-')
-		logger.debug('Receiving...')
+		logger.debug('Received...')
 
 		logger.debug(u'start: {0}'.format(repr(start)))
 		logger.debug(u'header length: {0} bytes'.format(hex_to_int(byte_to_hex(length))))
@@ -77,7 +77,7 @@ class Logic(object):
 		# logger.debug(u'IV: {0}'.format(binascii.hexlify(IV).upper()))
 		aes = AES.new(proto.factory.aes_key, AES.MODE_ECB, IV=IV)
 		ciphertext = aes.encrypt(data)
-		logger.debug(u'cyphertext: {0}'.format(repr(ciphertext)))
+		# logger.debug(u'cyphertext: {0}'.format(repr(ciphertext)))
 		return ciphertext
 
 	def aes_decrypt(self, proto, data):
@@ -85,7 +85,7 @@ class Logic(object):
 		IV = os.urandom(16)
 		aes = AES.new(proto.factory.aes_key, AES.MODE_ECB, IV=IV)
 		text = aes.decrypt(data)
-		logger.debug(u'text: {0}'.format(repr(text)))
+		# logger.debug(u'text: {0}'.format(repr(text)))
 		return text
 
 
@@ -100,6 +100,10 @@ class Logic(object):
 		return data
 
 	def fire_gps_starting_up_processing(self, data):
+		'''Relaying data from controller to device.'''
+		return data
+
+	def ble_key_update_processing(self, data):
 		'''Relaying data from controller to device.'''
 		return data
 
@@ -273,10 +277,63 @@ class Logic(object):
 		return normal_ack
 
 	def fault_report_processing(self, proto, parsed):
-		pass
+		'''Preparing response normal_ack to device.'''
+		length = parsed['length']
+		message_type = SERVER_TYPE['normal_ack']
+		message_id = parsed['message_id']
+		device_id = parsed['device_id']
+		version = parsed['version']
+		firmware = parsed['firmware']
+		# do something with payload.
+		payload = parsed['payload']
+
+		# header
+		header = START+length+version+message_type+message_id+firmware+device_id
+
+		# payload ---------------------------------
+		# timestamp (4bytes)
+		t = get_shanghai_time()
+		timestamp = to_timestamp(t)
+		timestamp = timestamp_to_byte(timestamp)
+		payload = timestamp
+
+		# normal_ack doesnt required to be encrypted.
+		cmd = header+payload
+		crc8_byte = create_crc8_val(cmd)
+		normal_ack = cmd+crc8_byte
+
+		logger.debug(u'Prepare response normal_ack:')
+		logger.debug(u'normal_ack: {0}'.format(repr(normal_ack)))
+		# logger.debug(u'normal_ack: {0}'.format(ascii_string(normal_ack)))
+		logger.debug(u'Length of normal_ack: {0}'.format(len(normal_ack)))
+
+		crc8_verification(normal_ack)
+		return normal_ack		
 
 	def ble_key_response_processing(self, proto, parsed):
-		pass
+		'''Relaying data from device to controller.'''
+		# length = parsed['length']
+		# message_type = parsed['message_type']
+		# Server should update device status here, by saving to database.
+		# message_id = parsed['message_id'] # Check the status.
+		# device_id = parsed['device_id']
+		# version = parsed['version']
+		# firmware = parsed['firmware']
+
+		# do something with payload and store in database.
+		payload = parsed['payload']
+
+		# Send message 'success' to controller.
+		if proto.device_id not in proto.factory.controllers:
+			logger.debug(u'controller_id {0} is not connected.'.format(proto.device_id))
+			return
+
+		logger.debug(u'Prepare for relaying data to controller_id: {0}'.format(proto.device_id))
+		proto.belongto_controller = proto.factory.controllers[proto.device_id]
+		logger.debug(u'Send response success ble_key_response: {0}'.format(repr(proto.response_success)))
+		proto.belongto_controller.sendLine(proto.response_success)
+		proto.belongto_controller = False
+		return
 
 	def command_response_processing(self, proto, parsed):
 		pass
@@ -324,6 +381,10 @@ class Logic(object):
 		elif parsed['message_type'] == SERVER_TYPE['fire_gps_starting_up']:
 			logger.debug(u'Detected incoming fire_gps_starting_up...')
 			return self.fire_gps_starting_up_processing(data)
+
+		elif parsed['message_type'] == SERVER_TYPE['ble_key_update']:
+			logger.debug(u'Detected incoming ble_key_update...')
+			return self.ble_key_update_processing(data)
 
 		else:
 			# Still several message_type unfinished yet.

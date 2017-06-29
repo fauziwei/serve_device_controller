@@ -1212,3 +1212,240 @@
 2017-06-28 18:40:47,913 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
 2017-06-28 18:40:47,913 SUCCESS get response from device.
 2017-06-28 18:40:47,913 controller initiate to drop connection.
+2017-06-29 23:05:38,575 ------------------------------
+2017-06-29 23:05:38,575 Get connection with 127.0.0.1:8001
+2017-06-29 23:05:38,575 message_type: 'Q'
+2017-06-29 23:05:38,575 message_id in byte: "'t"
+2017-06-29 23:05:38,575 version: '\x03'
+2017-06-29 23:05:38,575 firmware: '\x01'
+2017-06-29 23:05:38,575 length of total message: 17
+2017-06-29 23:05:38,575 version: '\x03'
+2017-06-29 23:05:38,575 firmware: '\x01'
+2017-06-29 23:05:38,575 payload length: 32
+2017-06-29 23:05:38,575 cyphertext: ' \x0b;%\xc5\xd9\xe9\xaf\xc3\xd0O\xed\x1c\x05\xe3\x1e\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-29 23:05:38,578 Lost connection with: 127.0.0.1:8001
+2017-06-29 23:07:46,012 ------------------------------
+2017-06-29 23:07:46,012 Get connection with 127.0.0.1:8001
+2017-06-29 23:07:46,012 message_type: 'Q'
+2017-06-29 23:07:46,012 message_id in byte: "'t"
+2017-06-29 23:07:46,012 version: '\x03'
+2017-06-29 23:07:46,012 firmware: '\x01'
+2017-06-29 23:07:46,012 length of total message: 17
+2017-06-29 23:07:46,012 version: '\x03'
+2017-06-29 23:07:46,013 firmware: '\x01'
+2017-06-29 23:07:46,013 payload length: 32
+2017-06-29 23:07:46,013 cyphertext: ' \x0b;%\xc5\xd9\xe9\xaf\xc3\xd0O\xed\x1c\x05\xe3\x1e\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-29 23:07:46,015 Lost connection with: 127.0.0.1:8001
+2017-06-29 23:14:06,470 ------------------------------
+2017-06-29 23:14:06,470 Get connection with 127.0.0.1:8001
+2017-06-29 23:14:06,470 message_type: 'Q'
+2017-06-29 23:14:06,470 message_id in byte: "'t"
+2017-06-29 23:14:06,470 version: '\x03'
+2017-06-29 23:14:06,470 firmware: '\x01'
+2017-06-29 23:14:06,470 length of total message: 17
+2017-06-29 23:14:06,470 version: '\x03'
+2017-06-29 23:14:06,470 firmware: '\x01'
+2017-06-29 23:14:06,470 header length: 16
+2017-06-29 23:14:06,470 payload length: 32
+2017-06-29 23:14:06,470 cyphertext: ' \x0b;%\xc5\xd9\xe9\xaf\xc3\xd0O\xed\x1c\x05\xe3\x1e\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-29 23:14:06,473 Lost connection with: 127.0.0.1:8001
+2017-06-29 23:14:52,519 ------------------------------
+2017-06-29 23:14:52,519 Get connection with 127.0.0.1:8001
+2017-06-29 23:14:52,519 message_type: 'Q'
+2017-06-29 23:14:52,519 message_id in byte: "'t"
+2017-06-29 23:14:52,519 version: '\x03'
+2017-06-29 23:14:52,519 firmware: '\x01'
+2017-06-29 23:14:52,519 length of total message: 17
+2017-06-29 23:14:52,520 version: '\x03'
+2017-06-29 23:14:52,520 firmware: '\x01'
+2017-06-29 23:14:52,520 payload length: 32
+2017-06-29 23:14:52,520 cyphertext: ' \x0b;%\xc5\xd9\xe9\xaf\xc3\xd0O\xed\x1c\x05\xe3\x1e\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-29 23:14:52,520 payload length: 32
+2017-06-29 23:14:52,523 Lost connection with: 127.0.0.1:8001
+2017-06-29 23:15:53,881 ------------------------------
+2017-06-29 23:15:53,882 Get connection with 127.0.0.1:8001
+2017-06-29 23:15:53,882 message_type: 'Q'
+2017-06-29 23:15:53,882 message_id in byte: "'t"
+2017-06-29 23:15:53,882 version: '\x03'
+2017-06-29 23:15:53,882 firmware: '\x01'
+2017-06-29 23:15:53,882 length of total message: 17
+2017-06-29 23:15:53,882 version: '\x03'
+2017-06-29 23:15:53,882 firmware: '\x01'
+2017-06-29 23:15:53,882 payload length: 32
+2017-06-29 23:15:53,882 cyphertext: ' \x0b;%\xc5\xd9\xe9\xaf\xc3\xd0O\xed\x1c\x05\xe3\x1e\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-29 23:15:53,885 Lost connection with: 127.0.0.1:8001
+2017-06-29 23:16:15,250 ------------------------------
+2017-06-29 23:16:15,250 Get connection with 127.0.0.1:8001
+2017-06-29 23:16:15,250 message_type: 'Q'
+2017-06-29 23:16:15,250 message_id in byte: "'t"
+2017-06-29 23:16:15,250 version: '\x03'
+2017-06-29 23:16:15,250 firmware: '\x01'
+2017-06-29 23:16:15,250 length of total message: 17
+2017-06-29 23:16:15,250 version: '\x03'
+2017-06-29 23:16:15,250 firmware: '\x01'
+2017-06-29 23:16:15,250 payload length: 32
+2017-06-29 23:16:15,250 cyphertext: ' \x0b;%\xc5\xd9\xe9\xaf\xc3\xd0O\xed\x1c\x05\xe3\x1e\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-29 23:16:15,253 Lost connection with: 127.0.0.1:8001
+2017-06-29 23:17:03,121 ------------------------------
+2017-06-29 23:17:03,121 Get connection with 127.0.0.1:8001
+2017-06-29 23:17:03,121 message_type: 'Q'
+2017-06-29 23:17:03,121 message_id in byte: "'t"
+2017-06-29 23:17:03,121 version: '\x03'
+2017-06-29 23:17:03,121 firmware: '\x01'
+2017-06-29 23:17:03,122 length of total message: 17
+2017-06-29 23:17:03,122 version: '\x03'
+2017-06-29 23:17:03,122 firmware: '\x01'
+2017-06-29 23:17:03,122 payload length: 32
+2017-06-29 23:17:03,122 cyphertext: ' \x0b;%\xc5\xd9\xe9\xaf\xc3\xd0O\xed\x1c\x05\xe3\x1e\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-29 23:17:03,122 cmd length: 48
+2017-06-29 23:17:03,125 Lost connection with: 127.0.0.1:8001
+2017-06-29 23:17:36,785 ------------------------------
+2017-06-29 23:17:36,785 Get connection with 127.0.0.1:8001
+2017-06-29 23:17:36,785 message_type: 'Q'
+2017-06-29 23:17:36,786 message_id in byte: "'t"
+2017-06-29 23:17:36,786 version: '\x03'
+2017-06-29 23:17:36,786 firmware: '\x01'
+2017-06-29 23:17:36,786 length of total message: 17
+2017-06-29 23:17:36,786 version: '\x03'
+2017-06-29 23:17:36,786 firmware: '\x01'
+2017-06-29 23:17:36,786 payload length: 32
+2017-06-29 23:17:36,786 cyphertext: ' \x0b;%\xc5\xd9\xe9\xaf\xc3\xd0O\xed\x1c\x05\xe3\x1e\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-29 23:17:36,788 Lost connection with: 127.0.0.1:8001
+2017-06-29 23:20:47,437 ------------------------------
+2017-06-29 23:20:47,437 Get connection with 127.0.0.1:8001
+2017-06-29 23:20:47,437 message_type: 'Q'
+2017-06-29 23:20:47,437 message_id in byte: "'t"
+2017-06-29 23:20:47,437 version: '\x03'
+2017-06-29 23:20:47,437 firmware: '\x01'
+2017-06-29 23:20:47,437 length of total message: 17
+2017-06-29 23:20:47,437 version: '\x03'
+2017-06-29 23:20:47,437 firmware: '\x01'
+2017-06-29 23:20:47,437 payload before aes: '\x124Vx\x124Vx\x124Vx\x124Vx\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01'
+2017-06-29 23:20:47,437 payload length: 32
+2017-06-29 23:20:47,437 cyphertext: ' \x0b;%\xc5\xd9\xe9\xaf\xc3\xd0O\xed\x1c\x05\xe3\x1e\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-29 23:20:47,437 payload after aes: ' \x0b;%\xc5\xd9\xe9\xaf\xc3\xd0O\xed\x1c\x05\xe3\x1e\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-29 23:20:47,440 Lost connection with: 127.0.0.1:8001
+2017-06-29 23:26:57,140 ------------------------------
+2017-06-29 23:26:57,140 Get connection with 127.0.0.1:8001
+2017-06-29 23:26:57,140 message_type: 'Q'
+2017-06-29 23:26:57,140 message_id in byte: "'t"
+2017-06-29 23:26:57,140 version: '\x03'
+2017-06-29 23:26:57,140 firmware: '\x01'
+2017-06-29 23:26:57,140 length of total message: 17
+2017-06-29 23:26:57,140 version: '\x03'
+2017-06-29 23:26:57,140 firmware: '\x01'
+2017-06-29 23:26:57,141 header: "\xaa\x00\x11\x03Q't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-29 23:26:57,141 payload before aes: '\x124Vx\x124Vx\x124Vx\x124Vx\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01'
+2017-06-29 23:26:57,141 payload length: 32
+2017-06-29 23:26:57,141 cyphertext: ' \x0b;%\xc5\xd9\xe9\xaf\xc3\xd0O\xed\x1c\x05\xe3\x1e\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-29 23:26:57,141 payload after aes: ' \x0b;%\xc5\xd9\xe9\xaf\xc3\xd0O\xed\x1c\x05\xe3\x1e\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-29 23:26:57,142 Lost connection with: 127.0.0.1:8001
+2017-06-29 23:41:14,404 ------------------------------
+2017-06-29 23:41:14,404 Get connection with 127.0.0.1:8001
+2017-06-29 23:41:14,404 message_type: 'Q'
+2017-06-29 23:41:14,404 message_id in byte: "'t"
+2017-06-29 23:41:14,404 version: '\x03'
+2017-06-29 23:41:14,404 firmware: '\x01'
+2017-06-29 23:41:14,404 length of total message: 17
+2017-06-29 23:41:14,404 version: '\x03'
+2017-06-29 23:41:14,404 firmware: '\x01'
+2017-06-29 23:41:14,404 header: "\xaa\x00\x11\x03Q't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-29 23:41:14,404 payload before aes: '\x124Vx\x124Vx\x124Vx\x124Vx\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01'
+2017-06-29 23:41:14,404 payload length: 32
+2017-06-29 23:41:14,404 cyphertext: ' \x0b;%\xc5\xd9\xe9\xaf\xc3\xd0O\xed\x1c\x05\xe3\x1e\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-29 23:41:14,404 payload after aes: ' \x0b;%\xc5\xd9\xe9\xaf\xc3\xd0O\xed\x1c\x05\xe3\x1e\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-29 23:41:14,407 Lost connection with: 127.0.0.1:8001
+2017-06-29 23:42:54,566 ------------------------------
+2017-06-29 23:42:54,566 Get connection with 127.0.0.1:8001
+2017-06-29 23:42:54,566 message_type: 'Q'
+2017-06-29 23:42:54,566 message_id in byte: "'t"
+2017-06-29 23:42:54,566 version: '\x03'
+2017-06-29 23:42:54,566 firmware: '\x01'
+2017-06-29 23:42:54,568 length of total message: 17
+2017-06-29 23:42:54,568 version: '\x03'
+2017-06-29 23:42:54,568 firmware: '\x01'
+2017-06-29 23:42:54,568 header: "\xaa\x00\x11\x03Q't\x01$i\x04\x03X\xb6\xe3\x92"
+2017-06-29 23:42:54,568 payload before aes: '\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01'
+2017-06-29 23:42:54,568 payload length: 32
+2017-06-29 23:42:54,568 cyphertext: '\xfdb\xba\xe7%+d\x88\x9e\x82S\xc3\td!\x11\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-29 23:42:54,568 payload after aes: '\xfdb\xba\xe7%+d\x88\x9e\x82S\xc3\td!\x11\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x'
+2017-06-29 23:42:54,569 Lost connection with: 127.0.0.1:8001
+2017-06-30 00:32:20,640 ------------------------------
+2017-06-30 00:32:20,640 Get connection with 127.0.0.1:8001
+2017-06-30 00:32:20,640 message_type: 'Q'
+2017-06-30 00:32:20,640 message_id in byte: "'t"
+2017-06-30 00:32:20,640 version: '\x03'
+2017-06-30 00:32:20,640 firmware: '\x01'
+2017-06-30 00:32:20,640 length of total message: 17
+2017-06-30 00:32:20,640 version: '\x03'
+2017-06-30 00:32:20,640 firmware: '\x01'
+2017-06-30 00:32:20,640 payload length: 32
+2017-06-30 00:32:20,640 ble_key_update: "\xaa\x00\x11\x03Q't\x01$i\x04\x03X\xb6\xe3\x92\xfdb\xba\xe7%+d\x88\x9e\x82S\xc3\td!\x11\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x0b"
+2017-06-30 00:32:20,640 Length of ble_key_update: 49
+2017-06-30 00:32:20,640 vrfy_crc: '\x0b' , crc: '\x0b'
+2017-06-30 00:32:20,640 Send ble_key_update: "\xff\xff\xff\xff\xaa\x00\x11\x03Q't\x01$i\x04\x03X\xb6\xe3\x92\xfdb\xba\xe7%+d\x88\x9e\x82S\xc3\td!\x11\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x0b"
+2017-06-30 00:32:20,640 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-30 00:32:20,640 SUCCESS get response from device.
+2017-06-30 00:32:20,640 controller initiate to drop connection.
+2017-06-30 00:32:30,655 Lost connection with: 127.0.0.1:8001
+2017-06-30 00:32:30,655 Lost connection with: 127.0.0.1:8001
+2017-06-30 00:33:55,188 ------------------------------
+2017-06-30 00:33:55,188 Get connection with 127.0.0.1:8001
+2017-06-30 00:33:55,188 message_type: '1'
+2017-06-30 00:33:55,188 message_id in byte: "'t"
+2017-06-30 00:33:55,188 version: '\x03'
+2017-06-30 00:33:55,188 firmware: '\x01'
+2017-06-30 00:33:55,188 length of total message: 17
+2017-06-30 00:33:55,188 version: '\x03'
+2017-06-30 00:33:55,188 firmware: '\x01'
+2017-06-30 00:33:55,188 payload length: 16
+2017-06-30 00:33:55,188 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-30 00:33:55,188 Length of fire_gps_starting_up: 33
+2017-06-30 00:33:55,188 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-30 00:33:55,188 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-30 00:33:57,282 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-30 00:33:57,282 SUCCESS get response from device.
+2017-06-30 00:33:57,282 controller initiate to drop connection.
+2017-06-30 00:34:05,196 Lost connection with: 127.0.0.1:8001
+2017-06-30 00:34:05,196 Lost connection with: 127.0.0.1:8001
+2017-06-30 00:36:17,108 ------------------------------
+2017-06-30 00:36:17,108 Get connection with 127.0.0.1:8001
+2017-06-30 00:36:17,108 message_type: '1'
+2017-06-30 00:36:17,108 message_id in byte: "'t"
+2017-06-30 00:36:17,108 version: '\x03'
+2017-06-30 00:36:17,108 firmware: '\x01'
+2017-06-30 00:36:17,108 length of total message: 17
+2017-06-30 00:36:17,108 version: '\x03'
+2017-06-30 00:36:17,108 firmware: '\x01'
+2017-06-30 00:36:17,108 payload length: 16
+2017-06-30 00:36:17,108 fire_gps_starting_up: "\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-30 00:36:17,108 Length of fire_gps_starting_up: 33
+2017-06-30 00:36:17,108 vrfy_crc: '\x8d' , crc: '\x8d'
+2017-06-30 00:36:17,108 Send fire_gps_starting_up: "\xff\xff\xff\xff\xaa\x00\x11\x031't\x01$i\x04\x03X\xb6\xe3\x92\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x8d"
+2017-06-30 00:36:19,217 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-30 00:36:19,217 SUCCESS get response from device.
+2017-06-30 00:36:19,217 controller initiate to drop connection.
+2017-06-30 00:36:19,217 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-30 00:36:19,217 SUCCESS get response from device.
+2017-06-30 00:36:19,217 controller initiate to drop connection.
+2017-06-30 00:36:27,125 Lost connection with: 127.0.0.1:8001
+2017-06-30 00:36:27,125 Lost connection with: 127.0.0.1:8001
+2017-06-30 00:36:57,898 ------------------------------
+2017-06-30 00:36:57,898 Get connection with 127.0.0.1:8001
+2017-06-30 00:36:57,898 message_type: 'Q'
+2017-06-30 00:36:57,898 message_id in byte: "'t"
+2017-06-30 00:36:57,898 version: '\x03'
+2017-06-30 00:36:57,898 firmware: '\x01'
+2017-06-30 00:36:57,898 length of total message: 17
+2017-06-30 00:36:57,898 version: '\x03'
+2017-06-30 00:36:57,898 firmware: '\x01'
+2017-06-30 00:36:57,898 payload length: 32
+2017-06-30 00:36:57,898 ble_key_update: "\xaa\x00\x11\x03Q't\x01$i\x04\x03X\xb6\xe3\x92\xfdb\xba\xe7%+d\x88\x9e\x82S\xc3\td!\x11\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x0b"
+2017-06-30 00:36:57,898 Length of ble_key_update: 49
+2017-06-30 00:36:57,898 vrfy_crc: '\x0b' , crc: '\x0b'
+2017-06-30 00:36:57,898 Send ble_key_update: "\xff\xff\xff\xff\xaa\x00\x11\x03Q't\x01$i\x04\x03X\xb6\xe3\x92\xfdb\xba\xe7%+d\x88\x9e\x82S\xc3\td!\x11\x1a\xc0.\x96\xfd\x04(\xc9!\xda\x98\xfc3\xdf\xf8x\x0b"
+2017-06-30 00:36:57,914 Recv: '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb'
+2017-06-30 00:36:57,914 SUCCESS get response from device.
+2017-06-30 00:36:57,914 controller initiate to drop connection.
+2017-06-30 00:37:07,900 Lost connection with: 127.0.0.1:8001
+2017-06-30 00:37:07,900 Lost connection with: 127.0.0.1:8001

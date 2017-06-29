@@ -48,7 +48,7 @@ class BProtocol(LineReceiver):
 		# Limiting active_connections.
 		logger.debug( 30 * u'-' )
 		self.active_connection += 1
-		
+				
 		if self.factory.haproxy_ip == self.transport.getPeer().host:
 			if self.active_connection > self.factory.max_connection:
 				logger.debug(u'Reaching max connection. Drop connection.')
@@ -97,8 +97,10 @@ class BProtocol(LineReceiver):
 
 	def sendFromController(self, data):
 		if not self.belongto_device:
+			# Send to controller.
 			# Device not connected to server.
 			# Send feedback to controller not success.
+			logger.debug(u'Send Fail to controller.')
 			self.sendLine(self.response_fail) # Fail
 		else:
 			# Send to device.

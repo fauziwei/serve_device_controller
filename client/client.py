@@ -41,6 +41,7 @@ class CProtocol(LineReceiver):
 	token_init_heartbeat = False
 	token_init_normal_bike_status = False
 	token_init_pedelec_status_report = False
+	token_init_fault_report = False
 
 	def connectionMade(self):
 		self.peer_ip = self.transport.getPeer().host
@@ -59,10 +60,15 @@ class CProtocol(LineReceiver):
 		# 	logger.debug(u'Send normal_bike_status: {0}'.format(repr(normal_bike_status)))
 		# 	self.sendLine(normal_bike_status)
 
-		if not self.token_init_pedelec_status_report:
-			pedelec_status_report = self.factory.logic.init_pedelec_status_report(self)
-			logger.debug(u'Send pedelec_status_report: {0}'.format(repr(pedelec_status_report)))
-			self.sendLine(pedelec_status_report)
+		# if not self.token_init_pedelec_status_report:
+		# 	pedelec_status_report = self.factory.logic.init_pedelec_status_report(self)
+		# 	logger.debug(u'Send pedelec_status_report: {0}'.format(repr(pedelec_status_report)))
+		# 	self.sendLine(pedelec_status_report)
+
+		if not self.token_init_fault_report:
+			fault_report = self.factory.logic.init_fault_report(self)
+			logger.debug(u'Send fault_report: {0}'.format(repr(fault_report)))
+			self.sendLine(fault_report)
 
 	def connectionLost(self, reason):
 		logger.debug(u'Lost connection with: {0}:{1}'.format(self.peer_ip, self.peer_port))
