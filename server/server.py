@@ -96,16 +96,16 @@ class BProtocol(LineReceiver):
 			p.addCallback(lambda data: self.sendFromDevice(data))
 
 	def sendFromController(self, data):
-		if not self.belongto_device:
+		if self.belongto_device:
+			# Send to device.
+			logger.debug(u'Send to device >: {0}'.format(repr(data)))
+			self.belongto_device.sendLine(data)
+		else:
 			# Send to controller.
 			# Device not connected to server.
 			# Send feedback to controller not success.
 			logger.debug(u'Send Fail to controller.')
-			self.sendLine(self.response_fail) # Fail
-		else:
-			# Send to device.
-			logger.debug(u'Send to device >: {0}'.format(repr(data)))
-			self.belongto_device.sendLine(data)
+			self.sendLine(self.response_fail)
 
 	def sendFromDevice(self, data):
 		if data:
