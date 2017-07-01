@@ -10,7 +10,7 @@ byte_to_double = lambda b: struct.unpack('>d', byte)[0]
 
 int_to_byte = lambda i: struct.pack('!H', i)[1:]
 
-print repr(int_to_byte(4))
+# print repr(int_to_byte(4))
 
 # latitude = 23.88888888
 # lat_byte = double_to_byte(latitude)
@@ -38,9 +38,10 @@ print repr(int_to_byte(4))
 # v_battery = 1
 # battery_stat = 1
 
-# # timestamp (4bytes)
-# t = get_shanghai_time()
-# timestamp = to_timestamp(t)
+# timestamp (4bytes)
+t = get_shanghai_time()
+timestamp = to_timestamp(t)
+print int(timestamp)
 # timestamp = timestamp_to_byte(timestamp)
 
 
@@ -83,18 +84,18 @@ print repr(int_to_byte(4))
 
 
 # orig
-normal_bike_status = 'aa0031034200010124479c0658cd0a18eaf7f5a4b52ac418b43d585d66a09dd5b4a595db644a34ac5518d42893493a0969'
-print repr(binascii.unhexlify(normal_bike_status))
-print len(binascii.unhexlify(normal_bike_status))
+# normal_bike_status = 'aa0031034200010124479c0658cd0a18eaf7f5a4b52ac418b43d585d66a09dd5b4a595db644a34ac5518d42893493a0969'
+# print repr(binascii.unhexlify(normal_bike_status))
+# print len(binascii.unhexlify(normal_bike_status))
 
 # simu
-normal_bike_status = "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92\x9c\xf6\xe5\xb00R\xa3\x83\x80J$\xbe\xe6?\xeb\xddK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\x91"
-print len(normal_bike_status)
+# normal_bike_status = "\xaa\x00\x11\x03B't\x01$i\x04\x03X\xb6\xe3\x92\x9c\xf6\xe5\xb00R\xa3\x83\x80J$\xbe\xe6?\xeb\xddK\xcf\x89c\xb3\x81&jp\xb4\xd2U\xdd\xd7\x85\xfd\x91"
+# print len(normal_bike_status)
 
 
-gps_data_report = "aa0031033200030124479c0658cd0a1861c0595ab3891183b7831e87c91b01c3c2a11c628e2a67ec64086d4948546e3cfc"
-print repr(binascii.unhexlify(gps_data_report))
-print len(binascii.unhexlify(gps_data_report))
+# gps_data_report = "aa0031033200030124479c0658cd0a1861c0595ab3891183b7831e87c91b01c3c2a11c628e2a67ec64086d4948546e3cfc"
+# print repr(binascii.unhexlify(gps_data_report))
+# print len(binascii.unhexlify(gps_data_report))
 
 # def bin_to_float(b):
 # 	""" Convert binary string to a float. """
