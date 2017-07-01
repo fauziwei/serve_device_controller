@@ -1,6 +1,6 @@
 # coding: utf-8
 # @2017
-# Fauzi, fauziwei@soovii.com
+# Fauzi, fauziwei@yahoo.com
 import sys
 import json
 import logging
@@ -34,7 +34,7 @@ def access_token(f):
 
 		# Get value of access_token in redis.
 		grant = self.access_token_cache.get_dict(acc_token)
-		logger.debug('Login: {0}'.format(grant))
+		logger.debug(u'Login: {0}'.format(grant))
 
 		self.user_id = grant['user_id']
 		self.client_id = grant['client_id']

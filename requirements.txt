@@ -2,7 +2,6 @@ tornado
 twisted
 pyOpenSSL
 pyCrypto
-sqlalchemy
 pyyaml
 pymysql
 sqlalchemy

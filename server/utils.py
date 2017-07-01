@@ -49,7 +49,7 @@ def crc8_verification(data):
 	# crc8_hex = crc8_0xVal.replace('0x', '')
 	crc8_hex = int_to_hex(crc8_func(cmd))
 	crc8_byte = binascii.unhexlify(crc8_hex)
-	logger.debug('vrfy_crc: {0} , crc: {1}'.format(repr(crc8_byte), repr(data[-1:])))
+	logger.debug(u'vrfy_crc: {0} , crc: {1}'.format(repr(crc8_byte), repr(data[-1:])))
 	return crc8_byte == data[-1:]
 
 def create_crc8_val(data):

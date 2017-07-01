@@ -12,6 +12,10 @@ class BaseHandler(web.RequestHandler):
 		super(BaseHandler, self).__init__(*args, **kwargs)
 
 	@property
+	def devices_cache(self):
+		return self.application.devices_cache
+
+	@property
 	def access_token_cache(self):
 		return self.application.access_token_cache
 
