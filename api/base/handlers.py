@@ -27,8 +27,12 @@ class BaseHandler(web.RequestHandler):
 		try:
 			session.flush()
 			session.commit()
+		except IntegrityError:
+			session.rollback()
+			logger.debug(u'Exception IntegrityError.')
 		except:
 			traceback.print_exc()
 			session.rollback()
+			logger.debug(u'Exception commit.')
 		finally:
 			session.close()

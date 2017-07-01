@@ -50,13 +50,23 @@ Temporary Items
 *.pyc
 
 # DB
-#sqlite.db
+sqlite.db
+api/sqlite.db
+server/sqlite.db
 
 # Logger
-#client/logs/client
-#client/logs/client*
-#server/logs/server
-#server/logs/server*
+api/logs/app
+api/logs/app*
+client/logs/client
+client/logs/client*
+controller/logs/controller
+controller/logs/controller*
+server/logs/server
+server/logs/server*
 
 # nohup
 nohup.out
+api/nohup.out
+client/nohup.out
+controller/nohup.out
+server/nohup.out
