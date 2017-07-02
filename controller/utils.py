@@ -20,6 +20,8 @@ int_to_hex = lambda i: '{0:02x}'.format(i)
 hex_to_int = lambda h: int(h, 16)
 
 int_to_byte = lambda i: struct.pack('!H', i)[1:]
+# int_to_byte = lambda i: struct.pack('!H', i)
+# byte_to_int = lambda b: struct.unpack('!H', b)
 
 float_to_byte = lambda f: struct.pack('f', f)
 byte_to_float = lambda b: struct.unpack('f', b)[0]

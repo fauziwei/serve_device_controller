@@ -8,9 +8,38 @@ byte_to_float = lambda b: struct.unpack('f', b)[0]
 double_to_byte = lambda f: struct.pack('>d', f)
 byte_to_double = lambda b: struct.unpack('>d', byte)[0]
 
-int_to_byte = lambda i: struct.pack('!H', i)[1:]
+# int_to_byte = lambda i: struct.pack('!H', i)[1:]
+int_to_byte = lambda i: struct.pack('!H', i)
+byte_to_int = lambda b: struct.unpack('!H', b)
 
-# print repr(int_to_byte(4))
+# print repr(int_to_byte(400))
+# print byte_to_int('\x01\x04')[0]
+
+# ---------------------------------
+device_id = '2469040358b6e392'
+h_to_i = hex_to_int(device_id)
+print 'hex_to_int: ', h_to_i
+
+# i_to_h = int_to_hex(h_to_i)
+# print 'int_to_hex: ', i_to_h
+
+# h_to_b = hex_to_byte(i_to_h)
+# print 'hex_to_byte: ', repr(h_to_b)
+
+# b_to_h = byte_to_hex(h_to_b)
+# print 'byte_to_hex: ', repr(b_to_h)
+
+# h_to_i = hex_to_int(b_to_h)
+# print 'hex_to_int: ', h_to_i
+# ----------------------------------
+
+
+
+# dev_id = 4023632670339818304
+dev_id = 9999999999999999999
+i_to_h = int_to_hex(dev_id)
+print 'int_to_hex: ', i_to_h
+
 
 # latitude = 23.88888888
 # lat_byte = double_to_byte(latitude)
@@ -39,9 +68,9 @@ int_to_byte = lambda i: struct.pack('!H', i)[1:]
 # battery_stat = 1
 
 # timestamp (4bytes)
-t = get_shanghai_time()
-timestamp = to_timestamp(t)
-print int(timestamp)
+# t = get_shanghai_time()
+# timestamp = to_timestamp(t)
+# print int(timestamp)
 # timestamp = timestamp_to_byte(timestamp)
 
 

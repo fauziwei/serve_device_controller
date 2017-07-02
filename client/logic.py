@@ -87,7 +87,7 @@ class Logic(object):
 		logger.debug(u'message_type: {0}'.format(repr(message_type)))
 		logger.debug(u'message_id: {0}'.format(repr(message_id)))
 		logger.debug(u'firmware: {0}'.format(repr(firmware)))
-		logger.debug(u'device_id: {0}'.format(byte_to_hex(device_id)))
+		logger.debug(u'device_id: {0}'.format(hex_to_int(byte_to_hex(device_id))))
 		logger.debug(u'payload: {0}'.format(repr(payload)))
 
 		if message_type == SERVER_TYPE['normal_ack']:
@@ -133,7 +133,8 @@ class Logic(object):
 		'''Sample initiator heartbeat to server.'''
 		message_type = CLIENT_TYPE['heartbeat']
 		message_id = get_message_id_for_crc8(proto.message_id)
-		device_id = hex_to_byte(proto.device_id)
+		# device_id = hex_to_byte(proto.device_id)
+		device_id = hex_to_byte(int_to_hex(proto.device_id))
 		length = get_length_for_crc8(message_type, message_id, device_id)
 		version = get_version()
 		firmware = get_firmware()
@@ -157,7 +158,8 @@ class Logic(object):
 		# header without aes.
 		message_type = CLIENT_TYPE['normal_bike_status']
 		message_id = get_message_id_for_crc8(proto.message_id)
-		device_id = hex_to_byte(proto.device_id)
+		# device_id = hex_to_byte(proto.device_id)
+		device_id = hex_to_byte(int_to_hex(proto.device_id))
 		length = get_length_for_crc8(message_type, message_id, device_id)
 		version = get_version()
 		firmware = get_firmware()
@@ -240,7 +242,8 @@ class Logic(object):
 		'''Sample initiator pedelec_status_report to server.'''
 		message_type = CLIENT_TYPE['pedelec_status_report']
 		message_id = get_message_id_for_crc8(proto.message_id)
-		device_id = hex_to_byte(proto.device_id)
+		# device_id = hex_to_byte(proto.device_id)
+		device_id = hex_to_byte(int_to_hex(proto.device_id))
 		length = get_length_for_crc8(message_type, message_id, device_id)
 		version = get_version()
 		firmware = get_firmware()		
@@ -342,7 +345,9 @@ class Logic(object):
 	def init_fault_report(self, proto):
 		message_type = CLIENT_TYPE['fault_report']
 		message_id = get_message_id_for_crc8(proto.message_id)
-		device_id = hex_to_byte(proto.device_id)
+		# device_id = hex_to_byte(proto.device_id)
+		device_id = hex_to_byte(int_to_hex(proto.device_id))
+		# logger.debug(u'device_id: {0}'.format(repr(device_id)))
 		length = get_length_for_crc8(message_type, message_id, device_id)
 		version = get_version()
 		firmware = get_firmware()		

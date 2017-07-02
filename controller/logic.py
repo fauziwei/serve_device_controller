@@ -120,7 +120,8 @@ class Logic(object):
 		message_type = SERVER_TYPE['unlock']
 		logger.debug(u'message_type: {0}'.format(repr(message_type)))
 		message_id = get_message_id_for_crc8(proto.message_id)
-		controller_id = hex_to_byte(proto.controller_id)
+		# controller_id = hex_to_byte(proto.controller_id)
+		controller_id = hex_to_byte(int_to_hex(proto.controller_id))
 		length = get_length_for_crc8(message_type, message_id, controller_id)
 		version = get_version()
 		firmware = get_firmware()
@@ -171,7 +172,8 @@ class Logic(object):
 		message_type = SERVER_TYPE['lock']
 		logger.debug(u'message_type: {0}'.format(repr(message_type)))
 		message_id = get_message_id_for_crc8(proto.message_id)
-		controller_id = hex_to_byte(proto.controller_id)
+		# controller_id = hex_to_byte(proto.controller_id)
+		controller_id = hex_to_byte(int_to_hex(proto.controller_id))
 		length = get_length_for_crc8(message_type, message_id, controller_id)
 		version = get_version()
 		firmware = get_firmware()
@@ -210,7 +212,8 @@ class Logic(object):
 		message_type = SERVER_TYPE['fire_gps_starting_up']
 		logger.debug(u'message_type: {0}'.format(repr(message_type)))
 		message_id = get_message_id_for_crc8(proto.message_id)
-		controller_id = hex_to_byte(proto.controller_id)
+		# controller_id = hex_to_byte(proto.controller_id)
+		controller_id = hex_to_byte(int_to_hex(proto.controller_id))
 		length = get_length_for_crc8(message_type, message_id, controller_id)
 		version = get_version()
 		firmware = get_firmware()
@@ -249,7 +252,8 @@ class Logic(object):
 		message_type = SERVER_TYPE['ble_key_update']
 		logger.debug(u'message_type: {0}'.format(repr(message_type)))
 		message_id = get_message_id_for_crc8(proto.message_id)
-		controller_id = hex_to_byte(proto.controller_id)
+		# controller_id = hex_to_byte(proto.controller_id)
+		controller_id = hex_to_byte(int_to_hex(proto.controller_id))
 		length = get_length_for_crc8(message_type, message_id, controller_id)
 		version = get_version()
 		firmware = get_firmware()

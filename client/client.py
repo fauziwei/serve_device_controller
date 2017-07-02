@@ -32,8 +32,9 @@ class CProtocol(LineReceiver):
 	message_id = 10100
 	# Sample of device_id (sample in HEX)
 	# device_id = 'FFFFFFFFFFFFFFFF'
-	device_id = '2469040358b6e392'
+	# device_id = '2469040358b6e392' # in hex
 	# device_id = '2614229659785431576'
+	device_id = 2623632670339818386 # in int
 
 	aes_key = '02B6111770695324'
 

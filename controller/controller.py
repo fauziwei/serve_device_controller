@@ -106,7 +106,8 @@ class CProtocol(LineReceiver):
 # Configuration -------------------------
 # controller_id = 'FFFFFFFFFFFFFFFF'
 # controller_id = 'ffffffffffffffff'
-controller_id = '2469040358b6e392'
+# controller_id = '2469040358b6e392' # in hex
+controller_id = 2623632670339818386 # in int
 aes_key = '02B6111770695324'
 redis_ip, redis_port = '127.0.0.1', 6379
 # ---------------------------------------

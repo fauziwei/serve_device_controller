@@ -3,33 +3,23 @@
 # Fauzi, fauziwei@yahoo.com
 import sys
 import uuid
-import logging
 import hashlib
-import datetime
 import traceback
 from sqlalchemy import SmallInteger, Integer, BigInteger, \
 	Float, String, Boolean, DateTime, \
 	Column, Table, ForeignKey, MetaData, create_engine
 from sqlalchemy import SMALLINT, INTEGER, BIGINT, VARCHAR
 from sqlalchemy.dialects.mysql import DOUBLE, TINYINT
-from sqlalchemy.orm  import sessionmaker, relationship
-from sqlalchemy.exc  import IntegrityError
+from sqlalchemy.orm import sessionmaker, relationship
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.pool import NullPool
 from sqlalchemy.ext.declarative import declarative_base
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-logger = logging.getLogger(__name__)
 
-# ---------------------------------------------------
-# Development.
-# SQLite
-# engine = create_engine('sqlite:///sqlite.db', encoding='utf8', poolclass=NullPool, echo=False)
-
-# ---------------------------------------------------
-# Production.
-# MySQL
+# Configuration.
 address = '127.0.0.1'
 port = 3306
 user = 'root'
@@ -42,6 +32,7 @@ engine = create_engine('mysql+pymysql://%s:%s@%s:%s/%s?charset=utf8' %
 metadata = MetaData(bind=engine)
 Base = declarative_base(metadata=metadata)
 
+
 class Db(object):
 	'''Session creator.'''
 
@@ -53,17 +44,16 @@ class Db(object):
 	def session(self):
 		return self.Session()
 
+
 def commit(session):
 	try:
 		session.flush()
 		session.commit()
 	except IntegrityError:
 		session.rollback()
-		logger.debug(u'Exception IntegrityError.')
 	except:
 		traceback.print_exc()
 		session.rollback()
-		logger.debug(u'Exception commit.')
 	finally:
 		session.close()
 
@@ -72,61 +62,36 @@ def commit(session):
 # The models is started from here...
 # --------------------------------------------------
 
-# Oauth2 models.
-
 class Client(Base):
-	'''Client application.'''
+	'''Client application.
+	Purposed for Oauth2 client_id and client_secret.
+	One to one record.
+	'''
 	__tablename__ = u'client'
 	__table_args__ = {'mysql_engine': 'InnoDB', 'mysql_charset': 'utf8', 'mysql_collate': 'utf8_general_ci'}
 	id = Column('id', String(36), primary_key=True) # uuid4
 	secret = Column('secret', String(36), index=True, nullable=False) # uuid4
 
 
-# Development and Production.
 class User(Base):
-	'''User controller.'''
+	'''User controller.
+	Table for Login user.
+	One to one record.
+	'''
 	__tablename__ = u'user'
 	__table_args__ = {'mysql_engine': 'InnoDB', 'mysql_charset': 'utf8', 'mysql_collate': 'utf8_general_ci'}
 	id = Column('id', BigInteger(), primary_key=True, autoincrement=True)
-	email = Column('email', String(150), index=True, nullable=False)
+	email = Column('email', String(150), index=True, unique=True, nullable=False)
 	salt = Column('salt', String(36), index=True, nullable=False) # uuid4
 	password = Column('password', String(32), index=True, nullable=False) # md5
 
 
 # --------------------------------------------------
 # CLASS STATUS
-# Development.
-# class Status(Base):
-# 	'''One device to one record.'''
-# 	__tablename__ = u'status'
-# 	__table_args__ = {'mysql_engine': 'InnoDB', 'mysql_charset': 'utf8', 'mysql_collate': 'utf8_general_ci'}
-# 	device_id = Column(u'device_id', BigInteger(), primary_key=True)
-# 	bike_id = Column(u'bike_id', BigInteger(), index=True)
-# 	sim_id = Column(u'sim_id', String(20), index=True)
-# 	phone_id = Column(u'phone_id', String(20), index=True)
-# 	bike_type = Column(u'bike_type', String(10), index=True)
-# 	parameters = Column(u'parameters', String(45), index=True)
-# 	firmware = Column(u'firmware', SmallInteger(), index=True)
-# 	hardware = Column(u'hardware', SmallInteger(), index=True)
-# 	temp = Column(u'temp', Integer(), index=True)
-# 	longitude = Column(u'longitude', Float(), index=True)
-# 	latitude = Column(u'latitude', Float(), index=True)
-# 	address = Column(u'address', String(150))
-# 	gps_flags = Column(u'gps_flags', Integer(), index=True)
-# 	lock_status = Column(u'lock_status', Integer(), index=True)
-# 	battery_percent = Column(u'battery_percent', Integer(), index=True)
-# 	mode = Column(u'mode', Integer(), index=True)
-# 	abnormal = Column(u'abnormal', Integer(), index=True)
-# 	faults = Column(u'faults', Integer(), index=True)
-# 	timestamp = Column(u'timestamp', Integer(), index=True)
-# 	ble_key = Column(u'ble_key', String(16), index=True)
-# 	upgrade_flag = Column(u'upgrade_flag', Integer(), index=True)
-# 	update_time = Column(u'update_time', DateTime(), index=True)
-# 	active = Column(u'active', Boolean(), index=True)
-
-# Production.
 class Status(Base):
-	'''One device to one record.'''
+	'''One device to one record.
+	This table is parent's table of all bike sharing's tables.
+	'''
 	__tablename__ = u'status'
 	__table_args__ = {'mysql_engine': 'InnoDB', 'mysql_charset': 'utf8', 'mysql_collate': 'utf8_general_ci'}
 	device_id = Column(u'device_id', BigInteger(), primary_key=True)
@@ -155,24 +120,6 @@ class Status(Base):
 
 # --------------------------------------------------
 # CLASS STATUS_RECORD
-# Development.
-# class StatusRecord(Base):
-# 	'''One device to many records.'''
-# 	__tablename__ = u'status_record'
-# 	__table_args__ = {'mysql_engine': 'InnoDB', 'mysql_charset': 'utf8', 'mysql_collate': 'utf8_general_ci'}
-# 	id = Column('id', BigInteger(), primary_key=True, autoincrement=True)
-# 	device_id = Column(u'device_id', BigInteger(), ForeignKey('status.device_id'), index=True)
-# 	lock_status = Column(u'lock_status', Integer(), index=True)
-# 	battery_percent = Column(u'battery_percent', Integer(), index=True)
-# 	mode = Column(u'mode', Integer(), index=True)
-# 	abnormal = Column(u'abnormal', Integer(), index=True)
-# 	faults = Column(u'faults', Integer(), index=True)
-# 	timestamp = Column(u'timestamp', Integer(), index=True)
-# 	create_at = Column(u'create_at', DateTime(), index=True)
-
-# 	status = relationship(u'Status', backref='status_records')
-
-# Production.
 class StatusRecord(Base):
 	'''One device to many records.'''
 	__tablename__ = u'status_record'
@@ -192,29 +139,13 @@ class StatusRecord(Base):
 
 # --------------------------------------------------
 # CLASS INFORMATION_RECORD
-# Development.
-# class InformationRecord(Base):
-# 	__tablename__ = u'information_record'
-# 	__table_args__ = {'mysql_engine': 'InnoDB', 'mysql_charset': 'utf8', 'mysql_collate': 'utf8_general_ci'}
-# 	id = Column('id', BigInteger(), primary_key=True, autoincrement=True)
-# 	device_id = Column(u'device_id', BigInteger(), ForeignKey('status.device_id'), index=True)
-# 	csq = Column(u'csq', Integer(), index=True)
-# 	temp = Column(u'temp', Integer(), index=True)
-# 	vbus = 	Column(u'vbus', Integer(), index=True)
-# 	charging_status = Column(u'charging_status', Boolean(), index=True)
-# 	vbattery = Column(u'vbattery', Integer(), index=True)
-# 	battery_percent = Column(u'battery_percent', Integer(), index=True)
-# 	create_at = Column(u'create_at', DateTime(), index=True)
-
-# 	status = relationship(u'Status', backref='information_records')
-
-# Production.
 class InformationRecord(Base):
+	'''One device to many records.'''
 	__tablename__ = u'information_record'
 	__table_args__ = {'mysql_engine': 'InnoDB', 'mysql_charset': 'utf8', 'mysql_collate': 'utf8_general_ci'}
 	id = Column('id', BigInteger(), primary_key=True, autoincrement=True)
 	device_id = Column(u'device_id', BigInteger(), ForeignKey('status.device_id'), index=True)
-	csq = Column(u'csq', TINYINT(1), primary_key=True)
+	csq = Column(u'csq', TINYINT(1), index=True)
 	temp = Column(u'temp', TINYINT(1), index=True)
 	vbus = 	Column(u'vbus', TINYINT(1), index=True)
 	charging_status = Column(u'charging_status', Boolean(), index=True)
@@ -227,23 +158,8 @@ class InformationRecord(Base):
 
 # --------------------------------------------------
 # CLASS GPS_RECORD
-# Development.
-# class GpsRecord(Base):
-# 	__tablename__ = u'gps_record'
-# 	__table_args__ = {'mysql_engine': 'InnoDB', 'mysql_charset': 'utf8', 'mysql_collate': 'utf8_general_ci'}
-# 	id = Column('id', BigInteger(), primary_key=True, autoincrement=True)
-# 	device_id = Column(u'device_id', BigInteger(), ForeignKey('status.device_id'), index=True)
-# 	longitude = Column(u'longitude', Float(), index=True)
-# 	latitude = Column(u'latitude', Float(), index=True)
-# 	gps_satellite = Column(u'gps_satellite', Integer(), index=True)
-# 	gps_flags = Column(u'gps_flags', Integer(), index=True)
-# 	create_at = Column(u'create_at', DateTime(), index=True)
-# 	is_address_done = Column(u'is_address_done', Boolean(), index=True)
-
-# 	status = relationship(u'Status', backref='gps_records')
-
-# Production
 class GpsRecord(Base):
+	'''One device to many records.'''
 	__tablename__ = u'gps_record'
 	__table_args__ = {'mysql_engine': 'InnoDB', 'mysql_charset': 'utf8', 'mysql_collate': 'utf8_general_ci'}
 	id = Column('id', BigInteger(), primary_key=True, autoincrement=True)
@@ -260,20 +176,8 @@ class GpsRecord(Base):
 
 # --------------------------------------------------
 # CLASS ABNORMAL_RECORD
-# Development.
-# class AbnormalRecord(Base):
-# 	__tablename__ = u'abnormal_record'
-# 	__table_args__ = {'mysql_engine': 'InnoDB', 'mysql_charset': 'utf8', 'mysql_collate': 'utf8_general_ci'}
-# 	id = Column('id', BigInteger(), primary_key=True, autoincrement=True)
-# 	device_id = Column(u'device_id', BigInteger(), ForeignKey('status.device_id'), index=True)
-# 	abnormal = Column(u'abnormal', Integer(), index=True)
-# 	faults = Column(u'faults', Integer(), index=True)
-# 	create_at = Column(u'create_at', DateTime(), index=True)
-
-# 	status = relationship(u'Status', backref='abnormal_records')
-
-# Production
 class AbnormalRecord(Base):
+	'''One device to many records.'''
 	__tablename__ = u'abnormal_record'
 	__table_args__ = {'mysql_engine': 'InnoDB', 'mysql_charset': 'utf8', 'mysql_collate': 'utf8_general_ci'}
 	id = Column('id', BigInteger(), primary_key=True, autoincrement=True)
@@ -287,21 +191,8 @@ class AbnormalRecord(Base):
 
 # --------------------------------------------------
 # CLASS BLE_KEY_RECORD
-# Development.
-# class BleKeyRecord(Base):
-# 	__tablename__ = u'ble_key_record'
-# 	__table_args__ = {'mysql_engine': 'InnoDB', 'mysql_charset': 'utf8', 'mysql_collate': 'utf8_general_ci'}
-# 	id = Column('id', BigInteger(), primary_key=True, autoincrement=True)
-# 	device_id = Column(u'device_id', BigInteger(), ForeignKey('status.device_id'), index=True)
-# 	ble_key = Column(u'ble_key', String(16), index=True)
-# 	push_timestamp = Column(u'push_timestamp', Integer(), index=True)
-# 	recv_timestamp = Column(u'recv_timestamp', Integer(), index=True)
-# 	create_at = Column(u'create_at', DateTime(), index=True)
-
-# 	status = relationship(u'Status', backref='ble_key_records')
-
-# Production
 class BleKeyRecord(Base):
+	'''One device to many records.'''
 	__tablename__ = u'ble_key_record'
 	__table_args__ = {'mysql_engine': 'InnoDB', 'mysql_charset': 'utf8', 'mysql_collate': 'utf8_general_ci'}
 	id = Column('id', BigInteger(), primary_key=True, autoincrement=True)
@@ -340,7 +231,7 @@ email = u'fauziwei@yahoo.com'
 user = session.query(User).filter_by(email=email).first()
 if not user:
 	user = User()
-	# user.id = str(uuid.uuid4())
+	# user.id = 1
 	user.email = email
 	salt = str(uuid.uuid4())
 	password = u'123456'

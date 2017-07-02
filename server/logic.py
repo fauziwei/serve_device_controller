@@ -5,12 +5,14 @@ import os
 import sys
 import logging
 import binascii
+import traceback
 from Crypto.Cipher import AES
+from sqlalchemy.exc import IntegrityError
 
 # local import
 from header import START, CLIENT_TYPE, SERVER_TYPE
 from utils import *
-from models import Db, commit, Client, User, \
+from models import Db, Client, User, \
 	Status, StatusRecord, InformationRecord, \
 	GpsRecord, AbnormalRecord, BleKeyRecord
 
@@ -26,7 +28,7 @@ class Logic(object):
 		'''Cut recv_data.
 		Data is supposed in ByteStream.
 		Default is todo decryption after checking CRC8, ...
-		unless 'hearbeat' and 'normal_ack'.
+		unless 'hearbeat' and 'normal_ack' message.
 		'''
 		if not crc8_verification(data):
 			logger.debug(u'CRC8 verification failed.')
@@ -42,7 +44,7 @@ class Logic(object):
 		crc = data[-1:]
 
 		logger.debug( 30 * u'-')
-		logger.debug('Received...')
+		logger.debug(u'Received...')
 
 		logger.debug(u'start: {0}'.format(repr(start)))
 		logger.debug(u'header length: {0} bytes'.format(hex_to_int(byte_to_hex(length))))
@@ -50,7 +52,7 @@ class Logic(object):
 		logger.debug(u'message_type: {0}'.format(repr(message_type)))
 		logger.debug(u'message_id: {0}'.format(repr(message_id)))
 		logger.debug(u'firmware: {0}'.format(repr(firmware)))
-		logger.debug(u'device_id: {0}'.format(byte_to_hex(device_id)))
+		logger.debug(u'device_id: {0}'.format(hex_to_int(byte_to_hex(device_id))))
 
 		if message_type in [ CLIENT_TYPE['heartbeat'], CLIENT_TYPE['normal_ack'] ]:
 			logger.debug(u'crc: {0}'.format(repr(crc)))
@@ -72,6 +74,20 @@ class Logic(object):
 			'message_type': message_type, 'message_id': message_id,
 			'firmware': firmware, 'device_id': device_id, 'payload': payload
 		}
+
+	def commit(self, session):
+		try:
+			session.flush()
+			session.commit()
+		except IntegrityError:
+			session.rollback()
+			logger.debug(u'Exception IntegrityError.')
+		except:
+			traceback.print_exc()
+			session.rollback()
+			logger.debug(u'Exception commit.')
+		finally:
+			session.close()
 
 	def aes_encrypt(self, proto, data):
 		'''data is without crc. Only 16bytes.'''
@@ -113,7 +129,7 @@ class Logic(object):
 	''' Receiving section. '''
 
 	def heartbeat_processing(self, proto, parsed):
-		'''Preparing response normal_ack to device.'''
+		'''Preparing response *normal_ack* to device.'''
 		length = parsed['length']
 		message_type = SERVER_TYPE['normal_ack']
 		message_id = parsed['message_id']
@@ -141,7 +157,9 @@ class Logic(object):
 		# logger.debug(u'normal_ack: {0}'.format(ascii_string(normal_ack)))
 		logger.debug(u'Length of normal_ack: {0}'.format(len(normal_ack)))
 
-		crc8_verification(normal_ack)
+		if not crc8_verification(normal_ack):
+			logger.debug(u'Error CRC8 verification after encryption.')
+			return
 		return normal_ack
 
 	def normal_ack_processing(self, proto, parsed):
@@ -241,7 +259,9 @@ class Logic(object):
 		# logger.debug(u'normal_ack: {0}'.format(ascii_string(normal_ack)))
 		logger.debug(u'Length of normal_ack: {0}'.format(len(normal_ack)))
 
-		crc8_verification(normal_ack)
+		if not crc8_verification(normal_ack):
+			logger.debug(u'Error CRC8 verification after encryption.')
+			return
 		return normal_ack
 
 	def pedelec_status_report_processing(self, proto, parsed):
@@ -275,7 +295,9 @@ class Logic(object):
 		# logger.debug(u'normal_ack: {0}'.format(ascii_string(normal_ack)))
 		logger.debug(u'Length of normal_ack: {0}'.format(len(normal_ack)))
 
-		crc8_verification(normal_ack)
+		if not crc8_verification(normal_ack):
+			logger.debug(u'Error CRC8 verification after encryption.')
+			return
 		return normal_ack
 
 	def fault_report_processing(self, proto, parsed):
@@ -309,7 +331,9 @@ class Logic(object):
 		# logger.debug(u'normal_ack: {0}'.format(ascii_string(normal_ack)))
 		logger.debug(u'Length of normal_ack: {0}'.format(len(normal_ack)))
 
-		crc8_verification(normal_ack)
+		if not crc8_verification(normal_ack):
+			logger.debug(u'Error CRC8 verification after encryption.')
+			return
 		return normal_ack		
 
 	def ble_key_response_processing(self, proto, parsed):
@@ -354,7 +378,8 @@ class Logic(object):
 		if not parsed:
 			return
 
-		proto.controller_id = byte_to_hex(parsed['device_id'])
+		# proto.controller_id = byte_to_hex(parsed['device_id'])
+		proto.controller_id = hex_to_int(byte_to_hex(parsed['device_id']))
 
 		if proto.controller_id not in proto.factory.devices:
 			logger.debug(u'device_id {0} is not connected.'.format(proto.controller_id))
@@ -403,7 +428,8 @@ class Logic(object):
 		if not parsed:
 			return
 
-		proto.device_id = byte_to_hex(parsed['device_id'])
+		# proto.device_id = byte_to_hex(parsed['device_id'])
+		proto.device_id = hex_to_int(byte_to_hex(parsed['device_id']))
 
 		# Store connected device to self.devices
 		proto.factory.devices[proto.device_id] = proto
