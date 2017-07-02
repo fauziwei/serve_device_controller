@@ -12,16 +12,16 @@ sys.setdefaultencoding('utf-8')
 # ---------------------------------------------------
 # local database
 # SQLite
-engine = create_engine('sqlite:///sqlite.db', encoding='utf8', poolclass=NullPool, echo=False)
+# engine = create_engine('sqlite:///sqlite.db', encoding='utf8', poolclass=NullPool, echo=False)
 
 # MySQL
-# address = '127.0.0.1'
-# port = 3306
-# user = 'your-user'
-# password = 'your-password'
-# database = 'your-database'
-# engine = create_engine('mysql+pymysql://%s:%s@%s:%s/%s?charset=utf8' %
-# 	(user, password, address, port, database), encoding='utf8', poolclass=NullPool, echo=False)
+address = '127.0.0.1'
+port = 3306
+user = 'root'
+password = ''
+database = 'bikedb'
+engine = create_engine('mysql+pymysql://%s:%s@%s:%s/%s?charset=utf8' %
+	(user, password, address, port, database), encoding='utf8', poolclass=NullPool, echo=False)
 
 
 metadata = MetaData(bind=engine)
