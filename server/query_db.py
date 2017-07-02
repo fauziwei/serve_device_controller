@@ -12,16 +12,16 @@ sys.setdefaultencoding('utf-8')
 # ---------------------------------------------------
 # local database
 # SQLite
-engine = create_engine('sqlite:///sqlite.db', encoding='utf8', poolclass=NullPool, echo=False)
+# engine = create_engine('sqlite:///sqlite.db', encoding='utf8', poolclass=NullPool, echo=False)
 
 # MySQL
-# address = '127.0.0.1'
-# port = 3306
-# user = 'your-user'
-# password = 'your-password'
-# database = 'your-database'
-# engine = create_engine('mysql+pymysql://%s:%s@%s:%s/%s?charset=utf8' %
-# 	(user, password, address, port, database), encoding='utf8', poolclass=NullPool, echo=False)
+address = '127.0.0.1'
+port = 3306
+user = 'root'
+password = ''
+database = 'bikedb'
+engine = create_engine('mysql+pymysql://%s:%s@%s:%s/%s?charset=utf8' %
+	(user, password, address, port, database), encoding='utf8', poolclass=NullPool, echo=False)
 
 
 metadata = MetaData(bind=engine)
@@ -71,3 +71,19 @@ mapper(InformationRecord, information_record_table)
 mapper(GpsRecord, gps_record_table)
 mapper(AbnormalRecord, abnormal_record_table)
 mapper(BleKeyRecord, ble_key_record_table)
+
+
+# ------------------------
+session = Db().Session()
+clients = session.query(Client).all()
+for client in clients:
+	print(u'{0}, {1}'.format(client.id, client.secret))
+
+users = session.query(User).all()
+for user in users:
+	print(u'id: {0}'.format(user.id))
+	print(u'email: {0}'.format(user.email))
+	print(u'salt: {0}'.format(user.salt))
+	print(u'password: {0}'.format(user.password))
+
+session.close()

@@ -4,6 +4,7 @@
 import logging
 import traceback
 from tornado import web
+from sqlalchemy.exc import IntegrityError
 
 logger = logging.getLogger(__name__)
 
