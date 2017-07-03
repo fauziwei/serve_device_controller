@@ -5,7 +5,7 @@ import sys
 import json
 import logging
 import datetime
-from tornado import gen
+from tornado import gen, web
 # local import
 from base.handlers import BaseHandler
 from lib.decorator import access_token
@@ -17,9 +17,10 @@ logger = logging.getLogger(__name__)
 
 
 class UnLock(BaseHandler):
-	'''Initiate for sending unlock message.'''
+	'''Initiate sending unlock message.'''
 
-	@gen.coroutine
+	@web.asynchronous
+	@gen.engine
 	@access_token
 	def post(self, *args, **kwargs):
 		payload = json.loads(self.request.body)
@@ -68,6 +69,11 @@ class UnLock(BaseHandler):
 			logger.debug(reason)
 			self.finish( json.dumps({'success': False, 'reason': reason}) )
 			return
+
+		d = yield gen.Task(self.post_pool, version, message_type, message_id, firmware, controller_id, signature)
+		self.finish( json.dumps({'success': d['success'], 'reason': d['reason']}) )
+
+	def post_pool(self, version, message_type, message_id, firmware, controller_id, signature, callback):
 
 		length = self.get_length(version, message_type, message_id, firmware, controller_id)
 
@@ -128,13 +134,19 @@ class UnLock(BaseHandler):
 		logger.debug( 30 * u'-' )
 
 		if not self.crc8_verification(unlock):
-			logger.debug(u'CRC8 verification error before sending unlock message. Exit!')
-			return
+			reason = u'CRC8 verification error before sending unlock message. Exit!'
+			logger.debug(reason)
+			d = {'success': False, 'reason': reason}
+			return callback(d)
+
 		# sending socket.
 
 
 class Lock(BaseHandler):
-	@gen.coroutine
+	'''Initiate sending lock message.'''
+
+	@web.asynchronous
+	@gen.engine
 	@access_token
 	def post(self, *args, **kwargs):
 		payload = json.loads(self.request.body)
@@ -184,6 +196,11 @@ class Lock(BaseHandler):
 			self.finish( json.dumps({'success': False, 'reason': reason}) )
 			return
 
+		d = yield gen.Task(self.post_pool, version, message_type, message_id, firmware, controller_id, signature)
+		self.finish( json.dumps({'success': d['success'], 'reason': d['reason']}) )
+
+	def post_pool(self, version, message_type, message_id, firmware, controller_id, signature, callback):
+
 		length = self.get_length(version, message_type, message_id, firmware, controller_id)
 
 		# header ---------------------------------
@@ -230,20 +247,29 @@ class Lock(BaseHandler):
 		logger.debug( 30 * u'-' )
 
 		if not self.crc8_verification(lock):
-			logger.debug(u'CRC8 verification error before sending lock message. Exit!')
-			return
+			reason = u'CRC8 verification error before sending lock message. Exit!'
+			logger.debug(reason)
+			d = {'success': False, 'reason': reason}
+			return callback(d)
+
 		# sending socket.
 
 
 class FireGpsStartingUp(BaseHandler):
-	@gen.coroutine
+	'''Initiate sending fire_gps_starting_up message.'''
+
+	@web.asynchronous
+	@gen.engine
 	@access_token
 	def post(self, *args, **kwargs):
 		pass
 
 
 class BleKeyUpdate(BaseHandler):
-	@gen.coroutine
+	'''Initiate sending ble_key_update message.'''
+
+	@web.asynchronous
+	@gen.engine
 	@access_token
 	def post(self, *args, **kwargs):
 		pass

@@ -398,19 +398,19 @@ class Logic(object):
 		proto.token_controller = True
 
 		if parsed['message_type'] == SERVER_TYPE['unlock']:
-			logger.debug(u'Detected incoming unlock...')
+			logger.debug(u'Detected incoming unlock from controller...')
 			return self.unlock_processing(data)
 
 		elif parsed['message_type'] == SERVER_TYPE['lock']:
-			logger.debug(u'Detected incoming lock...')
+			logger.debug(u'Detected incoming lock from controller...')
 			return self.lock_processing(data)
 
 		elif parsed['message_type'] == SERVER_TYPE['fire_gps_starting_up']:
-			logger.debug(u'Detected incoming fire_gps_starting_up...')
+			logger.debug(u'Detected incoming fire_gps_starting_up from controller...')
 			return self.fire_gps_starting_up_processing(data)
 
 		elif parsed['message_type'] == SERVER_TYPE['ble_key_update']:
-			logger.debug(u'Detected incoming ble_key_update...')
+			logger.debug(u'Detected incoming ble_key_update from controller...')
 			return self.ble_key_update_processing(data)
 
 		else:
@@ -442,52 +442,52 @@ class Logic(object):
 		proto.token_device = True
 
 		if parsed['message_type'] == CLIENT_TYPE['heartbeat']:
-			logger.debug(u'Detected incoming heartbeat...')
+			logger.debug(u'Detected incoming heartbeat from device...')
 			return self.heartbeat_processing(proto, parsed)
 
 		if parsed['message_type'] == CLIENT_TYPE['normal_ack']:
 			# 1st reply fire_gps_starting_up
-			logger.debug(u'Detected incoming normal_ack...')
+			logger.debug(u'Detected incoming normal_ack from device...')
 			return self.normal_ack_processing(proto, parsed)
 
 		elif parsed['message_type'] == CLIENT_TYPE['lock_unlock_response']:
-			logger.debug(u'Detected incoming lock_unlock_response...')
+			logger.debug(u'Detected incoming lock_unlock_response from device...')
 			return self.lock_unlock_response_processing(proto, parsed)
 
 		elif parsed['message_type'] ==  CLIENT_TYPE['gps_data_report']:
-			logger.debug(u'Detected incoming gps_data_report...')
+			logger.debug(u'Detected incoming gps_data_report from device...')
 			return self.gps_data_report_processing(proto, parsed)
 
 		elif parsed['message_type'] ==  CLIENT_TYPE['normal_bike_status']:
-			logger.debug(u'Detected incoming normal_bike_status...')
+			logger.debug(u'Detected incoming normal_bike_status from device...')
 			return self.normal_bike_status_processing(proto, parsed)
 
 		elif parsed['message_type'] ==  CLIENT_TYPE['pedelec_status_report']:
-			logger.debug(u'Detected incoming pedelec_status_report...')
+			logger.debug(u'Detected incoming pedelec_status_report from device...')
 			return self.pedelec_status_report_processing(proto, parsed)
 
 		elif parsed['message_type'] ==  CLIENT_TYPE['fault_report']:
-			logger.debug(u'Detected incoming fault_report...')
+			logger.debug(u'Detected incoming fault_report from device...')
 			return self.fault_report_processing(proto, parsed)
 
 		elif parsed['message_type'] ==  CLIENT_TYPE['ble_key_response']:
-			logger.debug(u'Detected incoming ble_key_response...')
+			logger.debug(u'Detected incoming ble_key_response from device...')
 			return self.ble_key_response_processing(proto, parsed)
 
 		elif parsed['message_type'] ==  CLIENT_TYPE['command_response']:
-			logger.debug(u'Detected incoming command_response...')
+			logger.debug(u'Detected incoming command_response from device...')
 			return self.command_response_processing(proto, parsed)
 
 		elif parsed['message_type'] ==  CLIENT_TYPE['upgrade_push_response']:
-			logger.debug(u'Detected incoming upgrade_push_response...')
+			logger.debug(u'Detected incoming upgrade_push_response from device...')
 			return self.upgrade_push_response_processing(proto, parsed)
 
 		elif parsed['message_type'] ==  CLIENT_TYPE['upgrade_data_request']:
-			logger.debug(u'Detected incoming upgrade_data_request...')
+			logger.debug(u'Detected incoming upgrade_data_request from device...')
 			return self.upgrade_data_request_processing(proto, parsed)
 
 		else:
-			logger.debug(u'Client Type is not correct. Drop connection.')
+			logger.debug(u'Client Type from device is not correct. Drop connection.')
 			proto.transport.loseConnection()
 
 		return

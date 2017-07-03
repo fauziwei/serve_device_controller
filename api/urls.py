@@ -10,3 +10,7 @@ url_patterns.extend(urls.url_patterns)
 # oauth2
 from oauth2 import urls
 url_patterns.extend(urls.url_patterns)
+
+# cmd
+from cmd import urls
+url_patterns.extend(urls.url_patterns)
