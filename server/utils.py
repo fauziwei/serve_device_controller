@@ -7,6 +7,7 @@ import datetime
 import struct
 import ctypes
 import logging
+import calendar
 import binascii
 import crcmod.predefined
 
@@ -72,7 +73,8 @@ def to_timestamp(t):
 	t = get_shanghai_time()
 	ts = to_timestamp(t)
 	'''
-	return round( time.mktime(t.timetuple()) )
+	# return round( time.mktime(t.timetuple()) )
+	return round( calendar.timegm(t.timetuple()) )
 
 def timestamp_to_byte(ts):
 	return struct.pack('<I', ts)

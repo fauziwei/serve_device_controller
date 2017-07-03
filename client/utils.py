@@ -7,6 +7,7 @@ import datetime
 import struct
 import ctypes
 import logging
+import calendar
 import binascii
 import crcmod.predefined
 
@@ -51,7 +52,7 @@ def crc8_verification(data):
 	# crc8_hex = crc8_0xVal.replace('0x', '')
 	crc8_hex = int_to_hex(crc8_func(cmd))
 	crc8_byte = binascii.unhexlify(crc8_hex)
-	logger.debug('vrfy_crc: {0} , crc: {1}'.format(repr(crc8_byte), repr(data[-1:])))
+	logger.debug(u'vrfy_crc: {0} , crc: {1}'.format(repr(crc8_byte), repr(data[-1:])))
 	return crc8_byte == data[-1:]
 
 def create_crc8_val(data):
@@ -72,7 +73,8 @@ def to_timestamp(t):
 	t = get_shanghai_time()
 	ts = to_timestamp(t)
 	'''
-	return round( time.mktime(t.timetuple()) )
+	# return round( time.mktime(t.timetuple()) )
+	return round( calendar.timegm(t.timetuple()) )
 
 def timestamp_to_byte(ts):
 	return struct.pack('<I', ts)

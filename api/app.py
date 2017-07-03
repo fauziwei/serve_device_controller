@@ -18,13 +18,21 @@ logger = logging.getLogger(__name__)
 
 
 class Application(web.Application):
-	settings = {'debug': False}
+
+	settings = {
+		'aes_key': '02B6111770695324',
+		'debug': False
+	}
+
+	# Connect to redis device_cache
 	d = {'host': '127.0.0.1', 'port': 6379, 'db': 0}
 	devices_cache = cache.Cache(**d)
 
+	# Connect to access_token_cache.
 	d = {'host': '127.0.0.1', 'port': 6379, 'db': 2}
 	access_token_cache = cache.Cache(**d)
 
+	# Connect to database bikedb.
 	models = models
 
 	def __init__(self):
