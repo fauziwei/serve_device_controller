@@ -4,10 +4,23 @@
 import os
 import logging
 from tornado import web, ioloop, httpserver
-from urls import url_patterns
+
 # local import
 import lib.cache as cache
 import lib.models as models
+
+url_patterns = []
+
+# index
+from index import urls
+url_patterns.extend(urls.url_patterns)
+# oauth2
+from oauth2 import urls
+url_patterns.extend(urls.url_patterns)
+# cmd
+from cmd import urls
+url_patterns.extend(urls.url_patterns)
+
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 logging.basicConfig(
@@ -38,6 +51,7 @@ class Application(web.Application):
 	def __init__(self):
 		super(Application, self).__init__(url_patterns, **settings)
 
+
 def run():
 	port, address = 7999, '127.0.0.1'
 	app = Application()
@@ -45,6 +59,7 @@ def run():
 	server.listen(port, address=address)
 	logger.debug(u'Server running on port: {0}'.format(port))
 	ioloop.IOLoop.instance().start()
+
 
 if __name__ == '__main__':
 	run()

@@ -118,6 +118,7 @@ class Status(Base):
 	update_time = Column(u'update_time', DateTime(), index=True)
 	active = Column(u'active', Boolean(), index=True)
 
+
 # --------------------------------------------------
 # CLASS STATUS_RECORD
 class StatusRecord(Base):
