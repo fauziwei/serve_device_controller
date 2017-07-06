@@ -34,6 +34,12 @@ class Application(web.Application):
 
 	settings = {
 		'aes_key': '02B6111770695324',
+		'delimiter': '\n',
+		'timeout': 300,
+		# controller start message
+		'controller_start': '\xff\xff\xff\xff\xff\xff\xff\xff',
+		'response_fail': '\xee\xee\xee\xee\xee\xee\xee\xee',
+		'response_success': '\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb',
 		'debug': False
 	}
 

@@ -6,6 +6,8 @@ import time
 import pytz
 import struct
 import ctypes
+import select
+import socket
 import logging
 import calendar
 import binascii
@@ -56,6 +58,11 @@ class BaseHandler(web.RequestHandler):
 		}
 
 		self.aes_key = self.settings.get('aes_key')
+		self.delimiter = self.settings.get('delimiter')
+		self.timeout = self.settings.get('timeout')
+		self.controller_start = self.settings.get('controller_start')
+		self.response_fail = self.settings.get('response_fail')
+		self.response_success = self.settings.get('response_success')
 
 	@property
 	def devices_cache(self):
@@ -188,3 +195,53 @@ class BaseHandler(web.RequestHandler):
 			len(self.get_message_id(message_id))+len(self.get_firmware(firmware))+\
 			len(self.get_controller_id(controller_id))
 		return self.convert_length_to_byte(length)
+
+
+class SetupConnection(object):
+
+	def __init__(self, *args, **kwargs):
+
+		self.delimiter = kwargs['delimiter']
+		self.timeout = kwargs['timeout']
+		self.server_ip = kwargs['server_ip']
+		self.server_port = kwargs['server_port']
+
+	def send(self, s):
+		try:
+			logger.debug(u'Send: {0}'.format(repr(s)))
+			self.s.send(s+self.delimiter)
+		except socket.error:
+			self.s.close()
+			# logger.debug(u'Fails send to server: {0}'.format(s))
+			return 
+		return 'Sent'
+
+	def recv(self):
+		ready = select.select([self.s], [], [], self.timeout)
+		if not ready[0]:
+			self.s.close()
+			reason = u'Read timeout > {0} seconds.'.format(self.timeout)
+			logger.debug(reason)
+			return
+		else:
+			data = self.s.recv(1024)
+			logger.debug(u'Recv: {0}'.format(repr(data)))
+			if not data:
+				reason = u'No reply from server. Fails setup device.'
+				logger.debug(reason)
+				return
+			return data
+
+	def connect(self):
+		self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		try:
+			self.s.connect((self.server_ip, self.server_port))
+			self.s.setblocking(True)
+		except socket.error:
+			self.s.close()
+			# logger.debug(u'Fails get connection to server.')
+			return
+		return 'Connect'
+
+	def close(self):
+		self.s.close()
