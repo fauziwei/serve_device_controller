@@ -86,9 +86,9 @@ class BProtocol(LineReceiver):
 		logger.debug(u'Recv: {0}'.format(repr(data)))
 		# Assume that the incoming controller message from API
 		# is started by '\xff\xff\xff\xff',
-		if data[0:4] == '\xff\xff\xff\xff':
+		if data[0:8] == '\xff\xff\xff\xff\xff\xff\xff\xff':
 			# Incoming data from controller.
-			p = threads.deferToThread(self.factory.logic.setting, self, data[4:])
+			p = threads.deferToThread(self.factory.logic.setting, self, data[8:])
 			p.addCallback(lambda data: self.sendFromController(data))
 		else:
 			# Incoming data from device.

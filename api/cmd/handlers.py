@@ -313,7 +313,68 @@ class Lock(BaseHandler):
 			d = {'success': False, 'reason': reason}
 			return callback(d)
 
-		# sending socket.
+
+		# Check redis cache for device connected.
+		addr_port = self.devices_cache.get(controller_id)
+		if not addr_port:
+			reason = u'Device: {0} doesnt exist in redis/ maybe disconnected.'.format(controller_id)
+			logger.debug(reason)
+			d = {'success': False, 'reason': reason}
+			return callback(d)
+		addr, port = addr_port.split(':')
+		port = int(port)
+
+		# Setup connection and do interaction with server.
+		d = {
+			'delimiter': self.delimiter,
+			'timeout': self.timeout,
+			'server_ip': addr,
+			'server_port': port
+		}
+
+		logger.debug( 30 * u'-' )
+		logger.debug(u'Start setting up connection to server: {0}:{1}'.format(addr, port))
+
+		control = SetupConnection(**d)
+
+		# create connection.
+		connect = control.connect()
+		if not connect:
+			reason = u'Fails get connection to server: {0}:{1}.'.format(addr, port)
+			logger.debug(reason)
+			d = {'success': False, 'reason': reason}
+			return callback(d)
+		logger.debug(u'Success get connection to server...')
+
+		# sending message.
+		sendto = control.send(unlock)
+		if not sendto:
+			reason = u'Fails sending message to server: {0}:{1}'.format(addr, port)
+			logger.debug(reason)
+			d = {'success': False, 'reason': reason}
+			return callback(d)
+		logger.debug(u'Success sending message to server...')
+
+		# receive message.
+		recv = control.recv()
+		if not recv:
+			reason = u'Fails get response from server: {0}:{1}'.format(addr, port)
+			logger.debug(reason)
+			d = {'success': False, 'reason': reason}
+			return callback(d)
+
+		if recv == self.response_success:
+			reason = u'Success setup device.'
+		elif recv == self.response_fail:
+			reason = u'Fails setup device.'
+		else:
+			reason = u'Error get message response.'
+		
+		logger.debug(reason)
+		logger.debug('Initiate to drop connection.')
+		control.close()
+		d = {'success': True, 'reason': reason}
+		return callback(d)
 
 
 class FireGpsStartingUp(BaseHandler):
@@ -426,7 +487,68 @@ class FireGpsStartingUp(BaseHandler):
 			d = {'success': False, 'reason': reason}
 			return callback(d)
 
-		# sending socket.
+
+		# Check redis cache for device connected.
+		addr_port = self.devices_cache.get(controller_id)
+		if not addr_port:
+			reason = u'Device: {0} doesnt exist in redis/ maybe disconnected.'.format(controller_id)
+			logger.debug(reason)
+			d = {'success': False, 'reason': reason}
+			return callback(d)
+		addr, port = addr_port.split(':')
+		port = int(port)
+
+		# Setup connection and do interaction with server.
+		d = {
+			'delimiter': self.delimiter,
+			'timeout': self.timeout,
+			'server_ip': addr,
+			'server_port': port
+		}
+
+		logger.debug( 30 * u'-' )
+		logger.debug(u'Start setting up connection to server: {0}:{1}'.format(addr, port))
+
+		control = SetupConnection(**d)
+
+		# create connection.
+		connect = control.connect()
+		if not connect:
+			reason = u'Fails get connection to server: {0}:{1}.'.format(addr, port)
+			logger.debug(reason)
+			d = {'success': False, 'reason': reason}
+			return callback(d)
+		logger.debug(u'Success get connection to server...')
+
+		# sending message.
+		sendto = control.send(unlock)
+		if not sendto:
+			reason = u'Fails sending message to server: {0}:{1}'.format(addr, port)
+			logger.debug(reason)
+			d = {'success': False, 'reason': reason}
+			return callback(d)
+		logger.debug(u'Success sending message to server...')
+
+		# receive message.
+		recv = control.recv()
+		if not recv:
+			reason = u'Fails get response from server: {0}:{1}'.format(addr, port)
+			logger.debug(reason)
+			d = {'success': False, 'reason': reason}
+			return callback(d)
+
+		if recv == self.response_success:
+			reason = u'Success setup device.'
+		elif recv == self.response_fail:
+			reason = u'Fails setup device.'
+		else:
+			reason = u'Error get message response.'
+		
+		logger.debug(reason)
+		logger.debug('Initiate to drop connection.')
+		control.close()
+		d = {'success': True, 'reason': reason}
+		return callback(d)
 
 
 class BleKeyUpdate(BaseHandler):
@@ -559,4 +681,65 @@ class BleKeyUpdate(BaseHandler):
 			d = {'success': False, 'reason': reason}
 			return callback(d)
 
-		# sending socket.
+
+		# Check redis cache for device connected.
+		addr_port = self.devices_cache.get(controller_id)
+		if not addr_port:
+			reason = u'Device: {0} doesnt exist in redis/ maybe disconnected.'.format(controller_id)
+			logger.debug(reason)
+			d = {'success': False, 'reason': reason}
+			return callback(d)
+		addr, port = addr_port.split(':')
+		port = int(port)
+
+		# Setup connection and do interaction with server.
+		d = {
+			'delimiter': self.delimiter,
+			'timeout': self.timeout,
+			'server_ip': addr,
+			'server_port': port
+		}
+
+		logger.debug( 30 * u'-' )
+		logger.debug(u'Start setting up connection to server: {0}:{1}'.format(addr, port))
+
+		control = SetupConnection(**d)
+
+		# create connection.
+		connect = control.connect()
+		if not connect:
+			reason = u'Fails get connection to server: {0}:{1}.'.format(addr, port)
+			logger.debug(reason)
+			d = {'success': False, 'reason': reason}
+			return callback(d)
+		logger.debug(u'Success get connection to server...')
+
+		# sending message.
+		sendto = control.send(unlock)
+		if not sendto:
+			reason = u'Fails sending message to server: {0}:{1}'.format(addr, port)
+			logger.debug(reason)
+			d = {'success': False, 'reason': reason}
+			return callback(d)
+		logger.debug(u'Success sending message to server...')
+
+		# receive message.
+		recv = control.recv()
+		if not recv:
+			reason = u'Fails get response from server: {0}:{1}'.format(addr, port)
+			logger.debug(reason)
+			d = {'success': False, 'reason': reason}
+			return callback(d)
+
+		if recv == self.response_success:
+			reason = u'Success setup device.'
+		elif recv == self.response_fail:
+			reason = u'Fails setup device.'
+		else:
+			reason = u'Error get message response.'
+		
+		logger.debug(reason)
+		logger.debug('Initiate to drop connection.')
+		control.close()
+		d = {'success': True, 'reason': reason}
+		return callback(d)
