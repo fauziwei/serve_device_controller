@@ -223,17 +223,18 @@ class SetupConnection(object):
 			reason = u'Read timeout > {0} seconds.'.format(self.timeout)
 			logger.debug(reason)
 			return
-		else:
-			data = self.s.recv(1024)
-			logger.debug(u'Recv: {0}'.format(repr(data)))
-			if not data:
-				reason = u'No reply from server. Fails setup device.'
-				logger.debug(reason)
-				return
-			return data
+		
+		data = self.s.recv(1024)
+		logger.debug(u'Recv: {0}'.format(repr(data)))
+		if not data:
+			reason = u'No reply from server. Fails setup device.'
+			logger.debug(reason)
+			return
+		return data
 
 	def connect(self):
 		self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		self.s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 		try:
 			self.s.connect((self.server_ip, self.server_port))
 			self.s.setblocking(True)
