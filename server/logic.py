@@ -192,25 +192,42 @@ class Logic(object):
 		# Cutting received payload 'lock' or 'unlock'
 		payload = parsed['payload']
 
-		hdware_ver = payload[0]
-		upgrade_flag = payload[1]
-		lock_status = payload[2]
-		csq = payload[3]
-		temp = payload[4]
-		vbus = payload[5]
-		icharge = payload[6]
-		vbattery = payload[7]
-		battery_stat = payload[8]
-		timestamp = payload[9:13]
-		latitude = payload[13:21]
-		longitude = payload[21:29]
-		fix_flag = payload[29]
-		gps_stars = payload[30]
-		signature = payload[31]
+		hdware_ver = hex_to_int(byte_to_hex(payload[0]))
+		upgrade_flag = hex_to_int(byte_to_hex(payload[1]))
+		lock_status = hex_to_int(byte_to_hex(payload[2]))
+		csq = hex_to_int(byte_to_hex(payload[3]))
+		temp = hex_to_int(byte_to_hex(payload[4]))
+		vbus = hex_to_int(byte_to_hex(payload[5]))
+		icharge = hex_to_int(byte_to_hex(payload[6]))
+		vbattery = hex_to_int(byte_to_hex(payload[7]))
+		battery_stat = hex_to_int(byte_to_hex(payload[8]))
+		timestamp = hex_to_int(byte_to_hex(payload[9:13]))
+		latitude = hex_to_int(byte_to_hex(payload[13:21]))
+		longitude = hex_to_int(byte_to_hex(payload[21:29]))
+		fix_flag = hex_to_int(byte_to_hex(payload[29]))
+		gps_stars = hex_to_int(byte_to_hex(payload[30]))
+		signature = hex_to_int(byte_to_hex(payload[31]))
 
 		# Store to db here...
 		session = Db().Session()
 		status = session.query(Status).filter_by(device_id=proto.device_id, active=True).first()
+		if status:
+			status.hdware_ver = hdware_ver
+			status.upgrade_flag = upgrade_flag
+			status.lock_status = lock_status
+			status.csq = csq
+			status.temp = temp
+			status.vbus = vbus
+			status.icharge = icharge
+			status.vbattery = vbattery
+			status.battery_stat = battery_stat
+			status.timestamp = timestamp
+			status.latitude = latitude
+			status.longitude = longitude
+			status.fix_flag = fix_flag
+			status.gps_stars = gps_stars
+			status.signature = signature
+			session.add(status)
 		self.commit(session)
 
 
@@ -238,17 +255,23 @@ class Logic(object):
 		# Cutting received payload 'gps_data_report'
 		payload = parsed['payload']
 
-		latitude = payload[0:8]
-		longitude = payload[8:16]
-		fig_flag = payload[16]
-		# gps_starts_count ???
-		gps_stars = payload[17]
+		latitude = hex_to_int(byte_to_hex(payload[0:8]))
+		longitude = hex_to_int(byte_to_hex(payload[8:16]))
+		fix_flag = hex_to_int(byte_to_hex(payload[16]))
+		gps_stars = hex_to_int(byte_to_hex(payload[17]))
 		zeros = payload[18:31]
-		signature = payload[31]
+		signature = hex_to_int(byte_to_hex(payload[31]))
 
 		# Store to db here...
 		session = Db().Session()
 		status = session.query(Status).filter_by(device_id=proto.device_id, active=True).first()
+		if status:
+			status.latitude = latitude
+			status.longitude = longitude
+			status.fix_flag = fix_flag
+			status.gps_stars = gps_stars
+			status.signature = signature
+			session.add(status)
 		self.commit(session)
 
 
@@ -281,25 +304,42 @@ class Logic(object):
 		# Cutting received payload 'normal_bike_status'
 		payload = parsed['payload']
 
-		hdware_ver = payload[0]
-		upgrade_flag = payload[1]
-		lock_status = payload[2]
-		csq = payload[3]
-		temp = payload[4]
-		vbus = payload[5]
-		icharge = payload[6]
-		vbattery = payload[7]
-		battery_stat = payload[8]
-		timestamp = payload[9:13]
-		latitude = payload[13:21]
-		longitude = payload[21:29]
-		fig_flag = payload[29]
-		gps_stars = payload[30]
-		signature = payload[31]
+		hdware_ver = hex_to_int(byte_to_hex(payload[0]))
+		upgrade_flag = hex_to_int(byte_to_hex(payload[1]))
+		lock_status = hex_to_int(byte_to_hex(payload[2]))
+		csq = hex_to_int(byte_to_hex(payload[3]))
+		temp = hex_to_int(byte_to_hex(payload[4]))
+		vbus = hex_to_int(byte_to_hex(payload[5]))
+		icharge = hex_to_int(byte_to_hex(payload[6]))
+		vbattery = hex_to_int(byte_to_hex(payload[7]))
+		battery_stat = hex_to_int(byte_to_hex(payload[8]))
+		timestamp = hex_to_int(byte_to_hex(payload[9:13]))
+		latitude = hex_to_int(byte_to_hex(payload[13:21]))
+		longitude = hex_to_int(byte_to_hex(payload[21:29]))
+		fix_flag = hex_to_int(byte_to_hex(payload[29]))
+		gps_stars = hex_to_int(byte_to_hex(payload[30]))
+		signature = hex_to_int(byte_to_hex(payload[31]))
 
 		# Store to db here...
 		session = Db().Session()
 		status = session.query(Status).filter_by(device_id=proto.device_id, active=True).first()
+		if status:
+			status.hdware_ver = hdware_ver
+			status.upgrade_flag = upgrade_flag
+			status.lock_status = lock_status
+			status.csq = csq
+			status.temp = temp
+			status.vbus = vbus
+			status.icharge = icharge
+			status.vbattery = vbattery
+			status.battery_stat = battery_stat
+			status.timestamp = timestamp
+			status.latitude = latitude
+			status.longitude = longitude
+			status.fix_flag = fix_flag
+			status.gps_stars = gps_stars
+			status.signature = signature
+			session.add(status)
 		self.commit(session)
 
 
@@ -345,33 +385,63 @@ class Logic(object):
 		# Cutting received payload 'pedelec_status_report'
 		payload = parsed['payload']
 
-		hdware_ver = payload[0]
-		upgrade_flag = payload[1]
-		lock_status = payload[2]
-		csq = payload[3]
-		temp = payload[4]
-		vbus = payload[5]
-		icharge = payload[6]
-		s_vbattery = payload[7]
-		s_battery_stat = payload[8]
-		timestamp = payload[9:13]
-		latitude = payload[13:21]
-		longitude = payload[21:29]
-		fig_flag = payload[29]
-		# gps_stars_count ???
-		gps_stars = payload[30]
-		rid_speed = payload[31]
-		limit_speed = payload[32]
-		gear = payload[33]
-		m_vbattery = payload[34:36]
-		m_battery_stat = payload[36]
-		m_battery_cab = payload[37]
-		m_bat_is = payload[38]
-		m_bat_cycle_cnt = payload[39]
+		hdware_ver = hex_to_int(byte_to_hex(payload[0]))
+		upgrade_flag = hex_to_int(byte_to_hex(payload[1]))
+		lock_status = hex_to_int(byte_to_hex(payload[2]))
+		csq = hex_to_int(byte_to_hex(payload[3]))
+		temp = hex_to_int(byte_to_hex(payload[4]))
+		vbus = hex_to_int(byte_to_hex(payload[5]))
+		icharge = hex_to_int(byte_to_hex(payload[6]))
+		vbattery = hex_to_int(byte_to_hex(payload[7]))
+		battery_stat = hex_to_int(byte_to_hex(payload[8]))
+		timestamp = hex_to_int(byte_to_hex(payload[9:13]))
+		latitude = hex_to_int(byte_to_hex(payload[13:21]))
+		longitude = hex_to_int(byte_to_hex(payload[21:29]))
+		fix_flag = hex_to_int(byte_to_hex(payload[29]))
+		gps_stars = hex_to_int(byte_to_hex(payload[30]))
+		ride_speed = hex_to_int(byte_to_hex(payload[31]))
+		limit_speed = hex_to_int(byte_to_hex(payload[32]))
+		gear = hex_to_int(byte_to_hex(payload[33]))
+		m_vbattery = hex_to_int(byte_to_hex(payload[34:36]))
+		m_battery_stat = hex_to_int(byte_to_hex(payload[36]))
+		m_battery_cab = hex_to_int(byte_to_hex(payload[37]))
+		m_bat_is = hex_to_int(byte_to_hex(payload[38]))
+		m_bat_cycle = hex_to_int(byte_to_hex(payload[39]))
+		m_bat_temp = hex_to_int(byte_to_hex(payload[40]))
+		m_bat_id = hex_to_int(byte_to_hex(payload[41:45]))
+		zeros = payload[45:47]
+		signature = hex_to_int(byte_to_hex(payload[47]))
 
 		# Store to db here...
 		session = Db().Session()
 		status = session.query(Status).filter_by(device_id=proto.device_id, active=True).first()
+		if status:
+			status.hdware_ver = hdware_ver
+			status.upgrade_flag = upgrade_flag
+			status.lock_status = lock_status
+			status.csq = csq
+			status.temp = temp
+			status.vbus = vbus
+			status.icharge = icharge
+			status.vbattery = vbattery
+			status.battery_stat = battery_stat
+			status.timestamp = timestamp
+			status.latitude = latitude
+			status.longitude = longitude
+			status.fix_flag = fix_flag
+			status.gps_stars = gps_stars
+			status.ride_speed = ride_speed
+			status.limit_speed = limit_speed
+			status.gear = gear
+			status.m_vbattery = m_vbattery
+			status.m_battery_stat = m_battery_stat
+			status.m_battery_cab = m_battery_cab
+			status.m_bat_is = m_bat_is
+			status.m_bat_cycle = m_bat_cycle
+			status.m_bat_temp = m_bat_temp
+			status.m_bat_id = m_bat_id
+			status.signature = signature
+			session.add(status)
 		self.commit(session)
 
 
@@ -417,15 +487,21 @@ class Logic(object):
 		# Cutting received payload 'fault_report'
 		payload = parsed['payload']
 
-		hdware_ver = payload[0]
-		abnormal = payload[1]
-		fault = payload[2]
+		hdware_ver = hex_to_int(byte_to_hex(payload[0]))
+		abnormal = hex_to_int(byte_to_hex(payload[1]))
+		fault = hex_to_int(byte_to_hex(payload[2]))
 		zeros = payload[3:15]
-		signature = payload[15]
+		signature = hex_to_int(byte_to_hex(payload[15]))
 
 		# Store to db here...
 		session = Db.Session()
 		status = session.query(Status).filter_by(device_id=proto.device_id, active=True).first()
+		if status:
+			status.hdware_ver = hdware_ver
+			status.abnormal = abnormal
+			status.fault = fault
+			status.signature = signature
+			session.add(status)
 		self.commit(session)
 
 
@@ -469,12 +545,14 @@ class Logic(object):
 
 		ble_key1 = payload[0:8]
 		ble_key2 = payload[8:16]
+		ble_key = ble_key1+ble_key2 # convert to string
+
 		zeros = payload[16:31]
-		signature = payload[31]
+		signature = hex_to_int(byte_to_hex(payload[31]))
 
 		# Store to db here...
 		session = Db.Session()
-		status = session.query(Status).filter_by(device_id=proto.device_id, active=True).first()
+		status = session.query(Status).filter_by(device_id=proto.device_id, active=True).first() 
 		self.commit(session)
 
 

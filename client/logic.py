@@ -172,9 +172,9 @@ class Logic(object):
 		lock_status = 1
 		csq = 1
 		temp = 1
-		v_bus = 1
-		i_charge = 1
-		v_battery = 1
+		vbus = 1
+		icharge = 1
+		vbattery = 1
 		battery_stat = 1
 
 		# timestamp (4bytes)
@@ -206,9 +206,9 @@ class Logic(object):
 			int_to_byte(lock_status)+\
 			int_to_byte(csq)+\
 			int_to_byte(temp)+\
-			int_to_byte(v_bus)+\
-			int_to_byte(i_charge)+\
-			int_to_byte(v_battery)+\
+			int_to_byte(vbus)+\
+			int_to_byte(icharge)+\
+			int_to_byte(vbattery)+\
 			int_to_byte(battery_stat)+\
 			timestamp+\
 			lat_byte_3bytes+\
@@ -256,9 +256,9 @@ class Logic(object):
 		lock_status = 1
 		csq = 1
 		temp = 1
-		v_bus = 1
-		i_charge = 1
-		v_battery = 1
+		vbus = 1
+		icharge = 1
+		vbattery = 1
 		battery_stat = 1
 
 		# timestamp (4bytes)
@@ -280,7 +280,7 @@ class Logic(object):
 
 		fix_flag = 1
 		gps_stars = 1
-		rid_speed = 1
+		ride_speed = 1
 		limit_speed = 1
 		gear = 1
 		m_vbattery = '\x00' * 2 # 2bytes
@@ -299,9 +299,9 @@ class Logic(object):
 			int_to_byte(lock_status)+\
 			int_to_byte(csq)+\
 			int_to_byte(temp)+\
-			int_to_byte(v_bus)+\
-			int_to_byte(i_charge)+\
-			int_to_byte(v_battery)+\
+			int_to_byte(vbus)+\
+			int_to_byte(icharge)+\
+			int_to_byte(vbattery)+\
 			int_to_byte(battery_stat)+\
 			timestamp+\
 			lat_byte_3bytes+\
@@ -310,7 +310,7 @@ class Logic(object):
 			lon_byte_5bytes+\
 			int_to_byte(fix_flag)+\
 			int_to_byte(gps_stars)+\
-			int_to_byte(rid_speed)+\
+			int_to_byte(ride_speed)+\
 			int_to_byte(limit_speed)+\
 			int_to_byte(gear)+\
 			m_vbattery+\
@@ -417,9 +417,9 @@ class Logic(object):
 		lock_status = 1
 		csq = 1
 		temp = 1
-		v_bus = 1
-		i_charge = 1
-		v_battery = 1
+		vbus = 1
+		icharge = 1
+		vbattery = 1
 		battery_stat = 1
 
 		# timestamp (4bytes)
@@ -451,9 +451,9 @@ class Logic(object):
 			int_to_byte(lock_status)+\
 			int_to_byte(csq)+\
 			int_to_byte(temp)+\
-			int_to_byte(v_bus)+\
-			int_to_byte(i_charge)+\
-			int_to_byte(v_battery)+\
+			int_to_byte(vbus)+\
+			int_to_byte(icharge)+\
+			int_to_byte(vbattery)+\
 			int_to_byte(battery_stat)+\
 			timestamp+\
 			lat_byte_3bytes+\
@@ -504,9 +504,9 @@ class Logic(object):
 		lock_status = 1
 		csq = 1
 		temp = 1
-		v_bus = 1
-		i_charge = 1
-		v_battery = 1
+		vbus = 1
+		icharge = 1
+		vbattery = 1
 		battery_stat = 1
 
 		# timestamp (4bytes)
@@ -538,9 +538,9 @@ class Logic(object):
 			int_to_byte(lock_status)+\
 			int_to_byte(csq)+\
 			int_to_byte(temp)+\
-			int_to_byte(v_bus)+\
-			int_to_byte(i_charge)+\
-			int_to_byte(v_battery)+\
+			int_to_byte(vbus)+\
+			int_to_byte(icharge)+\
+			int_to_byte(vbattery)+\
 			int_to_byte(battery_stat)+\
 			timestamp+\
 			lat_byte_3bytes+\
