@@ -92,19 +92,14 @@ class Logic(object):
 	def aes_encrypt(self, proto, data):
 		'''data is without crc. Only 16bytes.'''
 		IV = os.urandom(16)
-		# logger.debug(u'IV: {0}'.format(binascii.hexlify(IV).upper()))
 		aes = AES.new(proto.factory.aes_key, AES.MODE_ECB, IV=IV)
-		ciphertext = aes.encrypt(data)
-		# logger.debug(u'cyphertext: {0}'.format(repr(ciphertext)))
-		return ciphertext
+		return aes.encrypt(data)
 
 	def aes_decrypt(self, proto, data):
 		'''data is without crc. Only 16bytes.'''
 		IV = os.urandom(16)
 		aes = AES.new(proto.factory.aes_key, AES.MODE_ECB, IV=IV)
-		text = aes.decrypt(data)
-		# logger.debug(u'text: {0}'.format(repr(text)))
-		return text
+		return aes.decrypt(data)
 
 
 	''' Sending section. '''
@@ -132,7 +127,12 @@ class Logic(object):
 		'''Preparing response *normal_ack* to device.'''
 		length = parsed['length']
 		message_type = SERVER_TYPE['normal_ack']
+
+		# message_id += 1
 		message_id = parsed['message_id']
+		message_id = hex_to_int(byte_to_hex(message_id)) + 1
+		message_id = hex_to_byte(int_to_hex(message_id))
+
 		device_id = parsed['device_id']
 		version = parsed['version']
 		firmware = parsed['firmware']
@@ -158,7 +158,7 @@ class Logic(object):
 		logger.debug(u'Length of normal_ack: {0}'.format(len(normal_ack)))
 
 		if not crc8_verification(normal_ack):
-			logger.debug(u'Error CRC8 verification after encryption.')
+			logger.debug(u'Error CRC8 normal_ack, send feedback fails.')
 			return
 		return normal_ack
 
@@ -189,9 +189,30 @@ class Logic(object):
 		# version = parsed['version']
 		# firmware = parsed['firmware']
 
-		# do something with payload from 'lock' or 'unlock'
-		# and store in database.
+		# Cutting received payload 'lock' or 'unlock'
 		payload = parsed['payload']
+
+		hdware_ver = payload[0]
+		upgrade_flag = payload[1]
+		lock_status = payload[2]
+		csq = payload[3]
+		temp = payload[4]
+		vbus = payload[5]
+		icharge = payload[6]
+		vbattery = payload[7]
+		battery_stat = payload[8]
+		timestamp = payload[9:13]
+		latitude = payload[13:21]
+		longitude = payload[21:29]
+		fix_flag = payload[29]
+		gps_stars = payload[30]
+		signature = payload[31]
+
+		# Store to db here...
+		session = Db().Session()
+		status = session.query(Status).filter_by(device_id=proto.device_id, active=True).first()
+		self.commit(session)
+
 
 		# Send message 'success' to controller.
 		if proto.device_id not in proto.factory.controllers:
@@ -213,8 +234,23 @@ class Logic(object):
 		# device_id = parsed['device_id']
 		# version = parsed['version']
 		# firmware = parsed['firmware']
-		# do something with payload (from device), should saving to db.
+
+		# Cutting received payload 'gps_data_report'
 		payload = parsed['payload']
+
+		latitude = payload[0:8]
+		longitude = payload[8:16]
+		fig_flag = payload[16]
+		# gps_starts_count ???
+		gps_stars = payload[17]
+		zeros = payload[18:31]
+		signature = payload[31]
+
+		# Store to db here...
+		session = Db().Session()
+		status = session.query(Status).filter_by(device_id=proto.device_id, active=True).first()
+		self.commit(session)
+
 
 		# Send message 'success' to controller.
 		if proto.device_id not in proto.factory.controllers:
@@ -232,12 +268,40 @@ class Logic(object):
 		'''Preparing response normal_ack to device.'''
 		length = parsed['length']
 		message_type = SERVER_TYPE['normal_ack']
+
+		# message_id += 1
 		message_id = parsed['message_id']
+		message_id = hex_to_int(byte_to_hex(message_id)) + 1
+		message_id = hex_to_byte(int_to_hex(message_id))
+
 		device_id = parsed['device_id']
 		version = parsed['version']
 		firmware = parsed['firmware']
-		# do something with payload.
+
+		# Cutting received payload 'normal_bike_status'
 		payload = parsed['payload']
+
+		hdware_ver = payload[0]
+		upgrade_flag = payload[1]
+		lock_status = payload[2]
+		csq = payload[3]
+		temp = payload[4]
+		vbus = payload[5]
+		icharge = payload[6]
+		vbattery = payload[7]
+		battery_stat = payload[8]
+		timestamp = payload[9:13]
+		latitude = payload[13:21]
+		longitude = payload[21:29]
+		fig_flag = payload[29]
+		gps_stars = payload[30]
+		signature = payload[31]
+
+		# Store to db here...
+		session = Db().Session()
+		status = session.query(Status).filter_by(device_id=proto.device_id, active=True).first()
+		self.commit(session)
+
 
 		# header
 		header = START+length+version+message_type+message_id+firmware+device_id
@@ -260,7 +324,7 @@ class Logic(object):
 		logger.debug(u'Length of normal_ack: {0}'.format(len(normal_ack)))
 
 		if not crc8_verification(normal_ack):
-			logger.debug(u'Error CRC8 verification after encryption.')
+			logger.debug(u'Error CRC8 normal_ack, send feedback fails.')
 			return
 		return normal_ack
 
@@ -268,12 +332,48 @@ class Logic(object):
 		'''Preparing response normal_ack to device.'''
 		length = parsed['length']
 		message_type = SERVER_TYPE['normal_ack']
+
+		# message_id += 1
 		message_id = parsed['message_id']
+		message_id = hex_to_int(byte_to_hex(message_id)) + 1
+		message_id = hex_to_byte(int_to_hex(message_id))
+
 		device_id = parsed['device_id']
 		version = parsed['version']
 		firmware = parsed['firmware']
-		# do something with payload.
+
+		# Cutting received payload 'pedelec_status_report'
 		payload = parsed['payload']
+
+		hdware_ver = payload[0]
+		upgrade_flag = payload[1]
+		lock_status = payload[2]
+		csq = payload[3]
+		temp = payload[4]
+		vbus = payload[5]
+		icharge = payload[6]
+		s_vbattery = payload[7]
+		s_battery_stat = payload[8]
+		timestamp = payload[9:13]
+		latitude = payload[13:21]
+		longitude = payload[21:29]
+		fig_flag = payload[29]
+		# gps_stars_count ???
+		gps_stars = payload[30]
+		rid_speed = payload[31]
+		limit_speed = payload[32]
+		gear = payload[33]
+		m_vbattery = payload[34:36]
+		m_battery_stat = payload[36]
+		m_battery_cab = payload[37]
+		m_bat_is = payload[38]
+		m_bat_cycle_cnt = payload[39]
+
+		# Store to db here...
+		session = Db().Session()
+		status = session.query(Status).filter_by(device_id=proto.device_id, active=True).first()
+		self.commit(session)
+
 
 		# header
 		header = START+length+version+message_type+message_id+firmware+device_id
@@ -296,7 +396,7 @@ class Logic(object):
 		logger.debug(u'Length of normal_ack: {0}'.format(len(normal_ack)))
 
 		if not crc8_verification(normal_ack):
-			logger.debug(u'Error CRC8 verification after encryption.')
+			logger.debug(u'Error CRC8 normal_ack, send feedback fails.')
 			return
 		return normal_ack
 
@@ -304,12 +404,30 @@ class Logic(object):
 		'''Preparing response normal_ack to device.'''
 		length = parsed['length']
 		message_type = SERVER_TYPE['normal_ack']
+
+		# message_id += 1
 		message_id = parsed['message_id']
+		message_id = hex_to_int(byte_to_hex(message_id)) + 1
+		message_id = hex_to_byte(int_to_hex(message_id))
+
 		device_id = parsed['device_id']
 		version = parsed['version']
 		firmware = parsed['firmware']
-		# do something with payload.
+
+		# Cutting received payload 'fault_report'
 		payload = parsed['payload']
+
+		hdware_ver = payload[0]
+		abnormal = payload[1]
+		fault = payload[2]
+		zeros = payload[3:15]
+		signature = payload[15]
+
+		# Store to db here...
+		session = Db.Session()
+		status = session.query(Status).filter_by(device_id=proto.device_id, active=True).first()
+		self.commit(session)
+
 
 		# header
 		header = START+length+version+message_type+message_id+firmware+device_id
@@ -332,7 +450,7 @@ class Logic(object):
 		logger.debug(u'Length of normal_ack: {0}'.format(len(normal_ack)))
 
 		if not crc8_verification(normal_ack):
-			logger.debug(u'Error CRC8 verification after encryption.')
+			logger.debug(u'Error CRC8 normal_ack, send feedback fails.')
 			return
 		return normal_ack		
 
@@ -346,8 +464,19 @@ class Logic(object):
 		# version = parsed['version']
 		# firmware = parsed['firmware']
 
-		# do something with payload and store in database.
+		# Cutting received payload 'ble_key_response'
 		payload = parsed['payload']
+
+		ble_key1 = payload[0:8]
+		ble_key2 = payload[8:16]
+		zeros = payload[16:31]
+		signature = payload[31]
+
+		# Store to db here...
+		session = Db.Session()
+		status = session.query(Status).filter_by(device_id=proto.device_id, active=True).first()
+		self.commit(session)
+
 
 		# Send message 'success' to controller.
 		if proto.device_id not in proto.factory.controllers:

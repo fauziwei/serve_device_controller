@@ -78,14 +78,14 @@ class BProtocol(LineReceiver):
 			self.token_device = False
 			logger.debug(u'Active connections: {0}'.format(self.active_connection))
 
-		logger.debug(u'Size of controllers: {0}'.format(len(self.factory.controllers)))
-		logger.debug(u'Size of devices: {0}'.format(len(self.factory.devices)))
+		logger.debug(u'Total of controllers: {0}'.format(len(self.factory.controllers)))
+		logger.debug(u'Total of devices: {0}'.format(len(self.factory.devices)))
 		
 
 	def lineReceived(self, data):
 		logger.debug(u'Recv: {0}'.format(repr(data)))
 		# Assume that the incoming controller message from API
-		# is started by '\xff\xff\xff\xff',
+		# is started by '\xff\xff\xff\xff\xff\xff\xff\xff',
 		if data[0:8] == '\xff\xff\xff\xff\xff\xff\xff\xff':
 			# Incoming data from controller.
 			p = threads.deferToThread(self.factory.logic.setting, self, data[8:])
@@ -118,7 +118,7 @@ class BProtocol(LineReceiver):
 # Configuration. --------------------------
 server_ip, server_port = '127.0.0.1', 8001
 redis_ip, redis_port = '127.0.0.1', 6379
-max_connection = 10
+max_connection = 1000
 aes_key = '02B6111770695324'
 haproxy_ip = '192.168.8.10' # sample
 # -----------------------------------------
