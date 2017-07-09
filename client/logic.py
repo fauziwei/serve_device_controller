@@ -267,13 +267,13 @@ class Logic(object):
 		timestamp = timestamp_to_byte(timestamp)
 
 		# latitude (split by 2), 3bytes and 5bytes.
-		latitude = 23.88888888
+		latitude = 24.77777777
 		lat_byte = double_to_byte(latitude)
 		lat_byte_3bytes = lat_byte[0:3]
 		lat_byte_5bytes = lat_byte[3:]
 
 		# longitude (split by 2), 3bytes and 5bytes.
-		longitude = 3.66666666
+		longitude = 34.44444444
 		lon_byte = double_to_byte(longitude)
 		lon_byte_3bytes = lon_byte[0:3]
 		lon_byte_5bytes = lon_byte[3:]
@@ -355,7 +355,7 @@ class Logic(object):
 		header = START+length+version+message_type+message_id+firmware+device_id
 
 		# payload
-		hdware_ver = 1
+		hdware_ver = 3
 		abnormal = 1
 		fault = 1
 		zeros1 = '\x00' * 5
@@ -515,13 +515,13 @@ class Logic(object):
 		timestamp = timestamp_to_byte(timestamp)
 
 		# latitude (split by 2), 3bytes and 5bytes.
-		latitude = 23.88888888
+		latitude = 30.88888888
 		lat_byte = double_to_byte(latitude)
 		lat_byte_3bytes = lat_byte[0:3]
 		lat_byte_5bytes = lat_byte[3:]
 
 		# longitude (split by 2), 3bytes and 5bytes.
-		longitude = 3.66666666
+		longitude = 40.66666666
 		lon_byte = double_to_byte(longitude)
 		lon_byte_3bytes = lon_byte[0:3]
 		lon_byte_5bytes = lon_byte[3:]
@@ -632,11 +632,11 @@ class Logic(object):
 		# payload ------------------------
 
 		# latitude
-		latitude = 22.22222222
+		latitude = 50.22222222
 		lat_byte = double_to_byte(latitude)
 
 		# longitude
-		longitude = 32.99999999
+		longitude = 70.99999999
 		lon_byte = double_to_byte(longitude)
 
 		fix_flag = 1

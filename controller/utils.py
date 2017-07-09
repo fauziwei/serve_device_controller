@@ -28,8 +28,8 @@ float_to_byte = lambda f: struct.pack('f', f)
 byte_to_float = lambda b: struct.unpack('f', b)[0]
 
 # double (for latitude and longitude)
-double_to_byte = lambda f: struct.pack('>d', f)
-byte_to_double = lambda b: struct.unpack('>d', byte)[0]
+double_to_byte = lambda d: struct.pack('>d', d)
+byte_to_double = lambda b: struct.unpack('>d', b)[0]
 
 int32_to_uint32 = lambda i: ctypes.c_uint32(i).value
 ascii_string = lambda s: ''.join(map(lambda c: "%02X " % ord(c), s))

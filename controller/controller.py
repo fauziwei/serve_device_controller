@@ -38,7 +38,7 @@ class CProtocol(LineReceiver):
 	token_init_ble_key_update = False
 
 	# controller starting message.
-	controller_start = '\xff\xff\xff\xff'
+	controller_start = '\xff\xff\xff\xff\xff\xff\xff\xff'
 
 	# Response from twisted server for fail or success.
 	response_fail = '\xee\xee\xee\xee\xee\xee\xee\xee'
@@ -87,8 +87,8 @@ class CProtocol(LineReceiver):
 	def connectionLost(self, reason):
 		logger.debug(u'Lost connection with: {0}:{1}'.format(self.peer_ip, self.peer_port))
 		# if not ReactorNotRunning:
-		# 	reactor.stop()
-		reactor.stop()
+			# reactor.stop()
+		# reactor.stop()
 
 	def lineReceived(self, data):
 		logger.debug(u'Recv: {0}'.format(repr(data)))
@@ -101,6 +101,7 @@ class CProtocol(LineReceiver):
 
 		logger.debug(u'controller initiate to drop connection.')
 		# self.transport.loseConnection()
+		reactor.callLater(30, self.connectionLost, '')
 
 
 # Configuration -------------------------

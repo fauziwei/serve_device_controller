@@ -51,10 +51,10 @@ class CProtocol(LineReceiver):
 		logger.debug( 30 * u'-' )
 		logger.debug(u'Get connection with {0}:{1}'.format(self.peer_ip, self.peer_port))
 
-		# if not self.token_init_heartbeat:
-		# 	heartbeat = self.factory.logic.init_heartbeat(self)
-		# 	logger.debug(u'Send heartbeat: {0}'.format(repr(heartbeat)))
-		# 	self.sendLine(heartbeat)
+		if not self.token_init_heartbeat:
+			heartbeat = self.factory.logic.init_heartbeat(self)
+			logger.debug(u'Send heartbeat: {0}'.format(repr(heartbeat)))
+			self.sendLine(heartbeat)
 
 		# if not self.token_init_normal_bike_status:
 		# 	normal_bike_status = self.factory.logic.init_normal_bike_status(self)
@@ -66,10 +66,10 @@ class CProtocol(LineReceiver):
 		# 	logger.debug(u'Send pedelec_status_report: {0}'.format(repr(pedelec_status_report)))
 		# 	self.sendLine(pedelec_status_report)
 
-		if not self.token_init_fault_report:
-			fault_report = self.factory.logic.init_fault_report(self)
-			logger.debug(u'Send fault_report: {0}'.format(repr(fault_report)))
-			self.sendLine(fault_report)
+		# if not self.token_init_fault_report:
+		# 	fault_report = self.factory.logic.init_fault_report(self)
+		# 	logger.debug(u'Send fault_report: {0}'.format(repr(fault_report)))
+		# 	self.sendLine(fault_report)
 
 	def connectionLost(self, reason):
 		logger.debug(u'Lost connection with: {0}:{1}'.format(self.peer_ip, self.peer_port))

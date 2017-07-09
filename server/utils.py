@@ -24,33 +24,16 @@ int_to_byte = lambda i: struct.pack('!H', i)[1:]
 # int_to_byte = lambda i: struct.pack('!H', i)
 # byte_to_int = lambda b: struct.unpack('!H', b)
 
-float_to_byte = lambda f: struct.pack('f', f)
-byte_to_float = lambda b: struct.unpack('f', b)[0]
-
 # double (for latitude and longitude)
-double_to_byte = lambda f: struct.pack('>d', f)
-byte_to_double = lambda b: struct.unpack('>d', byte)[0]
-
-int32_to_uint32 = lambda i: ctypes.c_uint32(i).value
-ascii_string = lambda s: ''.join(map(lambda c: "%02X " % ord(c), s))
+double_to_byte = lambda d: struct.pack('d', d)
+byte_to_double = lambda b: struct.unpack('d', b)[0]
 
 crc8_func = crcmod.predefined.mkPredefinedCrcFun('crc-8')
 
-def convert_length_to_byte(int_len):
-	if int_len > 0xFF:
-		high = int_len & 0xFF
-		low = int_len >> 8
-		str_len = chr(low) + chr(high)
-	else:
-		str_len = '\x00' + chr(int_len)
-	return str_len
-
 def crc8_verification(data):
-	cmd = data[:-1]
-	# crc8_func = crcmod.predefined.mkPredefinedCrcFun('crc-8')
-	# crc8_0xVal = hex(crc8_func(cmd))
-	# crc8_hex = crc8_0xVal.replace('0x', '')
-	crc8_hex = int_to_hex(crc8_func(cmd))
+	cmd = data
+	crc8_0xVal = hex(crc8_func(cmd))
+	crc8_hex = crc8_0xVal.replace('0x', '')
 	crc8_byte = binascii.unhexlify(crc8_hex)
 	logger.debug(u'vrfy_crc: {0} , crc: {1}'.format(repr(crc8_byte), repr(data[-1:])))
 	return crc8_byte == data[-1:]
@@ -58,23 +41,20 @@ def crc8_verification(data):
 def create_crc8_val(data):
 	'''data is full data bytesstream arrive from the network.'''
 	# crc8_func = crcmod.predefined.mkPredefinedCrcFun('crc-8')
-	# crc8_0xVal = hex(crc8_func(data))
-	# crc8_hex = crc8_0xVal.replace('0x', '')
-	crc8_hex = int_to_hex(crc8_func(data))
+	crc8_0xVal = hex(crc8_func(data))
+	crc8_hex = crc8_0xVal.replace('0x', '')
 	crc8_byte = binascii.unhexlify(crc8_hex)
 	return crc8_byte
 
 def get_shanghai_time():
-	tz = pytz.timezone('Asia/Shanghai')
-	return datetime.datetime.now(tz)
+	return datetime.datetime.now()
 
 def to_timestamp(t):
 	'''
 	t = get_shanghai_time()
 	ts = to_timestamp(t)
 	'''
-	# return round( time.mktime(t.timetuple()) )
-	return round( calendar.timegm(t.timetuple()) )
+	return time.mktime(t)
 
 def timestamp_to_byte(ts):
 	return struct.pack('<I', ts)
