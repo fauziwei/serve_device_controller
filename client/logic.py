@@ -722,48 +722,4 @@ class Logic(object):
 		if not parsed:
 			return
 
-		if parsed['message_type'] == SERVER_TYPE['normal_ack']:
-			logger.debug(u'Detected incoming normal_ack...')
-			return self.normal_ack_processing(proto, parsed)
-
-		elif parsed['message_type'] == SERVER_TYPE['unlock']:
-			logger.debug(u'Detected incoming unlock...')
-			return self.unlock_processing(proto, parsed)
-
-		elif parsed['message_type'] == SERVER_TYPE['lock']:
-			logger.debug(u'Detected incoming lock...')
-			return self.lock_processing(proto, parsed)
-
-		elif parsed['message_type'] == SERVER_TYPE['configuration_command']:
-			logger.debug(u'Detected incoming configuration_command...')
-			return self.configuration_command_processing(proto, parsed)
-
-		elif parsed['message_type'] == SERVER_TYPE['fire_gps_starting_up']:
-			logger.debug(u'Detected incoming fire_gps_starting_up...')
-			return self.fire_gps_starting_up_processing(proto, parsed)
-
-		elif parsed['message_type'] == SERVER_TYPE['get_device_status']:
-			logger.debug(u'Detected incoming get_device_status...')
-			return self.get_device_status_processing(proto, parsed)
-
-		elif parsed['message_type'] == SERVER_TYPE['ble_key_update']:
-			logger.debug(u'Detected incoming ble_key_update...')
-			return self.ble_key_update_processing(proto, parsed)
-
-		elif parsed['message_type'] == SERVER_TYPE['control_command_send']:
-			logger.debug(u'Detected incoming control_command_send...')
-			return self.control_command_send_processing(proto, parsed)
-
-		elif parsed['message_type'] == SERVER_TYPE['upgrade_command_push']:
-			logger.debug(u'Detected incoming upgrade_command_push...')
-			return self.upgrade_command_push_processing(proto, parsed)
-
-		elif parsed['message_type'] == SERVER_TYPE['upgrade_data_send']:
-			logger.debug(u'Detected incoming upgrade_data_send...')
-			return self.upgrade_data_send_processing(proto, parsed)
-
-		else:
-			logger.debug(u'Server Type is not correct. Drop connection.')
-			proto.transport.loseConnection()
-
 		return

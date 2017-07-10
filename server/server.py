@@ -59,24 +59,9 @@ class BProtocol(LineReceiver):
 
 		if self.token_controller:
 			# Remove in controllers.
-			if self.controller_id in self.factory.controllers.keys():
-				del self.factory.controllers[self.controller_id]
-			# Remove in controllers cache.
-			if self.factory.controllers_cache.exists(self.controller_id):
-				self.factory.controllers_cache.delete(self.controller_id)
-			logger.debug(u'Lost connection with controller_id: {0}'.format(self.controller_id))
-			self.token_controller = False
-
+	
 		if self.token_device:
 			# Remove in devices.
-			if self.device_id in self.factory.devices.keys():
-				del self.factory.devices[self.device_id]
-			# Remove in devices cache.
-			if self.factory.devices_cache.exists(self.device_id):
-				self.factory.devices_cache.delete(self.device_id)
-			logger.debug(u'Lost connection with device_id: {0}'.format(self.device_id))
-			self.token_device = False
-			logger.debug(u'Active connections: {0}'.format(self.active_connection))
 
 		logger.debug(u'Total of controllers: {0}'.format(len(self.factory.controllers)))
 		logger.debug(u'Total of devices: {0}'.format(len(self.factory.devices)))
@@ -85,34 +70,12 @@ class BProtocol(LineReceiver):
 	def lineReceived(self, data):
 		logger.debug(u'Recv: {0}'.format(repr(data)))
 		# Assume that the incoming controller message from API
-		# is started by '\xff\xff\xff\xff\xff\xff\xff\xff',
-		if data[0:8] == '\xff\xff\xff\xff\xff\xff\xff\xff':
-			# Incoming data from controller.
-			p = threads.deferToThread(self.factory.logic.setting, self, data[8:])
-			p.addCallback(lambda data: self.sendFromController(data))
-		else:
-			# Incoming data from device.
-			p = threads.deferToThread(self.factory.logic.communication, self, data)
-			p.addCallback(lambda data: self.sendFromDevice(data))
-
+	
 	def sendFromController(self, data):
-		if self.belongto_device:
-			# Send to device.
-			logger.debug(u'Send to device >: {0}'.format(repr(data)))
-			self.belongto_device.sendLine(data)
-		else:
-			# Send to controller.
-			# Device not connected to server.
-			# Send feedback to controller not success.
-			logger.debug(u'Send Fail to controller.')
-			self.sendLine(self.response_fail)
+		logger.debug(u'Recv: {0}'.format(repr(data)))
 
 	def sendFromDevice(self, data):
-		if data:
-			logger.debug(u'Send >: {0}'.format(repr(data)))
-			self.sendLine(data)
-		else:
-			logger.debug(u'Maintain connection...')
+		logger.debug(u'Recv: {0}'.format(repr(data)))
 
 
 # Configuration. --------------------------
@@ -133,17 +96,6 @@ class BFactory(Factory):
 
 	server_ip, server_port = server_ip, server_port
 	redis_ip, redis_port = redis_ip, redis_port
-	haproxy_ip = haproxy_ip
-
-	def __init__(self):
-		d = {'host': redis_ip, 'port': redis_port, 'db': 0}
-		c = {'host': redis_ip, 'port': redis_port, 'db': 1}
-
-		self.devices_cache = Cache(**d)
-		self.controllers_cache = Cache(**c)
-
-		self.devices_cache.flushdb()
-		self.controllers_cache.flushdb()
 
 
 def run():

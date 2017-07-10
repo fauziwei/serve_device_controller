@@ -79,20 +79,6 @@ class Logic(object):
 			'firmware': firmware, 'device_id': device_id, 'payload': payload
 		}
 
-	def commit(self, session):
-		try:
-			session.flush()
-			session.commit()
-		except IntegrityError:
-			session.rollback()
-			logger.debug(u'Exception IntegrityError.')
-		except:
-			traceback.print_exc()
-			session.rollback()
-			logger.debug(u'Exception commit.')
-		finally:
-			session.close()
-
 	def aes_encrypt(self, proto, data):
 		'''data is without crc. Only 16bytes.'''
 		IV = os.urandom(16)
@@ -170,16 +156,6 @@ class Logic(object):
 		'''Relaying data from device to controller.
 		1st reply fire_gps_starting_up.
 		'''
-		if proto.device_id not in proto.factory.controllers:
-			logger.debug(u'controller_id {0} is not connected.'.format(proto.device_id))
-			return
-
-		logger.debug(u'Prepare for relaying data to controller_id: {0}'.format(proto.device_id))
-		proto.belongto_controller = proto.factory.controllers[proto.device_id]
-		logger.debug(u'Send response success normal_ack: {0}'.format(repr(proto.response_success)))
-		proto.belongto_controller.sendLine(proto.response_success)
-		# proto.belongto_controller = False
-		return
 
 	def lock_unlock_response_processing(self, proto, parsed):
 		'''Relaying data from device to controller.
@@ -193,21 +169,6 @@ class Logic(object):
 		# version = parsed['version']
 		# firmware = parsed['firmware']
 
-		# Cutting received payload 'lock' or 'unlock'
-		payload = parsed['payload']
-
-		# Send message 'success' to controller.
-		if proto.device_id not in proto.factory.controllers:
-			logger.debug(u'controller_id {0} is not connected.'.format(proto.device_id))
-			return
-
-		logger.debug(u'Prepare for relaying data to controller_id: {0}'.format(proto.device_id))
-		proto.belongto_controller = proto.factory.controllers[proto.device_id]
-		logger.debug(u'Send response success lock_unlock_response: {0}'.format(repr(proto.response_success)))
-		proto.belongto_controller.sendLine(proto.response_success)
-		proto.belongto_controller = False
-		return
-
 	def gps_data_report_processing(self, proto, parsed):
 		'''Preparing relaying gps_data_report from device to controller.'''
 		# length = parsed['length']
@@ -216,21 +177,6 @@ class Logic(object):
 		# device_id = parsed['device_id']
 		# version = parsed['version']
 		# firmware = parsed['firmware']
-
-		# Cutting received payload 'gps_data_report'
-		payload = parsed['payload']
-
-		# Send message 'success' to controller.
-		if proto.device_id not in proto.factory.controllers:
-			logger.debug(u'controller_id {0} is not connected.'.format(proto.device_id))
-			return
-
-		logger.debug(u'Prepare for relaying data to controller_id: {0}'.format(proto.device_id))
-		proto.belongto_controller = proto.factory.controllers[proto.device_id]
-		logger.debug(u'Send response success gps_data_report: {0}'.format(repr(proto.response_success)))
-		proto.belongto_controller.sendLine(proto.response_success)
-		proto.belongto_controller = False
-		return
 
 	def normal_bike_status_processing(self, proto, parsed):
 		'''Preparing response normal_ack to device.'''
@@ -360,28 +306,6 @@ class Logic(object):
 
 	def ble_key_response_processing(self, proto, parsed):
 		'''Relaying data from device to controller.'''
-		# length = parsed['length']
-		# message_type = parsed['message_type']
-		# Server should update device status here, by saving to database.
-		# message_id = parsed['message_id'] # Check the status.
-		# device_id = parsed['device_id']
-		# version = parsed['version']
-		# firmware = parsed['firmware']
-
-		# Cutting received payload 'ble_key_response'
-		payload = parsed['payload']
-
-		# Send message 'success' to controller.
-		if proto.device_id not in proto.factory.controllers:
-			logger.debug(u'controller_id {0} is not connected.'.format(proto.device_id))
-			return
-
-		logger.debug(u'Prepare for relaying data to controller_id: {0}'.format(proto.device_id))
-		proto.belongto_controller = proto.factory.controllers[proto.device_id]
-		logger.debug(u'Send response success ble_key_response: {0}'.format(repr(proto.response_success)))
-		proto.belongto_controller.sendLine(proto.response_success)
-		proto.belongto_controller = False
-		return
 
 	def command_response_processing(self, proto, parsed):
 		pass
@@ -398,49 +322,6 @@ class Logic(object):
 		'''
 		parsed = self.parsing_crc8(proto, data)
 		if not parsed:
-			return
-
-		# proto.controller_id = byte_to_hex(parsed['device_id'])
-		proto.controller_id = hex_to_int(byte_to_hex(parsed['device_id']))
-
-		if proto.controller_id not in proto.factory.devices:
-			logger.debug(u'device_id {0} is not connected.'.format(proto.controller_id))
-			return
-
-		logger.debug(u'Prepare for relaying data to device_id: {0}'.format(proto.controller_id))
-		proto.belongto_device = proto.factory.devices[proto.controller_id]
-
-		# Store connected controller to self.controllers.
-		proto.factory.controllers[proto.controller_id] = proto
-
-		# Store connected controller to redis, It will be accessed by its device when do feedback message.
-		# the device will search this 'key': proto.controller_id in redis,
-		# to determine socket belong to its controller.
-		proto.factory.controllers_cache.set(proto.controller_id, '{0}:{1}'.format(proto.factory.server_ip, proto.factory.server_port))
-		proto.token_controller = True
-
-		if parsed['message_type'] == SERVER_TYPE['unlock']:
-			logger.debug(u'Detected incoming unlock from controller...')
-			return self.unlock_processing(data)
-
-		elif parsed['message_type'] == SERVER_TYPE['lock']:
-			logger.debug(u'Detected incoming lock from controller...')
-			return self.lock_processing(data)
-
-		elif parsed['message_type'] == SERVER_TYPE['fire_gps_starting_up']:
-			logger.debug(u'Detected incoming fire_gps_starting_up from controller...')
-			return self.fire_gps_starting_up_processing(data)
-
-		elif parsed['message_type'] == SERVER_TYPE['ble_key_update']:
-			logger.debug(u'Detected incoming ble_key_update from controller...')
-			return self.ble_key_update_processing(data)
-
-		else:
-			# Still several message_type unfinished yet.
-			pass
-
-		return
-
 
 	def communication(self, proto, data):
 		'''proto is parent's self.
@@ -449,67 +330,5 @@ class Logic(object):
 		parsed = self.parsing_crc8(proto, data)
 		if not parsed:
 			return
-
-		# proto.device_id = byte_to_hex(parsed['device_id'])
-		proto.device_id = hex_to_int(byte_to_hex(parsed['device_id']))
-
-		# Store connected device to self.devices
-		proto.factory.devices[proto.device_id] = proto
-
-		# Store connected device to redis, later, it will be accessed by its controller.
-		# The controler will search this 'key': proto.device_id in redis,
-		# and then get value of ipaddr:port to determine, in which twisted server the device is connected.
-		# and then controler can login to the certain twisted server.
-		proto.factory.devices_cache.set(proto.device_id, '{0}:{1}'.format(proto.factory.server_ip, proto.factory.server_port))
-		proto.token_device = True
-
-		if parsed['message_type'] == CLIENT_TYPE['heartbeat']:
-			logger.debug(u'Detected incoming heartbeat from device...')
-			return self.heartbeat_processing(proto, parsed)
-
-		if parsed['message_type'] == CLIENT_TYPE['normal_ack']:
-			# 1st reply fire_gps_starting_up
-			logger.debug(u'Detected incoming normal_ack from device...')
-			return self.normal_ack_processing(proto, parsed)
-
-		elif parsed['message_type'] == CLIENT_TYPE['lock_unlock_response']:
-			logger.debug(u'Detected incoming lock_unlock_response from device...')
-			return self.lock_unlock_response_processing(proto, parsed)
-
-		elif parsed['message_type'] ==  CLIENT_TYPE['gps_data_report']:
-			logger.debug(u'Detected incoming gps_data_report from device...')
-			return self.gps_data_report_processing(proto, parsed)
-
-		elif parsed['message_type'] ==  CLIENT_TYPE['normal_bike_status']:
-			logger.debug(u'Detected incoming normal_bike_status from device...')
-			return self.normal_bike_status_processing(proto, parsed)
-
-		elif parsed['message_type'] ==  CLIENT_TYPE['pedelec_status_report']:
-			logger.debug(u'Detected incoming pedelec_status_report from device...')
-			return self.pedelec_status_report_processing(proto, parsed)
-
-		elif parsed['message_type'] ==  CLIENT_TYPE['fault_report']:
-			logger.debug(u'Detected incoming fault_report from device...')
-			return self.fault_report_processing(proto, parsed)
-
-		elif parsed['message_type'] ==  CLIENT_TYPE['ble_key_response']:
-			logger.debug(u'Detected incoming ble_key_response from device...')
-			return self.ble_key_response_processing(proto, parsed)
-
-		elif parsed['message_type'] ==  CLIENT_TYPE['command_response']:
-			logger.debug(u'Detected incoming command_response from device...')
-			return self.command_response_processing(proto, parsed)
-
-		elif parsed['message_type'] ==  CLIENT_TYPE['upgrade_push_response']:
-			logger.debug(u'Detected incoming upgrade_push_response from device...')
-			return self.upgrade_push_response_processing(proto, parsed)
-
-		elif parsed['message_type'] ==  CLIENT_TYPE['upgrade_data_request']:
-			logger.debug(u'Detected incoming upgrade_data_request from device...')
-			return self.upgrade_data_request_processing(proto, parsed)
-
-		else:
-			logger.debug(u'Client Type from device is not correct. Drop connection.')
-			proto.transport.loseConnection()
 
 		return
